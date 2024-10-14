@@ -8,7 +8,6 @@ const Navbar = () => {
     { title: "Clientes", path: "/home" },
     { title: "Resultados", path: "/resultados" },
     { title: "Serviços", path: "/servicos" },
-    { title: "Contato", path: "/form" },
   ];
 
   return (
@@ -20,7 +19,7 @@ const Navbar = () => {
               src="/img/logo.png"
               width={100}
               height={50}
-              alt="Float UI logo"
+              alt="LSG logo"
               className="shadow-none"
               initial={{ opacity: 0, y: -20 }} // Animação inicial
               animate={{ opacity: 1, y: 0 }} // Animação ao aparecer

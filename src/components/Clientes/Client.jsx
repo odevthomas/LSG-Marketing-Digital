@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
 
 const ImageCarousel = () => {
     const images = [
@@ -68,7 +68,7 @@ const ImageCarousel = () => {
                         </motion.p>
                       <div className="flex justify-center mt-6"> {/* Adicionando um contêiner flex para centralizar */}
                     <motion.a 
-                        href="https://www.seulink.com"  // Substitua pelo seu link desejado
+                        href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
                         className="inline-flex gap-x-1 items-center text-[#ffb23e] hover:text-[#e0a731] duration-150 font-medium text-lg"
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: [0, 1, 0] }}  // Faz o elemento piscar
