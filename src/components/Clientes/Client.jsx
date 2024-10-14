@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 const ImageCarousel = () => {
     const images = [
-        "/public/Clients/1.png",
-        "/public/Clients/2.png",
-        "/public/Clients/3.png",
-        "/public/Clients/4.png",
+        "/Clients/1.png",
+        "/Clients/2.png",
+        "/Clients/3.png",
+        "/Clients/4.png",
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);

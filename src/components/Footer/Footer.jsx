@@ -35,7 +35,7 @@ export default () => {
             <div className="gap-6 justify-between md:flex">
                 <div className="flex-1">
                     <img 
-                        src="/public/img/logo-banca-removebg-preview.png" 
+                        src="/img/logo-banca-removebg-preview.png" 
                         className="w-32 border-none shadow-none" 
                         alt="Logo LSG Digital" 
                     />

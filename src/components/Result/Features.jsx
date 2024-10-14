@@ -35,7 +35,7 @@ export default () => {
                 </div>
                 <div className="flex-1 mt-5 mx-auto sm:w-full lg:mt-0 lg:w-auto">
                     <motion.img 
-                        src="/public/Resultados/resultado-hero.jpg" 
+                        src="/Resultados/resultado-hero.jpg" 
                         alt="Resultados" 
                         className="w-full h-auto max-h-[600px] object-cover" 
                         initial={{ scale: 0.8 }} 

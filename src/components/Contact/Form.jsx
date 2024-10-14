@@ -4,7 +4,7 @@ export default () => {
     return (
         <main className="flex overflow-hidden">
             <div className="hidden lg:flex flex-1">
-                <img src="/public/img/hero.jpg" className="w-full h-screen object-cover" alt="Imagem de destaque" />
+                <img src="/img/hero.jpg" className="w-full h-screen object-cover" alt="Imagem de destaque" />
             </div>
             <div className="flex-1 py-12 lg:flex lg:justify-center lg:h-screen bg-[#131313]"> {/* Fundo #131313 */}
                 <div className="max-w-lg mx-auto px-4 text-gray-300"> {/* Texto em um tom mais claro para contraste */}

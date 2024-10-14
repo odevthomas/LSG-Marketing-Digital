@@ -6,9 +6,9 @@ import './Carrossel.css';
 
 export default function VideoPlayer() {
   const slides = [
-    { link: "/public/depoimentos/1.mov", content: "Depoimento 1" },
-    { link: "/public/depoimentos/3.mp4", content: "Depoimento 2" },
-    { link: "/public/depoimentos/4.mp4", content: "Depoimento 3" },
+    { link: "/depoimentos/1.mov", content: "Depoimento 1" },
+    { link: "/depoimentos/3.mp4", content: "Depoimento 2" },
+    { link: "/depoimentos/4.mp4", content: "Depoimento 3" },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);

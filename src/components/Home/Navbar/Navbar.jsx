@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <a href="/">
             <motion.img
-              src="/public/img/logo.png"
+              src="/img/logo.png"
               width={100}
               height={50}
               alt="Float UI logo"
