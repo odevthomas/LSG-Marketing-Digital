@@ -7,44 +7,44 @@
 }
 
 .app-container.light {
-  background-color: #ffffff; /* Cor de fundo clara */
-  color: #000000; /* Texto preto */
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .app-container.dark {
-  background-color: #010101; /* Cor de fundo escura */
-  color: #ffffff; /* Texto branco */
+  background-color: #010101;
+  color: #ffffff;
 }
 
 .dark .bg-white {
-  background-color: #111; /* Fundo escuro para elementos brancos */
+  background-color: #111;
 }
 
 .dark .border-gray-700 {
-  border-color: #333; /* Borda escura */
+  border-color: #333;
 }
 
 .dark .text-gray-600 {
-  color: #e6e7e8; /* Texto claro */
+  color: #e6e7e8;
 }
 
 .button {
   @apply px-4 py-2 rounded-lg font-semibold transition duration-200 ease-in-out;
-  background-color: #ffb23e; /* Cor de fundo padrão */
-  color: white; /* Texto branco */
+  background-color: #ffb23e;
+  color: #ffffff;
 }
 
 .button:hover {
-  @apply bg-white text-gray-900 transform scale-105 shadow-lg; /* Efeito de hover */
+  @apply bg-white text-gray-900 transform scale-105 shadow-lg;
 }
 
 .card {
   @apply shadow-lg rounded-lg transition duration-300 ease-in-out;
-  background-color: #131313; /* Fundo escuro para cartões */
+  background-color: #131313;
 }
 
 .card:hover {
-  @apply shadow-xl transform scale-105; /* Efeito de hover em cartões */
+  @apply shadow-xl transform scale-105;
 }
 
 ::-webkit-scrollbar {
@@ -53,122 +53,86 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1); /* Fundo da barra de rolagem */
-  border-radius: 10px; /* Bordas arredondadas */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffb23e; /* Cor do "thumb" */
-  border-radius: 10px; /* Bordas arredondadas */
+  background: #ffb23e;
+  border-radius: 10px;
   transition: background 0.3s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e0a74f; /* Cor do "thumb" em hover */
+  background: #e0a74f;
 }
 
 * {
-  scrollbar-width: thin; /* Largura da barra de rolagem */
-  scrollbar-color: #ffb23e rgba(255, 255, 255, 0.1); /* Cor da barra de rolagem */
+  scrollbar-width: thin;
+  scrollbar-color: #ffb23e rgba(255, 255, 255, 0.1);
 }
 
 a {
   @apply transition duration-200 ease-in-out;
-  color: inherit; /* Cor padrão */
+  color: inherit;
 }
 
 a:hover {
-  @apply text-gray-900; /* Cor de link em hover */
+  @apply text-gray-900;
 }
 
 h1, h2, h3, h4, h5, h6 {
   @apply transition duration-300 ease-in-out;
 }
 
-.custom-bg {
-  @apply bg-gray-200 dark:bg-gray-800; /* Fundo customizado */
-}
-
-.custom-border {
-  @apply border border-gray-300 dark:border-gray-600; /* Bordas customizadas */
-}
-
-.custom-text {
-  @apply text-gray-800 dark:text-gray-200; /* Texto customizado */
-}
-
-.text-white {
-  color: rgb(255, 255, 255); /* Texto branco */
-  transition: color 0.3s ease; /* Transição de cor */
-}
-
-.text-white:hover {
-  color: rgb(0, 0, 0); /* Efeito de hover no texto branco */
-}
-
-.dark .text-gray-600 {
-  color: #e6e7e8; /* Texto claro no tema escuro */
-  transition: color 0.3s ease; /* Transição de cor */
-}
-
-.dark .text-gray-600:hover {
-  color: #000; /* Efeito de hover em texto claro */
-}
-
-/* Adicionando estilos para cabeçalhos */
 h1 {
-  @apply text-3xl font-bold; /* Estilo para h1 */
+  @apply text-3xl font-bold;
 }
 
 h2 {
-  @apply text-2xl font-semibold; /* Estilo para h2 */
+  @apply text-2xl font-semibold;
 }
 
 h3 {
-  @apply text-xl font-medium; /* Estilo para h3 */
+  @apply text-xl font-medium;
 }
 
-/* Efeitos gerais */
 .transition-effect {
-  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efeitos de transição */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .transition-effect:hover {
-  transform: scale(1.02); /* Efeito de escala em hover */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra em hover */
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-container {
-  max-width: 800px; /* Largura máxima do carrossel */
-  margin: 0 auto; /* Centraliza o carrossel */
-  overflow: hidden; /* Remove barras de rolagem */
-  border-radius: 0.5rem; /* Bordas arredondadas */
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Sombra suave */
-  white-space: nowrap; /* Evita quebra de linha no conteúdo */
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
 }
 
-/* Estilos Responsivos */
 @media (max-width: 640px) {
   .carousel-container {
-    width: 90%; /* Largura para telas pequenas */
+    width: 90%;
   }
 }
 
 @media (min-width: 640px) {
   .carousel-container {
-    width: 80%; /* Largura para telas médias */
+    width: 80%;
   }
 }
 
 @media (min-width: 768px) {
   .carousel-container {
-    width: 70%; /* Largura para telas grandes */
+    width: 70%;
   }
 }
 
-/* Estilo para botões */
 button {
-  cursor: pointer; /* Muda o cursor ao passar o mouse */
+  cursor: pointer;
 }
-
-/* Outras estilizações globais conforme necessário */

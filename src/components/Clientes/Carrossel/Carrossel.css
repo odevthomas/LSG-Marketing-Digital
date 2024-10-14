@@ -1,95 +1,91 @@
 .video-player {
   position: relative;
-  max-width: 800px; /* Define a largura máxima do vídeo */
-  margin: 0 auto; /* Centraliza o vídeo */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .video {
-  width: 150%; /* O vídeo ocupa 100% da largura do contêiner */
-  max-height: 500px; /* Define a altura máxima do vídeo */
-  height: auto; /* Mantém a proporção do vídeo */
-  border: none; /* Remove bordas */
-  border-radius: 0; /* Remove bordas arredondadas */
+  width: 150%;
+  max-height: 500px;
+  height: auto;
+  border: none;
+  border-radius: 0;
 }
 
-.controls {
-   display: flex;
-  justify-content: center; /* Centraliza os botões */
-  margin-top: 10px;
-  gap: 2rem; /* Espaçamento entre os botões */
-  color: #131313; /* Cor do texto */
-  margin-top: 3rem;
-}
 .controls {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 3rem;
+  gap: 2rem;
+  color: #131313;
 }
 
 .dot {
-  width: 12px; /* Tamanho da bolinha */
-  height: 12px; /* Tamanho da bolinha */
-  background-color: #ffb23e; /* Cor da bolinha */
-  border-radius: 50%; /* Deixa redonda */
-  margin: 0 5px; /* Espaçamento entre as bolinhas */
-  cursor: pointer; /* Muda o cursor ao passar o mouse */
+  width: 12px;
+  height: 12px;
+  background-color: #ffb23e;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .dot.active {
-  background-color: #3d3d3d; /* Cor da bolinha ativa */
-  transform: scale(1.2); /* Aumenta a bolinha ativa */
+  background-color: #3d3d3d;
+  transform: scale(1.2);
 }
 
 button {
-     background-color: #ffb23e;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 20px 30px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  background-color: #ffb23e;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 button:hover {
   background-color: #ffb23e;
-    transform: translateY(-3px) scale(1.05);
-    color: #131313;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    padding: 10px 20px;
+  transform: translateY(-3px) scale(1.05);
+  color: #131313;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
 }
 
 button.disabled {
   background-color: #ffb23e;
-    cursor: not-allowed;
-    box-shadow: none;
-    color: #131313;
-    padding: 10px 20px;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #131313;
+  padding: 10px 20px;
 }
+
 button.disabled:hover {
-    background-color: #ffb23e;
-    transform: translateY(-3px) scale(1.05);
-    color: #131313;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    padding: 10px 20px;
+  background-color: #ffb23e;
+  transform: translateY(-3px) scale(1.05);
+  color: #131313;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
 }
+
 button.active {
   background-color: #ffb23e;
-    cursor: not-allowed;
-    box-shadow: none;
-    color: #131313;
-    padding: 10px 20px;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #131313;
+  padding: 10px 20px;
 }
 
 button.active:hover {
-    background-color: #ffb23e;
-    transform: translateY(-3px) scale(1.05);
-    color: #131313;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    padding: 10px 20px;
+  background-color: #ffb23e;
+  transform: translateY(-3px) scale(1.05);
+  color: #131313;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  padding: 10px 20px;
 }

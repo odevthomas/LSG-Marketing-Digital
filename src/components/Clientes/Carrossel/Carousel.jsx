@@ -30,7 +30,7 @@ export default function VideoPlayer() {
     <section className="py-14" style={{ backgroundColor: '#131313' }} aria-labelledby="depoimentos">
       <div className="max-w-screen-xl mx-auto px-4 text-gray-200 md:px-8">
         <div className="flex flex-col lg:flex-row items-center">
-          <div className="max-w-2xl lg:mr-8">
+          <div className="max-w-2xl lg:mr-8 mb-8 lg:mb-0">
             <motion.h3 
               className="text-[#ffb23e] font-semibold mb-4"
               initial={{ opacity: 0, y: -20 }}
@@ -41,7 +41,7 @@ export default function VideoPlayer() {
             </motion.h3>
             <motion.h2 
               id="depoimentos" 
-              className="text-gray-300 text-4xl font-semibold sm:text-5xl mb-4"
+              className="text-gray-300 text-4xl font-semibold sm:text-5xl mb-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -49,7 +49,7 @@ export default function VideoPlayer() {
               Satisfação Garantida!
             </motion.h2>
             <motion.p 
-              className="mt-3 text-lg mb-4 text-gray-400"
+              className="mt-3 text-lg mb-4 text-gray-400 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -57,7 +57,7 @@ export default function VideoPlayer() {
               "No último final de semana, consegui fechar 13 negócios reais!"
             </motion.p>
             <motion.p 
-              className="text-gray-400 mb-4"
+              className="text-gray-400 mb-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -70,7 +70,7 @@ export default function VideoPlayer() {
             <div className="video-player">
               <motion.video 
                 ref={videoRef}
-                className="video rounded-lg shadow-lg" 
+                className="video rounded-lg shadow-lg w-full" 
                 controls
                 preload="metadata"
                 initial={{ opacity: 0, scale: 0.95 }}

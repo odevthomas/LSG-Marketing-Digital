@@ -62,10 +62,10 @@ const Testimonials = () => {
     }, [currentIndex]);
 
     return (
-        <section className="py-14 my-10 bg-[#010101]" aria-labelledby="client-testimonials">
+        <section className="py-14 my-10 bg-[#010101] mt-12" aria-labelledby="client-testimonials"> {/* Margem superior de 3 rem */}
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <header className="text-center mb-12">
-                    <h3 className="text-[#ffb23e] text-3xl font-semibold mb-2">
+                    <h3 className="text-[#ffb23e] text-4xl font-semibold mb-5">
                         Nossos Clientes Satisfeitos
                     </h3>
                     <p className="text-gray-400">

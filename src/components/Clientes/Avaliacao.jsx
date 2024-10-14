@@ -8,8 +8,6 @@ const Avaliacao = () => {
             quote: "“Eu virei cliente da Hazap após receber algumas propagandas da empresa em meu Instagram. Fiquei positivamente surpreso com a qualidade do atendimento durante a venda e, ainda mais, no pós-venda. Sempre que tenho alguma dúvida sobre a máquina (software/hardware) sou muito bem atendido. Gostaria de deixar destacado o excelente atendimento do Matheus. O cara é show.”",
             rating: 5,
         },
-      ,
-       
         {
             avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/449717161_1458191511476709_2286688843264636556_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=102&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=naPV-HABZlEQ7kNvgHFYnK3&_nc_ht=scontent.cdninstagram.com&oh=00_AYDUqLd1KkcZM_jAPgHCF1so4KieBSIeuUMCyCPCnHRJ7w&oe=6711D77F",
             name: "Floya Design",
@@ -57,7 +55,7 @@ const Avaliacao = () => {
                                                 {item.quote}
                                             </p>
                                         </blockquote>
-                                        <div className="mt-4">
+                                        <div className="mt-4 flex flex-col items-center">
                                             <img src={item.avatar} alt={item.name} className="w-16 h-16 mx-auto rounded-full border-2 border-[#ffb23e]" />
                                             <div className="mt-3">
                                                 <span className="block text-gray-300 font-semibold text-lg">{item.name}</span>
@@ -72,7 +70,7 @@ const Avaliacao = () => {
                 </div>
                 <div className="mt-6">
                     <ul className="flex gap-x-3 justify-center">
-                        {testimonials.map((item, idx) => (
+                        {testimonials.map((_, idx) => (
                             <li key={idx}>
                                 <button
                                     className={`w-3 h-3 rounded-full duration-150 ring-offset-2 ring-[#ffb23e] focus:ring ${currentTestimonial === idx ? "bg-[#ffb23e]" : "bg-gray-300"}`}

@@ -17,9 +17,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que o vídeo cubra completamente */
+    object-fit: cover;
     z-index: 1;
-    opacity: 0.4; /* Ajuste para menos opacidade */
+    opacity: 0.4;
     filter: blur(8px);
 }
 
@@ -52,19 +52,21 @@
 }
 
 .hero-button {
-    background-color: #ffb23e;
-    color: rgb(246, 246, 246); 
-    padding: 12px 24px; 
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem; 
-    z-index: 3;
+    background-color: transparent;
+    color: #ffb23e;
+    border: 2px solid #ffb23e;
+    border-radius: 8px;
+    padding: 12px 44px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 
 .hero-button:hover {
-    background-color: #00ff11; 
+    background-color: rgba(255, 178, 62, 0.2);
     transform: scale(1.05);
     color: aliceblue;
+    border-color: #ffb23e;
 }
 
 @media (max-width: 1024px) {
@@ -113,4 +115,9 @@
     .hero-background p {
         font-size: 0.9rem; 
     }
+}
+
+.text-warning-foreground {
+    color: hsl(0deg 0% 100%);
+    transition: color 0.3s, transform 0.3s;
 }

@@ -43,7 +43,7 @@ const ImageCarousel = () => {
                     </div>
                     <div className="max-w-xl px-4 space-y-5 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
                         <motion.h3 
-                            className="text-[#ffb23e] font-semibold text-lg md:text-xl lg:text-2xl"
+                            className="text-[#ffb23e] font-semibold mb-4"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
@@ -51,15 +51,15 @@ const ImageCarousel = () => {
                             O que nossos clientes dizem
                         </motion.h3>
                         <motion.p 
-                            className="text-gray-900 text-3xl font-semibold sm:text-4xl lg:text-5xl"
+                            className="text-gray-300 text-4xl font-semibold sm:text-5xl mb-4 text-center"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
-                            Conectando marcas a clientes com resultados surpreendentes
+                          Clientes com resultados surpreendentes
                         </motion.p>
                         <motion.p 
-                            className="mt-3 text-gray-700 text-lg sm:text-xl lg:text-2xl"
+                            className="mt-3 text-lg mb-4 text-gray-400 text-center"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
