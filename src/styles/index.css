@@ -1,0 +1,219 @@
+:root {
+    --color-primary: #faad14; /* Cor Primária */
+    --color-secondary: #131313; /* Fundo Escuro */
+    --color-text: #ffffff; /* Texto Branco */
+    --color-text-light: #eaeaea; /* Texto claro */
+    --color-border: rgba(234, 234, 234, 0.1); /* Cor da Borda */
+    --color-hover: rgba(255, 255, 255, 0.8); /* Cor do Hover */
+    --color-dark-bg: #f8f8f8; /* Fundo Escuro Adicional */
+}
+
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Estilização do corpo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--color-secondary);
+    color: var(--color-text);
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Estilo dos títulos */
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase; /* Títulos em letras maiúsculas */
+}
+
+h1 {
+    font-size: 2.5rem; /* Ajuste de tamanho */
+}
+
+h2 {
+    font-size: 2rem; /* Ajuste de tamanho */
+}
+
+h3 {
+    font-size: 1.5rem; /* Ajuste de tamanho */
+}
+
+/* Parágrafos */
+p {
+    font-family: 'Lato', sans-serif;
+    color: var(--color-text-light);
+    margin: 0.5rem 0; /* Espaçamento vertical */
+}
+
+/* Estilo dos cartões */
+.card {
+    background-color: var(--color-secondary);
+    border-radius: 12px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    padding: 1rem;
+    border: 1px solid var(--color-border); /* Adiciona borda sutil */
+}
+
+/* Efeito de hover nos cartões */
+.card:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px); /* Eleva levemente o cartão */
+}
+
+/* Botões */
+.btn {
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    padding: 0.75rem 1.25rem; /* Aumenta o padding do botão */
+    border: none;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efeito de hover nos botões */
+.btn:hover {
+    background-color: white;
+    color: var(--color-primary);
+    transform: scale(1.05); /* Leve aumento do botão ao passar o mouse */
+}
+
+/* Adicionando margens e padding */
+.section {
+    padding: 3rem 0; /* Maior espaçamento vertical nas seções */
+}
+
+/* Estilo para o cabeçalho da seção */
+header {
+    margin-bottom: 2rem; /* Espaçamento inferior maior */
+}
+
+/* Adicionando animações sutis */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Estilo para as listas */
+ul {
+    list-style-type: none; /* Remove marcadores de listas */
+    padding: 0; /* Remove padding padrão */
+}
+
+/* Ajustando a responsividade */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem; /* Reduz tamanho do título em telas pequenas */
+    }
+
+    h2 {
+        font-size: 1.75rem; /* Reduz tamanho do subtítulo em telas pequenas */
+    }
+
+    h3 {
+        font-size: 1.25rem; /* Reduz tamanho do terceiro título em telas pequenas */
+    }
+
+    .max-w-screen-xl {
+        padding: 0 1rem; /* Reduzindo padding em telas pequenas */
+    }
+
+    .card {
+        padding: 0.5rem; /* Menor padding nos cartões em telas pequenas */
+    }
+
+    .btn {
+        padding: 0.5rem 1rem; /* Ajusta padding do botão */
+    }
+
+    .section {
+        padding: 2rem 0; /* Menor espaçamento vertical nas seções */
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.25rem; /* Ajusta tamanho do título para telas médias */
+    }
+
+    .card {
+        padding: 0.75rem; /* Ajusta padding dos cartões para telas médias */
+    }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-dark-bg); /* Cor de fundo da barra */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary); /* Cor do "thumb" da barra */
+    border-radius: 10px; /* Arredondamento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 179, 62, 0.8); /* Cor ao passar o mouse */
+}
+
+article {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+}
+
+.text-gray-500 {
+    color: var(--color-text-light);
+}
+
+.text-white {
+    color: var(--color-text);
+}
+
+.shadow-global {
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.transform-hover:hover {
+    transform: scale(1.05);
+}
+.text-gray-900 {
+    --tw-text-opacity: 1;
+    color: rgb(228 228 228);
+}
+
+.text-yellow-500 {
+    --tw-text-opacity: 1;
+    color: #faad14;
+}
+.text-gray-700 {
+    --tw-text-opacity: 1;
+    color: #9e9e9e;
+}
+.text-lg {
+    font-size: 1.15rem;
+    line-height: 1.75rem;
+}
