@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import React from 'react';
 
-const ContactForm = () => {
+export default () => {
     const servicesItems = [
         "Gestão de CRM",
         "Implementação de Chatbots",
@@ -16,7 +17,6 @@ const ContactForm = () => {
     });
 
     const [statusMessage, setStatusMessage] = useState('');
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,14 +24,7 @@ const ContactForm = () => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Previne o comportamento padrão do formulário
-
-        // Validar os dados do formulário (opcional)
-        if (!formData.name || !formData.email || !formData.contact || !formData.message) {
-            setStatusMessage('Por favor, preencha todos os campos.');
-            return;
-        }
-
+        e.preventDefault();
         try {
             const response = await fetch('http://localhost:5000/send-email', {
                 method: 'POST',
@@ -42,26 +35,20 @@ const ContactForm = () => {
             });
 
             if (response.ok) {
-                // Reseta os campos do formulário
+                setStatusMessage('Formulário enviado com sucesso!');
                 setFormData({
                     name: '',
                     email: '',
                     contact: '',
                     message: '',
                 });
-                setStatusMessage('Formulário enviado com sucesso!');
-                setIsModalOpen(true); // Abre o modal
             } else {
                 setStatusMessage('Erro ao enviar o formulário. Tente novamente mais tarde.');
             }
         } catch (error) {
-            console.error('Erro:', error); // Log do erro
+            console.error('Erro:', error);
             setStatusMessage('Erro ao enviar o formulário. Tente novamente mais tarde.');
         }
-    };
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
     };
 
     return (
@@ -80,7 +67,7 @@ const ContactForm = () => {
                         </p>
                     </div>
                     {statusMessage && (
-                        <div className="mt-4 text-center text-red-500">{statusMessage}</div>
+                        <div className="mt-4 text-center text-green-500">{statusMessage}</div>
                     )}
                     <div className="mt-8">
                         <h4 className="text-gray-800 text-2xl font-semibold mb-4">Nossos Serviços:</h4>
@@ -94,31 +81,37 @@ const ContactForm = () => {
                     </div>
                     <form onSubmit={handleSubmit} className="space-y-6 mt-8 lg:pb-12">
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">Seu nome</label>
+                            <label className="block font-medium text-gray-800 mb-1">
+                                Seu nome
+                            </label>
                             <input
                                 type="text"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 aria-label="Seu nome"
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">Email</label>
+                            <label className="block font-medium text-gray-800 mb-1">
+                                Email
+                            </label>
                             <input
                                 type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 aria-label="Email"
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">Contato</label>
+                            <label className="block font-medium text-gray-800 mb-1">
+                                Contato
+                            </label>
                             <input
                                 type="tel"
                                 name="contact"
@@ -126,18 +119,20 @@ const ContactForm = () => {
                                 value={formData.contact}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 aria-label="Contato"
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">Mensagem</label>
+                            <label className="block font-medium text-gray-800 mb-1">
+                                Mensagem
+                            </label>
                             <textarea
                                 name="message"
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
-                                className="w-full h-32 px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 resize-none"
+                                className="w-full h-32 px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
                                 aria-label="Mensagem"
                             ></textarea>
                         </div>
@@ -151,24 +146,6 @@ const ContactForm = () => {
                     </form>
                 </div>
             </div>
-
-            {/* Modal de Sucesso */}
-            {isModalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center">
-                        <h4 className="text-lg font-semibold text-green-500">Sucesso!</h4>
-                        <p className="mt-2 text-gray-800">Seu formulário foi enviado com sucesso.</p>
-                        <button
-                            className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400"
-                            onClick={handleCloseModal}
-                        >
-                            Fechar
-                        </button>
-                    </div>
-                </div>
-            )}
         </main>
     );
 };
-
-export default ContactForm;
