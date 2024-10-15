@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-      const navigation = [
-        { title: "Clientes", path: "/home" },
-        { title: "Resultados", path: "/resultados" },
-        { title: "Serviços", path: "/servicos" },
-      ];
+  const navigation = [
+    { title: "Clientes", path: "/home" },
+    { title: "Resultados", path: "/resultados" },
+    { title: "Serviços", path: "/servicos" },
+  ];
 
   const handleLinkClick = () => {
     if (isOpen) setIsOpen(false);
@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className="bg-black w-full border-b md:border-0 md:static">
       <div className="flex items-center justify-between px-4 max-w-screen-xl mx-auto md:px-8">
-        <Link to="/">
+        <Link to="/" className="flex-grow">
           <motion.img
             src="/img/logo-2.png"
             width={120}
@@ -30,7 +30,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           />
         </Link>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
           <button
             className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
             onClick={() => setIsOpen(!isOpen)}
@@ -48,29 +48,31 @@ const Navbar = () => {
             )}
           </button>
         </div>
-        <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
-          <ul className="flex flex-col justify-center items-center space-y-8 md:flex-row md:space-x-6 md:space-y-0">
-            {navigation.map((item, idx) => (
-              <li key={idx} className="text-white transition duration-200 transform hover:scale-110">
-                <Link
-                  to={item.path}
-                  className="hover:text-[#25D366] focus:text-[#25D366] focus:outline-none"
-                  onClick={handleLinkClick}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="hidden md:inline-block">
-          <a
-            href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"
-            className="py-3 px-4 text-white bg-[#25D366] hover:bg-[#25D366] rounded-md shadow animate-pulse transition duration-150"
-          >
-            Conversar Agora!
-          </a>
-        </div>
+      </div>
+      {/* Nav links */}
+      <div className={`flex flex-col items-start ${isOpen ? 'block' : 'hidden'} md:hidden transition-all duration-300 ease-in-out bg-black`}>
+        <ul className="flex flex-col justify-center items-start space-y-4 p-4">
+          {navigation.map((item, idx) => (
+            <li key={idx} className="text-white transition duration-200 transform hover:scale-110">
+              <Link
+                to={item.path}
+                className="hover:text-[#25D366] focus:text-[#25D366] focus:outline-none"
+                onClick={handleLinkClick}
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* WhatsApp link for larger screens */}
+      <div className="hidden md:inline-block">
+        <a
+          href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"
+          className="py-3 px-4 text-white bg-[#25D366] hover:bg-[#25D366] rounded-md shadow transition duration-150"
+        >
+          Conversar Agora!
+        </a>
       </div>
     </nav>
   );
