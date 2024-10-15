@@ -90,7 +90,7 @@ const Testimonials = () => {
         <section className="py-14 my-10 bg-[#010101] mt-12" aria-labelledby="client-testimonials">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <header className="text-center mb-12">
-                    <h3 className="text-[#b3b3b3] text-4xl font-semibold mb-5">
+                    <h3 className="text-[#fff] text-4xl font-semibold mb-5">
                         Nossos Clientes !
                     </h3>
                     <p className="text-gray-400">
