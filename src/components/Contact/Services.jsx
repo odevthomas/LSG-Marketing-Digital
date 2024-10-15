@@ -92,9 +92,10 @@ const ServicePlans = () => {
                         <h3 className='text-white text-3xl font-semibold sm:text-4xl'>
                             Planos para Todos os Tamanhos de Negócio
                         </h3>
-                       <p className='mt-3'>
-                    Nossos planos são cuidadosamente elaborados para atender a diversas necessidades e orçamentos. Explore e descubra qual opção se adapta melhor ao seu negócio!
-                    </p>
+                     <p className='mt-3' style={{ color: '#fff' }}>
+                            Nossos planos são cuidadosamente elaborados para atender a diversas necessidades e orçamentos. Explore e descubra qual opção se adapta melhor ao seu negócio!
+                        </p>
+
 
                     </div>
                     <div className='mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-2'>
