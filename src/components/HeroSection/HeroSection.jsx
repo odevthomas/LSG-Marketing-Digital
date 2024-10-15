@@ -16,7 +16,7 @@ const HeroSection = () => {
       <p className="text-base md:text-lg mb-2 text-white">Descubra soluções inovadoras e acessíveis para o seu negócio:</p>
       <p className="text-sm md:text-md mb-4">
         <span className="price-highlight mt-9">R$ 599/mês</span>
-        <span className="text-xs md:text-sm ml-2">Clique no botão e comece sua jornada!</span>
+        <span className="text-xs md:text-sm ml-2  text-white">Clique no botão e comece sua jornada!</span>
       </p>
       <div className="flex flex-col md:flex-row items-center justify-center mt-4" style={{ zIndex: 2 }}>
         <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-4 service-highlight">Explore nossos serviços!</span>
