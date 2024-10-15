@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Alerta from '../../utis/Alerta';
 import Modal from '../../utis/Modal';
 
