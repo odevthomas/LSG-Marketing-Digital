@@ -67,9 +67,9 @@ const ImageCarousel = () => {
                             Descubra como nossas estratégias de marketing transformam interações em resultados reais. Nossos clientes compartilham suas experiências e a eficácia de nossas soluções inovadoras.
                         </motion.p>
                         <div className="flex justify-center mt-6"> {/* Contêiner flex para centralizar */}
-                            <motion.a 
+                        <motion.a 
                                 href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
-                                className="inline-flex gap-x-1 items-center text-[#000] hover:text-[#333] duration-150 font-medium text-lg"
+                                className="inline-flex items-center justify-center gap-x-1 py-2 px-4 text-white bg-[#25D366] hover:bg-[#1DA65D] rounded-md shadow-md transition duration-50"
                                 initial={{ opacity: 0, y: -10 }}
                                 animate={{ opacity: [0, 1, 0] }}  // Faz o elemento piscar
                                 transition={{ duration: 1, repeat: Infinity }}  // Repete a animação indefinidamente
@@ -79,6 +79,7 @@ const ImageCarousel = () => {
                                     <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
                                 </svg>
                             </motion.a>
+
                         </div>
                     </div>
                 </div>
