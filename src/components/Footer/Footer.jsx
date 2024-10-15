@@ -1,21 +1,28 @@
-import React from 'react';
-import { Mail, Instagram, Facebook } from 'lucide-react'; // Importe os ícones disponíveis
+import { Facebook, Instagram, Mail } from 'lucide-react'; // Importe os ícones disponíveis
+import React, { useState } from 'react';
 
 export default () => {
+    const [email, setEmail] = useState('');
+    const [message, setMessage] = useState('');
+
     const footerNavs = [
         {
             label: "Informações",
             items: [
-                { href: 'javascript:void()', name: 'Sobre Nós' },
-                { href: 'javascript:void()', name: 'Termos' },
-                { href: 'javascript:void()', name: 'Privacidade' },
-                { href: 'javascript:void()', name: 'Suporte' },
+                { href: '#', name: 'Sobre Nós' },
+                { href: '#', name: 'Termos' },
+                { href: '#', name: 'Privacidade' },
+                { href: '#', name: 'Suporte' },
             ],
         },
         {
             label: "Contato",
             items: [
-                { href: 'mailto:comercial@lsgdigital.com.br', name: 'Email', icon: <Mail className="w-4 h-4 inline mr-1 text-[#3b5998]" /> },
+                { 
+                    href: 'mailto:comercial@lsgdigital.com.br', 
+                    name: 'Email', 
+                    icon: <Mail className="w-4 h-4 inline mr-1 text-[#3b5998]" /> 
+                },
                 {
                     href: 'https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0',
                     name: 'WhatsApp',
@@ -31,6 +38,13 @@ export default () => {
         }
     ];
 
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        // Aqui você pode adicionar a lógica para enviar o email para o servidor, se necessário.
+        setMessage(`Você se inscreveu com sucesso! Um email de confirmação foi enviado para ${email}.`);
+        setEmail('');
+    };
+
     return (
         <footer className="text-gray-300 bg-[#000] w-full px-4 py-5 md:px-8">
             <div className="gap-6 justify-between md:flex">
@@ -41,15 +55,19 @@ export default () => {
                         alt="Logo LSG Digital" 
                     />
                     <p className="mt-2 text-sm">A LSG Digital oferece soluções de marketing digital a partir de R$599/mês.</p>
-                    <form onSubmit={(e) => e.preventDefault()}>
+                    <form onSubmit={handleSubscribe}>
                         <label className="block pt-4 text-sm">Mantenha-se atualizado</label>
                         <input
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Digite seu email"
                             className="w-full p-2.5 mt-2 bg-gray-700 text-gray-300 outline-none"
+                            required
                         />
                         <button className="mt-2 p-2.5 rounded-md text-black" style={{ backgroundColor: '#fff' }}>Inscrever-se</button>
                     </form>
+                    {message && <p className="mt-2 text-sm text-green-400">{message}</p>}
                 </div>
                 <div className="flex-1 mt-10 space-y-6 items-center justify-between sm:flex md:space-y-0 md:mt-0">
                     {footerNavs.map((item, idx) => (

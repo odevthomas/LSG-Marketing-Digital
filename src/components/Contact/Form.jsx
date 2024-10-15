@@ -1,54 +1,56 @@
-import React, { useState } from 'react';
-import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+import React, { useState, useEffect } from 'react';
+import Alerta from '../../utis/Alerta';
+import Modal from '../../utis/Modal';
 
-export default () => {
-    const servicesItems = [
-        "Gestão de CRM",
-        "Implementação de Chatbots",
-        "Criação de Funil de Vendas",
-        "Campanhas Personalizadas"
-    ];
+export default function ContactForm() {
+    const [state, handleSubmit] = useForm("xvgoobjg");
+    const [modalMessage, setModalMessage] = useState('');
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [alertMessage, setAlertMessage] = useState('');
+    const [alertType, setAlertType] = useState('');
 
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        contact: '',
-        message: '',
-    });
-
-    const [statusMessage, setStatusMessage] = useState('');
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    const showAlert = (message, type) => {
+        setAlertMessage(message);
+        setAlertType(type);
+        setIsModalOpen(true);
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:5000/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                setStatusMessage('Formulário enviado com sucesso!');
-                setFormData({
-                    name: '',
-                    email: '',
-                    contact: '',
-                    message: '',
-                });
-            } else {
-                setStatusMessage('Erro ao enviar o formulário. Tente novamente mais tarde.');
-            }
-        } catch (error) {
-            console.error('Erro:', error);
-            setStatusMessage('Erro ao enviar o formulário. Tente novamente mais tarde.');
+    // Mostra alerta ao enviar com sucesso
+    useEffect(() => {
+        if (state.succeeded) {
+            showAlert('Formulário enviado com sucesso!', 'success');
         }
+    }, [state.succeeded]);
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+
+        // Validação dos campos
+        if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        fetch('https://formspree.io/f/xblrdolo', {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' },
+        })
+        .then((response) => {
+            if (response.ok) {
+                showAlert('Mensagem enviada com sucesso!', 'success');
+                event.target.reset();
+            } else {
+                throw new Error('Erro ao enviar a mensagem.');
+            }
+        })
+        .catch((error) => {
+            console.error('Erro ao enviar mensagem:', error);
+            alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.');
+        });
     };
 
     return (
@@ -66,86 +68,72 @@ export default () => {
                             Preencha o formulário abaixo e nossa equipe entrará em contato com você!
                         </p>
                     </div>
-                    {statusMessage && (
-                        <div className="mt-4 text-center text-green-500">{statusMessage}</div>
-                    )}
-                    <div className="mt-8">
-                        <h4 className="text-gray-800 text-2xl font-semibold mb-4">Nossos Serviços:</h4>
-                        <ul className="text-gray-600 space-y-2">
-                            {servicesItems.map((service, index) => (
-                                <li key={index} className="border-b border-gray-300 pb-2">
-                                    {service}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <form onSubmit={handleSubmit} className="space-y-6 mt-8 lg:pb-12">
+                    {alertMessage && <Alerta message={alertMessage} type={alertType} />}
+                    <form onSubmit={handleFormSubmit} className="space-y-6 mt-8 lg:pb-12">
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">
+                            <label className="block font-medium text-gray-800 mb-1" htmlFor="name">
                                 Seu nome
                             </label>
                             <input
+                                id="name"
                                 type="text"
                                 name="name"
-                                value={formData.name}
-                                onChange={handleChange}
+                                placeholder="Digite seu nome"
                                 required
-                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                                aria-label="Seu nome"
+                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400"
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">
+                            <label className="block font-medium text-gray-800 mb-1" htmlFor="email">
                                 Email
                             </label>
                             <input
+                                id="email"
                                 type="email"
                                 name="email"
-                                value={formData.email}
-                                onChange={handleChange}
+                                placeholder="Seu email"
                                 required
-                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                                aria-label="Email"
+                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400"
                             />
+                            <ValidationError prefix="Email" field="email" errors={state.errors} />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">
+                            <label className="block font-medium text-gray-800 mb-1" htmlFor="contact">
                                 Contato
                             </label>
                             <input
+                                id="contact"
                                 type="tel"
                                 name="contact"
                                 placeholder="+55 (11) 9999-9999"
-                                value={formData.contact}
-                                onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                                aria-label="Contato"
+                                className="w-full px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400"
                             />
                         </div>
                         <div>
-                            <label className="block font-medium text-gray-800 mb-1">
+                            <label className="block font-medium text-gray-800 mb-1" htmlFor="message">
                                 Mensagem
                             </label>
                             <textarea
+                                id="message"
                                 name="message"
-                                value={formData.message}
-                                onChange={handleChange}
+                                placeholder="Digite sua mensagem"
                                 required
-                                className="w-full h-32 px-4 py-2 text-gray-800 bg-gray-200 border border-gray-400 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-yellow-500 resize-none"
-                                aria-label="Mensagem"
+                                className="w-full h-32 px-4 py-2 text-gray-800 bg-gray-200 border border-green-500 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400 resize-none"
                             ></textarea>
+                            <ValidationError prefix="Mensagem" field="message" errors={state.errors} />
                         </div>
                         <button
                             type="submit"
+                            disabled={state.submitting}
                             className="w-full px-4 py-2 text-white font-medium bg-green-500 hover:bg-green-400 active:bg-green-600 rounded-lg transition duration-150 transform hover:scale-105"
-                            aria-label="Enviar"
                         >
                             Enviar
                         </button>
                     </form>
                 </div>
             </div>
+            {isModalOpen && <Modal message={modalMessage} onClose={() => setIsModalOpen(false)} />}
         </main>
     );
-};
+}

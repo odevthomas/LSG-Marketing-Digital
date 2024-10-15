@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@heroicons/react": "^2.1.5",
     "@material-tailwind/react": "^2.1.10",
     "@nextui-org/react": "^2.4.8",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@shadcn/ui": "^0.0.4",
     "acessoria": "file:",
     "chart.js": "^4.4.4",
