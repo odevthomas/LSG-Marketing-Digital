@@ -1,5 +1,5 @@
 import { useForm, ValidationError } from '@formspree/react';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Alerta from '../../utis/Alerta';
 import Modal from '../../utis/Modal';
 
@@ -16,12 +16,13 @@ export default function ContactForm() {
         setIsModalOpen(true);
     };
 
-    // Mostra alerta ao enviar com sucesso
     useEffect(() => {
         if (state.succeeded) {
             showAlert('Formulário enviado com sucesso!', 'success');
+        } else if (state.errors.length > 0) {
+            showAlert('Erro ao enviar o formulário. Por favor, tente novamente.', 'error');
         }
-    }, [state.succeeded]);
+    }, [state.succeeded, state.errors]);
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
@@ -34,23 +35,7 @@ export default function ContactForm() {
             return;
         }
 
-        fetch('https://formspree.io/f/xblrdolo', {
-            method: 'POST',
-            body: formData,
-            headers: { Accept: 'application/json' },
-        })
-        .then((response) => {
-            if (response.ok) {
-                showAlert('Mensagem enviada com sucesso!', 'success');
-                event.target.reset();
-            } else {
-                throw new Error('Erro ao enviar a mensagem.');
-            }
-        })
-        .catch((error) => {
-            console.error('Erro ao enviar mensagem:', error);
-            alert('Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente mais tarde.');
-        });
+        handleSubmit(event.target); // Usar o método handleSubmit do Formspree
     };
 
     return (
