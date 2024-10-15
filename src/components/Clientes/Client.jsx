@@ -22,7 +22,7 @@ const ImageCarousel = () => {
     }, [images.length]);
 
     return (
-        <section className="py-14">
+        <section className="py-14" style={{ backgroundColor: '#ffffff' }}>
             <div className="max-w-screen-xl mx-auto md:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-x-12 sm:px-4 md:px-0">
                     <div className="flex-1 sm:hidden lg:block">
@@ -43,7 +43,7 @@ const ImageCarousel = () => {
                     </div>
                     <div className="max-w-xl px-4 space-y-5 mt-6 sm:px-0 md:mt-0 lg:max-w-2xl">
                         <motion.h3 
-                            className="text-[#ffb23e] font-semibold mb-4"
+                            className="text-[#333] font-semibold mb-4"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
@@ -51,36 +51,35 @@ const ImageCarousel = () => {
                             O que nossos clientes dizem
                         </motion.h3>
                         <motion.p 
-                            className="text-gray-300 text-4xl font-semibold sm:text-5xl mb-4 text-center"
+                            className="text-[#212121] text-4xl font-semibold sm:text-5xl mb-4 text-center"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
-                          Clientes com resultados surpreendentes
+                            Clientes com resultados surpreendentes
                         </motion.p>
                         <motion.p 
-                            className="mt-3 text-lg mb-4 text-gray-400 text-center"
+                            className="mt-3 text-lg mb-4 text-[#212121] text-center"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.6 }}
                         >
                             Descubra como nossas estratégias de marketing transformam interações em resultados reais. Nossos clientes compartilham suas experiências e a eficácia de nossas soluções inovadoras.
                         </motion.p>
-                      <div className="flex justify-center mt-6"> {/* Adicionando um contêiner flex para centralizar */}
-                    <motion.a 
-                        href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
-                        className="inline-flex gap-x-1 items-center text-[#ffb23e] hover:text-[#e0a731] duration-150 font-medium text-lg"
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: [0, 1, 0] }}  // Faz o elemento piscar
-                        transition={{ duration: 1, repeat: Infinity }}  // Repete a animação indefinidamente
-                    >
-                        Descubra mais
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                            <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                        </svg>
-                    </motion.a>
-                </div>
-
+                        <div className="flex justify-center mt-6"> {/* Contêiner flex para centralizar */}
+                            <motion.a 
+                                href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
+                                className="inline-flex gap-x-1 items-center text-[#000] hover:text-[#333] duration-150 font-medium text-lg"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: [0, 1, 0] }}  // Faz o elemento piscar
+                                transition={{ duration: 1, repeat: Infinity }}  // Repete a animação indefinidamente
+                            >
+                                Descubra mais
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                    <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                                </svg>
+                            </motion.a>
+                        </div>
                     </div>
                 </div>
             </div>

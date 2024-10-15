@@ -1,6 +1,6 @@
 :root {
     --color-primary: #faad14;
-    --color-secondary: #131313;
+    --color-secondary: #000000;
     --color-text: #f2f2f2;
     --color-text-light: #eaeaea;
     --color-border: rgba(234, 234, 234, 0.1);
@@ -120,7 +120,7 @@ ul {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 179, 62, 0.8);
+    background: rgba(80, 80, 80, 0.8);
 }
 
 article {
@@ -148,7 +148,7 @@ article:hover {
 }
 
 .text-warning-foreground:hover {
-    color: hsl(39, 100%, 50%);
+    color: hsl(0, 0%, 52%);
     transform: scale(1.05);
 }
 
@@ -163,7 +163,7 @@ article:hover {
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: #ffb23e rgba(255, 178, 62, 0.1);
+    scrollbar-color: #595959 rgba(255, 178, 62, 0.1);
 }
 
 button {
@@ -171,7 +171,7 @@ button {
 }
 
 button:hover {
-    background-color: #ffb23e;
+    background-color: #ffffff;
     transform: translateY(-3px) scale(1.05);
     color: #eeeeee;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -193,7 +193,25 @@ button:hover {
     font-size: 1rem;
     line-height: 1.75rem;
 }
-.text-warning-foreground:hover {
-    color: hsl(0deg 0% 0%);
-    transform: scale(1.05);
+.text-black {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+    transition: color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.text-black:hover {
+    color: rgb(217, 217, 217); /* Altera a cor para laranja ao passar o mouse */
+}
+.object-cover {
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+
+.w-full {
+    width: 100%;
+}
+
+.h-screen {
+    height: 172vh;
 }

@@ -27,12 +27,12 @@ export default function VideoPlayer() {
   };
 
   return (
-    <section className="py-14" style={{ backgroundColor: '#131313' }} aria-labelledby="depoimentos">
-      <div className="max-w-screen-xl mx-auto px-4 text-gray-200 md:px-8">
+    <section className="py-14" style={{ backgroundColor: '#ffffff' }} aria-labelledby="depoimentos">
+      <div className="max-w-screen-xl mx-auto px-4 text-[#010101] md:px-8">
         <div className="flex flex-col lg:flex-row items-center">
           <div className="max-w-2xl lg:mr-8 mb-8 lg:mb-0">
             <motion.h3 
-              className="text-[#ffb23e] font-semibold mb-4"
+              className="text-[#333] font-semibold mb-4"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -41,15 +41,15 @@ export default function VideoPlayer() {
             </motion.h3>
             <motion.h2 
               id="depoimentos" 
-              className="text-gray-300 text-4xl font-semibold sm:text-5xl mb-4 text-center"
+              className="text-[#212121] text-4xl font-semibold sm:text-5xl mb-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Satisfação Garantida!
+             Nossos Clientes Satisfeitos!
             </motion.h2>
             <motion.p 
-              className="mt-3 text-lg mb-4 text-gray-400 text-center"
+              className="mt-3 text-lg mb-4 text-[#212121] text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -57,7 +57,7 @@ export default function VideoPlayer() {
               "No último final de semana, consegui fechar 13 negócios reais!"
             </motion.p>
             <motion.p 
-              className="text-gray-400 mb-4 text-center"
+              className="text-[#212121] mb-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}

@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [state, setState] = useState(false);
@@ -11,13 +11,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white w-full border-b md:border-0 md:static">
+    <nav className="bg-black w-full border-b md:border-0 md:static">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <a href="/">
             <motion.img
-              src="/img/logo.png"
-              width={100}
+              src="/img/logo-2.png"
+              width={120}
               height={50}
               alt="LSG logo"
               className="shadow-none"
@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${state ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
           <ul className="justify-center items-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => (
-              <li key={idx} className="text-gray-600 hover:text-indigo-600 transition-transform transform hover:scale-105">
+              <li key={idx} className="text-white hover:text-white transition-transform transform hover:scale-105">
                 <a href={item.path}>
                   {item.title}
                 </a>
@@ -56,8 +56,8 @@ const Navbar = () => {
         </div>
         <div className="hidden md:inline-block">
           <a
-            href="/form" // Altere para o link desejado
-            className="py-3 px-4 text-black bg-[#ffb23e] hover:bg-[#131313] rounded-md shadow animate-pulse transition duration-150"
+            href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
+            className="py-3 px-4 text-white bg-[#25D366] hover:bg-[#25D366] rounded-md shadow animate-pulse transition duration-150"
           >
             Conversar Agora!
           </a>

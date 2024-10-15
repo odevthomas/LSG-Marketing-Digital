@@ -30,7 +30,7 @@
 
 .button {
   @apply px-4 py-2 rounded-lg font-semibold transition duration-200 ease-in-out;
-  background-color: #ffb23e;
+  background-color: #333;
   color: #ffffff;
 }
 
@@ -58,7 +58,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ffb23e;
+  background: #333;
   border-radius: 10px;
   transition: background 0.3s;
 }
@@ -69,7 +69,7 @@
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #ffb23e rgba(255, 255, 255, 0.1);
+  scrollbar-color: #333 rgba(255, 255, 255, 0.1);
 }
 
 a {
@@ -135,4 +135,24 @@ h3 {
 
 button {
   cursor: pointer;
+}
+.transform-hover:hover {
+    transform: scale(1.05);
+}
+
+.font-semibold {
+    font-weight: 800;
+}
+.text-lg {
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+.text-black {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+    transition: color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.text-black:hover {
+    color: rgb(228, 228, 228); /* Altera a cor para laranja ao passar o mouse */
 }

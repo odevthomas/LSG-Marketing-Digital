@@ -44,7 +44,7 @@ const Avaliacao = () => {
         <section className="py-14 bg-[#010101] text-white">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h3 className="text-[#ffb23e] font-bold text-4xl pb-6">O que nossos clientes dizem</h3>
+                    <h3 className="text-[#fff] font-bold text-4xl pb-6">O que nossos clientes dizem</h3>
                     <ul>
                         {testimonials.map((item, idx) => (
                             currentTestimonial === idx && (
@@ -56,7 +56,7 @@ const Avaliacao = () => {
                                             </p>
                                         </blockquote>
                                         <div className="mt-4 flex flex-col items-center">
-                                            <img src={item.avatar} alt={item.name} className="w-16 h-16 mx-auto rounded-full border-2 border-[#ffb23e]" />
+                                            <img src={item.avatar} alt={item.name} className="w-16 h-16 mx-auto rounded-full border-2 border-[#333]" />
                                             <div className="mt-3">
                                                 <span className="block text-gray-300 font-semibold text-lg">{item.name}</span>
                                                 <StarRating rating={item.rating} />
@@ -73,7 +73,7 @@ const Avaliacao = () => {
                         {testimonials.map((_, idx) => (
                             <li key={idx}>
                                 <button
-                                    className={`w-3 h-3 rounded-full duration-150 ring-offset-2 ring-[#ffb23e] focus:ring ${currentTestimonial === idx ? "bg-[#ffb23e]" : "bg-gray-300"}`}
+                                    className={`w-3 h-3 rounded-full duration-150 ring-offset-2 ring-[#b3b3b3] focus:ring ${currentTestimonial === idx ? "bg-[#b3b3b3]" : "bg-gray-300"}`}
                                     onClick={() => setCurrentTestimonial(idx)}
                                 ></button>
                             </li>

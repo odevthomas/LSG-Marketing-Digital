@@ -15,9 +15,9 @@ const Home = () => {
   return (
     <>
       <Navbar className="margin-top" />
-      <div className="margin-top"><Client /></div>
+       <div className="margin-top"><Carousel /></div>
       <div className="margin-top"><Testimonial /></div>
-      <div className="margin-top"><Carousel /></div>
+      <div className="margin-top"><Client /></div>
       <div className="margin-top"><Avaliacao /></div>
       <div className="margin-top"><Footer /></div>
     </>

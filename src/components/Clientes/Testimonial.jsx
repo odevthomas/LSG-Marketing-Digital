@@ -56,7 +56,7 @@ const Testimonials = () => {
                 }
                 return nextTestimonials;
             });
-        }, 2000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, [currentIndex]);
@@ -65,8 +65,8 @@ const Testimonials = () => {
         <section className="py-14 my-10 bg-[#010101] mt-12" aria-labelledby="client-testimonials"> {/* Margem superior de 3 rem */}
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <header className="text-center mb-12">
-                    <h3 className="text-[#ffb23e] text-4xl font-semibold mb-5">
-                        Nossos Clientes Satisfeitos
+                    <h3 className="text-[#b3b3b3] text-4xl font-semibold mb-5">
+                        Nossos Clientes !
                     </h3>
                     <p className="text-gray-400">
                         Veja como nossos serviços transformaram as experiências de nossos clientes.
@@ -87,7 +87,7 @@ const Testimonials = () => {
                                 <div className="flex items-center gap-3">
                                     <Avatar isBordered radius="full" size="md" src={item.avatar} />
                                     <div className="flex flex-col">
-                                        <h4 className="text-[#ffb23e] font-semibold">{item.name}</h4>
+                                        <h4 className="text-[#b3b3b3] font-semibold">{item.name}</h4>
                                         <span className="flex items-center text-gray-500 text-xs">
                                             <FaUserFriends className="mr-1" aria-hidden="true" />
                                             {item.followers}
@@ -98,7 +98,7 @@ const Testimonials = () => {
                                         </span>
                                     </div>
                                 </div>
-                                <Button size="sm" color="warning" variant="solid">
+                                 <Button size="sm" style={{ backgroundColor: '#b3b3b3', color: '#010101' }} variant="solid">
                                     Seguir
                                 </Button>
                             </CardHeader>

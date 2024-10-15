@@ -23,7 +23,7 @@
 .dot {
   width: 12px;
   height: 12px;
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   border-radius: 50%;
   margin: 0 5px;
   cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 button {
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -51,7 +51,7 @@ button {
 }
 
 button:hover {
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   transform: translateY(-3px) scale(1.05);
   color: #131313;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -59,7 +59,7 @@ button:hover {
 }
 
 button.disabled {
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   cursor: not-allowed;
   box-shadow: none;
   color: #131313;
@@ -67,7 +67,7 @@ button.disabled {
 }
 
 button.disabled:hover {
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   transform: translateY(-3px) scale(1.05);
   color: #131313;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -75,7 +75,7 @@ button.disabled:hover {
 }
 
 button.active {
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   cursor: not-allowed;
   box-shadow: none;
   color: #131313;
@@ -83,7 +83,7 @@ button.active {
 }
 
 button.active:hover {
-  background-color: #ffb23e;
+  background-color: #b3b3b3;
   transform: translateY(-3px) scale(1.05);
   color: #131313;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);

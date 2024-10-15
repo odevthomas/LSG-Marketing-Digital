@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Contact from '../src/components/Contact/Form';
-import Services from '../src/components/Contact/Services/Services';
+import Services from '../src/components/Contact/Services';
 import HeroSection from '../src/components/HeroSection/HeroSection';
 import Testimonial from '../src/components/Home/Page'; // Renomeado para inglês
 import Resultados from '../src/components/Result/Result'; // Renomeado para "Resultados"
