@@ -1,3 +1,4 @@
+import React from 'react';
 import { Mail, Instagram, Facebook } from 'lucide-react'; // Importe os ícones disponíveis
 
 export default () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@nextui-org/react';
-import { cn } from 'classnames'; // Certifique-se de ter esta função ou ajuste conforme necessário
+import { cn } from 'classnames'; 
 
 export const EyeCatchingButton = ({ ...props }) => {
   return (

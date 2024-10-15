@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const Navbar = () => {
   const [state, setState] = useState(false);

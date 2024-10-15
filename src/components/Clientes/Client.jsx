@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from "react";
-
+import React from 'react';
 const ImageCarousel = () => {
     const images = [
         "/Clients/1.png",

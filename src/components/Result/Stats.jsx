@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 const Statistics = () => {
     const stats = [
@@ -8,7 +9,7 @@ const Statistics = () => {
         { data: +40, title: " Clientes Fieis " }, // Ajustado para incluir "anos"
     ];
 
-     const [count, setCount] = useState(Array(stats.length).fill(0));
+    const [count, setCount] = useState(Array(stats.length).fill(0));
 
     const formatNumber = (num) => {
         if (num >= 1000000) {
@@ -67,7 +68,7 @@ const Statistics = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: idx * 0.3, type: 'spring', stiffness: 100 }}
                     >
-                        <h4 className="text-4xl text-yellow-500 font-semibold">
+                        <h4 className="text-4xl text-[#25D366] font-semibold"> {/* Cor verde do WhatsApp */}
                             {formatNumber(count[idx])}
                         </h4>
                         <p className="mt-3 font-medium text-gray-700">{item.title}</p>

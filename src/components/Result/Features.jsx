@@ -1,6 +1,6 @@
 "use client";
-
 import { motion } from 'framer-motion';
+import React from 'react';
 
 export default () => {
     return (
@@ -20,8 +20,8 @@ export default () => {
                     </p>
                     <div className="flex justify-center">
                         <motion.a
-                            className="mt-5 px-4 py-2 text-[#333] font-medium bg-[#0101] rounded-full inline-flex items-center"
-                            href="javascript:void()"
+                            className="mt-5 px-6 py-3 text-white font-medium bg-[#25D366] rounded-full inline-flex items-center hover:bg-[#128C7E] transition duration-200" // Cor de fundo do WhatsApp
+                            href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
                             animate={{ scale: [1, 1.05, 1] }}
                             transition={{ duration: 0.5, repeat: Infinity, repeatType: "loop" }}
                         >

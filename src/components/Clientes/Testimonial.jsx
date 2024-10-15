@@ -1,6 +1,7 @@
-import { Avatar, Button, Card, CardHeader } from "@nextui-org/react";
 import React, { useEffect, useState } from 'react';
+import { Avatar, Button, Card, CardHeader } from "@nextui-org/react";
 import { FaInstagram, FaUserFriends } from 'react-icons/fa';
+
 
    const testimonials = [
     {

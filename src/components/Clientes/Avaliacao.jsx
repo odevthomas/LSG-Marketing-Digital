@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 
 const Avaliacao = () => {
     const testimonials = [
@@ -37,28 +38,30 @@ const Avaliacao = () => {
                     />
                 </svg>
             ))}
+
         </div>
     );
 
     return (
-        <section className="py-14 bg-[#010101] text-white">
+        <section className="py-14 bg-white text-black"> {/* Fundo branco e texto preto */}
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h3 className="text-[#fff] font-bold text-4xl pb-6">O que nossos clientes dizem</h3>
+                   <h3 className="font-bold text-4xl pb-6 text-black">O que nossos clientes dizem</h3>
+
                     <ul>
                         {testimonials.map((item, idx) => (
                             currentTestimonial === idx && (
                                 <li key={idx}>
                                     <figure className="relative">
                                         <blockquote>
-                                            <p className="text-gray-300 text-lg sm:text-xl italic font-light">
+                                            <p className="text-gray-800 text-lg sm:text-xl italic font-light"> {/* Texto escurecido */}
                                                 {item.quote}
                                             </p>
                                         </blockquote>
                                         <div className="mt-4 flex flex-col items-center">
                                             <img src={item.avatar} alt={item.name} className="w-16 h-16 mx-auto rounded-full border-2 border-[#333]" />
                                             <div className="mt-3">
-                                                <span className="block text-gray-300 font-semibold text-lg">{item.name}</span>
+                                                <span className="block text-gray-800 font-semibold text-lg">{item.name}</span> {/* Texto escurecido */}
                                                 <StarRating rating={item.rating} />
                                             </div>
                                         </div>

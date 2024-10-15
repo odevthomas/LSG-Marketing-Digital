@@ -1,6 +1,6 @@
 "use client";
-
 import { motion } from 'framer-motion';
+import React from 'react';
 
 const ImageDisplay = () => {
     const image = "https://hiraycacavazamentos.com.br/wp-content/uploads/2019/11/selo-garantia-700x471.png"; // Substitua pelo caminho da sua imagem
@@ -37,17 +37,17 @@ const ImageDisplay = () => {
                         </motion.p>
 
                         {/* Botão */}
-                            <div className="flex justify-center mt-6">
-                                <motion.a 
-                                    href="#"
-                                    className="inline-flex items-center justify-center px-6 py-3 bg-[#000] text-white font-semibold rounded-lg hover:bg-[#fff] hover:text-black transition duration-200"
-                                    initial={{ opacity: 0, y: -10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.5, delay: 0.8 }}
-                                >
-                                    Saiba Mais
-                                </motion.a>
-                            </div>
+                        <div className="flex justify-center mt-6">
+                            <motion.a 
+                                href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
+                                className="inline-flex items-center justify-center px-6 py-3 bg-[#000] text-white font-semibold rounded-lg shadow-lg hover:bg-[#25D366] hover:text-white transition duration-200"
+                                initial={{ opacity: 0, y: -10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.8 }}
+                            >
+                                Saiba Mais
+                            </motion.a>
+                        </div>
 
                     </div>
                 </div>

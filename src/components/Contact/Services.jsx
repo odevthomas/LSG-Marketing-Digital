@@ -1,8 +1,9 @@
+import { motion } from 'framer-motion';
+import React from 'react';
+import Footer from '../Footer/Footer';
 import Header from '../Home/Navbar/Navbar';
 import Form from './Form';
 import HeroServices from './HeroServices';
-import Footer from '../Footer/Footer';
-import { motion } from 'framer-motion';
 
 export default () => {
     const plans = [
