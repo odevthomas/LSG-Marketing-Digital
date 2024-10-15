@@ -13,7 +13,7 @@ const HeroSection = () => {
         Seu navegador não suporta vídeo.
       </video>
       <h1 className="text-3xl md:text-5xl font-bold mb-4">Transforme sua Presença Digital Hoje!</h1>
-      <p className="text-base md:text-lg mb-2">Descubra soluções inovadoras e acessíveis para o seu negócio:</p>
+      <p className="text-base md:text-lg mb-2 text-white">Descubra soluções inovadoras e acessíveis para o seu negócio:</p>
       <p className="text-sm md:text-md mb-4">
         <span className="price-highlight mt-9">R$ 599/mês</span>
         <span className="text-xs md:text-sm ml-2">Clique no botão e comece sua jornada!</span>
