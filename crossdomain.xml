@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtd/cross-domain-policy.dtd">
 <cross-domain-policy>
-    <allow-access-from domain="devthm.site" />
+    <allow-access-from domain="lsgdigital.com.br" />
 </cross-domain-policy>
