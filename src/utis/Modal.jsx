@@ -1,5 +1,5 @@
-import React from 'react';
 import * as Dialog from "@radix-ui/react-dialog";
+import React from 'react';
 
 const Modal = ({ isOpen, onOpenChange }) => {
   return (
@@ -17,12 +17,19 @@ const Modal = ({ isOpen, onOpenChange }) => {
                 />
               </svg>
             </div>
-            <Dialog.Title className="text-lg font-semibold text-gray-800 text-center mt-4">
+            <Dialog.Title className="text-lg font-semibold text-black text-center mt-4" id="modal-title">
               Formulário Enviado com Sucesso!
             </Dialog.Title>
-            <Dialog.Description className="mt-2 text-sm leading-relaxed text-center text-gray-500">
+            <Dialog.Description className="mt-2 text-sm leading-relaxed text-center text-black" id="modal-description">
               🎉 Obrigado por entrar em contato! Nossa equipe já recebeu sua mensagem e responderá em breve. Estamos animados para ajudar você!
             </Dialog.Description>
+            <div className="mt-6 flex justify-center">
+              <Dialog.Close asChild>
+                <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
+                  Fechar
+                </button>
+              </Dialog.Close>
+            </div>
           </div>
         </Dialog.Content>
       </Dialog.Portal>

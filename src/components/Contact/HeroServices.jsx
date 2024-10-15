@@ -1,15 +1,13 @@
-
 "use client";
 
 import { motion } from 'framer-motion';
 import React from 'react';
 
-
-export default () => {
+const ChatbotSection = () => {
     return (
         <section className="relative py-28 w-full bg-white"> 
             <motion.div 
-                className="relative z-10 gap-5 items-center lg:flex py-10 px-6 rounded-lg"  // Removido shadow-lg
+                className="relative z-10 gap-5 items-center lg:flex py-10 px-6 rounded-lg"
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
@@ -26,7 +24,7 @@ export default () => {
                     </p>
                     <div className="flex justify-center">
                         <motion.a
-                            className="mt-5 px-4 py-2 text-white font-medium bg-[#25D366] rounded-full inline-flex items-center transition duration-200 hover:bg-[#20B560] shadow-md"  // shadow-md permanece
+                            className="mt-5 px-4 py-2 text-white font-medium bg-[#25D366] rounded-full inline-flex items-center transition duration-200 hover:bg-[#20B560] shadow-md"
                             href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"
                             animate={{ scale: [1, 1.05, 1] }}
                             transition={{ duration: 0.5, repeat: Infinity, repeatType: "loop" }}
@@ -42,7 +40,7 @@ export default () => {
                     <motion.video 
                         src="/servicos/chatbot.mp4" 
                         alt="Chatbot em ação"
-                        className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"  // shadow-md permanece
+                        className="w-full h-auto max-h-[600px] object-cover rounded-lg shadow-md"
                         autoPlay
                         loop
                         muted
@@ -62,12 +60,12 @@ export default () => {
                 <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 258">
                     <defs>
                         <linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#1faf38"/>
-                            <stop offset="100%" stop-color="#60d669"/>
+                            <stop offset="0%" stopColor="#1faf38"/>
+                            <stop offset="100%" stopColor="#60d669"/>
                         </linearGradient>
                         <linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%">
-                            <stop offset="0%" stop-color="#f9f9f9"/>
-                            <stop offset="100%" stop-color="#fff"/>
+                            <stop offset="0%" stopColor="#f9f9f9"/>
+                            <stop offset="100%" stopColor="#fff"/>
                         </linearGradient>
                     </defs>
                     <path fill="url(#logosWhatsappIcon0)" d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/>
@@ -78,3 +76,5 @@ export default () => {
         </section>
     );
 };
+
+export default ChatbotSection;

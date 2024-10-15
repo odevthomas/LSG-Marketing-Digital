@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Contact from '../src/components/Contact/Form';
+import ContactForm from '../src/components/Contact/Form'; // Renomeado para maior clareza
 import Services from '../src/components/Contact/Services';
 import HeroSection from '../src/components/HeroSection/HeroSection';
-import Testimonial from '../src/components/Home/Page'; // Renomeado para inglês
-import Resultados from '../src/components/Result/Result'; // Renomeado para "Resultados"
+import Testimonial from '../src/components/Home/Page'; 
+import Resultados from '../src/components/Result/Result'; 
 
 import './styles/App.css';
 import './styles/index.css';
@@ -16,9 +16,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HeroSection />} />
           <Route path="/home" element={<Testimonial />} />
-          <Route path="/resultados" element={<Resultados />} /> {/* Caminho alterado para "resultados" */}
+          <Route path="/resultados" element={<Resultados />} />
           <Route path="/servicos" element={<Services />} />
-          <Route path="/form" element={<Contact />} />
+          <Route path="/form" element={<ContactForm />} />
         </Routes>
       </div>
     </Router>

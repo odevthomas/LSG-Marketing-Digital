@@ -23,7 +23,7 @@ const ServicePlans = () => {
             desc: "Revolucione seu atendimento ao cliente com chatbots humanizados. Automatize respostas a perguntas frequentes e libere sua equipe para tarefas mais estratégicas, garantindo um suporte ágil e eficiente.",
             isMostPop: true,
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none">
                     <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
                         <path d="M4 15.5a2 2 0 1 1 0-4m16 4a2 2 0 1 0 0-4M7 7V4m10 3V4"/>
                         <circle cx="7" cy="3" r="1"/>
@@ -39,7 +39,7 @@ const ServicePlans = () => {
             desc: "Desenvolva funis de vendas inteligentes que guiam seus leads até a conversão de forma eficaz. Nossa equipe está pronta para desenhar o funil perfeito para você!",
             isMostPop: false,
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none">
                     <path fill="currentColor" d="M15 19.88c.04.3-.06.62-.29.83a.996.996 0 0 1-1.41 0L9.29 16.7a.99.99 0 0 1-.29-.83v-5.12L4.21 4.62a1 1 0 0 1 .17-1.4c.19-.14.4-.22.62-.22h14c.22 0 .43.08.62.22a1 1 0 0 1 .17 1.4L15 10.75zM7.04 5L11 10.06v5.52l2 2v-7.53L16.96 5z"/>
                 </svg>
             ),
@@ -49,7 +49,7 @@ const ServicePlans = () => {
             desc: "Alcance o público certo com a mensagem certa. Comece a impactar sua audiência de maneira efetiva e veja resultados concretos.",
             isMostPop: false,
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 64 64">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 64 64" fill="none">
                     <path fill="currentColor" d="m61.995 3.877l-.062-1.805l-1.812-.069S60.023 2 59.836 2c-2.637 0-16.43.638-29.02 13.224c-3.371 3.368-6.324 6.899-8.715 10.356C12.944 21.872 2 32.808 2 32.808s8.415-3.505 14.489 3.768c-.448 1.541-.649 2.875-.671 4.032l-1.656 1.657c-.485.485-.446 1.313.039 1.799l.399.398l-1.142 1.143c-.279.279-.363.705-.163 1.021c-.807-.155-1.975.38-4.369 1.269c-3.027 1.123-3.585 3.677-3.585 3.677s.976.479 2.406.624c-1.828 2.644-1.409 5.448-1.409 5.448s2.806.418 5.449-1.408c.145 1.43.624 2.405.624 2.405s2.557-.559 3.679-3.587c.902-2.43 1.44-3.597 1.261-4.403c.329.164.773.133 1.029-.123l1.143-1.144l.479.479c.487.485 1.235.446 1.719-.041l1.68-1.677c1.217-.025 2.555-.253 3.988-.668C34.727 53.552 31.202 62 31.202 62s10.969-10.965 7.22-20.128c3.423-2.36 6.95-5.307 10.347-8.701C62.374 19.573 62.018 4.511 61.995 3.877m-45.99 48.586c-.623 1.68-2.039 1.99-2.039 1.99s-.367-.759-.364-1.793c-1.528 1.213-3.253.973-3.253.973s-.239-1.725.974-3.253c-1.036.002-1.794-.364-1.794-.364s.31-1.416 1.99-2.039c1.292-.479 1.934-.764 2.38-.7l2.809 2.808c.063.445-.223 1.087-.703 2.378m7.154-6.246a7 7 0 0 1-1.754-.224l-3.44-3.44c-1.352-5.55 4.495-16.231 14.224-25.957C37.464 11.323 42.985 8.247 47.71 6.45l9.836 9.836c-1.797 4.722-4.873 10.24-10.149 15.513c-8.796 8.792-18.378 14.418-24.238 14.418"/>
                     <path fill="currentColor" d="M42.261 16.88a4.853 4.853 0 1 0 0 9.707a4.856 4.856 0 0 0 4.855-4.853a4.856 4.856 0 0 0-4.855-4.854m0 8.088a3.235 3.235 0 1 1-.002-6.47a3.235 3.235 0 0 1 .002 6.47m-9.71 1.617a4.857 4.857 0 0 0-4.855 4.854a4.855 4.855 0 0 0 9.708 0a4.855 4.855 0 0 0-4.853-4.854m-.001 8.088a3.235 3.235 0 1 1 0-6.469a3.234 3.234 0 0 1 3.236 3.236a3.23 3.23 0 0 1-3.236 3.233"/>
                     <circle cx="46.905" cy="7.938" r=".809" fill="currentColor"/>
@@ -65,7 +65,7 @@ const ServicePlans = () => {
             desc: "Desenvolva páginas de destino personalizadas que convertem visitantes em leads. Nossos designs são otimizados para gerar resultados e maximizar a eficácia da sua campanha.",
             isMostPop: false,
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none">
                     <path fill="currentColor" d="M21 2H3a1 1 0 0 0-1 1v18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1M11 20H4V10h7Zm9 0h-7V10h7Zm0-12H4V4h16Z"/>
                 </svg>
             ),
@@ -75,7 +75,7 @@ const ServicePlans = () => {
             desc: "Aprimore suas habilidades com nossa mentoria em criação de criativos e copys. Transforme suas postagens em conteúdo envolvente que gera resultados.",
             isMostPop: false,
             icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none">
                     <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m12 22l-2-6H2l2 6zm0 0h4m-4-9v-.5c0-1.886 0-2.828-.586-3.414S9.886 8.5 8 8.5s-2.828 0-3.414.586S4 10.614 4 12.5v.5m15 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0m-9-9a2 2 0 1 1-4 0a2 2 0 0 1 4 0m4 13.5h6a2 2 0 0 1 2 2v.5a2 2 0 0 1-2 2h-1"/>
                 </svg>
             ),
