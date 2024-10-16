@@ -71,7 +71,8 @@ const Statistics = () => {
                         <h4 className="text-4xl text-[#25D366] font-semibold"> {/* Cor verde do WhatsApp */}
                             {formatNumber(count[idx])}
                         </h4>
-                        <p className="mt-3 font-medium text-gray-700">{item.title}</p>
+                       <p className="mt-3 font-medium text-gray-500">{item.title}</p>
+
                     </motion.li>
                 ))}
             </ul>

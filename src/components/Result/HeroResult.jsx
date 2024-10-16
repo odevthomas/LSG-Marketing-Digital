@@ -22,8 +22,10 @@ export default () => (
     <div className="max-w-2xl mx-auto px-4 py-10 bg-var(--color-dark-bg) rounded-lg shadow-lg">
         <div className="text-center mb-8">
             <h4 className="text-[#fff] text-3xl font-extrabold">Certificações e Parcerias</h4> {/* Título em amarelo */}
-            <p className="mt-2 text-var(--color-text-light) text-base">Conheça nossas certificações e parcerias que garantem a qualidade dos nossos serviços.</p>
-        </div>
+                <p className="mt-2 text-white text-base">
+                Conheça nossas certificações e parcerias que garantem a qualidade dos nossos serviços.
+                </p>
+                        </div>
         <ul className="divide-y" style={{ borderColor: '#FAAD14' }}> {/* Linhas de separação em amarelo */}
             {
                 members.map((item, idx) => (
