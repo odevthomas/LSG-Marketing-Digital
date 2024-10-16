@@ -32,10 +32,10 @@ export default function VideoPlayer() {
   return (
     <section className="py-14 bg-white" aria-labelledby="depoimentos">
       <div className="max-w-screen-xl mx-auto px-4 text-[#010101] md:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-8">
+        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
           <div className="max-w-2xl lg:mr-8 mb-8 lg:mb-0">
             <motion.h3 
-              className="text-[#333] font-semibold mb-6 mt-4 text-lg"
+              className="text-[#333] font-semibold mb-4 text-lg sm:text-xl"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -44,7 +44,7 @@ export default function VideoPlayer() {
             </motion.h3>
             <motion.h2 
               id="depoimentos" 
-              className="text-[#212121] text-5xl sm:text-6xl font-extrabold mb-6 mt-4 text-center"
+              className="text-[#212121] text-4xl sm:text-5xl font-extrabold mb-6 mt-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -71,7 +71,7 @@ export default function VideoPlayer() {
             
             <div className="text-center mt-6">
               <button 
-                className="bg-green-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-300"
+                className="bg-green-500 text-white py-2 px-4 sm:px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-300"
                 onClick={() => window.open('https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações.', '_blank')}
               >
                 Fale Conosco no WhatsApp
