@@ -111,9 +111,7 @@ const Testimonials = () => {
                         <h3 className="text-black text-4xl font-semibold mb-5">
                             Nossos Clientes!
                         </h3>
-                        <p className="text-black">
-                          O feedback deles não só nos inspira, mas também nos ajuda a evoluir continuamente.
-                        </p>
+
                         <p className="text-black">
                          Estamos comprometidos em fornecer serviços personalizados que atendam às necessidades específicas de cada cliente, garantindo resultados significativos e duradouros.
                         </p>
