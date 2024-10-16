@@ -1,7 +1,8 @@
 "use client";
-import React from 'react';
-import { useState, useRef, useEffect } from "react";
+
 import { motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import Testimonial from '../Testimonial';
 import './Carrossel.css';
 
 export default function VideoPlayer() {
@@ -18,7 +19,9 @@ export default function VideoPlayer() {
     if (videoRef.current) {
       videoRef.current.src = slides[activeIndex].link; 
       videoRef.current.load(); 
-      videoRef.current.play(); 
+      videoRef.current.play().catch((error) => {
+        console.error("Error playing video:", error);
+      });
     }
   }, [activeIndex]);
 
@@ -46,7 +49,7 @@ export default function VideoPlayer() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-             Nossos Clientes Satisfeitos!
+              Nossos Clientes Satisfeitos!
             </motion.h2>
             <motion.p 
               className="mt-3 text-lg mb-4 text-[#212121] text-center"
@@ -77,6 +80,7 @@ export default function VideoPlayer() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5 }}
+                aria-label="Video de depoimento"
               >
                 <source src={slides[activeIndex].link} type="video/mp4" />
                 Seu navegador não suporta a tag de vídeo.
@@ -95,6 +99,9 @@ export default function VideoPlayer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="-mt-10"> {/* Margem negativa para subir o Testimonial */}
+        <Testimonial />
       </div>
     </section>
   );

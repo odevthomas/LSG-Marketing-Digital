@@ -39,6 +39,7 @@ p {
     margin: 0.5rem 0;
 }
 
+
 .card {
     background-color: var(--color-secondary);
     border-radius: 12px;
@@ -168,16 +169,20 @@ article:hover {
 }
 
 button {
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  background: transparent; /* Remove o fundo */
+  border: none; /* Remove qualquer borda */
+  padding: 0.5rem; /* Ajusta o padding como desejado */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
 button:hover {
-    background-color: #ffffff;
-    transform: translateY(-3px) scale(1.05);
-    color: #eeeeee;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    padding: 3px 6px;
+  background: transparent; /* Mantém o fundo transparente ao passar o mouse */
 }
+
+button:focus {
+  outline: none; /* Remove o contorno padrão ao focar */
+}
+
 
 .shadow-global {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
@@ -215,4 +220,15 @@ button:hover {
 
 .h-screen {
     height: 172vh;
+}
+@media (min-width: 768px) {
+  .certificado-text {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .certificado-text {
+    display: block;
+  }
 }

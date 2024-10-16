@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Avatar, Button, Card, CardHeader } from "@nextui-org/react";
 import { FaInstagram, FaUserFriends } from 'react-icons/fa';
 
-
-   const testimonials = [
+const testimonials = [
     {
         avatar: "https://pps.whatsapp.net/v/t61.24694-24/440639645_978783430285411_8612163735245464371_n.jpg?ccb=11-4&oh=01_Q5AaIDROnTXXgEXatD6G1OMqduIJZ5pDGa_ex6Zqm8cOg_iE&oe=670F8A43&_nc_sid=5e03e0&_nc_cat=110",
         name: "IN Beauty",
@@ -62,7 +61,6 @@ import { FaInstagram, FaUserFriends } from 'react-icons/fa';
     },
 ];
 
-
 const Testimonials = () => {
     const [visibleTestimonials, setVisibleTestimonials] = useState(testimonials.slice(0, 3));
     const [currentIndex, setCurrentIndex] = useState(3);
@@ -87,13 +85,13 @@ const Testimonials = () => {
     }, [currentIndex]);
 
     return (
-        <section className="py-14 my-10 bg-[#010101] mt-12" aria-labelledby="client-testimonials">
+        <section className="py-14 my-10 bg-white mt-12" aria-labelledby="client-testimonials">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <header className="text-center mb-12">
-                    <h3 className="text-[#fff] text-4xl font-semibold mb-5">
-                        Nossos Clientes !
+                    <h3 className="text-black text-4xl font-semibold mb-5">
+                        Nossos Clientes!
                     </h3>
-                    <p className="text-gray-400">
+                    <p className="text-black">
                         Veja como nossos serviços transformaram as experiências de nossos clientes.
                     </p>
                 </header>
@@ -102,17 +100,12 @@ const Testimonials = () => {
                         <Card 
                             key={idx} 
                             className="max-w-sm bg-[#212121] transition-transform transform hover:scale-105 shadow-lg"
-                            css={{ 
-                                '&:hover': { 
-                                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
-                                } 
-                            }}
                         >
                             <CardHeader className="flex justify-between items-center p-4">
                                 <div className="flex items-center gap-3">
                                     <Avatar isBordered radius="full" size="md" src={item.avatar} />
                                     <div className="flex flex-col">
-                                        <h4 className="text-[#b3b3b3] font-semibold">{item.name}</h4>
+                                        <h4 className="text-gray-300 font-semibold">{item.name}</h4>
                                         <span className="flex items-center text-gray-500 text-xs">
                                             <FaUserFriends className="mr-1" aria-hidden="true" />
                                             {item.followers}
