@@ -46,7 +46,7 @@ const Avaliacao = () => {
         <section className="py-14 bg-white text-black"> {/* Fundo branco e texto preto */}
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                   <h3 className="font-bold text-4xl pb-6 text-black">O que nossos clientes dizem</h3>
+                   <h3 className="text-[#212121] text-4xl sm:text-4xl font-extrabold mb-5 mt-4 text-center">O que nossos clientes dizem</h3>
 
                     <ul>
                         {testimonials.map((item, idx) => (

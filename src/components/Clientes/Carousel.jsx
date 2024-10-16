@@ -44,7 +44,7 @@ export default function VideoPlayer() {
             </motion.h3>
             <motion.h2 
               id="depoimentos" 
-              className="text-[#212121] text-4xl sm:text-5xl font-extrabold mb-6 mt-4 text-center"
+              className="text-[#212121] text-6xl sm:text-4xl font-extrabold mb-6 mt-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
