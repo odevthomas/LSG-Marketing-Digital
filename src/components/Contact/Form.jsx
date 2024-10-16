@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import Modal from '../../utis/Modal'; // Ajuste o caminho conforme necessário
-import Notification from '../../utis/Notification'; // Importa a notificação
+import Notification from '../../utis/Alerta'; // Importa a notificação
 
 export default function ContactForm() {
   const [state, handleSubmit] = useForm("xvgoobjg");
