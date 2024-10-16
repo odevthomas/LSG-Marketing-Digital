@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Avaliacao from '../Clientes/Avaliacao';
-import Carousel from '../Clientes/Carrossel/Carousel';
+import Carousel from '../Clientes/Carousel';
 import Client from '../Clientes/Client';
 import Testimonial from '../Clientes/Testimonial';
 import HeroResult from '../Result/Result';

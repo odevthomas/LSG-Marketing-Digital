@@ -89,3 +89,18 @@ button.active:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
   padding: 10px 20px;
 }
+.button-whatsapp {
+    background-color: #25D366; /* Cor do botão do WhatsApp */
+    color: white; 
+    padding: 12px 24px; /* Ajustar o padding para um tamanho mais confortável */
+    border: none; /* Remover borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.button-whatsapp:hover {
+    background-color: #128C7E; /* Cor mais escura ao passar o mouse */
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+}

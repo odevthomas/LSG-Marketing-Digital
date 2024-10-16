@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef, useState } from 'react';
-import Testimonial from '../Testimonial';
-import './Carrossel.css';
+import Testimonial from './Testimonial';
+import './styles/Carrossel.css';
 
 export default function VideoPlayer() {
   const slides = [
@@ -30,12 +30,12 @@ export default function VideoPlayer() {
   };
 
   return (
-    <section className="py-14" style={{ backgroundColor: '#ffffff' }} aria-labelledby="depoimentos">
+    <section className="py-14 bg-white" aria-labelledby="depoimentos">
       <div className="max-w-screen-xl mx-auto px-4 text-[#010101] md:px-8">
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="max-w-2xl lg:mr-8 mb-8 lg:mb-0">
             <motion.h3 
-              className="text-[#333] font-semibold mb-4"
+              className="text-[#333] font-semibold mb-6 mt-4 text-lg"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -44,15 +44,16 @@ export default function VideoPlayer() {
             </motion.h3>
             <motion.h2 
               id="depoimentos" 
-              className="text-[#212121] text-4xl font-semibold sm:text-5xl mb-4 text-center"
+              className="text-[#212121] text-5xl sm:text-6xl font-extrabold mb-6 mt-4 text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               Nossos Clientes Satisfeitos!
             </motion.h2>
+
             <motion.p 
-              className="mt-3 text-lg mb-4 text-[#212121] text-center"
+              className="mt-4 mb-6 text-lg text-[#212121] text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -60,20 +61,29 @@ export default function VideoPlayer() {
               "No último final de semana, consegui fechar 13 negócios reais!"
             </motion.p>
             <motion.p 
-              className="text-[#212121] mb-4 text-center"
+              className="mb-6 text-[#212121] text-center"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               Descubra como transformamos experiências em histórias de sucesso através dos depoimentos de nossos clientes.
             </motion.p>
+            
+            <div className="text-center mt-6">
+              <button 
+                className="bg-green-500 text-white py-2 px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-300"
+                onClick={() => window.open('https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações.', '_blank')}
+              >
+                Fale Conosco no WhatsApp
+              </button>
+            </div>
           </div>
 
           <div className="flex-1 lg:flex lg:flex-col lg:items-end">
             <div className="video-player">
               <motion.video 
                 ref={videoRef}
-                className="video rounded-lg shadow-lg w-full" 
+                className="video rounded-lg shadow-lg w-full h-auto"
                 controls
                 preload="metadata"
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -100,9 +110,7 @@ export default function VideoPlayer() {
           </div>
         </div>
       </div>
-      <div className="-mt-10"> {/* Margem negativa para subir o Testimonial */}
-        <Testimonial />
-      </div>
+      <Testimonial />
     </section>
   );
 }
