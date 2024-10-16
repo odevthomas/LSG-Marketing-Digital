@@ -39,21 +39,22 @@ const CertificadoAvatar = () => (
       ))}
     </div>
     <motion.p
-      className="text-xs text-gray-500 font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      Certificações e Parcerias
-    </motion.p>
-    <motion.p
-      className="text-xs text-gray-500 font-medium mt-2 md:hidden"
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-    >
-      Certificações e Parcerias
-    </motion.p>
+  className="text-sm text-white font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
+  initial={{ opacity: 0, y: -10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3 }}
+>
+  Certificações e Parcerias
+</motion.p>
+<motion.p
+  className="text-sm text-white font-medium mt-2 md:hidden"
+  initial={{ opacity: 0, y: -10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.3 }}
+>
+  Certificações e Parcerias
+</motion.p>
+
   </div>
 );
 
