@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 const Avaliacao = () => {
     const testimonials = [
         {
-            avatar: "/public/Instagram-clientes/Pedro Henrique Tonin.jpg",
+            avatar: "/Instagram-clientes/Pedro Henrique Tonin.jpg",
             name: "Pedro Henrique Tonin",
             quote: "“Eu virei cliente da Hazap após receber algumas propagandas da empresa em meu Instagram. Fiquei positivamente surpreso com a qualidade do atendimento durante a venda e, ainda mais, no pós-venda. Sempre que tenho alguma dúvida sobre a máquina (software/hardware) sou muito bem atendido. Gostaria de deixar destacado o excelente atendimento do Matheus. O cara é show.”",
             rating: 5,
         },
         {
-            avatar: "/public/Instagram-clientes/Floya Design.jpg",
+            avatar: "/Instagram-clientes/Floya Design.jpg",
             name: "Floya Design",
             quote: "“Com a LSG, minha empresa viu um crescimento significativo nas vendas. Recomendo a todos!”",
             rating: 4,
