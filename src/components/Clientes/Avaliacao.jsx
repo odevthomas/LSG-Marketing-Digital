@@ -1,16 +1,15 @@
-import { useState } from "react";
-import React from 'react';
+import React, { useState } from 'react';
 
 const Avaliacao = () => {
     const testimonials = [
         {
-            avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/350402596_5978086568964620_2951162146556086756_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=105&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=O0rnushpYgkQ7kNvgGBRP3E&_nc_ht=scontent.cdninstagram.com&oh=00_AYBjTd2fVTBcKjjG8KMSObuizaQC4B4rtgvqsAQUBXRoGA&oe=6711C007",
+            avatar: "/public/Instagram-clientes/Pedro Henrique Tonin.jpg",
             name: "Pedro Henrique Tonin",
             quote: "“Eu virei cliente da Hazap após receber algumas propagandas da empresa em meu Instagram. Fiquei positivamente surpreso com a qualidade do atendimento durante a venda e, ainda mais, no pós-venda. Sempre que tenho alguma dúvida sobre a máquina (software/hardware) sou muito bem atendido. Gostaria de deixar destacado o excelente atendimento do Matheus. O cara é show.”",
             rating: 5,
         },
         {
-            avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/449717161_1458191511476709_2286688843264636556_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=102&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=naPV-HABZlEQ7kNvgHFYnK3&_nc_ht=scontent.cdninstagram.com&oh=00_AYDUqLd1KkcZM_jAPgHCF1so4KieBSIeuUMCyCPCnHRJ7w&oe=6711D77F",
+            avatar: "/public/Instagram-clientes/Floya Design.jpg",
             name: "Floya Design",
             quote: "“Com a LSG, minha empresa viu um crescimento significativo nas vendas. Recomendo a todos!”",
             rating: 4,
@@ -38,15 +37,16 @@ const Avaliacao = () => {
                     />
                 </svg>
             ))}
-
         </div>
     );
 
     return (
-        <section className="py-14 bg-white text-black"> {/* Fundo branco e texto preto */}
+        <section className="py-14 bg-white text-black">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="max-w-3xl mx-auto text-center">
-                   <h3 className="text-[#212121] text-4xl sm:text-4xl font-extrabold mb-5 mt-4 text-center">O que nossos clientes dizem</h3>
+                    <h3 className="text-[#212121] text-4xl sm:text-4xl font-extrabold mb-5 mt-4">
+                        O que nossos clientes dizem
+                    </h3>
 
                     <ul>
                         {testimonials.map((item, idx) => (
@@ -54,14 +54,18 @@ const Avaliacao = () => {
                                 <li key={idx}>
                                     <figure className="relative">
                                         <blockquote>
-                                            <p className="text-gray-800 text-lg sm:text-xl italic font-light"> {/* Texto escurecido */}
+                                            <p className="text-gray-800 text-lg sm:text-xl italic font-light">
                                                 {item.quote}
                                             </p>
                                         </blockquote>
                                         <div className="mt-4 flex flex-col items-center">
-                                            <img src={item.avatar} alt={item.name} className="w-16 h-16 mx-auto rounded-full border-2 border-[#333]" />
+                                            <img
+                                                src={item.avatar}
+                                                alt={item.name}
+                                                className="w-16 h-16 mx-auto rounded-full border-2 border-[#333]"
+                                            />
                                             <div className="mt-3">
-                                                <span className="block text-gray-800 font-semibold text-lg">{item.name}</span> {/* Texto escurecido */}
+                                                <span className="block text-gray-800 font-semibold text-lg">{item.name}</span>
                                                 <StarRating rating={item.rating} />
                                             </div>
                                         </div>

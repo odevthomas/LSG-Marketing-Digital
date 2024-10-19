@@ -232,3 +232,10 @@ button:focus {
     display: block;
   }
 }
+.highlighted-value {
+    font-weight: bold;
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+    color: #43a047; /* Cor chamativa */
+    padding: 0.2rem 0.4rem; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+}

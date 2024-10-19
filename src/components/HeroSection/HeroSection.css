@@ -9,6 +9,7 @@
     padding: 20px;
     position: relative;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro com leve opacidade */
 }
 
 .video-background {
@@ -19,21 +20,20 @@
     height: 100%;
     object-fit: cover;
     z-index: 1;
-    opacity: 0.4;
+    opacity: 0.3; /* Menos opaco para mais clareza */
     filter: blur(8px);
 }
 
 .price-highlight {
     font-weight: bold;
     font-size: 4rem; 
-    color: #ffb23e;
+    color: #ffb23e; /* Cor chamativa */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .hero-background h1,
 .hero-background p,
 .hero-button {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     margin: 0;
     position: relative;
     z-index: 2;
@@ -52,21 +52,19 @@
 }
 
 .hero-button {
-    background-color: transparent;
-    color: #ffb23e;
-    border: 2px solid #ffb23e;
+    background-color: #000000; /* Cor do botão */
+    color: #f7f7f7; /* Texto preto */
+    border: none; /* Removendo a borda */
     border-radius: 8px;
     padding: 12px 44px;
     font-weight: bold;
     font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s, color 0.3s;
 }
 
 .hero-button:hover {
-    background-color: rgba(255, 178, 62, 0.2);
+    background-color: #43a047; /* Cor de hover */
     transform: scale(1.05);
-    color: aliceblue;
-    border-color: #ffb23e;
+    color: #fff; /* Texto branco ao passar o mouse */
 }
 
 @media (max-width: 1024px) {
@@ -115,9 +113,4 @@
     .hero-background p {
         font-size: 0.9rem; 
     }
-}
-
-.text-warning-foreground {
-    color: hsl(0deg 0% 100%);
-    transition: color 0.3s, transform 0.3s;
 }

@@ -5,56 +5,56 @@ import './styles/Testimonials.css'; // Crie um arquivo CSS para estilos personal
 
 const testimonials = [
     {
-        avatar: "https://pps.whatsapp.net/v/t61.24694-24/440639645_978783430285411_8612163735245464371_n.jpg?ccb=11-4&oh=01_Q5AaIDROnTXXgEXatD6G1OMqduIJZ5pDGa_ex6Zqm8cOg_iE&oe=670F8A43&_nc_sid=5e03e0&_nc_cat=110",
+        avatar: "/Instagram-clientes/inbeautyluxury.jpg",
         name: "IN Beauty",
         instagram: "@inbeautyluxury",
         followers: "45,2 mil seguidores",
         link: "https://www.instagram.com/inbeautyluxury/"
     },
     {
-        avatar: "https://pps.whatsapp.net/v/t61.24694-24/346938865_210752247951379_6525012530753790999_n.jpg?ccb=11-4&oh=01_Q5AaIAtDMqn3uLnrZ6AsafF2Z2sdkPsLjEZo6UeNmlyNjKBS&oe=670F81A6&_nc_sid=5e03e0&_nc_cat=101",
+        avatar: "/Instagram-clientes/dconceptbr.jpg",
         name: "DCONCEPT",
         instagram: "@dconceptbr",
         followers: "13,5 mil seguidores",
         link: "https://www.instagram.com/dconceptbr/"
     },
     {
-        avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/355416030_1971476043197213_5941458899012046289_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=108&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=r1oBeMp87A4Q7kNvgH2TqPQ&_nc_ht=scontent.cdninstagram.com&oh=00_AYBHDtq4mXrn_ESbWyQzfUdcDhE16XuqHhZ3gLl1necU9w&oe=6711AA3F",
+        avatar: "/Instagram-clientes/luizgoncalvesconnection.jpg",
         name: "LUIZ GONÇALVES",
         instagram: "@luizgoncalvesconnection",
         followers: "24,6 mil seguidores",
         link: "https://www.instagram.com/luizgoncalvesconnection/"
     },
     {
-        avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/398301596_282823151402933_368550342658046539_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=104&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=aiNInKLUoPcQ7kNvgErIcLI&_nc_ht=scontent.cdninstagram.com&oh=00_AYAxigutK18FQ2H-aSjZiKKKx9CpJ73y2g9uhwXUFZcAvw&oe=67118E60",
+        avatar: "/Instagram-clientes/casalellit.jpg",
         name: "Casa L’Ellit",
         instagram: "@casalellit",
         followers: "42,1 mil seguidores",
         link: "https://www.instagram.com/casalellit/"
     },
     {
-        avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/461748001_551492894078868_5784138435294228408_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=105&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=wEi01omQBnEQ7kNvgFCS2AU&_nc_ht=scontent.cdninstagram.com&oh=00_AYDTkuTu0uIXeIy8ajhpABKgqiiQqFmYwsd8bJcGT4XFDg&oe=67119392",
+        avatar: "/Instagram-clientes/amovacinasoficial.jpg",
         name: "Amo Vacinas",
         instagram: "@amovacinasoficial",
         followers: "8.898 seguidores",
         link: "https://www.instagram.com/amovacinasoficial/"
     },
     {
-        avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/278132100_4820323688065357_2736621758705087379_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=104&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=k6OoIRpXr9gQ7kNvgG3RNtf&_nc_ht=scontent.cdninstagram.com&oh=00_AYAdmmH9KPvi__BIYl9QREJut_jl-5wXBG_x5vUGh788UA&oe=67117908",
+        avatar: "/Instagram-clientes/casavrsalao.jpg",
         name: "CASA VR",
         instagram: "@casavrsalao",
         followers: "6.364 seguidores",
         link: "https://www.instagram.com/casavrsalao/"
     },
     {
-        avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/445278519_1197948554968141_7992028756928377274_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=103&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=Uxs08yYbWFcQ7kNvgFXJs2G&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&oh=00_AYDwWcPxXrWbUAfdFr88Uam5fKT0PKrGigV9IGc6y2zESQ&oe=67144682",
+        avatar: "/Instagram-clientes/tominnicelli.jpg",
         name: "Tom Minnicelli",
         instagram: "@tominnicelli",
         followers: "5.013 seguidores",
         link: "https://www.instagram.com/tominnicelli/"
     },
     {
-        avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/456711593_513679507883478_3065663962680660730_n.jpg?stp=cp0_dst-jpg_s110x80&_nc_cat=107&ccb=1-7&_nc_sid=bf7eb4&_nc_ohc=qJQ0ED6bDXwQ7kNvgGdYDNM&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&oh=00_AYAXHd3qBfSIkV-K_pn7NCmEGYgw8mh15fY12gnvMzMI9w&oe=67144284",
+        avatar: "/Instagram-clientes/novo_olhar_revelesuabeleza.jpg",
         name: "Kely Santana",
         instagram: "@novo_olhar_revelesuabeleza",
         followers: "9.755 seguidores",
