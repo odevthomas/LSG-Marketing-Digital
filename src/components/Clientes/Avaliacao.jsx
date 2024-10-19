@@ -9,7 +9,7 @@ const Avaliacao = () => {
             rating: 5,
         },
         {
-            avatar: "/Instagram-clientes/Floya Design.jpg",
+            avatar: "./Instagram-clientes/Floya Design.jpg",
             name: "Floya Design",
             quote: "“Com a LSG, minha empresa viu um crescimento significativo nas vendas. Recomendo a todos!”",
             rating: 4,
