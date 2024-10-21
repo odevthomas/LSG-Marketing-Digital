@@ -4,9 +4,8 @@ import Modal from '../../utis/Modal'; // Ajuste o caminho conforme necessário
 import Notification from '../../utis/Alerta'; // Importa a notificação
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("xvgoobjg");
-  const [isModalOpen, setIsModalOpen] = useState(false); // Controle do estado do modal
-  const [showNotification, setShowNotification] = useState(false); // Estado para controlar a notificação
+  const [state, handleSubmit] = useForm("mgvevaab");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (state.succeeded) {
@@ -80,8 +79,11 @@ export default function ContactForm() {
               />
               <ValidationError prefix="Mensagem" field="message" errors={state.errors} />
             </div>
-            <button type="submit" disabled={state.submitting}
-              className="w-full px-4 py-2 text-white font-medium bg-green-500 hover:bg-green-400 active:bg-green-600 rounded-lg transition duration-150 transform hover:scale-105">
+            <button 
+              type="submit" 
+              disabled={state.submitting}
+              className="w-full px-4 py-2 text-white font-medium bg-green-500 hover:bg-green-400 active:bg-green-600 rounded-lg transition duration-150 transform hover:scale-105"
+            >
               Enviar
             </button>
           </form>
@@ -94,7 +96,6 @@ export default function ContactForm() {
           message="Formulário enviado com sucesso!"
         />
       )}
-      {showNotification && <Notification />} {/* Exibe a notificação */}
     </main>
   );
 }

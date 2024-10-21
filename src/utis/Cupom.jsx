@@ -7,6 +7,7 @@ const CouponModal = ({ isOpen, onOpenChange }) => {
     email: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,13 +17,31 @@ const CouponModal = ({ isOpen, onOpenChange }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(`Formulário enviado!\nNome: ${formData.name}\nEmail: ${formData.email}`);
-    setSubmitted(true);
-    setTimeout(() => {
-      onOpenChange(false);
-    }, 3000);
+    try {
+      const response = await fetch('https://formspree.io/f/mgvevaab', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error in form submission');
+      }
+
+      setSubmitted(true);
+      setError(null);
+      
+      // Optionally, you can wait a moment before closing
+      setTimeout(() => {
+        onOpenChange(false);
+      }, 3000);
+    } catch (err) {
+      setError(err.message);
+    }
   };
 
   return (
@@ -47,6 +66,7 @@ const CouponModal = ({ isOpen, onOpenChange }) => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="mt-4 space-y-4">
+                {error && <p className="text-red-500 text-center">{error}</p>}
                 <input
                   type="text"
                   name="name"

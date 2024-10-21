@@ -7,22 +7,37 @@ const HeroSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-center p-4 relative hero-background">
-      <video autoPlay loop muted className="video-background">
+    <section className="flex flex-col items-center justify-center h-screen text-center p-4 relative hero-background" aria-label="Seção Principal">
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        className="video-background" 
+        aria-label="Vídeo de fundo mostrando transformação digital"
+        preload="auto"
+      >
         <source src="/img/teste.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
-      <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">Transforme sua Presença Digital Hoje!</h1>
-      <p className="text-base md:text-lg mb-2 text-white">Descubra soluções inovadoras e acessíveis para o seu negócio:</p>
+      <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white" role="heading" aria-level="1">
+        Transforme sua Presença Digital Hoje!
+      </h1>
+      <p className="text-base md:text-lg mb-2 text-white">
+        Descubra soluções inovadoras e acessíveis para o seu negócio:
+      </p>
       <p className="text-sm md:text-md mb-4">
+        <span className="text-xs md:text-sm ml-2 text-white">A partir de </span>
         <span className="price-highlight mt-9">R$ 599/mês</span>
-        <span className="text-xs md:text-sm ml-2 text-white">Clique no botão e comece sua jornada!</span>
+        <span className="text-xs md:text-sm ml-2 text-white">Comece sua Jornada!</span>
       </p>
       <div className="flex flex-col md:flex-row items-center justify-center mt-4" style={{ zIndex: 2 }}>
-        <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-9 service-highlight">Explore nossos serviços!</span>
+        <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-9 service-highlight">
+          Explore nossos serviços!
+        </span>
         <Button 
           onClick={() => navigate('/home')} 
           className="hero-button"
+          aria-label="Clique e Conheça nossos serviços"
         >
           Clique e Conheça  
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
@@ -30,7 +45,7 @@ const HeroSection = () => {
           </svg>
         </Button>
       </div>
-    </div>
+    </section>
   );
 };
 

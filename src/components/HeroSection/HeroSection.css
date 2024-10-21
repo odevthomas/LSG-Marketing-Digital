@@ -52,13 +52,14 @@
 }
 
 .hero-button {
-    background-color: #000000; /* Cor do botão */
-    color: #f7f7f7; /* Texto preto */
+    background-color: #000; /* Cor do botão */
+    color: #f7f7f7; /* Texto claro */
     border: none; /* Removendo a borda */
     border-radius: 8px;
     padding: 12px 44px;
     font-weight: bold;
     font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave */
 }
 
 .hero-button:hover {

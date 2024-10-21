@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/img/logo-2.png" />
-    
+    <link rel="apple-touch-icon" href="/img/logo-2.png" />
+
     <!-- Estilos -->
     <link rel="stylesheet" href="./src/styles/index.css" />
     
@@ -31,11 +33,45 @@
     <meta name="twitter:image" content="https://lsgdigital.com.br/public/img/logo-2.png" />
     
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#ffffff" /> <!-- Cor do tema para navegadores móveis -->
-    <link rel="canonical" href="https://lsgdigital.com.br" /> <!-- URL canônica -->
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="canonical" href="https://lsgdigital.com.br" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "LSG Digital",
+      "url": "https://lsgdigital.com.br",
+      "logo": "https://lsgdigital.com.br/public/img/logo-2.png",
+      "sameAs": [
+        "https://www.facebook.com/lsgdigital",
+        "https://twitter.com/lsgdigital",
+        "https://www.linkedin.com/company/lsgdigital"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Exemplo, 123",
+        "addressLocality": "Campinas",
+        "addressRegion": "SP",
+        "postalCode": "13000-000",
+        "addressCountry": "BR"
+      },
+      "telephone": "+55 19 1234-5678"
+    }
+    </script>
 </head>
 <body>
     <div id="root"></div>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+
     <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
