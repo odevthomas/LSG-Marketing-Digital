@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const SeloSection = () => {
-  const image = "/public/img/selo2.png"; // Substitua pelo caminho da sua imagem
+  const image = "/img/selo2.png"; // Substitua pelo caminho da sua imagem
 
   return (
     <section className="overflow-hidden sm:grid sm:grid-cols-2 gap-8">
@@ -19,7 +19,7 @@ const SeloSection = () => {
           </motion.h2>
 
           <motion.p
-            className="hidden text-gray-500 md:mt-4 md:block"
+            className="hidden text-gray-900 md:mt-4 md:block"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -28,7 +28,7 @@ const SeloSection = () => {
           </motion.p>
 
           <motion.p
-            className="mt-4 text-gray-500 dark:text-gray-300"
+            className="mt-4 text-gray-900 dark:text-gray-900"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}

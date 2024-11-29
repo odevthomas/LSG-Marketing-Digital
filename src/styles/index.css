@@ -2,69 +2,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+/* Tailwind Base Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   font-family: 'Poppins', sans-serif;
 }
 
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
 /* Custom Tailwind Styles */
 .app-container {
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.py-32 {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-}
-.max-w-screen-xl {
- max-width: 1640px;
-}
-.app-container.light {
-  background-color: #f2f2f2;
-  color: #0c0c0c;
+  transition: background-color 0.3s ease, color 0.3s ease; /* transição suave entre os temas */
 }
 
+/* Tema Claro */
+.app-container.light {
+  background-color: #f2f2f2; /* fundo claro */
+  color: #0c0c0c; /* texto escuro */
+}
+
+/* Tema Escuro */
 .app-container.dark {
-  background-color: #211e1e;
-  color: #ffffff;
+  background-color: #211e1e; /* fundo escuro */
+  color: #ffffff; /* texto claro */
 }
 
 .dark .bg-white {
-  background-color: #111;
+  background-color: #111; /* cor de fundo dos elementos brancos no modo escuro */
 }
 
 .dark .border-gray-700 {
-  border-color: #333;
+  border-color: #333; /* bordas no tema escuro */
 }
 
 .dark .text-gray-600 {
-  color: #e6e7e8;
+  color: #e6e7e8; /* texto cinza claro no modo escuro */
 }
 
+/* Estilo do botão */
 .button {
   @apply px-4 py-2 rounded-lg font-semibold transition duration-200 ease-in-out;
-  background-color: #333;
-  color: #ffffff;
+  background-color: #333; /* fundo do botão */
+  color: #ffffff; /* texto branco */
 }
 
 .button:hover {
   @apply bg-white text-gray-900 transform scale-105 shadow-lg;
+  /* Efeito de hover: fundo branco, texto escuro, leve aumento e sombra */
 }
 
+/* Estilo do Card */
 .card {
   @apply shadow-lg rounded-lg transition duration-300 ease-in-out;
-  background-color: #131313;
+  background-color: #131313; /* fundo escuro */
 }
 
 .card:hover {
-  @apply shadow-xl transform scale-105;
+  @apply shadow-xl transform scale-105; /* Efeito de hover: sombra maior e leve aumento */
 }
 
+/* Scrollbar Customizado */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -80,8 +78,9 @@ body {
   border-radius: 10px;
   transition: background 0.3s;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background:#81ff94;
+  background: #81ff94; /* Cor de fundo da barra de rolagem ao passar o mouse */
 }
 
 * {

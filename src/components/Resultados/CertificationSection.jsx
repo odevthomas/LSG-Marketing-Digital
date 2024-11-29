@@ -32,7 +32,7 @@ export default function CertificationSection() {
                 {members.map((item, idx) => (
                     <motion.li 
                         key={idx} 
-                        className="flex items-start space-x-6 py-6 border-b border-gray-300"
+                        className="flex items-start space-x-6 py-6 border-b border-gray-900"
                         initial={{ opacity: 0, scale: 0.8 }} // Animação inicial
                         animate={{ opacity: 1, scale: 1 }} // Animação final
                         transition={{ duration: 0.5, delay: idx * 0.1 }} // Transição suave com delay

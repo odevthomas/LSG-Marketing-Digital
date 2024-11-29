@@ -17,7 +17,7 @@ const FormularioDeContato = () => {
               <h1 className="text-2xl font-semibold capitalize lg:text-3xl">
                 Solução de design definitiva
               </h1>
-              <p className="max-w-xl mt-6 text-white">
+              <p className="max-w-xl mt-6 text-black">
                 Oferecemos as melhores soluções para o seu projeto, com designs modernos e eficazes. Entre em contato para mais informações!
               </p>
 
