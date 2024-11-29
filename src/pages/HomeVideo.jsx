@@ -18,7 +18,7 @@ const HeroSection = () => {
         aria-label="Vídeo de fundo mostrando transformação digital"
         preload="auto"
       >
-        <source src="/videos/abertura1.mp4" type="video/mp4" />
+        <source src="/abertura1.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 

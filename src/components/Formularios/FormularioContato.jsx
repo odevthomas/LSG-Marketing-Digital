@@ -23,7 +23,7 @@ const FormularioDeContato = () => {
 
               <div className="flex justify-center lg:justify-start mt-6">
             <motion.a
-              href="https://novolink.com" // Aqui você pode trocar pelo novo link desejado
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" // Aqui você pode trocar pelo novo link desejado
               className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1 }}
