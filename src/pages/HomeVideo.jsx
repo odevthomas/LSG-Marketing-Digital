@@ -37,7 +37,7 @@ const HeroSection = () => {
         </p>
         <p className="text-sm text-white md:text-md mb-4">
           <span className="text-xs md:text-sm ml-2">A partir de </span>
-          <span className="price-highlight text-5xl font-semibold text-green-500">
+          <span className="price-highlight text-5xl font-semibold text-[#81ff94]">
             R$ 599/mês
           </span>
         </p>
@@ -51,7 +51,7 @@ const HeroSection = () => {
           {/* Botão */}
           <button
             aria-label="Clique para conhecer os serviços"
-            className="pinline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
+            className="pinline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
             initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
