@@ -41,13 +41,13 @@ const Navbar = () => {
         <div
           className={`flex items-center ${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-6 space-x-4`}
         >
-          <ul className="flex items-center space-x-6">
+          <ul className="flex items-center space-x-10">
             {navigation.map((item, idx) => (
               <li key={idx} className="text-white hover:opacity-75 transition duration-200">
                 <Link
                   to={item.path}
                   onClick={handleLinkClick}
-                  className="hover:text-blue-500"
+                  className="hover:text-green-600"
                 >
                   {item.title}
                 </Link>

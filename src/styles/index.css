@@ -26,7 +26,7 @@ body {
 }
 .app-container.light {
   background-color: #f2f2f2;
-  color: #000000;
+  color: #0c0c0c;
 }
 
 .app-container.dark {
@@ -81,7 +81,7 @@ body {
   transition: background 0.3s;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background:#25D366;
+  background:#81ff94;
 }
 
 * {
@@ -104,6 +104,68 @@ body {
   .nav-menu.open {
     display: block;
   }
+styles-module_whatsappChatBox__MdQ5U {
+    display: flex
+;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: #0c0c0cfc;
+    touch-action: auto;
+    position: fixed;
+    bottom: 9rem;
+    right: 4rem;
+    width: 375px;
+    opacity: 0;
+    transition: height 0.2s ease-out;
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 20%);
+    z-index: 9999;
+}
+
+/* Estilos para o Floating WhatsApp */
+.react-floating-whatsapp-button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+.react-floating-whatsapp-button:hover {
+  transform: scale(1.1); /* Aumenta o botão no hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
+
+/* Efeito de pulsação (pulse) quando está online */
+.react-floating-whatsapp-button-online {
+  animation: pulse 1.5s infinite;
+}
+
+/* Definir a animação de pulsação */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animação do status quando online */
+.react-floating-whatsapp-status {
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.react-floating-whatsapp-status-online {
+  color: #81ff94; /* Cor verde quando está online */
+  opacity: 1;
+}
+
+.react-floating-whatsapp-status-offline {
+  color: #ccc; /* Cor cinza quando está offline */
+  opacity: 0.5;
+}
 
   /* Transições e animações para o botão de menu */
   .nav-menu-item {
@@ -239,14 +301,13 @@ px-4 {
 
 /* Exemplo de estilo CSS para o botão flutuante */
 .floating-whatsapp-button {
-  background-color: #25D366;
+  background-color: #81ff94;
   border-radius: 50%;
   width: 60px;
   height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -256,7 +317,6 @@ px-4 {
 /* Exemplo de estilo para a caixa de bate-papo */
 .floating-whatsapp-chatbox {
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 /* Estilos do botão flutuante */
 .floating-btn {
@@ -265,7 +325,7 @@ px-4 {
   right: 24px;
   width: 60px;
   height: 60px;
-  background-color: #25D366; /* Cor do botão */
+  background-color: #81ff94; /* Cor do botão */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,7 +336,7 @@ px-4 {
 }
 
 .floating-btn:hover {
-  background-color: #25D366;
+  background-color: #81ff94;
 }
 
 /* Estilos do Modal */
@@ -293,11 +353,11 @@ px-4 {
 }
 
 .bg-blue-600 {
-  background-color: #25D366;
+  background-color: #81ff94;
 }
 
 .bg-blue-500 {
-  background-color: #25D366;
+  background-color: #81ff94;
 }
 
 .text-gray-700 {
@@ -441,7 +501,7 @@ px-4 {
 }
 
 .hover\:bg-blue-500:hover {
-  background-color: #25D366;
+  background-color: #81ff94;
 }
 
 .focus\:ring-blue-300:focus {
@@ -461,7 +521,7 @@ px-4 {
 }
 
 .hover\:text-blue-500:hover {
-  color: #25D366;
+  color: #81ff94;
 }
 .my-8 {
     margin-top: 0.0rem;
@@ -479,8 +539,8 @@ px-4 {
   background-color: inherit;
   border-radius: 100px;
   font-weight: 600;
-  color: greenyellow;
-  box-shadow: 0 0 0 2px greenyellow;
+  color: #25D366;
+  box-shadow: 0 0 0 2px #25D366;
   cursor: pointer;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
@@ -489,7 +549,7 @@ px-4 {
 .animated-button svg {
   position: absolute;
   width: 24px;
-  fill: greenyellow;
+  fill: #25D366;
   z-index: 9;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -509,7 +569,7 @@ px-4 {
   transform: translate(-50%, -50%);
   width: 20px;
   height: 20px;
-  background-color: greenyellow;
+  background-color: #25D366;
   border-radius: 50%;
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
@@ -546,7 +606,7 @@ px-4 {
 
 .animated-button:active {
   scale: 0.95;
-  box-shadow: 0 0 0 4px greenyellow;
+  box-shadow: 0 0 0 4px #25D366;
 }
 
 .animated-button:hover .circle {

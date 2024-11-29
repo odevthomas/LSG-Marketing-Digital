@@ -21,9 +21,8 @@ const ClientAvaliacao = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
           <div className="max-w-xl text-center sm:text-left">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Nossos Clientes!
+               <span className="text-[#81ff94]">Nossos Clientes!</span>
             </h2>
-
             <p className="mt-4 text-white">
               Conheça nossos maiores clientes! Veja como eles têm aproveitado nossos serviços.
             </p>

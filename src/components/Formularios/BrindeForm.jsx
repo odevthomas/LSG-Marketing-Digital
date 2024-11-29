@@ -7,13 +7,10 @@ const BrindeForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    if (email && contato) {
-      // Lógica para redirecionamento após o envio do formulário
-      setIsSubmitted(true);
 
-      // Redireciona para a página de pedido ou agradecimento
-      window.location.href = '/pagina-de-pedido'; // Substitua pelo link de destino
+    if (email && contato) {
+      // Definindo que o formulário foi enviado
+      setIsSubmitted(true);
     } else {
       alert('Por favor, preencha todos os campos!');
     }
@@ -25,7 +22,12 @@ const BrindeForm = () => {
       <p>Preencha o formulário abaixo para garantir sua oferta e aproveitar o brinde exclusivo!</p>
 
       {!isSubmitted ? (
-        <form onSubmit={handleSubmit}>
+        <form
+          onSubmit={handleSubmit}
+          id="contact-form"
+          action="https://formsubmit.co/comercial@lsgdigital.com.br?redirect=https://seusite.com/pagina-de-confirmacao"
+          method="POST"
+        >
           <div style={{ marginBottom: '10px' }}>
             <input
               type="email"

@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
-import FloatingWhatsApp from '../Buttons/FloatingWhatsApp'; // Ajuste o caminho conforme necessário
+import React, { useState } from "react";
+import FloatingWhatsApp from "../Buttons/FloatingWhatsApp"; // Ajuste o caminho conforme necessário
 
 export default function VideoPlayer() {
   const slides = [
@@ -17,6 +17,17 @@ export default function VideoPlayer() {
     setActiveIndex(index);
   };
 
+  const whatsappInfo = {
+   phoneNumber: '5519981331191',
+    accountName: 'LSG Digital',
+    chatMessage: 'Olá, como podemos ajudar?',
+    placeholder: 'Escreva sua mensagem...',
+    buttonImage: '/avatarwpp.jpeg',
+    buttonColor: 'linear-gradient(45deg, #25D366, #25D366)', 
+    position: 'right',
+    status: 'online', 
+  };
+
   return (
     <>
       <section className="section-with-background">
@@ -25,7 +36,8 @@ export default function VideoPlayer() {
             <div className="relative">
               <div className="max-w-3xl text-center mx-auto">
                 <h1 className="mt-2 block font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
-                  Histórias de Sucesso com a LSG Digital
+                  Histórias de {" "}
+                  <span className="text-[#81ff94]">Sucesso</span>
                 </h1>
                 <p className="mt-2 text-white">
                   O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
@@ -39,7 +51,10 @@ export default function VideoPlayer() {
           <div className="relative p-6 md:p-16">
             <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
               {/* Coluna de Texto */}
-              <div id="clientes" className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+              <div
+                id="clientes"
+                className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2"
+              >
                 <h2 className="text-2xl sm:text-3xl text-gray-100 font-bold dark:text-neutral-200">
                   Resultados Reais, Clientes Satisfeitos
                 </h2>
@@ -48,7 +63,12 @@ export default function VideoPlayer() {
                 </p>
 
                 {/* Navegação das Abas */}
-                <nav className="grid gap-6 mt-6 md:mt-10" aria-label="Depoimentos de Clientes" role="tablist" aria-orientation="vertical">
+                <nav
+                  className="grid gap-6 mt-6 md:mt-10"
+                  aria-label="Depoimentos de Clientes"
+                  role="tablist"
+                  aria-orientation="vertical"
+                >
                   {/* Aba 1: Aumento nas Vendas */}
                   <button
                     type="button"
@@ -105,7 +125,7 @@ export default function VideoPlayer() {
                   {/* Conteúdo das Abas */}
                   <div>
                     {/* Aba 1 */}
-                    <div className={`video-tab ${activeIndex === 0 ? 'block' : 'hidden'}`} role="tabpanel">
+                    <div className={`video-tab ${activeIndex === 0 ? "block" : "hidden"}`} role="tabpanel">
                       <video className="rounded-xl w-full" controls>
                         <source src={slides[0].link} type="video/mp4" />
                         Seu navegador não suporta o vídeo.
@@ -113,7 +133,7 @@ export default function VideoPlayer() {
                     </div>
 
                     {/* Aba 2 */}
-                    <div className={`video-tab ${activeIndex === 1 ? 'block' : 'hidden'}`} role="tabpanel">
+                    <div className={`video-tab ${activeIndex === 1 ? "block" : "hidden"}`} role="tabpanel">
                       <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
                         <source src={slides[1].link} type="video/mp4" />
                         Seu navegador não suporta o vídeo.
@@ -121,7 +141,7 @@ export default function VideoPlayer() {
                     </div>
 
                     {/* Aba 3 */}
-                    <div className={`video-tab ${activeIndex === 2 ? 'block' : 'hidden'}`} role="tabpanel">
+                    <div className={`video-tab ${activeIndex === 2 ? "block" : "hidden"}`} role="tabpanel">
                       <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
                         <source src={slides[2].link} type="video/mp4" />
                         Seu navegador não suporta o vídeo.
@@ -140,9 +160,8 @@ export default function VideoPlayer() {
         </div>
       </section>
 
-      {/* Botão Flutuante WhatsApp (Componente Importado) */}
+      {/* FloatingWhatsApp Component */}
       <FloatingWhatsApp />
-      
     </>
   );
 }

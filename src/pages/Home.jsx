@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Carousel from "../components/Clientes/Carousel";
+import Carousel from "../components/Clientes/Carousel"; // Verifique se o Carousel é exportado como default
 import ClientAvaliacao from "../components/Clientes/ClientAvaliacao";
 import Avaliacao from "../components/Clientes/ClientSection";
-import CouponModal from "../components/ModalComponent"; // Ajuste o caminho conforme necessário
+import CouponModal from "../components/ModalComponent"; // Verifique se o CouponModal é exportado corretamente
 import Footer from "../components/Footer";
 import ImageCarousel from "../components/Clientes/ImageCarousel";
 import Navbar from "../components/Navbar";
@@ -40,13 +40,11 @@ const Home = () => {
       <section>
         <ClientAvaliacao />
       </section>
-      
+
       {/* Carrossel de Imagens (Clientes) */}
       <section>
         <ImageCarousel />
       </section>
-
-    
 
       {/* Footer */}
       <section>

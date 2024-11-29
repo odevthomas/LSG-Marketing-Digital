@@ -3,7 +3,6 @@ import withMT from "@material-tailwind/react/utils/withMT";
 import { nextui } from "@nextui-org/react";
 
 /** @type {import('tailwindcss').Config} */
-// Configuração do Tailwind CSS com Material Tailwind e NextUI
 const config = withMT({
   // Arquivos onde o Tailwind CSS irá procurar classes
   content: [

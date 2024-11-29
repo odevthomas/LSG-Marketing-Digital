@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const FormularioDeContato = () => {
   return (
@@ -6,7 +7,7 @@ const FormularioDeContato = () => {
       className="min-h-screen bg-cover"
       style={{
         backgroundImage:
-          "url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')",
+          "url('/img/herocontato.jpeg')",
       }}
     >
       <div className="flex flex-col min-h-screen bg-black/60">
@@ -16,13 +17,34 @@ const FormularioDeContato = () => {
               <h1 className="text-2xl font-semibold capitalize lg:text-3xl">
                 Solução de design definitiva
               </h1>
-              <p className="max-w-xl mt-6">
+              <p className="max-w-xl mt-6 text-white">
                 Oferecemos as melhores soluções para o seu projeto, com designs modernos e eficazes. Entre em contato para mais informações!
               </p>
 
-              <button className="px-8 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50">
-                Entre em contato
-              </button>
+              <div className="flex justify-center lg:justify-start mt-6">
+            <motion.a
+              href="https://novolink.com" // Aqui você pode trocar pelo novo link desejado
+              className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
+              initial={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              aria-label="Descubra mais"
+            >
+             Saiba Mais {" "}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="w-5 h-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </motion.a>
+          </div>
             </div>
 
             <div className="mt-8 lg:w-1/2 lg:mx-6">
