@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { FloatingWhatsApp } from 'react-floating-whatsapp'; // Importando o componente
+import FloatingWhatsApp from '../Buttons/FloatingWhatsApp'; // Ajuste o caminho conforme necessário
 
 export default function VideoPlayer() {
   const slides = [
@@ -106,7 +106,7 @@ export default function VideoPlayer() {
                   <div>
                     {/* Aba 1 */}
                     <div className={`video-tab ${activeIndex === 0 ? 'block' : 'hidden'}`} role="tabpanel">
-                      <video className=" rounded-xl w-full" controls>
+                      <video className="rounded-xl w-full" controls>
                         <source src={slides[0].link} type="video/mp4" />
                         Seu navegador não suporta o vídeo.
                       </video>
@@ -141,19 +141,7 @@ export default function VideoPlayer() {
       </section>
 
       {/* Botão Flutuante WhatsApp (Componente Importado) */}
-      <FloatingWhatsApp
-        phoneNumber="5519981331191"
-        accountName="LSG Digital"
-        chatMessage="Olá, como podemos ajudar?"
-        chatboxHeight={320}
-        notification
-        notificationDelay={60}
-        notificationSound={true}
-        notificationSoundSrc="path/to/sound.mp3"
-        placeholder="Escreva sua mensagem..."
-        allowClickAway={false}
-        allowEsc={false}
-      />
+      <FloatingWhatsApp />
       
     </>
   );
