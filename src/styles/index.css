@@ -298,7 +298,9 @@ px-4 {
 .md\:block {
   display: block;
 }
-
+.text-gray-800 {
+    color: #000000;
+}
 /* Exemplo de estilo CSS para o botão flutuante */
 .floating-whatsapp-button {
   background-color: #81ff94;

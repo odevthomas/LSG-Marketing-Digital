@@ -4,7 +4,7 @@ const ClientCard = ({ imgSrc, name, description }) => {
       <div className="h-full flex items-center border-gray-900 border p-4 rounded-lg hover:shadow-xl transition-all duration-300 bg-white">
         <img
           alt="team"
-          className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+          className="w-16 h-16 bg-bla-900 object-cover object-center flex-shrink-0 rounded-full mr-4"
           src={imgSrc}
         />
         <div className="flex-grow">
