@@ -17,8 +17,8 @@ const BrindeForm = () => {
   };
 
   return (
-    <div style={{ padding: '20px', textAlign: 'center' }}>
-      <h2>Parabéns! Você ganhou um diagnóstico gratuito no valor de R$ 399,90!</h2>
+    <div style={{ padding: '20px', textAlign: 'center', color: '#000' }}> {/* Texto preto */}
+      <h2>Parabéns! Você ganhou um diagnóstico gratuito no valor de <span style={{ color: '#28a745' }}>R$ 399,90</span>!</h2> {/* Valor em verde */}
       <p>Preencha o formulário abaixo para garantir sua oferta e aproveitar o brinde exclusivo!</p>
 
       {!isSubmitted ? (
@@ -35,7 +35,13 @@ const BrindeForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={{ padding: '10px', width: '250px', borderRadius: '5px', marginRight: '10px' }}
+              style={{
+                padding: '10px',
+                width: '250px',
+                borderRadius: '5px',
+                marginRight: '10px',
+                borderColor: '#000', // Cor do borda preta
+              }}
             />
           </div>
 
@@ -46,7 +52,15 @@ const BrindeForm = () => {
               value={contato}
               onChange={(e) => setContato(e.target.value)}
               required
-              style={{ padding: '10px', width: '250px', borderRadius: '5px' }}
+              style={{
+                backgroundColor: '#000000FF', // Cor de fundo verde
+                padding: '10px',
+                width: '250px',
+                borderRadius: '5px',
+                borderColor: '#000', // Cor do borda preta
+                color: '#ff', // Cor da fonte do botão branca
+
+              }}
             />
           </div>
 
@@ -54,8 +68,8 @@ const BrindeForm = () => {
             type="submit"
             style={{
               padding: '10px 20px',
-              backgroundColor: '#28a745',
-              color: '#fff',
+              backgroundColor: '#28a745', // Cor de fundo verde
+              color: '#000', // Cor da fonte do botão branca
               border: 'none',
               borderRadius: '5px',
               cursor: 'pointer',
