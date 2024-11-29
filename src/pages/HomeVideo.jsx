@@ -17,7 +17,6 @@ const HeroSection = () => {
         className="absolute top-0 left-0 w-full h-full object-cover"
         aria-label="Vídeo de fundo mostrando transformação digital"
         preload="auto" // Garantir o carregamento automático do vídeo
-        poster="/Capturar.PNG" // Imagem de fallback enquanto o vídeo carrega
       >
         <source src="/abertura1.mp4" type="video/mp4" />
         {/* Texto alternativo para navegadores que não suportam vídeo */}
