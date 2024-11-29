@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react';  // Adicione isso
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import ContactForm from '../src/components/Contact/Form'; // Renomeado para maior clareza
-import Services from '../src/components/Contact/Services';
-import HeroSection from '../src/components/HeroSection/HeroSection';
-import Testimonial from '../src/components/Home/Page'; 
-import Resultados from '../src/components/Result/Result'; 
+import ContactForm from './components/Formularios/FormularioContato';
+import HomeVideo from './pages/HomeVideo';
+import Home from './pages/Home';
+import Services from './pages/Servicos';
+import Resultados from './pages/Resultados';
 
 import './styles/App.css';
 import './styles/index.css';
@@ -14,11 +14,11 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<HeroSection />} />
-          <Route path="/home" element={<Testimonial />} />
+          <Route path="/" element={<HomeVideo />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/resultados" element={<Resultados />} />
           <Route path="/servicos" element={<Services />} />
-          <Route path="/form" element={<ContactForm />} />
+          <Route path="/contactForm" element={<ContactForm />} />
         </Routes>
       </div>
     </Router>

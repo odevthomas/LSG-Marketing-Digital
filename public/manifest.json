@@ -26,8 +26,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "src/assets/styles.css",
-        "src/assets/locales/en/translation.json"
+        "assets/styles.css",
+        "assets/locales/en/translation.json"
       ],
       "matches": ["<all_urls>"]
     }
@@ -36,7 +36,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["contentScript.js"],
-      "css": ["src/assets/styles.css"]
+      "css": ["assets/styles.css"]
     }
   ]
 }

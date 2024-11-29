@@ -1,116 +1,160 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import React, { useEffect, useRef, useState } from 'react';
-import Testimonial from './Testimonial';
-import './styles/Carrossel.css';
+import React, { useState } from 'react';
+import { FloatingWhatsApp } from 'react-floating-whatsapp'; // Importando o componente
 
 export default function VideoPlayer() {
   const slides = [
-    { link: "/depoimentos/1.mov", content: "Depoimento 1" },
-    { link: "/depoimentos/3.mp4", content: "Depoimento 2" },
-    { link: "/depoimentos/4.mp4", content: "Depoimento 3" },
+    { link: "/videos/1.mov", content: "Depoimento 1" },
+    { link: "/videos/3.mp4", content: "Depoimento 2" },
+    { link: "/videos/4.mp4", content: "Depoimento 3" },
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const videoRef = useRef(null);
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.src = slides[activeIndex].link; 
-      videoRef.current.load(); 
-      videoRef.current.play().catch((error) => {
-        console.error("Error playing video:", error);
-      });
-    }
-  }, [activeIndex]);
-
+  // Função para mudar o vídeo ao clicar nas bolinhas
   const handleDotClick = (index) => {
     setActiveIndex(index);
   };
 
   return (
-    <section className="py-14 bg-white" aria-labelledby="depoimentos">
-      <div className="max-w-screen-xl mx-auto px-4 text-[#010101] md:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-          <div className="max-w-md lg:max-w-2xl lg:mr-8 mb-8 lg:mb-0">
-            <motion.h3 
-              className="text-[#333] font-semibold mb-4 text-lg sm:text-xl"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              O que nossos clientes falam sobre nós
-            </motion.h3>
-            <motion.h2 
-              id="depoimentos" 
-              className="text-[#212121] text-5xl sm:text-4xl font-extrabold mb-6 mt-4 text-center"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              Nossos Clientes Satisfeitos!
-            </motion.h2>
-
-            <motion.p 
-              className="mt-4 mb-6 text-lg text-[#212121] text-center"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              "No último final de semana, consegui fechar 13 negócios reais!"
-            </motion.p>
-            <motion.p 
-              className="mb-6 text-[#212121] text-center"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              Descubra como transformamos experiências em histórias de sucesso através dos depoimentos de nossos clientes.
-            </motion.p>
-            
-            <div className="text-center mt-6">
-              <button 
-                className="bg-green-500 text-white py-2 px-4 sm:px-6 rounded-md shadow-lg hover:bg-green-600 transition duration-300"
-                onClick={() => window.open('https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações.', '_blank')}
-              >
-                Fale Conosco no WhatsApp
-              </button>
-            </div>
-          </div>
-
-          <div className="flex-1 lg:flex lg:flex-col lg:items-end">
-            <div className="video-player">
-              <motion.video 
-                ref={videoRef}
-                className="video rounded-lg shadow-lg w-full h-auto"
-                controls
-                preload="metadata"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.5 }}
-                aria-label="Video de depoimento"
-              >
-                <source src={slides[activeIndex].link} type="video/mp4" />
-                Seu navegador não suporta a tag de vídeo.
-              </motion.video>
-              <div className="controls flex justify-center mt-4">
-                {slides.map((_, index) => (
-                  <motion.div
-                    key={index}
-                    className={`dot ${activeIndex === index ? 'active' : ''}`}
-                    onClick={() => handleDotClick(index)}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  ></motion.div>
-                ))}
+    <>
+      <section className="section-with-background">
+        <div className="content-wrapper">
+          <div className="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
+            <div className="relative">
+              <div className="max-w-3xl text-center mx-auto">
+                <h1 className="mt-2 block font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
+                  Histórias de Sucesso com a LSG Digital
+                </h1>
+                <p className="mt-2 text-white">
+                  O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <Testimonial />
-    </section>
+
+        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 mx-auto">
+          <div className="relative p-6 md:p-16">
+            <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+              {/* Coluna de Texto */}
+              <div id="clientes" className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+                <h2 className="text-2xl sm:text-3xl text-gray-100 font-bold dark:text-neutral-200">
+                  Resultados Reais, Clientes Satisfeitos
+                </h2>
+                <p className="mt-2 text-gray-100 dark:text-neutral-500">
+                  Confira o que nossos clientes têm a dizer sobre a experiência com a nossa equipe e como nossas soluções de marketing digital ajudaram a alavancar os negócios deles.
+                </p>
+
+                {/* Navegação das Abas */}
+                <nav className="grid gap-6 mt-6 md:mt-10" aria-label="Depoimentos de Clientes" role="tablist" aria-orientation="vertical">
+                  {/* Aba 1: Aumento nas Vendas */}
+                  <button
+                    type="button"
+                    className="tab-button text-start hover:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-orange-800 focus:ring-opacity-50 p-5 md:p-6 rounded-xl transition-all duration-300 ease-in-out"
+                    onClick={() => handleDotClick(0)}
+                  >
+                    <span className="grow">
+                      <span className="block text-lg font-semibold text-gray-800 hover:text--600 transition-all duration-300 ease-in-out">
+                        Aumento nas Vendas
+                      </span>
+                      <span className="block mt-1 text-gray-200">
+                        Ajudamos nossos clientes a melhorar suas vendas através de estratégias eficazes de marketing digital.
+                      </span>
+                    </span>
+                  </button>
+
+                  {/* Aba 2: Satisfação e Reconhecimento */}
+                  <button
+                    type="button"
+                    className="tab-button text-start hover:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-orange-800 focus:ring-opacity-50 p-5 md:p-6 rounded-x transition-all duration-300 ease-in-out"
+                    onClick={() => handleDotClick(1)}
+                  >
+                    <span className="grow">
+                      <span className="block text-lg font-semibold text-gray-800 hover:text--600 transition-all duration-300 ease-in-out">
+                        Satisfação e Reconhecimento
+                      </span>
+                      <span className="block mt-1 text-gray-200">
+                        Clientes satisfeitos são nosso maior reconhecimento. Veja como conseguimos transformar negócios.
+                      </span>
+                    </span>
+                  </button>
+
+                  {/* Aba 3: Gestão de Tráfego Pago */}
+                  <button
+                    type="button"
+                    className="tab-button text-start hover:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-orange-800 focus:ring-opacity-50 p-5 md:p-6 rounded-x transition-all duration-300 ease-in-out"
+                    onClick={() => handleDotClick(2)}
+                  >
+                    <span className="grow">
+                      <span className="block text-lg font-semibold text-gray-800 hover:text--600 transition-all duration-300 ease-in-out">
+                        Gestão de Tráfego Pago
+                      </span>
+                      <span className="block mt-1 text-gray-100">
+                        A estratégia de tráfego pago foi a chave para o sucesso de muitos de nossos clientes.
+                      </span>
+                    </span>
+                  </button>
+                </nav>
+              </div>
+
+              {/* Coluna de Vídeos */}
+              <div className="lg:col-span-6">
+                <div className="relative">
+                  {/* Conteúdo das Abas */}
+                  <div>
+                    {/* Aba 1 */}
+                    <div className={`video-tab ${activeIndex === 0 ? 'block' : 'hidden'}`} role="tabpanel">
+                      <video className=" rounded-xl w-full" controls>
+                        <source src={slides[0].link} type="video/mp4" />
+                        Seu navegador não suporta o vídeo.
+                      </video>
+                    </div>
+
+                    {/* Aba 2 */}
+                    <div className={`video-tab ${activeIndex === 1 ? 'block' : 'hidden'}`} role="tabpanel">
+                      <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
+                        <source src={slides[1].link} type="video/mp4" />
+                        Seu navegador não suporta o vídeo.
+                      </video>
+                    </div>
+
+                    {/* Aba 3 */}
+                    <div className={`video-tab ${activeIndex === 2 ? 'block' : 'hidden'}`} role="tabpanel">
+                      <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
+                        <source src={slides[2].link} type="video/mp4" />
+                        Seu navegador não suporta o vídeo.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sobreposição de fundo */}
+            <div className="absolute inset-0 grid grid-cols-12 size-full">
+              <div className="col-span-full lg:col-span-8 lg:col-start-6 bg-gray-900 w-full h-5/4 sm:h-3/4 lg:h-full opacity-80"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Botão Flutuante WhatsApp (Componente Importado) */}
+      <FloatingWhatsApp
+        phoneNumber="5519981331191"
+        accountName="LSG Digital"
+        chatMessage="Olá, como podemos ajudar?"
+        chatboxHeight={320}
+        notification
+        notificationDelay={60}
+        notificationSound={true}
+        notificationSoundSrc="path/to/sound.mp3"
+        placeholder="Escreva sua mensagem..."
+        allowClickAway={false}
+        allowEsc={false}
+      />
+      
+    </>
   );
 }
