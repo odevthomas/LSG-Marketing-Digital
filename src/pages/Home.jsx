@@ -1,10 +1,8 @@
-"use client";
-
 import React, { useEffect, useState } from "react";
-import Carousel from "../components/Clientes/Carousel"; // Verifique se o Carousel é exportado como default
+import Carousel from "../components/Clientes/Carousel";
 import ClientAvaliacao from "../components/Clientes/ClientAvaliacao";
 import Avaliacao from "../components/Clientes/ClientSection";
-import CouponModal from "../components/ModalComponent"; // Verifique se o CouponModal é exportado corretamente
+import CouponModal from "../components/ModalComponent";
 import Footer from "../components/Footer";
 import ImageCarousel from "../components/Clientes/ImageCarousel";
 import Navbar from "../components/Navbar";
@@ -12,14 +10,13 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Abre o modal de cupom após 3 segundos
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsModalOpen(true);
-    }, 3000); // 3000 milissegundos = 3 segundos
+    }, 3000);
 
-    return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
-  }, []); // Executa apenas uma vez quando o componente é montado
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -32,24 +29,22 @@ const Home = () => {
       </section>
 
       {/* Avaliação */}
-      <section>
+      <section style={{ margin: "20px 0" }}>
         <Avaliacao />
       </section>
 
       {/* Avaliação de Clientes */}
-      <section>
+      <section style={{ margin: "20px 0" }}>
         <ClientAvaliacao />
       </section>
 
       {/* Carrossel de Imagens (Clientes) */}
-      <section>
+      <section style={{ margin: "20px 0" }}>
         <ImageCarousel />
       </section>
 
       {/* Footer */}
-      <section>
-        <Footer />
-      </section>
+      <Footer />
 
       {/* Modal de Cupom */}
       <CouponModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
