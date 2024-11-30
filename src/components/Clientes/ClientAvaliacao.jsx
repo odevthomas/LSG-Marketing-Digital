@@ -23,7 +23,7 @@ const ClientAvaliacao = () => {
             <h2 className="text-3xl font-bold tracking-tight text-[#81ff94] sm:text-4xl">
               Nossos Clientes!
             </h2>
-            <p className="mt-4 text-black">
+            <p className="mt-4 text-white">
               Conheça nossos maiores clientes! Veja como eles têm aproveitado nossos serviços.
             </p>
 
