@@ -8,8 +8,8 @@ const ClientCard = ({ imgSrc, name, description }) => {
           src={imgSrc}
         />
         <div className="flex-grow">
-          <h2 className="text-xl font-semibold text-gray-900">{name}</h2>
-          <p className="text-sm text-gray-800">{description}</p>
+          <h2 className="text-xl font-semibold text-black">{name}</h2>
+          <p className="text-sm text-black">{description}</p>
         </div>
       </div>
     </div>
