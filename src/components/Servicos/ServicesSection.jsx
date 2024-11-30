@@ -12,7 +12,7 @@ const ServicesSection = () => {
             <Box className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-lg font-semibold text-gray-800">Gestão de CRM</h3>
+            <h3 className="text-[#81ff94]">Gestão de CRM</h3>
             <p className="mt-1 text-gray-600">
               Organize seus contatos e transforme leads em clientes fiéis com um sistema de CRM otimizado.
             </p>
@@ -25,7 +25,7 @@ const ServicesSection = () => {
             <MessageCircle className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-lg font-semibold text-gray-800">Implementação de Chatbots</h3>
+            <h3 className="text-[#81ff94]">Implementação de Chatbots</h3>
             <p className="mt-1 text-gray-600">
               Revolucione seu atendimento ao cliente com chatbots humanizados. Automatize respostas a perguntas frequentes.
             </p>
@@ -38,7 +38,7 @@ const ServicesSection = () => {
             <Sliders className="shrink-0 w-8 h-8 text-black" /> {/* Substituindo Funnel por Sliders */}
           </div>
           <div className="mt-5">
-            <h3 className="text-lg font-semibold text-gray-800">Criação de Funil de Vendas</h3>
+            <h3 className="text-[#81ff94]">Criação de Funil de Vendas</h3>
             <p className="mt-1 text-gray-600">
               Desenvolva funis de vendas inteligentes que guiam seus leads até a conversão de forma eficaz.
             </p>
@@ -51,7 +51,7 @@ const ServicesSection = () => {
             <Target className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-lg font-semibold text-gray-800">Campanhas Personalizadas</h3>
+            <h3 className="text-[#81ff94]">Campanhas Personalizadas</h3>
             <p className="mt-1 text-gray-600">
               Alcance o público certo com a mensagem certa. Impacte sua audiência e veja resultados concretos.
             </p>
@@ -64,7 +64,7 @@ const ServicesSection = () => {
             <FileText className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-lg font-semibold text-gray-800">Criação de Landing Pages</h3>
+            <h3 className="text-[#81ff94]">Criação de Landing Pages</h3>
             <p className="mt-1 text-gray-600">
               Crie páginas de destino que convertem visitantes em leads, maximizando a eficácia da sua campanha.
             </p>
@@ -77,7 +77,7 @@ const ServicesSection = () => {
             <Edit className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-lg font-semibold text-gray-800">Mentoria em Postagem</h3>
+            <h3 className="text-[#81ff94]">Mentoria em Postagem</h3>
             <p className="mt-1 text-gray-600">
               Aprimore suas habilidades com nossa mentoria em criação de criativos e copys para gerar resultados.
             </p>

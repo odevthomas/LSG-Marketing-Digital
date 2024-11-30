@@ -6,7 +6,7 @@ const SeloSection = () => {
   const image = "/img/selo2.png"; // Substitua pelo caminho da sua imagem
 
   return (
-    <section className="overflow-hidden sm:grid sm:grid-cols-2 gap-8">
+    <section className="overflow-hidden sm:grid sm:grid-cols-2 gap-8 w-full">
       <div className="p-8 md:p-12 lg:px-16 lg:py-24">
         <div className="mx-auto max-w-xl text-center sm:text-left">
           <motion.h2
@@ -53,7 +53,7 @@ const SeloSection = () => {
           <div className="flex justify-center lg:justify-start mt-6">
               <motion.a
                 href="https://novolink.com"  // Aqui você pode trocar pelo novo link desejado
-                className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-white  bg-[#000] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
+                className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-white bg-[#000] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
@@ -78,11 +78,13 @@ const SeloSection = () => {
       </div>
 
       {/* Imagem Responsiva Ajustada */}
-      <img
-        alt="Imagem do selo"
-        src={image}
-        className="h-56 w-full object-contain sm:h-full sm:object-cover"
-      />
+      <div className="relative w-full sm:h-auto">
+        <img
+          alt="Imagem do selo"
+          src={image}
+          className="w-full h-auto object-contain sm:h-full sm:object-cover"
+        />
+      </div>
     </section>
   );
 };

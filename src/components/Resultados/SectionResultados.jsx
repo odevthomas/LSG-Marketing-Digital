@@ -41,7 +41,7 @@ const SectionResultados = () => {
       <div className="relative max-w-screen-xl mx-auto md:px-8 z-40 w-full px-4">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-x-12 w-full">
           {/* Texto do depoimento */}
-          <div className="text-center lg:text-left max-w-xl px-4 space-y-5 mt-6 lg:max-w-2xl w-full">
+          <div className="text-center lg:text-left max-w-2xl px-4 space-y-5 mt-6 lg:max-w-2xl w-full">
             <motion.h3
               className="text-white font-semibold mb-4 text-lg sm:text-xl"
               initial={{ opacity: 0, y: 1 }}

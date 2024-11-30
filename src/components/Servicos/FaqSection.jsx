@@ -12,7 +12,7 @@ const FaqSection = () => {
     <section className="bg-white dark:bg-gray-900 py-16">
       <div className="container mx-auto px-6">
         {/* Título da seção */}
-        <h1 className="text-3xl font-extrabold text-center text-gray-800 lg:text-4xl dark:text-white mb-12">
+        <h1 className="text-3xl font-extrabold text-center text-gray-800 lg:text-4xl dark:text-gray-900 mb-12">
           Perguntas Frequentes sobre nossos serviços
         </h1>
 
@@ -27,10 +27,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(0)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 O que é um Atendimento com Chatbots Inteligentes?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 0 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -41,8 +41,8 @@ const FaqSection = () => {
 
             {expanded === 0 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   Integrar um chatbot inteligente ao seu sistema permite automatizar o suporte ao cliente, aumentando a eficiência da sua equipe. Isso permite que os colaboradores se concentrem em tarefas mais estratégicas e complexas.
                 </p>
               </>
@@ -58,10 +58,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(1)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 Como funciona a Demonstração Grátis?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 1 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -72,8 +72,8 @@ const FaqSection = () => {
 
             {expanded === 1 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   A demonstração grátis permite testar nossas soluções e ver como elas podem otimizar seus processos antes de qualquer compromisso. Aproveite para explorar os recursos e funcionalidades.
                 </p>
               </>
@@ -89,10 +89,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(2)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 O que é um sistema de Gestão de CRM?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 2 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -103,8 +103,8 @@ const FaqSection = () => {
 
             {expanded === 2 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   O CRM ajuda a organizar seus contatos e automatizar o acompanhamento de leads, transformando-os em clientes fiéis. Com ele, você pode melhorar a comunicação e otimizar os processos de vendas.
                 </p>
               </>
@@ -120,10 +120,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(3)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 Como a Implementação de Chatbots pode ajudar meu negócio?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 3 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -134,8 +134,8 @@ const FaqSection = () => {
 
             {expanded === 3 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   A implementação de chatbots humanizados oferece uma resposta rápida e eficiente para perguntas frequentes, proporcionando um atendimento ao cliente mais ágil, enquanto automatiza processos repetitivos.
                 </p>
               </>
@@ -151,10 +151,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(4)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 O que é um Funil de Vendas e como ele pode ajudar?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 4 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -165,8 +165,8 @@ const FaqSection = () => {
 
             {expanded === 4 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   Criar funis de vendas inteligentes permite direcionar seus leads de forma estratégica, ajudando-os a avançar nas etapas do processo até a conversão, aumentando a eficiência da equipe de vendas.
                 </p>
               </>
@@ -182,10 +182,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(5)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 O que são Campanhas Personalizadas e como elas ajudam meu negócio?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 5 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -196,8 +196,8 @@ const FaqSection = () => {
 
             {expanded === 5 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   Campanhas personalizadas são estratégias de marketing direcionadas ao público certo, com a mensagem certa. Isso permite que você maximize o impacto de suas ações e aumente os resultados.
                 </p>
               </>
@@ -213,10 +213,10 @@ const FaqSection = () => {
               className="flex items-center justify-between w-full p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-50 dark:hover:bg-gray-800"
               onClick={() => toggleExpanded(6)}
             >
-              <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
+              <h1 className="font-semibold text-lg text-gray-700 dark:text-gray-900">
                 Como a Criação de Landing Pages ajuda a converter visitantes em leads?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 6 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -227,8 +227,8 @@ const FaqSection = () => {
 
             {expanded === 6 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   Landing Pages são páginas de destino otimizadas para conversão. Elas são desenhadas para capturar informações de visitantes e transformá-los em leads qualificados para a sua equipe de vendas.
                 </p>
               </>
@@ -247,7 +247,7 @@ const FaqSection = () => {
               <h1 className="font-semibold text-lg text-gray-700 dark:text-white">
                 O que é a Mentoria em Postagem e como ela pode aprimorar meus criativos?
               </h1>
-              <span className="text-gray-500 bg-gray-200 rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
+              <span className="text-gray-900 bg-[#81ff94] rounded-full p-2 transition-colors duration-300 hover:bg-[#81ff94]">
                 {expanded === 7 ? (
                   <Minus className="w-6 h-6 text-[#1DA65D]" />
                 ) : (
@@ -258,8 +258,8 @@ const FaqSection = () => {
 
             {expanded === 7 && (
               <>
-                <hr className="border-t-2 border-gray-200 dark:border-gray-700" />
-                <p className="p-6 text-sm text-gray-500 dark:text-gray-300">
+                <hr className="border-t-2 border-[#81ff94] dark:border-gray-700" />
+                <p className="p-6 text-sm text-gray-900 dark:text-gray-700">
                   Nossa mentoria em postagem foca no aprimoramento da criação de criativos e copys, ajudando você a gerar resultados eficazes para suas campanhas de marketing digital e engajamento com o público.
                 </p>
               </>
