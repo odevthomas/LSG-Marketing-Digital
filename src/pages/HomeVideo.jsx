@@ -14,12 +14,14 @@ const HeroSection = () => {
         autoPlay
         loop
         muted
+        playsInline
+        preload="auto"
         className="absolute top-0 left-0 w-full h-full object-cover"
         aria-label="Vídeo de fundo mostrando transformação digital"
-        preload="auto" // Garantir o carregamento automático do vídeo
+        onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
       >
         <source src="/abertura1.mp4" type="video/mp4" />
-        {/* Texto alternativo para navegadores que não suportam vídeo */}
+        <source src="/abertura1.webm" type="video/webm" />
         Seu navegador não suporta vídeo.
       </video>
 
@@ -50,14 +52,10 @@ const HeroSection = () => {
           {/* Botão */}
           <button
             aria-label="Clique para conhecer os serviços"
-            className="pinline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            id="startButton"
-            onClick={() => navigate('/home')} // Ação para navegar
+            className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
+            onClick={() => navigate('/home')}
           >
-            Clique e Conheça 
+            Clique e Conheça
           </button>
         </div>
       </div>
