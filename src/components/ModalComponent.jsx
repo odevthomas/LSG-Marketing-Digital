@@ -153,7 +153,7 @@ const Modal = () => {
             <h3 className="font-medium leading-6 text-gray-800 capitalize dark:text-white">
               Erro
             </h3>
-            <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            <p className="mt-4 text-sm text-gray-900 dark:text-gray-900">
               {error}
             </p>
             <button onClick={handleClose} className="mt-4 px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-red-600 rounded-md hover:bg-red-500 focus:outline-none focus:ring focus:ring-red-300 focus:ring-opacity-40">
