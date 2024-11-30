@@ -1,234 +1,52 @@
-import React, { useEffect, useRef } from 'react';
-import KeenSlider from 'keen-slider';
-import 'keen-slider/keen-slider.min.css';
+import * as Dialog from "@radix-ui/react-dialog";
+import React from "react";
 
-const ClientAvaliacao = () => {
-  const sliderRef = useRef(null);
-
-  useEffect(() => {
-    const slider = new KeenSlider(sliderRef.current, {
-      loop: true,
-    });
-
-    return () => {
-      slider.destroy(); // Limpa o slider quando o componente for desmontado
-    };
-  }, []);
-
+const Modal = ({ isOpen, onOpenChange }) => {
   return (
-    <section className="bg-black">
-      <div className="mx-auto max-w-[1740px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
-          <div className="max-w-xl text-center sm:text-left">
-            <h2 className="text-3xl font-bold tracking-tight text-[#81ff94] sm:text-4xl">
-              Nossos Clientes!
-            </h2>
-            <p className="mt-4 text-black">
-              Conheça nossos maiores clientes! Veja como eles têm aproveitado nossos serviços.
-            </p>
-
-            <div className="hidden lg:mt-8 lg:flex lg:gap-4">
-              {/* Botões de navegação */}
-              <button
-                aria-label="Previous slide"
-                id="keen-slider-previous"
-                className="rounded-full p-3 transition hover:text-white"
+    <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="fixed inset-0 w-full h-full bg-black opacity-40" />
+        <Dialog.Content className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg mx-auto px-4">
+          <div className="bg-white rounded-md shadow-lg px-6 py-8">
+            <div className="flex items-center justify-center w-12 h-12 mx-auto bg-green-100 rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-5 h-5 text-green-600"
+                viewBox="0 0 20 20"
+                fill="currentColor"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#00000000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-circle-chevron-left"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m14 16-4-4 4-4" />
-                </svg>
-              </button>
-
-              <button
-                aria-label="Next slide"
-                id="keen-slider-next"
-                className="rounded-full p-3 transition hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-circle-chevron-right"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m10 8 4 4-4 4" />
-                </svg>
-              </button>
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+            <Dialog.Title
+              className="text-lg font-semibold text-black text-center mt-4"
+              id="modal-title"
+            >
+              Formulário Enviado com Sucesso!
+            </Dialog.Title>
+            <Dialog.Description
+              className="mt-2 text-sm leading-relaxed text-center text-black"
+              id="modal-description"
+            >
+              🎉 Obrigado por entrar em contato! Nossa equipe já recebeu sua
+              mensagem e responderá em breve. Estamos animados para ajudar você!
+            </Dialog.Description>
+            <div className="mt-6 flex justify-center">
+              <Dialog.Close asChild>
+                <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
+                  Fechar
+                </button>
+              </Dialog.Close>
             </div>
           </div>
-
-          <div className="-mx-6 lg:col-span-2 lg:mx-0">
-            <div ref={sliderRef} className="keen-slider">
-              {/* Slide 1 */}
-              <div className="keen-slider__slide">
-                <div className="flex flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      className="w-12 h-12 rounded-full object-cover"
-                      src="/ImgInstagram/amovacinasoficial.jpg"
-                      alt="Client 1"
-                    />
-                    <div className="text-sm">
-                      <p className="font-bold text-black">Amo Vacinas</p>
-                      <p className="text-black">@amovacinasoficial</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-black">
-                    "A experiência foi excelente, nossa empresa cresceu muito desde que começamos a trabalhar com eles!"
-                  </p>
-                </div>
-              </div>
-
-              {/* Slide 2 */}
-              <div className="keen-slider__slide">
-                <div className="flex flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      className="w-12 h-12 rounded-full object-cover"
-                      src="/ImgInstagram/tominnicelli.jpg"
-                      alt="Client 2"
-                    />
-                    <div className="text-sm">
-                      <p className="font-bold text-black">Tom Minnicelli</p>
-                      <p className="text-black">@tominnicelli</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-black">
-                    "Simplesmente incrível! Nos ajudaram a aumentar nosso alcance digital em menos de 6 meses."
-                  </p>
-                </div>
-              </div>
-
-              {/* Slide 3 */}
-              <div className="keen-slider__slide">
-                <div className="flex flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      className="w-12 h-12 rounded-full object-cover"
-                      src="/ImgInstagram/novo_olhar_revelesuabeleza.jpg"
-                      alt="Client 3"
-                    />
-                    <div className="text-sm">
-                      <p className="font-bold text-black">Kely Santana</p>
-                      <p className="text-black">@novo_olhar_revelesuabeleza</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-black">
-                    "Altamente recomendados! A equipe é muito dedicada e nossos resultados falam por si mesmos."
-                  </p>
-                </div>
-              </div>
-
-              {/* Slide 4 */}
-              <div className="keen-slider__slide">
-                <div className="flex flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      className="w-12 h-12 rounded-full object-cover"
-                      src="/ImgInstagram/casavrsalao.jpg"
-                      alt="Client 4"
-                    />
-                    <div className="text-sm">
-                      <p className="font-bold text-black">CASA VR</p>
-                      <p className="text-black">@casavrsalao</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-black">
-                    "Altamente recomendados! A equipe é muito dedicada e nossos resultados falam por si mesmos."
-                  </p>
-                </div>
-              </div>
-
-              {/* Slide 5 */}
-              <div className="keen-slider__slide">
-                <div className="flex flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-                  <div className="flex items-center space-x-4">
-                    <img
-                      className="w-12 h-12 rounded-full object-cover"
-                      src="/ImgInstagram/novo_olhar_revelesuabeleza.jpg"
-                      alt="Client 5"
-                    />
-                    <div className="text-sm">
-                      <p className="font-bold text-black">Kely Santana</p>
-                      <p className="text-black">@novo_olhar_revelesuabeleza</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-black">
-                    "Altamente recomendados! A equipe é muito dedicada e nossos resultados falam por si mesmos."
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:hidden mt-1 flex justify-center gap-4">
-              {/* Botões de navegação no mobile */}
-              <button
-                aria-label="Previous slide"
-                id="keen-slider-previous-mobile"
-                className="rounded-full p-3 transition hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-circle-chevron-left"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m14 16-4-4 4-4" />
-                </svg>
-              </button>
-
-              <button
-                aria-label="Next slide"
-                id="keen-slider-next-mobile"
-                className="rounded-full p-3 transition hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-circle-chevron-right"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m10 8 4 4-4 4" />
-                </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 };
 
-export default ClientAvaliacao;
+export default Modal;
