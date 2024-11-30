@@ -9,7 +9,10 @@ export default defineConfig({
     open: true, // Abre automaticamente no navegador
   },
   build: {
-    outDir: 'dist', // Diretório de saída da build
+    outDir: 'dist', // Saída do build
+    rollupOptions: {
+      // Opções de Rollup (caso necessário)
+    },
   },
   resolve: {
     alias: {
