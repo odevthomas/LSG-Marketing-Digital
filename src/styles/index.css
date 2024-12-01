@@ -625,7 +625,18 @@ px-4 {
   z-index: 10; /* Z-index baixo para não sobrepor o conteúdo principal */
 }
 
-.section-with-background {
-  position: relative;
-  z-index: 20; /* Z-index maior para ficar acima do header */
+.hero-background video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}
+
+@media (max-width: 768px) {
+  .hero-background video {
+    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorcer */
+  }
 }
