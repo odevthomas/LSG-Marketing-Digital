@@ -18,10 +18,10 @@ const HeroSection = () => {
         preload="auto"
         className="absolute top-0 left-0 w-full h-full object-cover"
         aria-label="Vídeo de fundo mostrando transformação digital"
+        onError={() => console.error("Erro ao carregar o vídeo.")}
         onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
       >
-        <source src="/public/abertura1.mp4" type="video/mp4" />
-        <source src="/public/abertura1.mp4" type="video/mp4" />
+        <source src="/abertura1.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 
