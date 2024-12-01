@@ -4,7 +4,7 @@
 
 **Descrição:**  
 Este projeto é um site para a agência **LSG Digital**, que oferece serviços de marketing digital, design, e automação. O site possui uma interface moderna e responsiva, destacando serviços oferecidos pela agência, incluindo gestão de CRM, criação de landing pages, e campanhas personalizadas. Além disso, há um formulário de contato para facilitar a interação com clientes e leads.
-![modelo-celular](https://github.com/user-attachments/assets/b6c52114-a2af-4cd3-a24a-5ac4a28b5b47)
+![modelo-tablet](https://github.com/user-attachments/assets/b6c52114-a2af-4cd3-a24a-5ac4a28b5b47)
 
 
 ## Funcionalidades
@@ -14,7 +14,7 @@ Este projeto é um site para a agência **LSG Digital**, que oferece serviços d
 - **Formulário de Contato:** Permite que os visitantes entrem em contato diretamente com a equipe através de um formulário interativo.
 - **Consentimento de Cookies:** Banner de consentimento de cookies para conformidade com as leis de privacidade (ex: GDPR).
 - **Design Responsivo:** O site é totalmente responsivo, ou seja, ele se adapta automaticamente a diferentes tamanhos de tela (desktop, tablet, celular).
-![](https://github.com/user-attachments/assets/7ea12603-2e04-4bc2-ac76-1276a74454b4)
+![modelo-celular](https://github.com/user-attachments/assets/7ea12603-2e04-4bc2-ac76-1276a74454b4)
 
 ## Tecnologias Utilizadas
 
