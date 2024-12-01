@@ -20,6 +20,7 @@
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@shadcn/ui": "^0.0.4",
+    "@tailwindcss/forms": "^0.5.9",
     "acessoria": "file:",
     "chart.js": "^4.4.4",
     "classnames": "^2.5.1",
