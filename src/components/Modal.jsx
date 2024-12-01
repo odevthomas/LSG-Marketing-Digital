@@ -1,18 +1,15 @@
+import React, { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import React from "react";
 
 const Modal = ({ isOpen, onOpenChange }) => {
   return (
     <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        {/* Overlay: Ajuste o z-index para garantir que o fundo do modal fique na frente de tudo */}
         <Dialog.Overlay className="fixed inset-0 w-full h-full bg-black opacity-40 z-50" />
-        
-        <Dialog.Content 
+        <Dialog.Content
           className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg mx-auto px-4 z-60"
         >
           <div className="bg-white rounded-md shadow-lg px-6 py-8">
-            {/* Ícone de sucesso */}
             <div className="flex items-center justify-center w-12 h-12 mx-auto bg-green-100 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -27,25 +24,15 @@ const Modal = ({ isOpen, onOpenChange }) => {
                 />
               </svg>
             </div>
-            
-            {/* Título do Modal */}
-            <Dialog.Title
-              className="text-lg font-semibold text-black text-center mt-4"
-              id="modal-title"
-            >
+
+            <Dialog.Title className="text-lg font-semibold text-black text-center mt-4">
               Formulário Enviado com Sucesso!
             </Dialog.Title>
-            
-            {/* Descrição do Modal */}
-            <Dialog.Description
-              className="mt-2 text-sm leading-relaxed text-center text-black"
-              id="modal-description"
-            >
+            <Dialog.Description className="mt-2 text-sm leading-relaxed text-center text-black">
               🎉 Obrigado por entrar em contato! Nossa equipe já recebeu sua
               mensagem e responderá em breve. Estamos animados para ajudar você!
             </Dialog.Description>
-            
-            {/* Botão para fechar o modal */}
+
             <div className="mt-6 flex justify-center">
               <Dialog.Close asChild>
                 <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">
@@ -60,4 +47,82 @@ const Modal = ({ isOpen, onOpenChange }) => {
   );
 };
 
-export default Modal;
+const FormComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Preencha todos os campos.");
+      return;
+    }
+
+    // Simula o envio do formulário usando formsubmit.co
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action =
+      "https://formsubmit.co/comercial@lsgdigital.com.br?redirect=https://seusite.com/pagina-de-confirmacao";
+
+    Object.keys(formData).forEach((key) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = formData[key];
+      form.appendChild(input);
+    });
+
+    document.body.appendChild(form);
+    form.submit();
+    setIsOpen(true);
+  };
+
+  return (
+    <div className="p-8">
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="name"
+          placeholder="Nome"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-lg"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="E-mail"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-lg"
+        />
+        <textarea
+          name="message"
+          placeholder="Mensagem"
+          value={formData.message}
+          onChange={handleChange}
+          className="w-full px-4 py-2 border rounded-lg"
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400"
+        >
+          Enviar
+        </button>
+      </form>
+
+      <Modal isOpen={isOpen} onOpenChange={setIsOpen} />
+    </div>
+  );
+};
+
+export default FormComponent;
