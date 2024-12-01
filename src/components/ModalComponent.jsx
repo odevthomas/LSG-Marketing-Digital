@@ -61,7 +61,7 @@ const Modal = () => {
     <>
       {isOpen && !isConfirmed && (
         <div
-          className="fixed inset-0 z-99 flex items-center justify-center bg-gray-800 bg-opacity-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50"
           role="dialog"
           aria-labelledby="modal-title"
           aria-modal="true"
@@ -140,7 +140,7 @@ const Modal = () => {
       )}
 
       {error && (
-        <div className="fixed inset-0 z-10 flex items-center justify-center bg-gray-800 bg-opacity-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
           <div className="bg-white p-4 rounded-lg shadow-lg max-w-md mx-auto text-center">
             <h3 className="font-medium leading-6 text-gray-800 capitalize dark:text-white">
               Erro
