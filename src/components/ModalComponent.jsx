@@ -64,13 +64,13 @@ const Modal = () => {
               />
               <div className="mt-2 text-center">
                 <h3
-                  className="font-medium leading-5 text-gray-800 capitalize dark:text-black"
+                  className="font-medium leading-5 text-black capitalize dark:text-black"
                   id="modal-title"
                 >
                   Oferta de Diagnóstico Gratuito!
                 </h3>
 
-                <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mt-1 text-sm text-black dark:text-gray-400">
                   Aproveite esta oportunidade exclusiva! Diagnóstico completo de saúde no valor de R$ 399, totalmente grátis.
                 </p>
 
