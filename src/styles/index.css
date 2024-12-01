@@ -617,14 +617,15 @@ px-4 {
   opacity: 1;
 }
 /* Adiciona altura adequada para o Navbar, sem sobrepor a seção seguinte */
-nav {
-  position: relative; /* Adiciona contexto para ajustes de posicionamento */
-  z-index: 999; /* Garante que o navbar fique no topo */
+
+
+
+.navbar {
+  position: relative;
+  z-index: 10; /* Z-index baixo para não sobrepor o conteúdo principal */
 }
 
-
-
-/* Alternativamente, você pode usar margens específicas para o conteúdo */
-section {
-  margin-top: 80px; /* Margem no topo das seções para não sobrepor o navbar */
+.section-with-background {
+  position: relative;
+  z-index: 20; /* Z-index maior para ficar acima do header */
 }
