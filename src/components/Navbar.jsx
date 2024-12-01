@@ -1,4 +1,4 @@
-Consegue refazer esse componente geader nav ? Ele está com bottom no móvel muito alto aí a section está subindo para cima e ficando escondido pq o ueader tá enorme import { motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CertificadoAvatar from '../components/CertificadoAvatar'; // Ajuste o caminho conforme necessário
@@ -18,8 +18,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black w-full border-b md:border-0    hover:opacity-75  ">
-      <div className="flex items-center justify-between px-4 py-2 max-w-screen-2xl mx-auto md:px-8">
+    <nav className="bg-black w-full border-b md:border-0 hover:opacity-75">
+      <div className="flex items-center justify-between px-4 py-2 md:py-4 max-w-screen-2xl mx-auto md:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
@@ -33,10 +33,31 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           />
         </Link>
- <CertificadoAvatar />
+        
+        <CertificadoAvatar />
 
         {/* Menu Toggle Button (Hambúrguer) para mobile */}
-       
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
 
         {/* Menu de navegação para dispositivos móveis e desktop */}
         <div
@@ -57,7 +78,6 @@ const Navbar = () => {
           </ul>
 
           {/* CertificadoAvatar - Aparece somente no desktop */}
-          
         </div>
       </div>
     </nav>
@@ -65,4 +85,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
