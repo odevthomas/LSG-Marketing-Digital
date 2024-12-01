@@ -61,7 +61,7 @@ const Modal = () => {
     <>
       {isOpen && !isConfirmed && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50"
+          className="fixed inset-0 z-90 flex items-center justify-center bg-gray-800 bg-opacity-50"
           role="dialog"
           aria-labelledby="modal-title"
           aria-modal="true"
