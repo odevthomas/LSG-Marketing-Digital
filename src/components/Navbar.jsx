@@ -18,8 +18,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black w-full border-b md:border-0 hover:opacity-75">
-      <div className="flex items-center justify-between px-4 py-2 md:py-4 max-w-screen-2xl mx-auto md:px-8">
+    <nav className="bg-black w-full border-b md:border-0 hover:opacity-75 z-10">
+      <div className="flex items-center justify-between px-4 py-4 md:py-4 max-w-screen-2xl mx-auto md:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
@@ -33,8 +33,11 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           />
         </Link>
-        
-        <CertificadoAvatar />
+
+        {/* CertificadoAvatar - Centralizado */}
+        <div className="flex flex-1 justify-center md:absolute top-0 left-1/2 transform -translate-x-1/2">
+          <CertificadoAvatar />
+        </div>
 
         {/* Menu Toggle Button (Hambúrguer) para mobile */}
         <div className="md:hidden flex items-center">
@@ -76,8 +79,6 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
-          {/* CertificadoAvatar - Aparece somente no desktop */}
         </div>
       </div>
     </nav>
