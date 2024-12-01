@@ -6,17 +6,17 @@ const SeloSection = () => {
   const image = "/assets/garantia.png"; // Caminho da imagem
 
   return (
-    <section className="bg-white py-12 px-4 sm:px-6 lg:px-16">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 items-center">
+    <section className="bg-white py-12 px-6 lg:px-16">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
         {/* Texto da seção */}
-        <div className="text-center text-white sm:text-left space-y-6">
+        <div className="text-center sm:text-left space-y-6">
           <motion.h2
-            className="text-3xl font-bold text-gray-900"
+            className="text-3xl font-semibold text-gray-900"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Garantia 
+            Garantia
           </motion.h2>
 
           <motion.p
@@ -25,18 +25,18 @@ const SeloSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Estamos tão confiantes na qualidade do nosso trabalho que oferecemos uma garantia de satisfação.
+            Confiança total na qualidade. Garantimos sua satisfação.
           </motion.p>
 
           <motion.div
-            className="mt-8"
+            className="mt-6"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            <h5 className="text-xl font-semibold text-gray-800">O que está incluso?</h5>
-            <p className="text-base text-gray-100 mt-2">
-              Se não obtiver os resultados prometidos, ou não estiver satisfeito com o serviço, oferecemos sessões adicionais ou ajustes necessários.
+            <h5 className="text-lg font-semibold text-gray-800">O que inclui?</h5>
+            <p className="text-sm text-gray-600 mt-2">
+              Caso não esteja satisfeito, oferecemos ajustes ou sessões adicionais.
             </p>
           </motion.div>
 
@@ -49,7 +49,7 @@ const SeloSection = () => {
           >
             <a
               href="https://novolink.com" // Link do botão
-              className="inline-flex items-center justify-center gap-x-2 py-3 px-6 bg-black text-white hover:bg-[#1DA65D] rounded-lg shadow-md transition-all duration-300"
+              className="inline-flex items-center py-3 px-6 bg-black text-white hover:bg-[#1DA65D] rounded-lg shadow-md transition-all duration-300"
               aria-label="Descubra mais"
             >
               DESCUBRA MAIS
@@ -57,7 +57,7 @@ const SeloSection = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                className="w-5 h-5"
+                className="w-5 h-5 ml-2"
               >
                 <path
                   fillRule="evenodd"
@@ -74,7 +74,7 @@ const SeloSection = () => {
           <motion.img
             src={image}
             alt="Garantia de Satisfação"
-            className="w-32 sm:w-48 md:w-64 lg:w-72 h-auto object-contain"
+            className="w-40 sm:w-48 md:w-64 lg:w-72 h-auto object-contain"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.2 }}
