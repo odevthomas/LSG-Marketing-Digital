@@ -20,8 +20,8 @@ const HeroSection = () => {
         aria-label="Vídeo de fundo mostrando transformação digital"
         onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
       >
-        <source src="/abertura1.mp4" type="video/mp4" />
-        <source src="/abertura1.webm" type="video/webm" />
+        <source src="/public/abertura1.mp4" type="video/mp4" />
+        <source src="/public/abertura1.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 
