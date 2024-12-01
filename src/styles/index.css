@@ -9,6 +9,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+   background-color : #000;
 }
 
 /* Custom Tailwind Styles */
@@ -614,4 +615,19 @@ px-4 {
   width: 220px;
   height: 220px;
   opacity: 1;
+}
+/* Adiciona altura adequada para o Navbar, sem sobrepor a seção seguinte */
+nav {
+  position: relative; /* Adiciona contexto para ajustes de posicionamento */
+  z-index: 10; /* Garante que o navbar fique no topo */
+}
+
+/* Para garantir que o conteúdo seguinte não seja sobreposto pelo navbar */
+body {
+  padding-top: 80px; /* Ajuste o valor conforme necessário */
+}
+
+/* Alternativamente, você pode usar margens específicas para o conteúdo */
+section {
+  margin-top: 80px; /* Margem no topo das seções para não sobrepor o navbar */
 }

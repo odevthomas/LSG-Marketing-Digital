@@ -12,10 +12,10 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsModalOpen(true);
+      setIsModalOpen(true); // Abre o modal após 3 segundos
     }, 3000);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
   }, []);
 
   return (

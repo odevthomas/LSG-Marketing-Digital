@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import KeenSlider, { KeenSliderInstance } from 'keen-slider';
+import KeenSlider from 'keen-slider';  // Remova a importação de 'KeenSliderInstance'
 import 'keen-slider/keen-slider.min.css';
 
 const ClientSlide = ({ imgSrc, clientName, username, testimonial }) => (
@@ -23,7 +23,7 @@ const ClientSlide = ({ imgSrc, clientName, username, testimonial }) => (
 
 const ClientAvaliacao = () => {
   const sliderRef = useRef(null);
-  const sliderInstance = useRef<KeenSliderInstance | null>(null);
+  const sliderInstance = useRef(null);  // Remova a referência para 'KeenSliderInstance'
 
   useEffect(() => {
     if (sliderRef.current) {

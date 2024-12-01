@@ -5,9 +5,14 @@ const Modal = ({ isOpen, onOpenChange }) => {
   return (
     <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 w-full h-full bg-black opacity-40" />
-        <Dialog.Content className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg mx-auto px-4">
+        {/* Overlay: Ajuste o z-index para garantir que o fundo do modal fique na frente de tudo */}
+        <Dialog.Overlay className="fixed inset-0 w-full h-full bg-black opacity-40 z-50" />
+        
+        <Dialog.Content 
+          className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg mx-auto px-4 z-60"
+        >
           <div className="bg-white rounded-md shadow-lg px-6 py-8">
+            {/* Ícone de sucesso */}
             <div className="flex items-center justify-center w-12 h-12 mx-auto bg-green-100 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -22,12 +27,16 @@ const Modal = ({ isOpen, onOpenChange }) => {
                 />
               </svg>
             </div>
+            
+            {/* Título do Modal */}
             <Dialog.Title
               className="text-lg font-semibold text-black text-center mt-4"
               id="modal-title"
             >
               Formulário Enviado com Sucesso!
             </Dialog.Title>
+            
+            {/* Descrição do Modal */}
             <Dialog.Description
               className="mt-2 text-sm leading-relaxed text-center text-black"
               id="modal-description"
@@ -35,6 +44,8 @@ const Modal = ({ isOpen, onOpenChange }) => {
               🎉 Obrigado por entrar em contato! Nossa equipe já recebeu sua
               mensagem e responderá em breve. Estamos animados para ajudar você!
             </Dialog.Description>
+            
+            {/* Botão para fechar o modal */}
             <div className="mt-6 flex justify-center">
               <Dialog.Close asChild>
                 <button className="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-400">

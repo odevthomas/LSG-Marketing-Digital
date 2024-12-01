@@ -14,8 +14,8 @@ const Resultados = () => {
       <Navbar />
       <SectionResultados />  {/* Agora o componente SectionResultados pode ser usado */}
       <Statistics />
-      <SeloSection /> 
       <CertificationSection /> 
+       <SeloSection /> 
       <Footer />
     </>
   );

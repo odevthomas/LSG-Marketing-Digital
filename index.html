@@ -4,22 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/react-floating-whatsapp@latest/dist/index.css"
-/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/react-floating-whatsapp@latest/dist/index.css" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/img/logo-2.png" />
     <link rel="apple-touch-icon" href="/img/logo-2.png" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-
     <!-- Estilos -->
     <link rel="stylesheet" href="/src/styles/index.css" />
     <link rel="stylesheet" href="/src/styles/App.css" />
 
-    
     <title>LSG Digital - Soluções em Marketing Digital</title>
 
     <meta name="description" content="LSG Digital oferece soluções inovadoras em marketing digital, assessoria e consultoria para impulsionar seu negócio." />
@@ -41,6 +36,14 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="canonical" href="https://lsgdigital.com.br" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NGBJKQN5');</script>
+    <!-- End Google Tag Manager -->
 
     <script type="application/ld+json">
     {
@@ -65,18 +68,25 @@
       "telephone": "+55 19 1234-5678"
     }
     </script>
+
 </head>
 <body>
-    <div id="root"></div>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGBJKQN5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-092NLM84P6"></script> <!-- Troque o ID aqui -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'YOUR_TRACKING_ID');
+
+      gtag('config', 'G-092NLM84P6'); // Troque pelo seu ID de rastreamento do GA4
     </script>
+
+    <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
 </body>

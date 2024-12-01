@@ -1,3 +1,6 @@
+import React from 'react';  // Adicione esta linha no início do arquivo
+import { useState, useEffect } from 'react';
+
 const ClientCard = ({ imgSrc, name, description }) => {
   return (
     <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
