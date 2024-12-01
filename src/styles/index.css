@@ -1,8 +1,4 @@
-/* Importação das fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-/* Tailwind Base Styles */
+/* Importa os estilos base, componentes e utilitários do Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,11 +13,11 @@
   --gray-dark: #333333;
 }
 
-/* Estilos globais */
+/* Corpo e fundo */
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--gray-light);
-  color: var(--gray-dark);
+  font-family: 'Inter', Arial, sans-serif; /* Fonte principal */
+  background-color: var(--gray-light); /* Cor de fundo clara */
+  color: var(--gray-dark); /* Texto escuro por padrão */
   margin: 0;
   padding: 0;
 }
@@ -32,10 +28,10 @@ a {
   color: inherit;
 }
 
-/* Estilo dos cabeçalhos */
+/* Estilos do cabeçalho, botões e outras seções personalizadas */
 h1, h2, h3, h4 {
-  font-family: 'Inter', Arial, sans-serif;
-  color: var(--black);
+  font-family: 'Inter', Arial, sans-serif; /* Cabeçalhos com a mesma fonte */
+  color: var(--black); /* Cor do texto dos cabeçalhos */
 }
 
 /* Botões personalizados */
@@ -46,7 +42,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 0.375rem;
+  border-radius: 0.375rem; /* Bordas arredondadas */
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -57,7 +53,7 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover {
   background-color: var(--secondary-color);
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* Efeito de "hover" */
 }
 
 .btn-secondary {
@@ -67,10 +63,10 @@ h1, h2, h3, h4 {
 
 .btn-secondary:hover {
   background-color: var(--primary-color);
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* Efeito de "hover" */
 }
 
-/* Definindo o estilo para seções com imagem de fundo */
+/* Definindo um estilo para seções com imagem de fundo */
 .bg-cover {
   background-size: cover;
   background-position: center;
@@ -80,10 +76,9 @@ h1, h2, h3, h4 {
 p {
   font-size: 1rem;
   line-height: 1.75;
-  color: var(--gray-dark);
+  color: var(--gray-dark); /* Texto escuro */
 }
 
-/* Prose para textos em seções longas */
 .prose {
   max-width: 70ch;
   margin: 0 auto;
@@ -93,7 +88,7 @@ p {
   line-height: 1.6;
 }
 
-/* Definindo cores personalizadas para Tailwind */
+/* Definição de cores personalizadas para utilizar no Tailwind */
 .bg-primary {
   background-color: var(--primary-color);
 }
@@ -122,7 +117,7 @@ select:focus {
   box-shadow: 0 0 5px var(--primary-color);
 }
 
-/* Estilos para o modal */
+/* Customizando o modal */
 .modal {
   @apply fixed top-0 left-0 right-0 z-50 p-6 bg-black bg-opacity-50 hidden;
 }
@@ -155,7 +150,7 @@ select:focus {
   margin-left: 10px;
 }
 
-/* Estilos para o formulário de contato */
+/* Customizando o formulário de contato */
 .form-section {
   @apply bg-white shadow-2xl p-8 rounded-lg;
 }
@@ -172,30 +167,6 @@ select:focus {
 
 .form-section button {
   @apply mt-6 px-6 py-3 text-white bg-primary rounded-md hover:bg-secondary transition-colors;
-}
-
-/* Tema Claro */
-.app-container.light {
-  background-color: #f2f2f2; /* fundo claro */
-  color: #0c0c0c; /* texto escuro */
-}
-
-/* Tema Escuro */
-.app-container.dark {
-  background-color: #211e1e; /* fundo escuro */
-  color: #ffffff; /* texto claro */
-}
-
-.dark .bg-white {
-  background-color: #111; /* cor de fundo dos elementos brancos no modo escuro */
-}
-
-.dark .border-gray-700 {
-  border-color: #0c0c0c; /* bordas no tema escuro */
-}
-
-.dark .text-gray-600 {
-  color: #e6e7e8; /* texto cinza claro no modo escuro */
 }
 
 /* Animação de carregamento */
