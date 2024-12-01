@@ -18,8 +18,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black w-full fixed top-0 left-0 z-50">
-      <div className="flex items-center justify-between px-4 py-2 max-w-screen-2xl mx-auto md:px-8">
+    <nav className="bg-black w-full border-b md:border-0 hover:opacity-75">
+      <div className="flex items-center justify-between px-4 py-2 md:py-4 max-w-screen-2xl mx-auto md:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <motion.img
@@ -33,49 +33,42 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           />
         </Link>
- <CertificadoAvatar />
+
+        {/* CertificadoAvatar */}
+        <CertificadoAvatar />
 
         {/* Menu Toggle Button (Hambúrguer) para mobile */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-white md:hidden focus:outline-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white focus:outline-none"
           >
-            {isOpen ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
               />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            )}
-          </svg>
-        </button>
+            </svg>
+          </button>
+        </div>
 
         {/* Menu de navegação para dispositivos móveis e desktop */}
         <div
           className={`${
             isOpen ? 'block' : 'hidden'
-          } absolute top-full left-0 w-full bg-black md:relative md:flex md:items-center md:space-x-6 md:space-x-4 md:bg-transparent`}
+          } md:flex md:items-center md:space-x-6 space-x-4`}
         >
-          <ul className="flex flex-col md:flex-row md:items-center space-y-4 md:space-y-0 md:space-x-10 p-4 md:p-0">
+          <ul className="flex items-center space-x-10">
             {navigation.map((item, idx) => (
-              <li
-                key={idx}
-                className="text-white hover:opacity-75 transition duration-200"
-              >
+              <li key={idx} className="text-white hover:opacity-75 transition duration-200">
                 <Link
                   to={item.path}
                   onClick={handleLinkClick}
@@ -86,9 +79,26 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
-         
         </div>
+      </div>
+
+      {/* Menu para dispositivos móveis */}
+      <div
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'} p-4 space-y-4 bg-black text-white`}
+      >
+        <ul>
+          {navigation.map((item, idx) => (
+            <li key={idx} className="py-2 hover:text-green-600">
+              <Link
+                to={item.path}
+                onClick={handleLinkClick}
+                className="block"
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
