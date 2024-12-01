@@ -3,20 +3,20 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const SeloSection = () => {
-  const image = "/src/assets/garantia.png"; // Caminho da imagem
+  const image = "/assets/garantia.png"; // Caminho da imagem
 
   return (
-    <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-16">
+    <section className="bg-white py-12 px-4 sm:px-6 lg:px-16">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 items-center">
         {/* Texto da seção */}
-        <div className="text-center sm:text-left space-y-6">
+        <div className="text-center text-white sm:text-left space-y-6">
           <motion.h2
             className="text-3xl font-bold text-gray-900"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Garantia de Satisfação
+            Garantia 
           </motion.h2>
 
           <motion.p
@@ -35,7 +35,7 @@ const SeloSection = () => {
             transition={{ duration: 0.5, delay: 0.9 }}
           >
             <h5 className="text-xl font-semibold text-gray-800">O que está incluso?</h5>
-            <p className="text-base text-gray-600 mt-2">
+            <p className="text-base text-gray-100 mt-2">
               Se não obtiver os resultados prometidos, ou não estiver satisfeito com o serviço, oferecemos sessões adicionais ou ajustes necessários.
             </p>
           </motion.div>
