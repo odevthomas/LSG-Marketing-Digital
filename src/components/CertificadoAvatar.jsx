@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import * as Avatar from "@radix-ui/react-avatar";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const avatarData = [
   {
@@ -28,7 +28,9 @@ const CertificadoAvatar = () => (
           transition={{ duration: 0.3, delay: idx * 0.1 }}
           className="relative"
         >
-          <Avatar.Root className="h-14 w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#25D366]">
+          <Avatar.Root
+            className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#25D366]"
+          >
             <Avatar.Image
               src={item.imgURL}
               className="h-full w-full object-cover"
