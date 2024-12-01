@@ -21,7 +21,7 @@ const HeroSection = () => {
         onError={() => console.error("Erro ao carregar o vídeo.")}
         onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
       >
-        <source src="/abertura1.mp4" type="video/mp4" />
+        <source src="/video/abertura.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 
