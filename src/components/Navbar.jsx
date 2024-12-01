@@ -33,7 +33,8 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           />
         </Link>
-        
+
+        {/* CertificadoAvatar */}
         <CertificadoAvatar />
 
         {/* Menu Toggle Button (Hambúrguer) para mobile */}
@@ -61,7 +62,9 @@ const Navbar = () => {
 
         {/* Menu de navegação para dispositivos móveis e desktop */}
         <div
-          className={`flex items-center ${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-6 space-x-4`}
+          className={`${
+            isOpen ? 'block' : 'hidden'
+          } md:flex md:items-center md:space-x-6 space-x-4`}
         >
           <ul className="flex items-center space-x-10">
             {navigation.map((item, idx) => (
@@ -76,9 +79,26 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
-          {/* CertificadoAvatar - Aparece somente no desktop */}
         </div>
+      </div>
+
+      {/* Menu para dispositivos móveis */}
+      <div
+        className={`md:hidden ${isOpen ? 'block' : 'hidden'} p-4 space-y-4 bg-black text-white`}
+      >
+        <ul>
+          {navigation.map((item, idx) => (
+            <li key={idx} className="py-2 hover:text-green-600">
+              <Link
+                to={item.path}
+                onClick={handleLinkClick}
+                className="block"
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
