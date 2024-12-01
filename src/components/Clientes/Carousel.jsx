@@ -18,7 +18,7 @@ export default function VideoPlayer() {
   };
 
   const whatsappInfo = {
-   phoneNumber: '5519981331191',
+    phoneNumber: '5519981331191',
     accountName: 'LSG Digital',
     chatMessage: 'Olá, como podemos ajudar?',
     placeholder: 'Escreva sua mensagem...',
@@ -120,40 +120,37 @@ export default function VideoPlayer() {
               </div>
 
               {/* Coluna de Vídeos */}
-              <div className="lg:col-span-6">
-                <div className="relative">
-                  {/* Conteúdo das Abas */}
-                  <div>
-                    {/* Aba 1 */}
-                    <div className={`video-tab ${activeIndex === 0 ? "block" : "hidden"}`} role="tabpanel">
-                      <video className="rounded-xl w-full" controls>
-                        <source src={slides[0].link} type="video/mp4" />
-                        Seu navegador não suporta o vídeo.
-                      </video>
-                    </div>
+              <div className="lg:col-span-6 relative z-10">
+                <div>
+                  {/* Aba 1 */}
+                  <div className={`video-tab ${activeIndex === 0 ? "block" : "hidden"}`} role="tabpanel">
+                    <video className="rounded-xl w-full" controls>
+                      <source src={slides[0].link} type="video/mp4" />
+                      Seu navegador não suporta o vídeo.
+                    </video>
+                  </div>
 
-                    {/* Aba 2 */}
-                    <div className={`video-tab ${activeIndex === 1 ? "block" : "hidden"}`} role="tabpanel">
-                      <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
-                        <source src={slides[1].link} type="video/mp4" />
-                        Seu navegador não suporta o vídeo.
-                      </video>
-                    </div>
+                  {/* Aba 2 */}
+                  <div className={`video-tab ${activeIndex === 1 ? "block" : "hidden"}`} role="tabpanel">
+                    <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
+                      <source src={slides[1].link} type="video/mp4" />
+                      Seu navegador não suporta o vídeo.
+                    </video>
+                  </div>
 
-                    {/* Aba 3 */}
-                    <div className={`video-tab ${activeIndex === 2 ? "block" : "hidden"}`} role="tabpanel">
-                      <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
-                        <source src={slides[2].link} type="video/mp4" />
-                        Seu navegador não suporta o vídeo.
-                      </video>
-                    </div>
+                  {/* Aba 3 */}
+                  <div className={`video-tab ${activeIndex === 2 ? "block" : "hidden"}`} role="tabpanel">
+                    <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
+                      <source src={slides[2].link} type="video/mp4" />
+                      Seu navegador não suporta o vídeo.
+                    </video>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Sobreposição de fundo */}
-            <div className="absolute inset-0 grid grid-cols-12 size-full">
+            <div className="absolute inset-0 grid grid-cols-12 size-full z-20">
               <div className="col-span-full lg:col-span-8 lg:col-start-6 bg-gray-900 w-full h-5/4 sm:h-3/4 lg:h-full opacity-80"></div>
             </div>
           </div>
