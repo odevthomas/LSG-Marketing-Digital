@@ -2,51 +2,18 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
-    },
-    {
       "src": "public/**/*",
       "use": "@vercel/static"
-    }
-  ],
-  "rewrites": [
+    },
     {
-      "source": "/custom-page",
-      "destination": "/public/custom.html"
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
     }
   ],
-  "redirects": [
+  "routes": [
     {
-      "source": "/old-path",
-      "destination": "/new-path",
-      "permanent": true
+      "src": "/(.*)",
+      "dest": "/public/$1"
     }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, PUT, DELETE, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"  // Garantindo que o cabeçalho Authorization seja aceito
-        }
-      ]
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false,
-  
+  ]
 }
