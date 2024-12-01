@@ -120,6 +120,3 @@ A seção de **serviços** descreve as soluções oferecidas pela agência, enqu
 
 O projeto também é preparado para a adição de novas funcionalidades, com uma estrutura de código limpa e organizada que facilita futuras manutenções e expansões.
 
----
-
-Esse `README.md` proporciona um panorama completo do projeto, incluindo como rodá-lo, as tecnologias utilizadas e instruções para personalizar o projeto.
