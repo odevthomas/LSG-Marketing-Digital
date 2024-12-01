@@ -12,7 +12,7 @@ const Modal = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 1000);
+    }, 9000);
 
     // Limpa o timer quando o componente for desmontado
     return () => clearTimeout(timer);
@@ -61,7 +61,7 @@ const Modal = () => {
     <>
       {isOpen && !isConfirmed && (
         <div
-          className="fixed inset-0 z-10 flex items-center justify-center bg-gray-800 bg-opacity-50"
+          className="fixed inset-0 z-99 flex items-center justify-center bg-gray-800 bg-opacity-50"
           role="dialog"
           aria-labelledby="modal-title"
           aria-modal="true"
