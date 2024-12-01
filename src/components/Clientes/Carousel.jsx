@@ -1,164 +1,105 @@
-"use client";
-
 import React, { useState } from "react";
-import FloatingWhatsApp from "../Buttons/FloatingWhatsApp"; // Ajuste o caminho conforme necessário
+import { FaPlay } from "react-icons/fa"; // Ícone de play da biblioteca react-icons
+import { motion } from "framer-motion"; // Importação do motion
+import FloatingWhatsAppComponent from '../Buttons/FloatingWhatsApp'; // Caminho do componente
 
-export default function VideoPlayer() {
+
+export default function VideoTabs() {
+  const [activeTab, setActiveTab] = useState(0); // Estado para controle da aba ativa
+
   const slides = [
     { link: "/videos/1.mov", content: "Depoimento 1" },
     { link: "/videos/3.mp4", content: "Depoimento 2" },
     { link: "/videos/4.mp4", content: "Depoimento 3" },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // Função para mudar o vídeo ao clicar nas bolinhas
-  const handleDotClick = (index) => {
-    setActiveIndex(index);
-  };
-
-  const whatsappInfo = {
-    phoneNumber: '5519981331191',
-    accountName: 'LSG Digital',
-    chatMessage: 'Olá, como podemos ajudar?',
-    placeholder: 'Escreva sua mensagem...',
-    buttonImage: '/avatarwpp.jpeg',
-    buttonColor: 'linear-gradient(45deg, #25D366, #25D366)', 
-    position: 'right',
-    status: 'online', 
+  const handleTabClick = (index) => {
+    setActiveTab(index); // Atualiza a aba ativa
   };
 
   return (
-    <>
-      <section className="section-with-background">
-        <div className="content-wrapper">
-          <div className="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
-            <div className="relative">
-              <div className="max-w-3xl text-center mx-auto">
-                <h1 className="mt-2 block font-medium text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
-                  Histórias de {" "}
-                  <span className="text-[#81ff94]">Sucesso</span>
-                </h1>
-                <p className="mt-2 text-white">
-                  O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <motion.section
+      className="py-16 sm:py-20 md:py-32 bg-cover bg-center relative w-full"
+      style={{
+        backgroundImage: "url('/img/fundo-slide.jpeg')", // Certifique-se de que o caminho da imagem está correto
+      }}
+      aria-labelledby="testimonials"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      {/* Overlay para o fundo escuro */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
 
-        <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-16 mx-auto">
-          <div className="relative p-6 md:p-16">
-            <div className="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
-              {/* Coluna de Texto */}
-              <div
-                id="clientes"
-                className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2"
+      <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto relative z-10">
+        <div className="relative p-6 md:p-16">
+          <div className="relative lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+            {/* Coluna de Texto */}
+            <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+              <h1 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white shadow-md shadow-black">
+                Histórias de {" "}
+                <span className="text-[#81ff94]">Sucesso</span>
+              </h1>
+              <p className="mt-2 text-white text-lg sm:text-xl md:text-2xl leading-relaxed shadow-md shadow-black">
+                O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
+              </p>
+              {/* Navegação das Abas */}
+              <nav
+                className="grid gap-4 mt-5 md:mt-10 text-white"
+                aria-label="Tabs"
+                role="tablist"
+                aria-orientation="vertical"
               >
-                <h2 className="text-2xl sm:text-3xl text-gray-100 font-bold dark:text-neutral-200">
-                  Resultados Reais, Clientes Satisfeitos
-                </h2>
-                <p className="mt-2 text-gray-100 dark:text-neutral-500">
-                  Confira o que nossos clientes têm a dizer sobre a experiência com a nossa equipe e como nossas soluções de marketing digital ajudaram a alavancar os negócios deles.
-                </p>
-
-                {/* Navegação das Abas */}
-                <nav
-                  className="grid gap-6 mt-6 md:mt-10"
-                  aria-label="Depoimentos de Clientes"
-                  role="tablist"
-                  aria-orientation="vertical"
-                >
-                  {/* Aba 1: Aumento nas Vendas */}
+                {slides.map((slide, index) => (
                   <button
+                    key={index}
                     type="button"
-                    className="tab-button text-start hover:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-orange-800 focus:ring-opacity-50 p-5 md:p-6 rounded-xl transition-all duration-300 ease-in-out"
-                    onClick={() => handleDotClick(0)}
+                    className={`flex items-center gap-3 hover:bg-[#81ff94] focus:outline-none focus:bg-[#81ff94] p-4 md:p-5 rounded-xl transition-all duration-300 ease-in-out ${
+                      activeTab === index ? "bg-[#00a859] shadow-lg" : "bg-[#2d2d2d]"
+                    }`}
+                    onClick={() => handleTabClick(index)}
                   >
-                    <span className="grow">
-                      <span className="block text-lg font-semibold text-gray-800 hover:text--600 transition-all duration-300 ease-in-out">
-                        Aumento nas Vendas
-                      </span>
-                      <span className="block mt-1 text-gray-200">
-                        Ajudamos nossos clientes a melhorar suas vendas através de estratégias eficazes de marketing digital.
-                      </span>
+                    {/* Ícone Play */}
+                    <FaPlay className="text-white text-lg" />
+                    <span className="text-white font-medium">
+                      Assista ao {slide.content}
                     </span>
                   </button>
+                ))}
+              </nav>
+              {/* Fim Navegação das Abas */}
+            </div>
+            {/* Fim Coluna de Texto */}
 
-                  {/* Aba 2: Satisfação e Reconhecimento */}
-                  <button
-                    type="button"
-                    className="tab-button text-start hover:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-orange-800 focus:ring-opacity-50 p-5 md:p-6 rounded-x transition-all duration-300 ease-in-out"
-                    onClick={() => handleDotClick(1)}
-                  >
-                    <span className="grow">
-                      <span className="block text-lg font-semibold text-gray-800 hover:text--600 transition-all duration-300 ease-in-out">
-                        Satisfação e Reconhecimento
-                      </span>
-                      <span className="block mt-1 text-gray-200">
-                        Clientes satisfeitos são nosso maior reconhecimento. Veja como conseguimos transformar negócios.
-                      </span>
-                    </span>
-                  </button>
-
-                  {/* Aba 3: Gestão de Tráfego Pago */}
-                  <button
-                    type="button"
-                    className="tab-button text-start hover:bg-gray-900 focus:outline-none focus:ring-1 focus:ring-orange-800 focus:ring-opacity-50 p-5 md:p-6 rounded-x transition-all duration-300 ease-in-out"
-                    onClick={() => handleDotClick(2)}
-                  >
-                    <span className="grow">
-                      <span className="block text-lg font-semibold text-gray-800 hover:text--600 transition-all duration-300 ease-in-out">
-                        Gestão de Tráfego Pago
-                      </span>
-                      <span className="block mt-1 text-gray-100">
-                        A estratégia de tráfego pago foi a chave para o sucesso de muitos de nossos clientes.
-                      </span>
-                    </span>
-                  </button>
-                </nav>
-              </div>
-
-              {/* Coluna de Vídeos */}
-              <div className="lg:col-span-6 relative z-10">
+            {/* Coluna de Vídeos */}
+            <div className="lg:col-span-6">
+              <div className="relative">
+                {/* Conteúdo das Abas */}
                 <div>
-                  {/* Aba 1 */}
-                  <div className={`video-tab ${activeIndex === 0 ? "block" : "hidden"}`} role="tabpanel">
-                    <video className="rounded-xl w-full" controls>
-                      <source src={slides[0].link} type="video/mp4" />
-                      Seu navegador não suporta o vídeo.
-                    </video>
-                  </div>
-
-                  {/* Aba 2 */}
-                  <div className={`video-tab ${activeIndex === 1 ? "block" : "hidden"}`} role="tabpanel">
-                    <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
-                      <source src={slides[1].link} type="video/mp4" />
-                      Seu navegador não suporta o vídeo.
-                    </video>
-                  </div>
-
-                  {/* Aba 3 */}
-                  <div className={`video-tab ${activeIndex === 2 ? "block" : "hidden"}`} role="tabpanel">
-                    <video className="shadow-xl shadow-gray-200 rounded-xl w-full" controls>
-                      <source src={slides[2].link} type="video/mp4" />
-                      Seu navegador não suporta o vídeo.
-                    </video>
-                  </div>
+                  {slides.map((slide, index) => (
+                    <div
+                      key={index}
+                      className={`tab-content ${activeTab === index ? "block" : "hidden"}`}
+                      id={`tab-content-${index}`}
+                      role="tabpanel"
+                      aria-labelledby={`tabs-item-${index}`}
+                    >
+                      <video className="shadow-xl rounded-xl w-full" controls>
+                        <source src={slide.link} type="video/mp4" />
+                        Seu navegador não suporta o vídeo.
+                      </video>
+                    </div>
+                  ))}
                 </div>
+                {/* Fim Conteúdo das Abas */}
               </div>
             </div>
-
-            {/* Sobreposição de fundo */}
-            <div className="absolute inset-0 grid grid-cols-12 size-full z-20">
-              <div className="col-span-full lg:col-span-8 lg:col-start-6 bg-gray-900 w-full h-5/4 sm:h-3/4 lg:h-full opacity-80"></div>
-            </div>
+            {/* Fim Coluna de Vídeos */}
           </div>
         </div>
-      </section>
+      </div>
+          <FloatingWhatsAppComponent />
 
-      {/* FloatingWhatsApp Component */}
-      <FloatingWhatsApp />
-    </>
+    </motion.section>
   );
 }

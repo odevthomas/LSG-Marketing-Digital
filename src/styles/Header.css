@@ -1,0 +1,158 @@
+/* Estilo geral para o Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #030303FF;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  z-index: 10;
+}
+
+/* Logo */
+.logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Menu de navegação */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #81ff94;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00F324FF; /* Cor de destaque para o hover */
+}
+
+/* Estilo para os avatares de certificação e parcerias */
+.certificates {
+  display: flex;
+  gap: 10px;
+}
+
+.certificates .relative {
+  margin-top: 10px;
+}
+
+.certificates img {
+  max-width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Descrição para os avatares */
+.certificates p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #81ff94;
+  border-radius: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Menu de navegação em tela pequena */
+  .nav-links {
+    position: absolute;
+    top: 140px;
+    right: 0;
+    background-color: #0c0c0c;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  /* Mostrar o ícone do hambúrguer */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Exibir descrição nas telas pequenas */
+  .certificates p {
+    display: block;
+    color: #0c0c0c;
+    margin-top: 15px;
+  }
+}
+
+/* Estilo para o avatar dentro do Header */
+.avatar-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.avatar-container .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #25D366;
+}
+
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animação dos Avatares (usando framer-motion) */
+.motion-div {
+  transition: transform 0.3s ease;
+}
+
+.motion-div:hover {
+  transform: scale(1.1);
+}
+
+/* Avatares com border */
+.avatar-border {
+  border: 3px solid #25D366;
+  box-shadow: 0 4px 8px rgba(57, 57, 57, 0.979);
+}

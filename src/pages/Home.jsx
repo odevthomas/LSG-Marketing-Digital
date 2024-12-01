@@ -6,6 +6,8 @@ import CouponModal from "../components/ModalComponent";
 import Footer from "../components/Footer";
 import ImageCarousel from "../components/Clientes/ImageCarousel";
 import Navbar from "../components/Navbar";
+import CookieConsent from '../components/CookieConsent'; // Caminho do arquivo
+
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -48,6 +50,7 @@ const Home = () => {
 
       {/* Modal de Cupom */}
       <CouponModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
+        <CookieConsent />
     </>
   );
 };

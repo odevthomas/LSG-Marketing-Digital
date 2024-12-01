@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/HeroSection.css'
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -21,12 +22,12 @@ const HeroSection = () => {
         onError={() => console.error("Erro ao carregar o vídeo.")}
         onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
       >
-        <source src="/video/abertura.mp4" type="video/mp4" />
+        <source src="/video/abertura1.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 
-      {/* Camada de sobreposição */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+      {/* Camada de sobreposição com opacidade ajustada */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div> {/* Menos opacidade para melhorar a visibilidade do vídeo */}
 
       {/* Texto principal sobre o vídeo */}
       <div className="relative z-10 text-white px-4">

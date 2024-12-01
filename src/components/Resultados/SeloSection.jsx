@@ -48,7 +48,7 @@ const SeloSection = () => {
             transition={{ duration: 0.5, delay: 1 }}
           >
             <a
-              href="https://novolink.com" // Link do botão
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber com funciona" // Link do botão
               className="inline-flex items-center py-3 px-6 bg-black text-white hover:bg-[#1DA65D] rounded-lg shadow-md transition-all duration-300"
               aria-label="Descubra mais"
             >

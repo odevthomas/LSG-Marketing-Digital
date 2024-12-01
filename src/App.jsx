@@ -1,10 +1,11 @@
-import React from 'react';  // Adicione isso
+import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import ContactForm from './components/Formularios/FormularioContato';
 import HomeVideo from './pages/HomeVideo';
 import Home from './pages/Home';
 import Services from './pages/Servicos';
 import Resultados from './pages/Resultados';
+import { Link } from 'react-router-dom'; // Importando o Link
 
 import './styles/App.css';
 import './styles/index.css';

@@ -1,88 +1,103 @@
-import { motion } from 'framer-motion';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import CertificadoAvatar from '../components/CertificadoAvatar'; // Ajuste o caminho conforme necessário
+import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Importando Link para navegação interna
+import * as Avatar from "@radix-ui/react-avatar";
+import { motion } from "framer-motion";
+import '../styles/Header.css';  // Para adicionar o estilo CSS
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+// Dados dos avatares (certificados e parcerias)
+const avatarData = [
+  {
+    name: "Google Ads",
+    imgURL: "https://static.vecteezy.com/system/resources/previews/025/732/723/non_2x/google-ads-logo-icon-free-vector.jpg",
+  },
+  {
+    name: "Meta",
+    imgURL: "https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png",
+  },
+  {
+    name: "Kommo",
+    imgURL: "https://d3v6byorcue2se.cloudfront.net/contents/KRsHs1KMsDqSwFEaCqAD50E0TIvxHBvjbmgVCQOR.png",
+  },
+];
 
-  // Caminhos das rotas no React Router
-  const navigation = [
-    { title: "Clientes", path: "/Home" },
-    { title: "Resultados", path: "/resultados" },
-    { title: "Serviços", path: "/servicos" },
-  ];
+// Definindo os itens de navegação
+const navigation = [
+  { title: "Clientes", path: "/home" },
+  { title: "Resultados", path: "/resultados" },
+  { title: "Serviços", path: "/servicos" },
+];
 
-  const handleLinkClick = () => {
-    if (isOpen) setIsOpen(false); // Fecha o menu ao clicar em um link
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Função para alternar o estado do menu hamburguer
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
-    <nav className="bg-black w-full border-b md:border-0 hover:opacity-75 z-10">
-      <div className="flex items-center justify-between px-4 py-4 md:py-4 max-w-screen-2xl mx-auto md:px-8">
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <motion.img
-            src="/img/logo-2.png"
-            width={50}
-            height={60}
-            alt="LSG logo"
-            className="shadow-none"
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          />
+    <header className="header">
+      {/* Logo com Link para a página inicial */}
+      <div className="logo">
+        <Link to="/">  {/* Link para a página inicial */}
+          <img src="/img/logo-2.png" alt="Logo" />
         </Link>
+      </div>
 
-        {/* CertificadoAvatar - Centralizado */}
-        <div className="flex flex-1 justify-center md:absolute top-0 left-1/2 transform -translate-x-1/2">
-          <CertificadoAvatar />
-        </div>
+      {/* Navegação principal */}
+      <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <ul>
+          {navigation.map((item, idx) => (
+            <li key={idx}>
+              <Link to={item.path}>{item.title}</Link> {/* Usando Link para navegação interna */}
+            </li>
+          ))}
+        </ul>
+      </nav>
 
-        {/* Menu Toggle Button (Hambúrguer) para mobile */}
-        <div className="md:hidden flex items-center">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
-        </div>
-
-        {/* Menu de navegação para dispositivos móveis e desktop */}
-        <div
-          className={`flex items-center ${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-6 space-x-4`}
-        >
-          <ul className="flex items-center space-x-10">
-            {navigation.map((item, idx) => (
-              <li key={idx} className="text-white hover:opacity-75 transition duration-200">
-                <Link
-                  to={item.path}
-                  onClick={handleLinkClick}
-                  className="hover:text-green-600"
+      {/* Avatares de Certificados e Parcerias */}
+      <div className="certificates">
+        <div className="flex flex-col md:flex-row items-center p-6">
+          <div className="flex items-center -space-x-2">
+            {avatarData.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.3, delay: idx * 0.1 }}
+                className="relative"
+              >
+                <Avatar.Root
+                  className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#25D366]"
                 >
-                  {item.title}
-                </Link>
-              </li>
+                  <Avatar.Image
+                    src={item.imgURL}
+                    className="h-full w-full object-cover"
+                  />
+                  <Avatar.Fallback delayMs={600}>{item.name}</Avatar.Fallback>
+                </Avatar.Root>
+              </motion.div>
             ))}
-          </ul>
+          </div>
+          <motion.p
+            className="text-sm text-white font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            Certificações e Parcerias
+          </motion.p>
         </div>
       </div>
-    </nav>
+
+      {/* Ícone de menu hambúrguer */}
+      <div className="hamburger" onClick={toggleMenu}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </div>
+    </header>
   );
 };
 
-export default Navbar;
+export default Header;
