@@ -625,6 +625,11 @@ px-4 {
   z-index: 10; /* Z-index baixo para não sobrepor o conteúdo principal */
 }
 
+.section-with-background {
+  position: relative;
+  z-index: 20; /* Z-index maior para ficar acima do header */
+}
+
 .hero-background video {
   object-fit: cover;
   width: 100%;
