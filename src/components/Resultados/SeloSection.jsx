@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 
 const SeloSection = () => {
-  const image = "/assets/garantia.png"; // Caminho da imagem
+  const image = "./src/assets/garantia.png"; // Caminho da imagem
 
   return (
     <section className="bg-white py-12 px-6 lg:px-16">
@@ -20,7 +20,7 @@ const SeloSection = () => {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-700"
+            className="text-lg text-black"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
