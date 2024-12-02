@@ -1,54 +1,116 @@
 .hero-background {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #000; /* Fallback para desktop */
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que o vídeo cubra completamente */
+    z-index: 1;
+    opacity: 0.4; /* Ajuste para menos opacidade */
+    filter: blur(8px);
 }
 
-/* Garante que o vídeo seja mostrado em telas menores e maiores */
-@media (max-width: 768px) {
-  .video-background {
-    display: block; /* O vídeo será exibido mesmo em telas menores */
-  }
-
-  .hero-background {
-    background-color: #000; /* Sem fundo cinza, só o vídeo */
-  }
+.price-highlight {
+    font-weight: bold;
+    font-size: 4rem; 
+    color: #ffb23e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-/* Estilos para a parte do texto */
-h1, p {
-  z-index: 1;
+.hero-background h1,
+.hero-background p,
+.hero-button {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0;
+    position: relative;
+    z-index: 2;
 }
 
-/* Ajustes gerais para responsividade */
-@media (max-width: 768px) {
-  /* Ajusta o tamanho das fontes para telas menores */
-  h1 {
-    font-size: 2rem;
-  }
+.hero-background h1 {
+    font-size: 3.5rem; 
+    font-weight: 700; 
+    line-height: 1.2; 
+}
 
-  p {
-    font-size: 1rem;
-  }
+.hero-background p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500; 
+}
 
-  /* Ajusta o layout do botão e conteúdo em telas pequenas */
-  .flex {
-    flex-direction: column;
-  }
+.hero-button {
+    background-color: #ffb23e;
+    color: rgb(246, 246, 246); 
+    padding: 12px 24px; 
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem; 
+    z-index: 3;
+}
+
+.hero-button:hover {
+    background-color: #00ff11; 
+    transform: scale(1.05);
+    color: aliceblue;
+}
+
+@media (max-width: 1024px) {
+    .hero-background h1 {
+        font-size: 2.8rem; 
+    }
+
+    .hero-background p {
+        font-size: 1.25rem;
+    }
+
+    .hero-button {
+        font-size: 1.2rem; 
+        padding: 10px 20px; 
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-background h1 {
+        font-size: 2.2rem; 
+    }
+
+    .hero-background p {
+        font-size: 1rem;
+    }
+
+    .price-highlight {
+        font-size: 1.5rem;
+    }
+
+    .hero-button {
+        font-size: 1rem; 
+        padding: 8px 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .video-background {
+        filter: blur(4px); 
+    }
+
+    .hero-background h1 {
+        font-size: 1.8rem; 
+    }
+
+    .hero-background p {
+        font-size: 0.9rem; 
+    }
 }
