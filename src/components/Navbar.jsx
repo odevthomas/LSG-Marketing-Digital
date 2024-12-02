@@ -58,7 +58,7 @@ const Header = () => {
       {/* Avatares de Certificados e Parcerias */}
       <div className="certificates">
         <div className="flex flex-col md:flex-row items-center p-6">
-          <div className="flex items-center -space-x-2">
+          <div className="flex items-center text-white -space-x-2">
             {avatarData.map((item, idx) => (
               <motion.div
                 key={idx}
@@ -80,7 +80,7 @@ const Header = () => {
             ))}
           </div>
           <motion.p
-            className="text-sm text-gray-100 font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
+            className=" text-gray-100 font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
