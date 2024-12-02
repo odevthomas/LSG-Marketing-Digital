@@ -72,7 +72,7 @@ const Statistics = () => {
     }, []); // Executa apenas uma vez, quando o componente é montado
 
     return (
-        <section className="py-14 my-8 bg-[#010101]" aria-labelledby="impacto-global">
+        <section className="py-14 bg-[#000]">
             <motion.h2
                 id="impacto-global"
                 className="text-center text-3xl font-bold text-white mb-8"
@@ -82,7 +82,7 @@ const Statistics = () => {
             >
                 Nosso Impacto Global
             </motion.h2>
-            
+
             <ul className="flex flex-col items-center justify-center gap-y-10 sm:flex-row sm:flex-wrap lg:divide-x" aria-live="polite">
                 {stats.map((item, idx) => (
                     <motion.li
@@ -101,7 +101,7 @@ const Statistics = () => {
             </ul>
 
             <motion.div
-                className="mt-8 text-center text-indigo-600"
+                className="text-center text-indigo-600 mt-10"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: stats.length * 0.3 }}

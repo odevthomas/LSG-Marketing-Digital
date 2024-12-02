@@ -38,8 +38,8 @@ const SectionResultados = () => {
       {/* Camada para escurecer o fundo */}
       <div className="absolute inset-0 bg-black opacity-50 z-10" />
 
-      <div className="relative w-full px-4 md:px-8 z-40">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-x-12 w-full">
+      <div className="relative w-full px-4 md:px-4 z-40">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-x-5 w-full">
           {/* Texto do depoimento */}
           <div className="text-center lg:text-left max-w-2xl px-4 space-y-5 mt-6 lg:max-w-2xl w-full">
             <motion.h3
@@ -118,7 +118,7 @@ const SectionResultados = () => {
                   <img
                     src={image}
                     alt={`Depoimento do cliente ${index + 1}`}
-                    className="rounded-lg object-cover mt-28 w-full h-[300px] sm:h-[300px] md:h-[450px] lg:h-[400px] shadow-lg" // Ajuste da altura das imagens
+                    className="rounded-lg object-cover  w-full h-[300px] sm:h-[300px] md:h-[450px] lg:h-[400px] shadow-lg" // Ajuste da altura das imagens
                   />
                 </motion.div>
               ))}

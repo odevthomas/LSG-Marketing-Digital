@@ -1,34 +1,76 @@
-import React, { useEffect, useRef } from 'react';
-import KeenSlider from 'keen-slider';  // Remova a importação de 'KeenSliderInstance'
-import 'keen-slider/keen-slider.min.css';
+import React, { useEffect, useRef } from "react";
+import Avatar from "boring-avatars";
+import KeenSlider from "keen-slider"; // Importando KeenSlider
+import "keen-slider/keen-slider.min.css"; // Estilo do KeenSlider
 
-const ClientSlide = ({ imgSrc, clientName, username, testimonial }) => (
-  <div className="keen-slider__slide">
-    <div className="flex flex-col justify-between bg-white p-6 shadow-sm sm:p-8 lg:p-12">
-      <div className="flex items-center space-x-4">
-        <img
-          className="w-12 h-12 rounded-full object-cover"
-          src={imgSrc}
-          alt={clientName}
-        />
-        <div className="text-sm">
-          <p className="font-bold text-black">{clientName}</p>
-          <p className="text-black">@{username}</p>
+const ClientSlide = ({ clientName, username, testimonial }) => {
+  return (
+    <div className="keen-slider__slide">
+      <div className="bg-white p-6 shadow-sm sm:p-8 lg:p-12 w-full">
+        <div className="flex items-center space-x-4">
+          <Avatar name={clientName} size={88} variant="marble" />
+          <div className="text-sm">
+            <p className="font-bold text-black">{clientName}</p>
+            <p className="text-black">@{username}</p>
+          </div>
         </div>
+        <p className="mt-4 text-black">{testimonial}</p>
       </div>
-      <p className="mt-4 text-black">{testimonial}</p>
     </div>
-  </div>
-);
+  );
+};
 
 const ClientAvaliacao = () => {
   const sliderRef = useRef(null);
-  const sliderInstance = useRef(null);  // Remova a referência para 'KeenSliderInstance'
+  const sliderInstance = useRef(null);
+
+  const testimonials = [
+    {
+      clientName: "Amo Vacinas",
+      username: "amovacinasoficial",
+      testimonial:
+        "A experiência foi excelente, nossa empresa cresceu muito desde que começamos a trabalhar com eles!",
+    },
+    {
+      clientName: "Tom Minnicelli",
+      username: "tominnicelli",
+      testimonial:
+        "Simplesmente incrível! Nos ajudaram a aumentar nosso alcance digital em menos de 6 meses.",
+    },
+    {
+      clientName: "Novo Cliente",
+      username: "novocliente",
+      testimonial:
+        "Os resultados foram além das nossas expectativas, nossa visibilidade online nunca esteve melhor!",
+    },
+    {
+      clientName: "Jéssica Rocha",
+      username: "jessicarocha",
+      testimonial:
+        "Trabalhar com a equipe da LSG Digital foi um divisor de águas para o meu negócio!",
+    },
+    {
+      clientName: "André Martins",
+      username: "andremartins",
+      testimonial:
+        "Excelente! O time é super profissional e atencioso. Só tenho a agradecer!",
+    },
+  ];
 
   useEffect(() => {
     if (sliderRef.current) {
       sliderInstance.current = new KeenSlider(sliderRef.current, {
         loop: true,
+        slidesPerView: 2, // Mostrar 2 slides de cada vez em telas grandes
+        spacing: 20, // Espaço entre os slides
+        breakpoints: {
+          640: {
+            slidesPerView: 1, // Mostrar 1 slide por vez em telas pequenas
+          },
+          1024: {
+            slidesPerView: 2, // Mostrar 2 slides por vez em telas médias/grandes
+          },
+        },
       });
     }
 
@@ -41,73 +83,42 @@ const ClientAvaliacao = () => {
   const handleNextSlide = () => sliderInstance.current?.next();
 
   return (
-    <section className="bg-black">
-      <div className="mx-auto max-w-[1740px] px-4 py-12 sm:px-6 lg:me-0 lg:py-16 lg:pe-0 lg:ps-8 xl:py-24">
+    <section className="bg-[#1f1f1f] py-12 lg:py-16 xl:py-24 w-full">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
           <div className="max-w-xl text-center sm:text-left">
             <h2 className="text-3xl font-bold tracking-tight text-[#81ff94] sm:text-4xl">
               Nossos Clientes!
             </h2>
             <p className="mt-4 text-white">
-              Conheça nossos maiores clientes! Veja como eles têm aproveitado nossos serviços.
+              Conheça nossos maiores clientes! Veja como eles têm aproveitado
+              nossos serviços.
             </p>
-            <div className="hidden lg:mt-8 lg:flex lg:gap-4">
-              <button
-                aria-label="Previous slide"
-                onClick={handlePrevSlide}
-                className="rounded-full p-3 transition hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m14 16-4-4 4-4" />
-                </svg>
-              </button>
-              <button
-                aria-label="Next slide"
-                onClick={handleNextSlide}
-                className="rounded-full p-3 transition hover:text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#000"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="m10 8 4 4-4 4" />
-                </svg>
-              </button>
-            </div>
           </div>
-          <div className="-mx-6 lg:col-span-2 lg:mx-0">
+          <div className="-mx-6 lg:col-span-2 lg:mx-0 w-full">
             <div ref={sliderRef} className="keen-slider">
-              <ClientSlide
-                imgSrc="/ImgInstagram/amovacinasoficial.jpg"
-                clientName="Amo Vacinas"
-                username="amovacinasoficial"
-                testimonial="A experiência foi excelente, nossa empresa cresceu muito desde que começamos a trabalhar com eles!"
-              />
-              <ClientSlide
-                imgSrc="/ImgInstagram/tominnicelli.jpg"
-                clientName="Tom Minnicelli"
-                username="tominnicelli"
-                testimonial="Simplesmente incrível! Nos ajudaram a aumentar nosso alcance digital em menos de 6 meses."
-              />
+              {testimonials.map((testimonial, index) => (
+                <ClientSlide
+                  key={index}
+                  clientName={testimonial.clientName}
+                  username={testimonial.username}
+                  testimonial={testimonial.testimonial}
+                />
+              ))}
+            </div>
+            <div className="flex justify-center gap-4 mt-6">
+              <button
+                onClick={handlePrevSlide}
+                className="p-3 rounded-full bg-[#25D366] text-white transition hover:bg-[#128C7E]"
+              >
+                Anterior
+              </button>
+              <button
+                onClick={handleNextSlide}
+                className="p-3 rounded-full bg-[#25D366] text-white transition hover:bg-[#128C7E]"
+              >
+                Próximo
+              </button>
             </div>
           </div>
         </div>

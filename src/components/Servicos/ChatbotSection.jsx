@@ -12,7 +12,7 @@ const ChatbotSection = () => {
       style={{ backgroundImage: "url('/img/7.jpeg')" }} // Certifique-se de que o caminho está correto
     >
       <motion.div
-        className="relative z-20 gap-9 items-start lg:flex py-10 px-6 rounded-lg"
+        className="relative z-1 gap-9 items-start lg:flex py-10 px-6 rounded-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, type: "spring", stiffness: 100 }}

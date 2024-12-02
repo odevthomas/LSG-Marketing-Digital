@@ -22,30 +22,16 @@ const Home = () => {
 
   return (
     <>
-      {/* Navbar */}
       <Navbar />
 
-      {/* Carousel */}
-      <section>
         <Carousel />
-      </section>
 
-      {/* Avaliação */}
-      <section style={{ margin: "20px 0" }}>
         <Avaliacao />
-      </section>
 
-      {/* Avaliação de Clientes */}
-      <section style={{ margin: "20px 0" }}>
         <ClientAvaliacao />
-      </section>
 
-      {/* Carrossel de Imagens (Clientes) */}
-      <section style={{ margin: "20px 0" }}>
         <ImageCarousel />
-      </section>
 
-      {/* Footer */}
       <Footer />
 
       {/* Modal de Cupom */}

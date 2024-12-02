@@ -49,7 +49,7 @@ const FormularioDeContato = () => {
             {/* Formulário movido para o lado direito */}
             <div className="mt-8 lg:w-1/2 lg:mx-6 lg:order-first">
               <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-xl rounded-xl">
-                <h1 className="text-xl font-medium text-gray-700">
+                <h1 className="text-xl font-medium text-gray-100">
                   Formulário de Contato
                 </h1>
                 <p className="mt-2 text-gray-500">
@@ -76,7 +76,7 @@ const FormularioDeContato = () => {
                       id="name"
                       name="name"
                       placeholder="João da Silva"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -94,7 +94,7 @@ const FormularioDeContato = () => {
                       id="email"
                       name="email"
                       placeholder="joaodasilva@exemplo.com"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -112,7 +112,7 @@ const FormularioDeContato = () => {
                       id="phone"
                       name="phone"
                       placeholder="(99) 99999-9999"
-                      className="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -129,7 +129,7 @@ const FormularioDeContato = () => {
                       id="message"
                       name="message"
                       placeholder="Sua mensagem aqui..."
-                      className="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-48 focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full h-32 px-5 py-3 mt-2 text-gray-800 placeholder-gray-600 bg-white border border-gray-200 rounded-md md:h-48 focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>

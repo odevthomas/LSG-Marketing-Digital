@@ -1,42 +1,74 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/HeroSection.css';
 
 const HeroSection = () => {
   const navigate = useNavigate();
+  const [videoError, setVideoError] = useState(false);
+
+  useEffect(() => {
+    // Verifica se o vídeo foi carregado corretamente
+    const videoElement = document.getElementById('hero-video');
+    videoElement.onerror = () => {
+      setVideoError(true); // Caso haja erro no carregamento, habilita o fallback
+    };
+  }, []);
 
   return (
     <section
-      className="hero-section flex flex-col items-center justify-center h-screen text-center p-4"
+      className="hero-section flex flex-col items-center justify-center h-screen text-center p-4 relative"
       aria-label="Seção Principal - Transformação Digital"
     >
-      <h1 className="text-3xl text-white md:text-5xl font-bold mb-4">
-        Transforme sua Presença Digital Hoje!
-      </h1>
-      <p className="text-base text-white md:text-lg mb-2">
-        Descubra soluções inovadoras e acessíveis para o seu negócio:
-      </p>
-      <p className="text-sm text-white md:text-md mb-4">
-        <span className="text-xs md:text-sm ml-2">A partir de </span>
-        <span className="price-highlight text-5xl font-semibold text-[#81ff94]">
-          R$ 599/mês
-        </span>
-      </p>
+      {/* Vídeo de fundo */}
+      <video
+        id="hero-video"
+        autoPlay
+        loop
+        muted
+        className="hero-section video w-full h-full object-cover absolute inset-0"
+        aria-label="Vídeo de fundo sobre transformação digital"
+      >
+        <source src="/videos/abertura1.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
 
-      {/* Botões de ação */}
-      <div className="flex flex-col md:flex-row items-center justify-center mt-6">
-        <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-5">
-          Comece sua Jornada!
-        </span>
+      {/* Caso o vídeo falhe no carregamento, um fallback será mostrado */}
+      {videoError && (
+        <div className="hero-section-fallback bg-black bg-opacity-70 w-full h-full flex items-center justify-center absolute inset-0">
+          <p className="text-white text-xl font-semibold">O vídeo não pôde ser carregado. Por favor, tente novamente mais tarde.</p>
+        </div>
+      )}
 
-        {/* Botão */}
-        <button
-          aria-label="Clique para conhecer os serviços"
-          className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
-          onClick={() => navigate('/home')}
-        >
-          Clique e Conheça
-        </button>
+      {/* Conteúdo sobre o vídeo */}
+      <div className="content relative z-10 text-center px-4 py-8 md:px-12">
+        <h1 className="text-3xl text-white md:text-5xl font-bold mb-4">
+          Transforme sua Presença Digital Hoje!
+        </h1>
+        <p className="text-base text-white md:text-lg mb-2">
+          Descubra soluções inovadoras e acessíveis para o seu negócio:
+        </p>
+        <p className="text-sm text-white md:text-md mb-4">
+          <span className="text-xs md:text-sm ml-2">A partir de </span>
+          <span className="price-highlight text-5xl font-semibold text-[#81ff94]">
+            R$ 599/mês
+          </span>
+        </p>
+
+        {/* Botões de ação */}
+        <div className="flex flex-col md:flex-row items-center justify-center mt-6">
+          <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-5">
+            Comece sua Jornada!
+          </span>
+
+          {/* Botão */}
+          <button
+            aria-label="Clique para conhecer os serviços"
+            className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
+            onClick={() => navigate('/home')}
+          >
+            Clique e Conheça
+          </button>
+        </div>
       </div>
     </section>
   );
