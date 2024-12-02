@@ -23,7 +23,7 @@ const WhatsAppButton = () => {
     width: "60px",
     height: "60px",
     cursor: "pointer",
-    zIndex: 9999,
+    zIndex: 99,
   };
 
   const chatboxStyle = {
