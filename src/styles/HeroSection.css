@@ -19,6 +19,7 @@
   z-index: 5; /* Garante que o fallback fique abaixo do vídeo */
 }
 
+
 /* Estilo para o vídeo que ocupa a tela toda */
 .hero-section video {
   position: absolute;
@@ -26,8 +27,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz com que o vídeo cubra toda a área sem distorcer, mantendo o aspecto */
+  object-fit: cover; /* Faz com que o vídeo cubra toda a área sem distorcer */
   z-index: 1; /* O vídeo fica atrás do conteúdo */
+}
+
+/* Conteúdo da seção Hero que aparece sobre o vídeo */
+.hero-section .content {
+  position: relative;
+  z-index: 10; /* Garante que o conteúdo esteja acima do vídeo */
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  padding: 0 1rem;
 }
 
 .hero-section .content {
@@ -37,4 +48,33 @@
 
 .price-highlight {
   color: var(--primary-color); /* A cor do preço em destaque */
+}
+/* Responsividade para telas menores */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: 100vh; /* Garantir que ocupe a tela inteira */
+  }
+
+  .hero-section video {
+    object-fit: cover; /* O vídeo vai cobrir toda a área sem distorcer */
+  }
+
+  .hero-section .content {
+    font-size: 1.5rem; /* Ajustar o tamanho da fonte para telas menores */
+    padding: 0 0.5rem;
+  }
+}
+
+/* Responsividade para telas médias (tablets) */
+@media (max-width: 1024px) {
+  .hero-section .content {
+    font-size: 1.8rem; /* Ajuste do tamanho da fonte para tablets */
+  }
+}
+
+/* Estilos adicionais para telas grandes */
+@media (min-width: 1025px) {
+  .hero-section .content {
+    font-size: 2.5rem; /* Ajuste do tamanho da fonte para telas grandes */
+  }
 }

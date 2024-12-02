@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/HeroSection.css';
+import '../styles/HeroSection.css'; // Assumindo que você já tenha o arquivo CSS
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const HeroSection = () => {
         autoPlay
         loop
         muted
-        className="hero-section video w-full h-full object-cover absolute inset-0"
+        className="hero-section-video w-full h-full object-cover absolute inset-0"
         aria-label="Vídeo de fundo sobre transformação digital"
       >
         <source src="/videos/abertura1.mp4" type="video/mp4" />
@@ -35,7 +35,9 @@ const HeroSection = () => {
       {/* Caso o vídeo falhe no carregamento, um fallback será mostrado */}
       {videoError && (
         <div className="hero-section-fallback bg-black bg-opacity-70 w-full h-full flex items-center justify-center absolute inset-0">
-          <p className="text-white text-xl font-semibold">O vídeo não pôde ser carregado. Por favor, tente novamente mais tarde.</p>
+          <p className="text-white text-xl font-semibold">
+            O vídeo não pôde ser carregado. Por favor, tente novamente mais tarde.
+          </p>
         </div>
       )}
 
