@@ -10,27 +10,15 @@ const HeroSection = () => {
       className="relative flex flex-col items-center justify-center h-screen text-center p-4 hero-background"
       aria-label="Seção Principal - Transformação Digital"
     >
-      {/* Vídeo de fundo */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        className="absolute top-0 left-0 w-full h-full object-cover"
-        aria-label="Vídeo de fundo mostrando transformação digital"
-        onError={() => console.error("Erro ao carregar o vídeo.")}
-        onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
-      >
+     
+
+div className="flex flex-col items-center justify-center h-screen text-center p-4 relative hero-background">
+      <video autoPlay loop muted className="video-background">
         <source src="/abertura1.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 
-      {/* Camada de sobreposição com opacidade ajustada */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div> {/* Menos opacidade para melhorar a visibilidade do vídeo */}
 
-      {/* Texto principal sobre o vídeo */}
-      <div className="relative z-10 text-white px-4">
         <h1 className="text-3xl  text-white md:text-5xl font-bold mb-4">
           Transforme sua Presença Digital Hoje!
         </h1>
