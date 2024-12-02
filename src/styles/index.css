@@ -16,8 +16,8 @@
 /* Corpo e fundo */
 body {
   font-family: 'Inter', Arial, sans-serif; /* Fonte principal */
-  background-color: var(--gray-light); /* Cor de fundo clara */
-  color: var(--gray-dark); /* Texto escuro por padrão */
+  background-color: var(--gray-dark); /* Cor de fundo clara */
+  color: var(--gray-light); /* Texto escuro por padrão */
   margin: 0;
   padding: 0;
 }
