@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/HeroSection.css'
+import '../styles/HeroSection.css';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -10,16 +10,13 @@ const HeroSection = () => {
       className="relative flex flex-col items-center justify-center h-screen text-center p-4 hero-background"
       aria-label="Seção Principal - Transformação Digital"
     >
-     
+      <div className="flex flex-col items-center justify-center h-screen text-center p-4 relative hero-background">
+        <video autoPlay loop muted className="video-background">
+          <source src="/abertura1.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
 
-div className="flex flex-col items-center justify-center h-screen text-center p-4 relative hero-background">
-      <video autoPlay loop muted className="video-background">
-        <source src="/abertura1.mp4" type="video/mp4" />
-        Seu navegador não suporta vídeo.
-      </video>
-
-
-        <h1 className="text-3xl  text-white md:text-5xl font-bold mb-4">
+        <h1 className="text-3xl text-white md:text-5xl font-bold mb-4">
           Transforme sua Presença Digital Hoje!
         </h1>
         <p className="text-base text-white md:text-lg mb-2">
