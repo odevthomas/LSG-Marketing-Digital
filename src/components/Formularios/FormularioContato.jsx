@@ -13,7 +13,7 @@ const FormularioDeContato = () => {
         <div className="container flex flex-col flex-1 px-6 py-12 mx-auto">
           <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
             <div className="text-white lg:w-1/2 lg:mx-6">
-              <h1 className="text-2xl font-semibold capitalize lg:text-3xl">
+              <h1 className="text-2xl font-semibold text-white capitalize lg:text-3xl">
                 Solução de design definitiva
               </h1>
               <p className="max-w-xl mt-6 text-white">
