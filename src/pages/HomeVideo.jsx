@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center p-4 relative hero-background">
       <video autoPlay loop muted className="video-background">
-        <source src="/img/teste.mp4" type="video/mp4" />
+        <source src="/abertura1.mp4 type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
       <h1 className="text-3xl md:text-5xl font-bold mb-4">Transforme sua Presença Digital Hoje!</h1>
