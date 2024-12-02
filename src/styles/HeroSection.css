@@ -1,6 +1,8 @@
 /* Estilos adicionais para o HeroSection */
 .hero-section {
   position: relative;
+  width: 100%;
+  height: 100vh; /* Faz com que a altura ocupe toda a altura da tela */
   overflow: hidden;
 }
 
@@ -14,6 +16,18 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.7); /* Fallback background */
+  z-index: 5; /* Garante que o fallback fique abaixo do vídeo */
+}
+
+/* Estilo para o vídeo que ocupa a tela toda */
+.hero-section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz com que o vídeo cubra toda a área sem distorcer, mantendo o aspecto */
+  z-index: 1; /* O vídeo fica atrás do conteúdo */
 }
 
 .hero-section .content {
