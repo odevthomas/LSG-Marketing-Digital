@@ -6,6 +6,7 @@
   overflow: hidden;
 }
 
+/* Camada de fallback para escurecer o vídeo */
 .hero-section-fallback {
   position: absolute;
   top: 0;
@@ -15,10 +16,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7); /* Fallback background */
-  z-index: 5; /* Garante que o fallback fique abaixo do vídeo */
+  background-color: rgba(0, 0, 0, 0.8); /* Maior opacidade para escurecer mais */
+  z-index: 5; /* Garante que o fallback fique abaixo do conteúdo */
 }
-
 
 /* Estilo para o vídeo que ocupa a tela toda */
 .hero-section video {
@@ -41,14 +41,17 @@
   padding: 0 1rem;
 }
 
-.hero-section .content {
-  position: relative;
-  z-index: 10; /* Garante que o conteúdo esteja acima do vídeo */
+.hero-section .content .button {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: auto;
+  height: auto;
 }
 
 .price-highlight {
   color: var(--primary-color); /* A cor do preço em destaque */
 }
+
 /* Responsividade para telas menores */
 @media (max-width: 767px) {
   .hero-section {
@@ -77,13 +80,6 @@
   .hero-section .content {
     font-size: 2.5rem; /* Ajuste do tamanho da fonte para telas grandes */
   }
-}
-
-.hero-section .content .button {
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  width: auto;
-  height: auto;
 }
 
 @media (max-width: 767px) {
