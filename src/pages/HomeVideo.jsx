@@ -22,7 +22,7 @@ const HeroSection = () => {
         onError={() => console.error("Erro ao carregar o vídeo.")}
         onLoadedData={(e) => e.target.play()} // Garante que o vídeo inicie
       >
-        <source src="/video/abertura1.mp4" type="video/mp4" />
+        <source src="/abertura1.mp4" type="video/mp4" />
         Seu navegador não suporta vídeo.
       </video>
 
@@ -31,7 +31,7 @@ const HeroSection = () => {
 
       {/* Texto principal sobre o vídeo */}
       <div className="relative z-10 text-white px-4">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4">
+        <h1 className="text-3xl  text-white md:text-5xl font-bold mb-4">
           Transforme sua Presença Digital Hoje!
         </h1>
         <p className="text-base text-white md:text-lg mb-2">

@@ -23,8 +23,8 @@ const Footer = () => {
 
           {/* Informações de contato */}
           <div className="mt-4 md:mt-0 text-center md:text-left">
-            <p className="text-sm">&copy; 2024 LSG Digital. Todos os direitos reservados.</p>
-            <p className="text-sm">
+            <p className="text-sm  text-white">&copy; 2024 LSG Digital. Todos os direitos reservados.</p>
+            <p className="text-sm  text-white">
               Entre em contato pelo WhatsApp: 
               <a href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
                 className="underline text-[#81ff94] hover:text-white transition-colors">Clique aqui</a>
