@@ -32,9 +32,12 @@ const HeroSection = () => {
         Seu navegador não suporta vídeos.
       </video>
 
+      {/* Camada para deixar o vídeo mais escuro (mais fosco) */}
+      <div className="hero-section-video-overlay"></div>
+
       {/* Caso o vídeo falhe no carregamento, um fallback será mostrado */}
       {videoError && (
-        <div className="hero-section-fallback bg-black bg-opacity-70 w-full h-full flex items-center justify-center absolute inset-0">
+        <div className="hero-section-fallback bg-black w-full h-full flex items-center justify-center absolute inset-0">
           <p className="text-white text-xl font-semibold">
             O vídeo não pôde ser carregado. Por favor, tente novamente mais tarde.
           </p>
@@ -63,14 +66,13 @@ const HeroSection = () => {
           </span>
 
           {/* Botão */}
-        <button
-  aria-label="Clique para conhecer os serviços"
-  className="inline-flex items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-base bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
-  onClick={() => navigate('/home')}
->
-  Clique e Conheça
-</button>
-
+          <button
+            aria-label="Clique para conhecer os serviços"
+            className="inline-flex text-black  items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
+            onClick={() => navigate('/home')}
+          >
+            Clique e Conheça
+          </button>
         </div>
       </div>
     </section>
