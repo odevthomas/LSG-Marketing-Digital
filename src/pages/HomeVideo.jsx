@@ -7,50 +7,36 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative flex flex-col items-center justify-center h-screen text-center p-4 hero-background"
+      className="hero-section flex flex-col items-center justify-center h-screen text-center p-4"
       aria-label="Seção Principal - Transformação Digital"
     >
-      <div className="absolute inset-0">
-        <video
-          autoPlay
-          loop
-          muted
-          className="w-full h-full object-cover"
+      <h1 className="text-3xl text-white md:text-5xl font-bold mb-4">
+        Transforme sua Presença Digital Hoje!
+      </h1>
+      <p className="text-base text-white md:text-lg mb-2">
+        Descubra soluções inovadoras e acessíveis para o seu negócio:
+      </p>
+      <p className="text-sm text-white md:text-md mb-4">
+        <span className="text-xs md:text-sm ml-2">A partir de </span>
+        <span className="price-highlight text-5xl font-semibold text-[#81ff94]">
+          R$ 599/mês
+        </span>
+      </p>
+
+      {/* Botões de ação */}
+      <div className="flex flex-col md:flex-row items-center justify-center mt-6">
+        <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-5">
+          Comece sua Jornada!
+        </span>
+
+        {/* Botão */}
+        <button
+          aria-label="Clique para conhecer os serviços"
+          className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
+          onClick={() => navigate('/home')}
         >
-          <source src="/abertura1.mp4" type="video/mp4" />
-          Seu navegador não suporta vídeo.
-        </video>
-      </div>
-
-      <div className="relative z-10 flex flex-col items-center justify-center text-center p-4">
-        <h1 className="text-3xl text-white md:text-5xl font-bold mb-4">
-          Transforme sua Presença Digital Hoje!
-        </h1>
-        <p className="text-base text-white md:text-lg mb-2">
-          Descubra soluções inovadoras e acessíveis para o seu negócio:
-        </p>
-        <p className="text-sm text-white md:text-md mb-4">
-          <span className="text-xs md:text-sm ml-2">A partir de </span>
-          <span className="price-highlight text-5xl font-semibold text-[#81ff94]">
-            R$ 599/mês
-          </span>
-        </p>
-
-        {/* Botões de ação */}
-        <div className="flex flex-col md:flex-row items-center justify-center mt-6">
-          <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-5">
-            Comece sua Jornada!
-          </span>
-
-          {/* Botão */}
-          <button
-            aria-label="Clique para conhecer os serviços"
-            className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
-            onClick={() => navigate('/home')}
-          >
-            Clique e Conheça
-          </button>
-        </div>
+          Clique e Conheça
+        </button>
       </div>
     </section>
   );
