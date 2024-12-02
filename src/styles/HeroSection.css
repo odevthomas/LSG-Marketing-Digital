@@ -2,6 +2,12 @@
   position: relative;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #000; /* Fallback para desktop */
 }
 
 .video-background {
@@ -14,14 +20,14 @@
   z-index: -1;
 }
 
-/* Adiciona um fundo cinza para dispositivos móveis, quando o vídeo não é mostrado */
+/* Garante que o vídeo seja mostrado em telas menores e maiores */
 @media (max-width: 768px) {
-  .hero-background {
-    background-color: #d1d1d1; /* Cor de fundo cinza */
+  .video-background {
+    display: block; /* O vídeo será exibido mesmo em telas menores */
   }
 
-  .video-background {
-    display: none; /* Esconde o vídeo em telas menores */
+  .hero-background {
+    background-color: #000; /* Sem fundo cinza, só o vídeo */
   }
 }
 
@@ -30,12 +36,19 @@ h1, p {
   z-index: 1;
 }
 
-/* Outros ajustes gerais */
-.hero-background {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #000; /* Fallback para desktop */
+/* Ajustes gerais para responsividade */
+@media (max-width: 768px) {
+  /* Ajusta o tamanho das fontes para telas menores */
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  /* Ajusta o layout do botão e conteúdo em telas pequenas */
+  .flex {
+    flex-direction: column;
+  }
 }
