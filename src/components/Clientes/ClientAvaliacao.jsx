@@ -5,7 +5,7 @@ import "keen-slider/keen-slider.min.css"; // Estilo do KeenSlider
 
 const ClientSlide = ({ clientName, username, testimonial }) => {
   return (
-    <div className="keen-slider__slide">
+    <div className="keen-slider__slide z-1">
       <div className="bg-white p-6 shadow-sm sm:p-8 lg:p-12 w-full">
         <div className="flex items-center space-x-4">
           <Avatar name={clientName} size={88} variant="marble" />
