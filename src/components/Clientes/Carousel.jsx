@@ -36,11 +36,11 @@ export default function VideoTabs() {
           <div className="relative lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
             {/* Coluna de Texto */}
             <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
-              <h1 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white shadow-md shadow-black">
+              <h1 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
                 Histórias de {" "}
                 <span className="text-[#81ff94]">Sucesso</span>
               </h1>
-              <p className="mt-2 text-white text-lg sm:text-xl md:text-2xl leading-relaxed shadow-md shadow-black">
+              <p className="mt-2 text-white text-lg sm:text-xl md:text-2xl leading-relaxed">
                 O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
               </p>
               {/* Navegação das Abas */}
