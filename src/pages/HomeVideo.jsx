@@ -28,7 +28,7 @@ const HeroSection = () => {
         className="hero-section-video w-full h-full object-cover absolute inset-0"
         aria-label="Vídeo de fundo sobre transformação digital"
       >
-        <source src="/videos/abertura1.mp4" type="video/mp4" />
+        <source src="/videos/abertura.mp4" type="video/mp4" />
         Seu navegador não suporta vídeos.
       </video>
 
