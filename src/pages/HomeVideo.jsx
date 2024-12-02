@@ -63,13 +63,14 @@ const HeroSection = () => {
           </span>
 
           {/* Botão */}
-          <button
-            aria-label="Clique para conhecer os serviços"
-            className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
-            onClick={() => navigate('/home')}
-          >
-            Clique e Conheça
-          </button>
+        <button
+  aria-label="Clique para conhecer os serviços"
+  className="inline-flex items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-base bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
+  onClick={() => navigate('/home')}
+>
+  Clique e Conheça
+</button>
+
         </div>
       </div>
     </section>
