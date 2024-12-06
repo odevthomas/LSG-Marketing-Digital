@@ -21,6 +21,7 @@ body {
   color: var(--gray-dark);
   margin: 0;
   padding: 0;
+  position: relative; /* Adicionando posição relativa ao body */
 }
 
 a {
@@ -179,6 +180,15 @@ select:focus {
   color: #e6e7e8;
 }
 
+/* Estilo para o botão flutuante do WhatsApp */
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999; /* Garante que o botão fique acima de outros elementos */
+}
+
+/* Animações */
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -186,14 +196,4 @@ select:focus {
   100% {
     transform: rotate(360deg);
   }
-}
-
-.spinner {
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  border: 4px solid var(--primary-color);
-  border-top: 4px solid transparent;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
 }

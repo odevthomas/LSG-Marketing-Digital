@@ -6,17 +6,17 @@ const SeloSection = () => {
   const image = "/garantia.png"; // Caminho da imagem
 
   return (
-    <section className="bg-white py-12 px-6 lg:px-16">
+    <section className="bg-white py-16 px-6 lg:px-16">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center">
         {/* Texto da seção */}
         <div className="text-center sm:text-left space-y-6">
           <motion.h2
-            className="text-3xl font-semibold text-gray-900"
+            className="text-4xl font-semibold text-gray-900"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Garantia
+            Garantia de Satisfação
           </motion.h2>
 
           <motion.p
@@ -25,7 +25,7 @@ const SeloSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Confiança total na qualidade. Garantimos sua satisfação.
+            Confiança total na qualidade. Garantimos sua satisfação ou ajustamos o que for necessário.
           </motion.p>
 
           <motion.div
@@ -36,7 +36,7 @@ const SeloSection = () => {
           >
             <h5 className="text-lg font-semibold text-gray-800">O que inclui?</h5>
             <p className="text-sm text-gray-600 mt-2">
-              Caso não esteja satisfeito, oferecemos ajustes ou sessões adicionais.
+              Caso não esteja satisfeito com o serviço, oferecemos ajustes ou sessões adicionais para garantir o seu completo contentamento.
             </p>
           </motion.div>
 
@@ -48,9 +48,9 @@ const SeloSection = () => {
             transition={{ duration: 0.5, delay: 1 }}
           >
             <a
-              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber com funciona" // Link do botão
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber como funciona"
               className="inline-flex items-center py-3 px-6 bg-black text-white hover:bg-[#1DA65D] rounded-lg shadow-md transition-all duration-300"
-              aria-label="Descubra mais"
+              aria-label="Descubra mais sobre a Garantia"
             >
               DESCUBRA MAIS
               <svg
@@ -79,6 +79,145 @@ const SeloSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 1.2 }}
           />
+        </div>
+      </div>
+
+      {/* FAQ - Como funciona? */}
+      <div className="mt-12 bg-[#f9fafb] py-12 px-6 lg:px-16">
+        <div className="max-w-screen-xl mx-auto text-center">
+          <motion.h3
+            className="text-3xl font-semibold text-gray-900 mb-6"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Como Funciona a Garantia?
+          </motion.h3>
+
+          <div className="space-y-4">
+            <details className="group rounded-lg bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+                <h2 className="font-medium">O que está incluído na garantia?</h2>
+                <span className="relative size-5 shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute inset-0 size-5 opacity-100 group-open:opacity-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute inset-0 size-5 opacity-0 group-open:opacity-100"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+              </summary>
+
+              <p className="mt-4 leading-relaxed text-gray-700">
+                A garantia cobre ajustes ou sessões adicionais caso você não esteja satisfeito com os resultados. Estamos comprometidos com a sua satisfação total.
+              </p>
+            </details>
+
+            <details className="group rounded-lg bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+                <h2 className="font-medium">Como posso solicitar um ajuste?</h2>
+                <span className="relative size-5 shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute inset-0 opacity-100 group-open:opacity-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute inset-0 opacity-0 group-open:opacity-100"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+              </summary>
+
+              <p className="mt-4 leading-relaxed text-gray-700">
+                Para solicitar um ajuste, entre em contato conosco diretamente através do WhatsApp ou por e-mail. Estamos prontos para ajudar você a alcançar o resultado desejado.
+              </p>
+            </details>
+
+            <details className="group rounded-lg bg-gray-50 p-6 [&_summary::-webkit-details-marker]:hidden">
+              <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+                <h2 className="font-medium">E se eu não estiver satisfeito com o ajuste?</h2>
+                <span className="relative size-5 shrink-0">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute inset-0 opacity-100 group-open:opacity-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="absolute inset-0 opacity-0 group-open:opacity-100"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </span>
+              </summary>
+
+              <p className="mt-4 leading-relaxed text-gray-700">
+                Se mesmo após o ajuste você não estiver satisfeito, oferecemos uma política de reembolso ou outra alternativa para garantir sua satisfação total.
+              </p>
+            </details>
+          </div>
         </div>
       </div>
     </section>

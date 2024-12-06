@@ -51,6 +51,7 @@
 .price-highlight {
   color: var(--primary-color); /* A cor do preço em destaque */
 }
+
 /* Ajustes para o título */
 .content h1 {
   font-weight: bold;

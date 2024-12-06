@@ -15,7 +15,8 @@ const Resultados = () => {
       <SectionResultados />  {/* Agora o componente SectionResultados pode ser usado */}
       <Statistics />
       <CertificationSection /> 
-       <SeloSection /> 
+      <SeloSection /> 
+      
       <Footer />
     </>
   );

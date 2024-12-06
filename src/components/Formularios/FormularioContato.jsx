@@ -49,7 +49,7 @@ const FormularioDeContato = () => {
             {/* Formulário movido para o lado direito */}
             <div className="mt-8 lg:w-1/2 lg:mx-6 lg:order-first">
               <div className="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-xl rounded-xl">
-                <h1 className="text-xl font-medium text-gray-100">
+                <h1 className="text-xl font-medium text-[#333]">
                   Formulário de Contato
                 </h1>
                 <p className="mt-2 text-gray-500">

@@ -1,18 +1,17 @@
 import React from 'react';  // Adicione esta linha no início do arquivo
-import { useState, useEffect } from 'react';
 
 const ClientCard = ({ imgSrc, name, description }) => {
   return (
-    <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
-      <div className="h-full flex items-center border-gray-900 border p-4 rounded-lg hover:shadow-xl transition-all duration-300 bg-white">
+    <div className="p-4 lg:w-1/3 md:w-1/2 w-full">
+      <div className="flex items-center border-gray-300 border p-6 rounded-lg hover:shadow-xl transition-all duration-300 bg-white">
         <img
-          alt="team"
-          className="w-16 h-16 bg-bla-900 object-cover object-center flex-shrink-0 rounded-full mr-4"
+          alt={name}
+          className="w-20 h-20 object-cover object-center rounded-full shadow-md border-2 border-gray-300"
           src={imgSrc}
         />
-        <div className="flex-grow">
-          <h2 className="text-xl font-semibold text-black">{name}</h2>
-          <p className="text-sm text-black">{description}</p>
+        <div className="flex-grow pl-6">
+          <h2 className="text-xl font-semibold text-gray-900">{name}</h2>
+          <p className="text-sm text-gray-600">{description}</p>
         </div>
       </div>
     </div>
@@ -56,21 +55,19 @@ const ClientSection = () => {
       name: "InBeauty Luxury",
       description: "Beleza Premium e Cuidados"
     }
-  
   ];
 
   return (
-    <section className="bg-white text-gray-900 body-font">
-      <div className="container px-5 py-24 mx-auto">
-        <div className="flex flex-col text-center w-full mb-15">
-          <h1 className="sm:text-4xl text-3xl font-bold title-font mb-4 text-gray-900">
-            Clientes que Transformaram Seus Negócios com a LSG Digital
-          </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-gray-800">
-            Veja como nossos clientes estão alcançando novos patamares de sucesso com a LSG Digital, a força por trás do seu crescimento!
-          </p>
-        </div>
-        <div className="flex flex-wrap mb-12">
+    <section className="bg-[#FFF] py-16">
+      <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
+        <h3 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#000]">
+          Clientes que Transformaram   <span className="text-[#81ff94]"> Seus Negócios!</span> 
+        </h3>
+        <p className="mt-2 text-[#333] text-lg sm:text-xl md:text-2xl leading-relaxed">
+          Veja como nossos clientes estão alcançando novos patamares de sucesso com a LSG Digital, a força por trás do seu crescimento!
+        </p>
+
+        <div className="flex flex-wrap justify-center mb-12">
           {clients.map((client, index) => (
             <ClientCard
               key={index}
