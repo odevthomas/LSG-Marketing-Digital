@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FaPlay } from "react-icons/fa"; // Ícone de play da biblioteca react-icons
 import { motion } from "framer-motion"; // Importação do motion
-import FloatingWhatsAppComponent from '../Buttons/FloatingWhatsApp'; // Caminho do componente
 
 
 export default function VideoTabs() {
@@ -98,8 +97,6 @@ export default function VideoTabs() {
           </div>
         </div>
       </div>
-          <FloatingWhatsAppComponent />
-
     </motion.section>
   );
 }

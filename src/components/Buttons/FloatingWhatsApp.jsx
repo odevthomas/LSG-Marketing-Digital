@@ -1,5 +1,6 @@
 import React from 'react';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
+import './WhatsAppButton.css'; // Importando o CSS externo
 
 const WhatsAppButton = () => {
   const whatsappInfo = {
@@ -14,7 +15,7 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div style={{ position: 'relative', zIndex: 1 }}>
+    <div className="whatsapp-button-container">
       {/* Botão flutuante do WhatsApp */}
       <FloatingWhatsApp
         phoneNumber={whatsappInfo.phoneNumber}
@@ -32,18 +33,11 @@ const WhatsAppButton = () => {
           borderRadius: "50%",
           padding: "10px",
           boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)", // Sombra mais forte
-          transition: "transform 0.3s ease, box-shadow 0.3s ease",
-          width: "70px", // Aumentando o tamanho do botão
-          height: "70px",
           cursor: "pointer",
           position: "fixed",
           bottom: "30px",
           right: "30px",
           zIndex: 9999999, // Garante que o botão sempre fique acima de outros elementos
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          transform: "scale(1)", // Adicionando uma transformação inicial
         }}
         chatboxStyle={{
           display: "flex",

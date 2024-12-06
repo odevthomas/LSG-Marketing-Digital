@@ -21,7 +21,7 @@ const ImageCarousel = () => {
     }, [images.length]);
 
     return (
-        <section className="py-16 bg-[#F4F4F4]">
+        <section className="py-16 bg-[#F4F4F4] relative z-10"> {/* Adicionando z-index aqui */}
             <div className="max-w-full mx-auto px-6 md:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Imagem */}

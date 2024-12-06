@@ -1,0 +1,53 @@
+.whatsapp-button-container {
+  position: relative; /* Garante que o container tenha um contexto de empilhamento */
+  z-index: 1; /* Garante que o container fique acima de outros elementos */
+}
+
+.floating-whatsapp-button {
+  background: linear-gradient(45deg, #25D366, #25D366);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+  width: 70px; /* Aumentando o tamanho do botão */
+  height: 70px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999999; /* Garante que o botão sempre fique acima de outros elementos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito hover */
+.floating-whatsapp-button:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Aumenta a sombra ao passar o mouse */
+}
+
+.floating-whatsapp-chatbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px; /* Bordas mais arredondadas */
+  overflow: hidden;
+  background-color: #ffffff;
+  position: fixed;
+  bottom: 6rem;
+  right: 1rem;
+  width: 400px; /* Largura do chatbox */
+  opacity: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
+  z-index: 9999998; /* Garante que o chatbox também esteja acima, mas abaixo do botão */
+  padding: 15px; /* Espaçamento interno */
+}
+
+/* Efeito hover nas fontes do chatbox */
+.floating-whatsapp-chatbox p:hover,
+.floating-whatsapp-chatbox h3:hover {
+  color: #25D366; /* Muda a cor do texto ao passar o mouse */
+  text-decoration: underline; /* Adiciona um sublinhado ao texto */
+  cursor: pointer; /* Muda o cursor para indicar que é interativo */
+}

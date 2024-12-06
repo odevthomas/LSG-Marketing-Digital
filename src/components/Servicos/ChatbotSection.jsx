@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import React from "react";
-import FloatingWhatsApp from "../Buttons/FloatingWhatsApp"; // Ajuste o caminho conforme necessário
 
 
 const ChatbotSection = () => {
@@ -68,7 +67,6 @@ href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&
         </div>
       </motion.div>
 
-            <FloatingWhatsApp />
 
     </section>
   );

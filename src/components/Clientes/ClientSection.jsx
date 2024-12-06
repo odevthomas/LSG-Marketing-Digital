@@ -58,10 +58,10 @@ const ClientSection = () => {
   ];
 
   return (
-    <section className="bg-[#FFF] py-16">
+    <section className="bg-[#FFF] py-16 relative z-10"> {/* Adicionando z-index aqui */}
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <h3 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#000]">
-          Clientes que Transformaram   <span className="text-[#81ff94]"> Seus Negócios!</span> 
+          Clientes que Transformaram <span className="text-[#81ff94]"> Seus Negócios!</span> 
         </h3>
         <p className="mt-2 text-[#333] text-lg sm:text-xl md:text-2xl leading-relaxed">
           Veja como nossos clientes estão alcançando novos patamares de sucesso com a LSG Digital, a força por trás do seu crescimento!
