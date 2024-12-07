@@ -92,7 +92,7 @@ const Statistics = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: idx * 0.3, type: 'spring', stiffness: 100 }}
                     >
-                        <h3 className="text-4xl text-[#25D366] font-semibold" aria-label={`Número de ${item.title}`}>
+                        <h3 className="text-4xl text-[#f6472c] font-semibold" aria-label={`Número de ${item.title}`}>
                             {formatNumber(count[idx])}
                         </h3>
                         <p className="mt-3 font-medium text-gray-500">{item.title}</p>

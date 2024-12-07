@@ -24,7 +24,7 @@ const CookieConsent = () => {
           <div className="flex-1">
             <p className="text-sm sm:text-base text-white">
               Este site usa cookies para melhorar a sua experiência. Ao continuar a navegar, você concorda com o uso de cookies. 
-              <a href="/política-de-privacidade" className="text-[#81ff94] hover:underline ml-1">
+              <a href="/política-de-privacidade" className="text-[#f6472c] hover:underline ml-1">
                 Saiba mais
               </a>
             </p>
@@ -34,7 +34,7 @@ const CookieConsent = () => {
         <div className="mt-4 flex justify-between space-x-4">
           <button
             onClick={handleAccept}
-            className="bg-[#81ff94] text-black text-sm px-4 py-2 rounded-md hover:bg-[#81ff94] focus:outline-none transition duration-300"
+            className="bg-[#f6472c] text-black text-sm px-4 py-2 rounded-md hover:bg-[#f6472c] focus:outline-none transition duration-300"
           >
             Aceitar
           </button>

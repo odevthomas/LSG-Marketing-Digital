@@ -29,14 +29,14 @@
 
 .nav-links a {
   text-decoration: none;
-  color: #81ff94;
-  font-size: 16px;
+  color: #FFEFE7FF;
+  font-size: 22px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #00F324FF;
+  color: #f6472c;
 }
 
 .hamburger {
@@ -49,7 +49,7 @@
 .hamburger .bar {
   width: 30px;
   height: 4px;
-  background-color: #81ff94;
+  background-color: #f6472c;
   border-radius: 2px;
 }
 
@@ -65,7 +65,7 @@
   height: 20px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid #25D366;
+  border: 2px solid #000000FF;
 }
 
 .avatar-container img {
@@ -83,7 +83,7 @@
 }
 
 .avatar-border {
-  border: 3px solid #25D366;
+  border: 3px solid #000000FF;
   box-shadow: 0 4px 8px rgba(57, 57, 57, 0.979);
 }
 @media (max-width: 768px) {

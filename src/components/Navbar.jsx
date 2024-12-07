@@ -68,7 +68,7 @@ const Header = () => {
                 className="relative"
               >
                 <Avatar.Root
-                  className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#25D366]"
+                  className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#f4f4f4]"
                 >
                   <Avatar.Image
                     src={item.imgURL}

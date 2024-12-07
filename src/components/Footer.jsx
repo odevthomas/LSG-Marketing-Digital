@@ -16,9 +16,9 @@ const Footer = () => {
 
           {/* Links de navegação */}
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
-            <Link to="/home" className="hover:text-[#81ff94] transition-colors">Home</Link>
-            <Link to="/resultados" className="hover:text-[#81ff94] transition-colors">Resultados</Link>
-            <Link to="/servicos" className="hover:text-[#81ff94] transition-colors">Serviços</Link>
+            <Link to="/home" className="hover:text-[#f46d40] transition-colors">Home</Link>
+            <Link to="/resultados" className="hover:text-[#f46d40] transition-colors">Resultados</Link>
+            <Link to="/servicos" className="hover:text-[#f46d40] transition-colors">Serviços</Link>
           </div>
 
           {/* Informações de contato */}
@@ -27,7 +27,7 @@ const Footer = () => {
             <p className="text-sm  text-white">
               Entre em contato pelo WhatsApp: 
               <a href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
-                className="underline text-[#81ff94] hover:text-white transition-colors">Clique aqui</a>
+                className="underline text-[#f46d40] hover:text-white transition-colors">Clique aqui</a>
             </p>
           </div>
         </div>

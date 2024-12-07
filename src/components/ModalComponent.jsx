@@ -80,7 +80,7 @@ const Modal = () => {
                   Aproveite esta oportunidade exclusiva! Diagnóstico completo de saúde no valor de R$ 399, totalmente grátis.
                 </p>
 
-                <p className="mt-2 text-lg font-semibold text-blue-600">
+                <p className="mt-2 text-lg font-semibold text-[#f6472c]">
                   Oferta exclusiva: R$ 399 grátis!
                 </p>
               </div>
@@ -93,7 +93,7 @@ const Modal = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Digite seu nome"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f46d40]transition-colors"
                 required
               />
               <input
@@ -101,7 +101,7 @@ const Modal = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Digite seu e-mail"
-                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f46d40]transition-colors"
                 required
               />
               <input
@@ -109,7 +109,7 @@ const Modal = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Digite seu telefone"
-                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f46d40]transition-colors"
                 required
               />
             </div>
@@ -124,7 +124,7 @@ const Modal = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full px-4 py-2 mt-3 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none transition-colors sm:mt-0 sm:w-1/2"
+                className="w-full px-4 py-2 mt-3 text-sm font-medium text-white bg-[#f6472c] rounded-md hover:bg-[#f46d40]focus:outline-none transition-colors sm:mt-0 sm:w-1/2"
               >
                 Aproveitar Agora
               </button>

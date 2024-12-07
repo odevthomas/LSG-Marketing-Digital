@@ -57,7 +57,7 @@ const SectionResultados = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               RESULTADOS  {" "}
-              <span className="text-[#81ff94]">SURPREENDENTES</span>
+              <span className="text-[#f6472c]">SURPREENDENTES</span>
             </motion.p>
 
             <motion.p
@@ -73,7 +73,7 @@ const SectionResultados = () => {
             <div className="flex justify-center mt-6">
               <motion.a
                 href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber com funciona"
-                className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
+                className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#e57c3a] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase"
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}

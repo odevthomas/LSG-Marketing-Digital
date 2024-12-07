@@ -19,7 +19,7 @@ const ChatbotSection = () => {
         <div className="flex-1 max-w-lg py-5 sm:mx-auto sm:text-left lg:max-w-lg lg:text-left mt-15">
           <h3 className="text-3xl text-white font-semibold md:text-4xl lg:text-5xl">
             Atendimento com{" "}
-            <span className="text-[#81ff94]">Chatbots Inteligentes</span>
+            <span className="text-[#f46d40]">Chatbots </span>
           </h3>
           <p className="text-white leading-relaxed mt-6 text-base sm:text-lg lg:text-xl">
             Ao integrar um chatbot ao seu sistema, você não apenas otimiza o
@@ -29,7 +29,7 @@ const ChatbotSection = () => {
           </p>
           <div className="flex justify-center lg:justify-start mt-6">
             <motion.a
-href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"              className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#1DA65D] rounded-lg shadow-lg transition-all duration-300 uppercase"
+href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"              className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white  rounded-lg shadow-lg transition-all duration-300 uppercase"
               initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}

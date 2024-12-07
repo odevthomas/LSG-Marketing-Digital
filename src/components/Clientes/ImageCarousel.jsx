@@ -45,12 +45,12 @@ const ImageCarousel = () => {
                     {/* Texto e Conteúdo */}
                     <div className="w-full lg:max-w-xl px-4 space-y-5 text-center lg:text-left">
                         <motion.h3
-                            className="text-[#212121] font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                            className="text-gray-700 font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            Resultados <span className="text-[#81ff94]">Surpreendentes!</span>
+                            Resultados <span className="text-[#f46d40]">Surpreendentes!</span>
                         </motion.h3>
 
                         <motion.p

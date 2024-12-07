@@ -26,15 +26,15 @@ const CertificationSection = () => {
     <section className="bg-gray-50 py-16 px-6 lg:px-16 relative">
       <div className="max-w-screen-xl mx-auto text-center">
         {/* Título e descrição */}
-        <motion.h4
-          className="text-4xl font-semibold text-[#212121] mb-4"
+        <motion.h2
+          className="text-4xl font-semibold text-gray-700 mb-4"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           Certificações e Parcerias que{" "}
-          <span className="text-[#81ff94]">Impulsionam Seu Sucesso </span>
-        </motion.h4>
+          <span className="text-[#ff781e]">Impulsionam Seu Sucesso </span>
+        </motion.h2>
         <motion.p
           className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: -10 }}
@@ -50,7 +50,7 @@ const CertificationSection = () => {
         {members.map((item, idx) => (
           <motion.div
             key={idx}
-            className="flex items-center space-x-6 bg-white p-8 rounded-2xl border-2 hover:border-[#81ff94]"
+            className="flex items-center space-x-6 bg-white p-8 rounded-2xl border-2 hover:border-[#f4f4f4]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: idx * 0.2 }}
@@ -58,7 +58,7 @@ const CertificationSection = () => {
             <img
               src={item.icon}
               alt={item.title}
-              className="w-16 h-16 rounded-full border-2 border-[#81ff94] object-cover"
+              className="w-16 h-16 rounded-full border-2 border-[#f4f4f4] object-cover"
             />
             <div>
               <h5 className="text-xl font-semibold text-[#000]">{item.title}</h5>

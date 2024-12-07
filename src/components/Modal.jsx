@@ -114,7 +114,7 @@ const FormComponent = () => {
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-400"
+          className="px-4 py-2 bg-[#f46d40]text-white rounded-lg hover:bg-[#f6472c]"
         >
           Enviar
         </button>

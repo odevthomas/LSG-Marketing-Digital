@@ -76,7 +76,7 @@ const FormularioDeContato = () => {
                       id="name"
                       name="name"
                       placeholder="João da Silva"
-                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#f6472c] focus:ring-[#f6472c] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -94,7 +94,7 @@ const FormularioDeContato = () => {
                       id="email"
                       name="email"
                       placeholder="joaodasilva@exemplo.com"
-                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#f6472c] focus:ring-[#f6472c] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -112,7 +112,7 @@ const FormularioDeContato = () => {
                       id="phone"
                       name="phone"
                       placeholder="(99) 99999-9999"
-                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full px-5 py-3 mt-2 text-gray-800 bg-white border border-gray-200 rounded-md focus:border-[#f6472c] focus:ring-[#f6472c] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -129,7 +129,7 @@ const FormularioDeContato = () => {
                       id="message"
                       name="message"
                       placeholder="Sua mensagem aqui..."
-                      className="block w-full h-32 px-5 py-3 mt-2 text-gray-800 placeholder-gray-600 bg-white border border-gray-200 rounded-md md:h-48 focus:border-[#81ff94] focus:ring-[#81ff94] focus:ring-opacity-40 focus:outline-none"
+                      className="block w-full h-32 px-5 py-3 mt-2 text-gray-800 placeholder-gray-600 bg-white border border-gray-200 rounded-md md:h-48 focus:border-[#f6472c] focus:ring-[#f6472c] focus:ring-opacity-40 focus:outline-none"
                       required
                     />
                   </div>
@@ -140,7 +140,7 @@ const FormularioDeContato = () => {
                       type="checkbox"
                       id="terms"
                       name="terms"
-                      className="w-5 h-5 text-[#81ff94]"
+                      className="w-5 h-5 text-[#f6472c]"
                       required
                     />
                     <label
@@ -148,7 +148,7 @@ const FormularioDeContato = () => {
                       className="text-sm text-gray-500"
                     >
                       Aceito os{" "}
-                      <a href="#" className="underline text-[#81ff94]">
+                      <a href="#" className="underline text-[#f6472c]">
                         termos e condições
                       </a>
                       .
@@ -158,7 +158,7 @@ const FormularioDeContato = () => {
                   {/* Botão de Envio */}
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#81ff94] rounded-md hover:bg-[#66d47f] focus:outline-none focus:ring focus:ring-[#81ff94] focus:ring-opacity-50"
+                    className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#f6472c] rounded-md hover:bg-[#66d47f] focus:outline-none focus:ring focus:ring-[#f6472c] focus:ring-opacity-50"
                   >
                     Enviar
                   </button>

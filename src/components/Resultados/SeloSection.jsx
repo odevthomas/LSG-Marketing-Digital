@@ -49,7 +49,7 @@ const SeloSection = () => {
           >
             <a
               href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber como funciona"
-              className="inline-flex items-center py-3 px-6 bg-black text-white hover:bg-[#1DA65D] rounded-lg shadow-md transition-all duration-300"
+              className="inline-flex items-center py-3 px-6 bg-black text-white hover:bg-[#f6472c]  hover:text-white rounded-lg shadow-md transition-all duration-300"
               aria-label="Descubra mais sobre a Garantia"
             >
               DESCUBRA MAIS

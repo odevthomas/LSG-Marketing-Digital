@@ -3,13 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/HeroSection.css'; // Assumindo que você já tenha o arquivo CSS
 import FloatingWhatsAppComponent from '../components/Buttons/FloatingWhatsApp'; // Caminho do componente
 
-
 const HeroSection = () => {
   const navigate = useNavigate();
   const [videoError, setVideoError] = useState(false);
 
   useEffect(() => {
-    // Verifica se o vídeo foi carregado corretamente
     const videoElement = document.getElementById('hero-video');
     videoElement.onerror = () => {
       setVideoError(true); // Caso haja erro no carregamento, habilita o fallback
@@ -48,29 +46,29 @@ const HeroSection = () => {
 
       {/* Conteúdo sobre o vídeo */}
       <div className="content relative z-10 text-center px-4 py-8 md:px-12">
-        <h1 className="text-3xl text-white md:text-5xl font-bold mb-4">
+        <h1 className="text-4xl text-white md:text-6xl font-bold mb-4">
           Transforme sua Presença Digital Hoje!
         </h1>
-        <p className="text-base text-white md:text-lg mb-2">
+        <p className="text-lg text-white md:text-xl mb-2">
           Descubra soluções inovadoras e acessíveis para o seu negócio:
         </p>
-        <p className="text-sm text-white md:text-md mb-4">
-          <span className="text-xs md:text-sm ml-2">A partir de </span>
-          <span className="price-highlight text-5xl font-semibold text-[#81ff94]">
+        <p className="text-md text-white md:text-lg mb-4">
+          <span className="text-sm md:text-md ml-2">A partir de </span>
+          <span className="price-highlight text-6xl font-semibold text-[#ff8c00]"> {/* Cor laranja */}
             R$ 599/mês
           </span>
         </p>
 
         {/* Botões de ação */}
         <div className="flex flex-col md:flex-row items-center justify-center mt-6">
-          <span className="text-base md:text-lg font-medium mb-2 md:mb-0 md:mr-5">
+          <span className="text-lg md:text-xl font-medium mb-2 md:mb-0 md:mr-5 text-white">
             Comece sua Jornada!
           </span>
 
           {/* Botão */}
           <button
             aria-label="Clique para conhecer os serviços"
-            className="inline-flex text-black  items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-black bg-[#81ff94] hover:bg-[#1DA65D] rounded-full hover:text-black shadow-lg transition-all duration-300 uppercase"
+            className="inline-flex text-white items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-lg bg-[#ff8c00] hover:bg-[#ff6f00] rounded-full shadow-lg transition-all duration-300 uppercase" // Cor de fundo laranja
             onClick={() => navigate('/home')}
           >
             Clique e Conheça

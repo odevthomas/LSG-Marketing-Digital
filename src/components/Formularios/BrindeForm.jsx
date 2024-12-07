@@ -18,7 +18,7 @@ const BrindeForm = () => {
 
   return (
     <div style={{ padding: '20px', textAlign: 'center', color: '#000' }}> {/* Texto preto */}
-      <h2>Parabéns! Você ganhou um diagnóstico gratuito no valor de <span style={{ color: '#28a745' }}>R$ 399,90</span>!</h2> {/* Valor em verde */}
+      <h2>Parabéns! Você ganhou um diagnóstico gratuito no valor de <span style={{ color: '#f6472c' }}>R$ 399,90</span>!</h2> {/* Valor em verde */}
       <p>Preencha o formulário abaixo para garantir sua oferta e aproveitar o brinde exclusivo!</p>
 
       {!isSubmitted ? (
@@ -68,7 +68,7 @@ const BrindeForm = () => {
             type="submit"
             style={{
               padding: '10px 20px',
-              backgroundColor: '#28a745', // Cor de fundo verde
+              backgroundColor: '#f6472c', // Cor de fundo verde
               color: '#000', // Cor da fonte do botão branca
               border: 'none',
               borderRadius: '5px',

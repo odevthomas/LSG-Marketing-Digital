@@ -9,11 +9,11 @@ const ServicesSection = () => {
         
         {/* Serviço 1: Gestão de CRM */}
         <div className="flex flex-col items-center text-center">
-          <div className="relative flex justify-center items-center w-16 h-16 bg-[#2ef94c] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
+          <div className="relative flex justify-center items-center w-16 h-16 bg-[#f4f4f4] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
             <Box className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-[#2ef94c] font-semibold">Gestão de CRM</h3>
+            <h3 className="text-[#f46d40] font-semibold">Gestão de CRM</h3>
             <p className="mt-1 text-gray-600">
               Organize seus contatos e transforme leads em clientes fiéis com um sistema de CRM otimizado.
             </p>
@@ -22,11 +22,11 @@ const ServicesSection = () => {
 
         {/* Serviço 2: Implementação de Chatbots */}
         <div className="flex flex-col items-center text-center">
-          <div className="relative flex justify-center items-center w-16 h-16 bg-[#2ef94c] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
+          <div className="relative flex justify-center items-center w-16 h-16 bg-[#f4f4f4] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
             <MessageCircle className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-[#2ef94c] font-semibold">Implementação de Chatbots</h3>
+            <h3 className="text-[#f6472c] font-semibold">Implementação de Chatbots</h3>
             <p className="mt-1 text-gray-600">
               Revolucione seu atendimento ao cliente com chatbots humanizados. Automatize respostas a perguntas frequentes.
             </p>
@@ -35,11 +35,11 @@ const ServicesSection = () => {
 
         {/* Serviço 3: Criação de Funil de Vendas */}
         <div className="flex flex-col items-center text-center">
-          <div className="relative flex justify-center items-center w-16 h-16 bg-[#2ef94c] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
+          <div className="relative flex justify-center items-center w-16 h-16 bg-[#f4f4f4] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
             <Sliders className="shrink-0 w-8 h-8 text-black" /> {/* Substituindo Funnel por Sliders */}
           </div>
           <div className="mt-5">
-            <h3 className="text-[#2ef94c] font-semibold">Criação de Funil de Vendas</h3>
+            <h3 className="text-[#f6472c] font-semibold">Criação de Funil de Vendas</h3>
             <p className="mt-1 text-gray-600">
               Desenvolva funis de vendas inteligentes que guiam seus leads até a conversão de forma eficaz.
             </p>
@@ -48,11 +48,11 @@ const ServicesSection = () => {
 
         {/* Serviço 4: Campanhas Personalizadas */}
         <div className="flex flex-col items-center text-center">
-          <div className="relative flex justify-center items-center w-16 h-16 bg-[#2ef94c] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
+          <div className="relative flex justify-center items-center w-16 h-16 bg-[#f4f4f4] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
             <Target className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-[#2ef94c] font-semibold">Campanhas Personalizadas</h3>
+            <h3 className="text-[#f6472c] font-semibold">Campanhas Personalizadas</h3>
             <p className="mt-1 text-gray-600">
               Alcance o público certo com a mensagem certa. Impacte sua audiência e veja resultados concretos.
             </p>
@@ -61,11 +61,11 @@ const ServicesSection = () => {
 
         {/* Serviço 5: Criação de Landing Pages */}
         <div className="flex flex-col items-center text-center">
-          <div className="relative flex justify-center items-center w-16 h-16 bg-[#2ef94c] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
+          <div className="relative flex justify-center items-center w-16 h-16 bg-[#f4f4f4] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
             <FileText className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-[#2ef94c] font-semibold">Criação de Landing Pages</h3>
+            <h3 className="text-[#f6472c] font-semibold">Criação de Landing Pages</h3>
             <p className="mt-1 text-gray-600">
               Crie páginas de destino que convertem visitantes em leads, maximizando a eficácia da sua campanha.
             </p>
@@ -74,11 +74,11 @@ const ServicesSection = () => {
 
         {/* Serviço 6: Mentoria em Postagem */}
         <div className="flex flex-col items-center text-center">
-          <div className="relative flex justify-center items-center w-16 h-16 bg-[#2ef94c] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
+          <div className="relative flex justify-center items-center w-16 h-16 bg-[#f4f4f4] rounded-xl before:absolute before:-inset-px before:-z-[1] before:bg-gradient-to-br before:from-green-600 before:via-transparent before:to-green-400 before:rounded-xl">
             <Edit className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-[#2ef94c] font-semibold">Mentoria em Postagem</h3>
+            <h3 className="text-[#f6472c] font-semibold">Mentoria em Postagem</h3>
             <p className="mt-1 text-gray-600">
               Aprimore suas habilidades com nossa mentoria em criação de criativos e copys para gerar resultados.
             </p>

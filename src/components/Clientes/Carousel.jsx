@@ -37,7 +37,7 @@ export default function VideoTabs() {
             <div className="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
               <h1 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
                 Histórias de {" "}
-                <span className="text-[#81ff94]">Sucesso</span>
+                <span className="text-[#f46d40]">Sucesso</span>
               </h1>
               <p className="mt-2 text-white text-lg sm:text-xl md:text-2xl leading-relaxed">
                 O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
@@ -53,8 +53,8 @@ export default function VideoTabs() {
                   <button
                     key={index}
                     type="button"
-                    className={`flex items-center gap-3 hover:bg-[#81ff94] focus:outline-none focus:bg-[#81ff94] p-4 md:p-5 rounded-xl transition-all duration-300 ease-in-out ${
-                      activeTab === index ? "bg-[#00a859] shadow-lg" : "bg-[#2d2d2d]"
+                    className={`flex items-center gap-3 hover:bg-[#f6472c] focus:outline-none focus:bg-[#f6472c] p-4 md:p-5 rounded-xl transition-all duration-300 ease-in-out ${
+                      activeTab === index ? "bg-[#f46d40] shadow-lg" : "bg-[#2d2d2d]"
                     }`}
                     onClick={() => handleTabClick(index)}
                   >
