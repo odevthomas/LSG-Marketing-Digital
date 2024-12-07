@@ -37,7 +37,7 @@ const SectionResultados = () => {
       {/* Camada para escurecer o fundo */}
       <div className="absolute inset-0 bg-black opacity-50 z-10" />
 
-      <div className="relative w-full px-4 md:px-8 z-40">
+      <div className="relative w-full px-4 md:px-8 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-x-5 w-full text-center">
           {/* Texto do depoimento */}
           <div className="max-w-2xl px-4 space-y-5 mt-6 lg:max-w-2xl w-full">
