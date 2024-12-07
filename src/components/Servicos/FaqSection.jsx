@@ -9,8 +9,8 @@ const FaqSection = () => {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 py-16">
-      <div className="container mx-auto px-6">
+    <section className="bg-white dark:bg-gray-900 py-16 z-10">
+      <div className="container mx-auto px-6 z-10">
         {/* Título da seção */}
         <h1 className="text-3xl font-extrabold text-center text-gray-800 lg:text-4xl dark:text-gray-900 mb-12">
           Perguntas Frequentes sobre nossos serviços

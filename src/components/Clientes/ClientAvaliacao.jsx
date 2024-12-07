@@ -64,7 +64,7 @@ const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) =>
   };
 
   return (
-    <div className="keen-slider__slide p-4">
+    <div className="keen-slider__slide p-4 z-10">
       <blockquote className="flex flex-col justify-between bg-white p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
         <div>
           <div className="flex gap-0.5 text-yellow-400">{renderStars(rating)}</div>
@@ -84,11 +84,13 @@ const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) =>
 const TestimonialsSlider = () => {
   const settings = {
     infinite: true,
-    speed: 500,
+    speed: 800, // Aumentando a velocidade da transição
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
     focusOnSelect: true,
+    autoplay: true, // Habilitando autoplay
+    autoplaySpeed: 5000, // Atraso entre as transições
     prevArrow: (
       <button
         aria-label="Previous slide"
@@ -122,12 +124,12 @@ const TestimonialsSlider = () => {
   };
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-gray-50 py-16 ">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
-        <h1 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900">
+        <h2 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900">
           Avaliações de{" "}
           <span className="text-[#81ff94]">Sucesso</span>
-        </h1>
+        </h2>
         <p className="mt-2 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-700">
           O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
         </p>

@@ -7,7 +7,6 @@
   background: linear-gradient(45deg, #25D366, #25D366);
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
   width: 70px; /* Aumentando o tamanho do botão */
   height: 70px;
   cursor: pointer;

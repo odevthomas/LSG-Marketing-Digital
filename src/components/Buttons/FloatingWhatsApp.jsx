@@ -1,6 +1,5 @@
 import React from 'react';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-import './WhatsAppButton.css'; // Importando o CSS externo
 
 const WhatsAppButton = () => {
   const whatsappInfo = {
@@ -15,45 +14,50 @@ const WhatsAppButton = () => {
   };
 
   return (
-    <div className="whatsapp-button-container">
+    <div>
       {/* Botão flutuante do WhatsApp */}
       <FloatingWhatsApp
         phoneNumber={whatsappInfo.phoneNumber}
         accountName={whatsappInfo.accountName}
         chatMessage={whatsappInfo.chatMessage}
+        chatboxHeight={400}
         notification={true}
         notificationDelay={60}
         notificationSound={true}
         notificationSoundSrc="/sound/whatsapp-notification.mp3"
         placeholder={whatsappInfo.placeholder}
         allowClickAway={false}
+        allowEsc={true}
+        darkMode={true}
         avatar="/avatar.png"  // Caminho do avatar personalizado
         buttonStyle={{
           background: whatsappInfo.buttonColor,
           borderRadius: "50%",
           padding: "10px",
-          boxShadow: "0 4px 15px rgba(0, 0, 0, 0.3)", // Sombra mais forte
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
+          transition: "transform 0.3s ease, box-shadow 0.3s ease",
+          width: "60px",
+          height: "60px",
           cursor: "pointer",
           position: "fixed",
           bottom: "30px",
           right: "30px",
-          zIndex: 9999999, // Garante que o botão sempre fique acima de outros elementos
+          zIndex: 99999,
         }}
         chatboxStyle={{
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          borderRadius: "10px", // Bordas mais arredondadas
+          borderRadius: "5% 5% 0 0",
           overflow: "hidden",
           backgroundColor: "#ffffff",
           position: "fixed",
           bottom: "6rem",
           right: "1rem",
-          width: "400px", // Largura do chatbox
+          width: "386px",
           opacity: 1,
-          boxShadow: "0 6px 20px rgba(0, 0, 0, 0.2)", // Sombra mais forte
-          zIndex: 9999998, // Garante que o chatbox também esteja acima, mas abaixo do botão
-          padding: "15px", // Espaçamento interno
+        
+          zIndex: 99998,
         }}
         status={whatsappInfo.status}
         statusMessage={whatsappInfo.statusMessage}

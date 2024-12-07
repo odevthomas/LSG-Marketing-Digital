@@ -7,7 +7,7 @@ import React from "react";
 const ChatbotSection = () => {
   return (
     <section
-      className="relative py-28 w-full bg-cover bg-center"
+      className="relative py-28 w-full bg-cover bg-center z-10 "
       style={{ backgroundImage: "url('/img/7.jpeg')" }} // Certifique-se de que o caminho está correto
     >
       <motion.div

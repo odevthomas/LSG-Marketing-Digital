@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import ImageCarousel from "../components/Clientes/ImageCarousel";
 import Navbar from "../components/Navbar";
 import CookieConsent from '../components/CookieConsent'; // Caminho do arquivo
+import FloatingWhatsAppComponent from '../components/Buttons/FloatingWhatsApp'; // Caminho do componente
+
 
 
 const Home = () => {
@@ -36,7 +38,11 @@ const Home = () => {
 
       {/* Modal de Cupom */}
       <CouponModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
-        <CookieConsent />
+      <CookieConsent />
+     <div className="fixed bottom-5 right-5 z-40">
+        <FloatingWhatsAppComponent />
+      </div>
+
     </>
   );
 };

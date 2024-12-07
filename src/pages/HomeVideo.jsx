@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/HeroSection.css'; // Assumindo que você já tenha o arquivo CSS
+import FloatingWhatsAppComponent from '../components/Buttons/FloatingWhatsApp'; // Caminho do componente
+
 
 const HeroSection = () => {
   const navigate = useNavigate();
