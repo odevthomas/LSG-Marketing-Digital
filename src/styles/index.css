@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+KR:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ultra&display=swap');
-
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
   --primary-color: #ff8c00;
   --secondary-color: #ffa434;
-  --black: #1f1f1f;
-  --white: #ffffff;
+  --black: #ffffff; /* Texto claro */
+  --white: #000000; /* Fundo escuro */
   --gray-light: #f5f5f5;
-  --gray-dark: #1f1f1f;
+  --gray-dark: #dddddd; /* Ajustado para um cinza claro */
 }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #000;
+  background-color: var(--white);
   color: var(--black);
   margin: 0;
   padding: 0;
@@ -100,10 +98,6 @@ p {
   background-color: var(--primary-color);
   transform: translateY(-2px);
 }
-
-
-
-
 
 .spinner {
   display: inline-block;
