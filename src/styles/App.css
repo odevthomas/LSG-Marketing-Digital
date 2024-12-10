@@ -12,8 +12,7 @@
 }
 
 body {
-  background-color: var(--gray-light);
-  color: var(--gray-dark);
+  color: var(--gray-white);
   margin: 0;
   padding: 0;
   position: relative; /* Adicionando posição relativa ao body */
