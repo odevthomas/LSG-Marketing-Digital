@@ -24,7 +24,7 @@ const HeroSection = () => {
         autoPlay
         loop
         muted
-        className="hero-section-video w-full h-full object-cover absolute inset-0 border-4 border-[#ff8c00] shadow-lg"
+        className="hero-section-video w-full h-full object-cover absolute inset-0 border-4 shadow-lg"
         aria-label="Vídeo de fundo sobre transformação digital"
       >
         <source src="/videos/abertura.mp4" type="video/mp4" />
