@@ -19,7 +19,7 @@ const CookieConsent = () => {
 
   return (
     !isAccepted && (
-      <div className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-black w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s">
+      <div className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-[#f6472c] w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s shadow-lg">
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <p className="text-sm sm:text-base text-white">
@@ -31,10 +31,10 @@ const CookieConsent = () => {
           </div>
         </div>
 
-        <div className="mt-4 flex justify-between space-x-4">
+        <div className="mt-4 flex justify-end">
           <button
             onClick={handleAccept}
-            className="bg-[#f6472c] text-black text-sm px-4 py-2 rounded-md hover:bg-[#f6472c] focus:outline-none transition duration-300"
+            className="bg-[#f6472c] text-black text-sm px-4 py-2 rounded-md hover:bg-[#d63924] focus:outline-none transition duration-300"
           >
             Aceitar
           </button>

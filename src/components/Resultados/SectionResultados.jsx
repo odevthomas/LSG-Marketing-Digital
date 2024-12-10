@@ -4,45 +4,37 @@ import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 const SectionResultados = () => {
-  // Lista de imagens com clientes
   const images = [
-    "/outs/5.png", // Imagens de clientes no diretório 'public/outs'
+    "/outs/5.png",
     "/outs/7.png",
   ];
 
-  // Estado para controlar qual imagem está ativa
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    // Intervalo para alterar a imagem a cada 18 segundos
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 18000);
 
-    // Limpeza do intervalo ao desmontar o componente
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <motion.section
-      className="py-16 sm:py-20 md:py-32 bg-cover bg-center relative w-full mt-16"
-      style={{
-        backgroundImage: "url('/img/HeroResultados.jpeg')", // Certifique-se de que o caminho da imagem está correto
-      }}
+      className="py-16 sm:py-20 md:py-32 bg-cover bg-center relative w-full"
+      style={{ backgroundImage: "url('/img/HeroResultados.jpeg')" }}
       aria-labelledby="testimonials"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      {/* Camada para escurecer o fundo */}
-      <div className="absolute inset-0 bg-black opacity-50 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#f46d40] to-[#000] opacity-90"></div>
 
       <div className="relative w-full px-4 md:px-8 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-center gap-x-5 w-full text-center">
-          {/* Texto do depoimento */}
-          <div className="max-w-2xl px-4 space-y-5 mt-6 lg:max-w-2xl w-full">
+          <div className="max-w-2xl px-4 mt-6 lg:max-w-2xl w-full">
             <motion.h3
-              className="text-white font-semibold mb-4 text-lg sm:text-xl"
+              className="text-[#f4f4f4] font-semibold mb-4 text-lg sm:text-xl"
               initial={{ opacity: 0, y: 1 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -56,8 +48,8 @@ const SectionResultados = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              RESULTADOS  {" "}
-              <span className="text-[#f6472c]">SURPREENDENTES</span>
+              RESULTADOS{" "}
+              <span className="text-[#f4f4f4]">SURPREENDENTES</span>
             </motion.p>
 
             <motion.p
@@ -66,20 +58,19 @@ const SectionResultados = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              Descubra como nossas estratégias de marketing transformam interações em resultados reais. Nossos clientes compartilham suas experiências e a eficácia de nossas soluções inovadoras.
+              Descubra como nossas estratégias de marketing transformam interações em resultados reais. Nossos clientes compartilham experiências que demonstram a eficácia de nossas soluções inovadoras.
             </motion.p>
 
-            {/* Call to Action - Botão para novo link */}
             <div className="flex justify-center mt-6">
               <motion.a
-                href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber com funciona"
-                className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#e57c3a] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase"
+                href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber como funciona"
+                className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-white bg-[#f46d40] hover:bg-[#e57c3a] rounded-lg shadow-lg transition-all duration-300 uppercase"
                 initial={{ opacity: 1, y: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 aria-label="Descubra mais"
               >
-                Converse com Especialista
+                Converse com um Especialista
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
@@ -96,7 +87,6 @@ const SectionResultados = () => {
             </div>
           </div>
 
-          {/* Carrossel de imagens - Horizontal */}
           <div className="w-full lg:flex-1 overflow-x-hidden mt-6 lg:mt-0">
             <motion.div
               className="flex gap-x-2 w-full"
@@ -117,7 +107,7 @@ const SectionResultados = () => {
                   <img
                     src={image}
                     alt={`Depoimento do cliente ${index + 1}`}
-                    className="rounded-lg object-cover w-full h-[200px] sm:h-[300px] md:h-[450px] lg:h-[400px] shadow-lg" // Ajuste da altura das imagens
+                    className="rounded-lg object-cover w-full h-[200px] sm:h-[300px] md:h-[450px] lg:h-[400px] shadow-lg"
                   />
                 </motion.div>
               ))}
@@ -125,8 +115,6 @@ const SectionResultados = () => {
           </div>
         </div>
       </div>
-
-      {/* Botão Flutuante do WhatsApp */}
     </motion.section>
   );
 };

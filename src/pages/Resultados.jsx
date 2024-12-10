@@ -4,7 +4,7 @@ import CertificationSection from '../components/Resultados/CertificationSection'
 import Navbar from '../components/Navbar';
 import SeloSection from '../components/Resultados/SeloSection';
 import Statistics from '../components/Resultados/Statistics';
-import FloatingWhatsAppComponent from '../components/Buttons/FloatingWhatsApp'; // Caminho do componente
+import WhatsAppButton from '../components/Buttons/WhatsAppButton'; // Caminho do componente
 
 
 // Importando o componente SectionResultados corretamente
@@ -22,7 +22,7 @@ const Resultados = () => {
       <Footer />
 
         <div className="fixed bottom-5 right-5 z-40">
-        <FloatingWhatsAppComponent />
+        <WhatsAppButton />
       </div>
     </>
   );

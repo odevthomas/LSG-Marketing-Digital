@@ -5,14 +5,14 @@ import { FaQuoteRight } from 'react-icons/fa'; // Importando ícone de citação
 // Componente do cartão do cliente
 const ClientCard = ({ imgSrc, name, description, slogan }) => {
   return (
-    <div className="p-4 flex flex-col items-center border-gray-300 border p-6 rounded-lg bg-white shadow-md">
+    <div className="p-4 flex flex-col items-center border-gray-800 border p-6 rounded-lg bg-[#2121] shadow-md">
       <img
         alt={`Imagem de ${name}`}
-        className="w-24 h-24 object-cover object-center rounded-full shadow-md border-2 border-gray-300 mb-4"
+        className="w-24 h-24 object-cover object-center rounded-full shadow-md border-2 border-gray-800 mb-4"
         src={imgSrc}
       />
       <div className="text-center">
-        <h2 className="text-xl font-semibold text-gray-900">{name}</h2>
+        <h2 className="text-xl font-semibold text-gray-300">{name}</h2>
         <p className="text-sm text-gray-600">{description}</p>
         <div className="text-gray-600 mt-2 flex items-center justify-center italic">
           <FaQuoteRight size={16} className="inline-block mr-1" />
@@ -132,12 +132,12 @@ const ClientSection = () => {
   };
 
   return (
-    <section className="bg-[#FFF] py-16 relative z-10">
+   <section className="bg-gradient-to-b from-black to-[#000] py-16 relative z-10">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
-        <h3 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-700 text-center">
+        <h3 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100 text-center">
           Clientes que Transformaram <span className="text-[#f46d40]"> Seus Negócios!</span> 
         </h3>
-        <p className="mt-3 text-gray-700 text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+        <p className="mt-3 text-gray-100 text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
           Veja como nossos clientes estão alcançando novos patamares de sucesso com a LSG Digital, a força por trás do seu crescimento!
         </p>
 

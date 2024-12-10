@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className=" bg-[#000]  text-white py-3">
+    <footer className="bg-[#000] text-white py-5">
       <div className="max-w-screen-2xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           
@@ -14,22 +18,27 @@ const Footer = () => {
             </Link>
           </div>
 
-          {/* Links de navegação */}
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 text-center md:text-left">
-            <Link to="/home" className="hover:text-[#f46d40] transition-colors">Home</Link>
-            <Link to="/resultados" className="hover:text-[#f46d40] transition-colors">Resultados</Link>
-            <Link to="/servicos" className="hover:text-[#f46d40] transition-colors">Serviços</Link>
-          </div>
-
           {/* Informações de contato */}
           <div className="mt-4 md:mt-0 text-center md:text-left">
-            <p className="text-sm  text-white">&copy; 2024 LSG Digital. Todos os direitos reservados.</p>
-            <p className="text-sm  text-white">
+            <p className="text-sm text-white">&copy; 2024 LSG Digital. Todos os direitos reservados.</p>
+            <p className="text-sm text-white">
               Entre em contato pelo WhatsApp: 
-              <a href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
-                className="underline text-[#f46d40] hover:text-white transition-colors">Clique aqui</a>
+              <a 
+                href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
+                className="underline text-[#f46d40] hover:text-white transition-colors"
+              >
+                Clique aqui
+              </a>
             </p>
           </div>
+
+          {/* Botão Voltar ao Topo */}
+          <button 
+            onClick={scrollToTop}
+            className="mt-4 md:mt-0 bg-[#f46d40] text-black font-semibold py-2 px-4 rounded-lg hover:bg-[#e65c30] transition-colors"
+          >
+            Voltar ao Topo
+          </button>
         </div>
       </div>
     </footer>

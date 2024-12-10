@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/HeroSection.css'; // Assumindo que você já tenha o arquivo CSS
-import FloatingWhatsAppComponent from '../components/Buttons/FloatingWhatsApp'; // Caminho do componente
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ const HeroSection = () => {
         autoPlay
         loop
         muted
-        className="hero-section-video w-full h-full object-cover absolute inset-0"
+        className="hero-section-video w-full h-full object-cover absolute inset-0 border-4 border-[#ff8c00] shadow-lg"
         aria-label="Vídeo de fundo sobre transformação digital"
       >
         <source src="/videos/abertura.mp4" type="video/mp4" />
@@ -46,7 +45,7 @@ const HeroSection = () => {
 
       {/* Conteúdo sobre o vídeo */}
       <div className="content relative z-10 text-center px-4 py-8 md:px-12">
-        <h1 className="text-4xl text-white md:text-6xl font-bold mb-4">
+        <h1 className="text-4xl text-white md:text-6xl font-bold mb-4 shadow-md">
           Transforme sua Presença Digital Hoje!
         </h1>
         <p className="text-lg text-white md:text-xl mb-2">
@@ -54,7 +53,7 @@ const HeroSection = () => {
         </p>
         <p className="text-md text-white md:text-lg mb-4">
           <span className="text-sm md:text-md ml-2">A partir de </span>
-          <span className="price-highlight text-6xl font-semibold text-[#ff8c00]"> {/* Cor laranja */}
+          <span className="price-highlight text-6xl font-semibold text-[#ff8c00]">
             R$ 599/mês
           </span>
         </p>
@@ -68,10 +67,10 @@ const HeroSection = () => {
           {/* Botão */}
           <button
             aria-label="Clique para conhecer os serviços"
-            className="inline-flex text-white items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-lg bg-[#ff8c00] hover:bg-[#ff6f00] rounded-full shadow-lg transition-all duration-300 uppercase" // Cor de fundo laranja
+            className="inline-flex text-white items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-lg bg-[#ff8c00] hover:bg-[#ff6f00] rounded-full shadow-lg transition-all duration-300 uppercase"
             onClick={() => navigate('/home')}
           >
-            Clique e Conheça
+            QUERO MAIS INFORMAÇÕES
           </button>
         </div>
       </div>

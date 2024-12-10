@@ -10,12 +10,14 @@ const ChatbotSection = () => {
       className="relative py-28 w-full bg-cover bg-center z-10 "
       style={{ backgroundImage: "url('/img/7.jpeg')" }} // Certifique-se de que o caminho está correto
     >
+      
       <motion.div
         className="relative z-1 gap-9 items-start lg:flex py-10 px-6 rounded-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
       >
+        
         <div className="flex-1 max-w-lg py-5 sm:mx-auto sm:text-left lg:max-w-lg lg:text-left mt-15">
           <h3 className="text-3xl text-white font-semibold md:text-4xl lg:text-5xl">
             Atendimento com{" "}
@@ -27,6 +29,7 @@ const ChatbotSection = () => {
             tarefas mais estratégicas, aumentando a eficiência e a produtividade
             do seu negócio.
           </p>
+          
           <div className="flex justify-center lg:justify-start mt-6">
             <motion.a
 href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"              className="inline-flex items-center justify-center gap-x-2 py-4 px-8 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white  rounded-lg shadow-lg transition-all duration-300 uppercase"
@@ -51,7 +54,6 @@ href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&
             </motion.a>
           </div>
         </div>
-        {/* Container do vídeo */}
         <div className="flex-1 mt-5 mx-auto sm:w-full lg:mt-0 lg:w-auto relative">
           <motion.video
             src="/videos/chatbot.mp4"

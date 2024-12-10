@@ -58,25 +58,25 @@ const Modal = () => {
     <>
       {isOpen && !isConfirmed && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
           role="dialog"
           aria-labelledby="modal-title"
           aria-modal="true"
           onClick={(e) => e.target === e.currentTarget && handleClose()} // Fechar ao clicar fora
         >
-          <div className="relative bg-white rounded-lg shadow-2xl sm:w-[400px] w-full p-6 mx-4 transition-transform transform hover:scale-105">
+          <div className="relative bg-[#0b0b0b] rounded-lg shadow-2xl sm:w-[400px] w-full p-6 mx-4 transition-transform transform hover:scale-105">
             <div>
               <img
                 className="object-cover w-full h-32 rounded-md"
                 src="https://images.unsplash.com/photo-1579226905180-636b76d96082?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                alt="Diagnostic image"
+                alt="Imagem de Diagnóstico"
               />
               <div className="mt-4 text-center">
-                <h3 className="text-2xl font-semibold text-gray-800 capitalize dark:text-black" id="modal-title">
+                <h3 className="text-2xl font-semibold text-white capitalize" id="modal-title">
                   Oferta de Diagnóstico Gratuito!
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                <p className="mt-2 text-sm text-gray-300">
                   Aproveite esta oportunidade exclusiva! Diagnóstico completo de saúde no valor de R$ 399, totalmente grátis.
                 </p>
 
@@ -93,7 +93,7 @@ const Modal = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Digite seu nome"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f46d40]transition-colors"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f6472c] transition-colors"
                 required
               />
               <input
@@ -101,7 +101,7 @@ const Modal = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Digite seu e-mail"
-                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f46d40]transition-colors"
+                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f6472c] transition-colors"
                 required
               />
               <input
@@ -109,7 +109,7 @@ const Modal = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Digite seu telefone"
-                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f46d40]transition-colors"
+                className="w-full mt-3 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#f6472c] transition-colors"
                 required
               />
             </div>
@@ -124,7 +124,7 @@ const Modal = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full px-4 py-2 mt-3 text-sm font-medium text-white bg-[#f6472c] rounded-md hover:bg-[#f46d40]focus:outline-none transition-colors sm:mt-0 sm:w-1/2"
+                className="w-full px-4 py-2 mt-3 text-sm font-medium text-white bg-[#f6472c] rounded-md hover:bg-[#f46d40] focus:outline-none transition-colors sm:mt-0 sm:w-1/2"
               >
                 Aproveitar Agora
               </button>
@@ -134,10 +134,10 @@ const Modal = () => {
       )}
 
       {error && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-800 bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto text-center">
-            <h3 className="text-xl font-semibold text-red-600 capitalize dark:text-white">Erro</h3>
-            <p className="mt-2 text-sm text-gray-900 dark:text-gray-900">{error}</p>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-[#0b0b0b] p-6 rounded-lg shadow-lg max-w-md mx-auto text-center">
+            <h3 className="text-xl font-semibold text-red-600 capitalize">Erro</h3>
+            <p className="mt-2 text-sm text-white">{error}</p>
             <button
               onClick={handleClose}
               className="mt-4 px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-500 focus:outline-none transition-colors"

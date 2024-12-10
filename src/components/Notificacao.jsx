@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 // Componente Notification
 const Notification = ({ message, type = 'success', duration = 10000 }) => {
@@ -24,7 +25,7 @@ const Notification = ({ message, type = 'success', duration = 10000 }) => {
     if (!isVisible) return null; // Não renderiza se não estiver visível
 
     return (
-        <div className="notification-container">
+        <div className="notification-container" aria-live="polite" role="alert">
             <div className={`notification ${type === 'success' ? 'notification-success' : 'notification-error'}`}>
                 <div className="notification-content">
                     <div className="notification-icon">
@@ -43,10 +44,10 @@ const Notification = ({ message, type = 'success', duration = 10000 }) => {
                             {type === 'success' ? 'Sucesso' : 'Erro'}
                         </span>
                         <p className={`notification-message ${type === 'success' ? 'text-green' : 'text-red'}`}>
-                            {message}
+                            {message || 'Mensagem não disponível.'}
                         </p>
                     </div>
-                    <button onClick={handleClose} className="notification-close-btn">
+                    <button onClick={handleClose} className="notification-close-btn" aria-label="Fechar notificação">
                         <svg xmlns="http://www.w3.org/2000/svg" className="icon-close" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>
@@ -55,6 +56,13 @@ const Notification = ({ message, type = 'success', duration = 10000 }) => {
             </div>
         </div>
     );
+};
+
+// Validação de propriedades
+Notification.propTypes = {
+    message: PropTypes.string.isRequired,
+    type: PropTypes.oneOf(['success', 'error']),
+    duration: PropTypes.number,
 };
 
 export default Notification;

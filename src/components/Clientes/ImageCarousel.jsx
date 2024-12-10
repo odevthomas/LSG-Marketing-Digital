@@ -15,13 +15,13 @@ const ImageCarousel = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex(prevIndex => (prevIndex + 1) % images.length);
-        }, 7000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, [images.length]);
 
     return (
-        <section className="py-16 bg-[#F4F4F4] relative z-10"> {/* Adicionando z-index aqui */}
+   <section className="bg-gradient-to-b from-black to-[#0000] py-16 relative z-10">
             <div className="max-w-full mx-auto px-6 md:px-8 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Imagem */}
@@ -45,7 +45,7 @@ const ImageCarousel = () => {
                     {/* Texto e Conteúdo */}
                     <div className="w-full lg:max-w-xl px-4 space-y-5 text-center lg:text-left">
                         <motion.h3
-                            className="text-gray-700 font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
+                            className="text-gray-100 font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
@@ -54,7 +54,7 @@ const ImageCarousel = () => {
                         </motion.h3>
 
                         <motion.p
-                            className="text-[#010101] text-lg sm:text-xl md:text-2xl leading-relaxed"
+                            className="text-[#f4f4f4] text-lg sm:text-xl md:text-2xl leading-relaxed"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.4 }}
@@ -63,7 +63,7 @@ const ImageCarousel = () => {
                         </motion.p>
 
                         <motion.p
-                            className="mt-3 text-lg mb-4 text-[#333]"
+                            className="mt-3 text-lg mb-4 text-[#f4f4f4]"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.6 }}

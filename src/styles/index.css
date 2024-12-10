@@ -1,41 +1,77 @@
-/* Importa os estilos base, componentes e utilitários do Tailwind */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+KR:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ultra&display=swap');
 
-/* Estilos globais personalizados */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
 :root {
-  --primary-color: #f46d40;
-  --secondary-color: #f6472c;
+  --primary-color: #ff8c00;
+  --secondary-color: #ffa434;
   --black: #1f1f1f;
   --white: #ffffff;
   --gray-light: #f5f5f5;
   --gray-dark: #1f1f1f;
 }
 
-/* Corpo e fundo */
 body {
-  font-family: 'Inter', Arial, sans-serif; /* Fonte principal */
-  background-color: var(--gray-dark); /* Cor de fundo escura */
-  color: var(--gray-light); /* Texto claro por padrão */
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+  color: var(--black);
   margin: 0;
   padding: 0;
-  position: relative; /* Adicionando posição relativa ao body */
 }
 
-/* Estilo do link principal */
-a {
-  text-decoration: none;
-  color: inherit;
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0.5rem 0;
 }
 
-/* Estilos do cabeçalho, botões e outras seções personalizadas */
-h1, h2, h3, h4 {
-  font-family: 'Inter', Arial, sans-serif; /* Cabeçalhos com a mesma fonte */
-  color: var(--black); /* Cor do texto dos cabeçalhos */
+h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0.5rem 0;
 }
 
-/* Botões personalizados */
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--black);
+  margin: 0.5rem 0;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray-dark);
+  margin: 0.5rem 0;
+}
+
+.description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--gray-dark);
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 0.375rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -43,7 +79,7 @@ h1, h2, h3, h4 {
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 0.375rem; /* Bordas arredondadas */
+  border-radius: 0.375rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -54,7 +90,7 @@ h1, h2, h3, h4 {
 
 .btn-primary:hover {
   background-color: var(--secondary-color);
-  transform: translateY(-2px); /* Efeito de "hover" */
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -64,45 +100,9 @@ h1, h2, h3, h4 {
 
 .btn-secondary:hover {
   background-color: var(--primary-color);
-  transform: translateY(-2px); /* Efeito de "hover" */
+  transform: translateY(-2px);
 }
 
-/* Definindo um estilo para seções com imagem de fundo */
-.bg-cover {
-  background-size: cover;
-  background-position: center;
-}
-
-/* Estilos para textos de parágrafos */
-p {
-  font-size: 1rem;
-  line-height: 1.75;
-  color: var(--gray-dark); /* Texto escuro */
-}
-
-.prose {
-  max-width: 70ch;
-  margin: 0 auto;
-  padding: 2rem;
-  font-size: 1rem;
-  color: var(--gray-dark);
-  line-height: 1.6;
-}
-
-/* Definição de cores personalizadas para utilizar no Tailwind */
-.bg-primary {
-  background-color: var(--primary-color);
-}
-
-.text-primary {
-  color: var(--primary-color);
-}
-
-.text-secondary {
-  color: var(--secondary-color);
-}
-
-/* Customizando a aparência do formulário */
 input,
 textarea,
 select {
@@ -118,67 +118,6 @@ select:focus {
   box-shadow: 0 0 5px var(--primary-color);
 }
 
-/* Customizando o modal */
-.modal {
-  @apply fixed top-0 left-0 right-0 z-50 p-6 bg-black bg-opacity-50 hidden;
-}
-
-.modal.show {
-  @apply block;
-}
-
-.modal-content {
-  @apply bg-white p-8 rounded-lg shadow-lg;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.modal-header {
-  @apply flex justify-between items-center;
-}
-
-.modal-header h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.modal-footer {
-  @apply flex justify-end mt-4;
-}
-
-.modal-footer .btn {
-  margin-left: 10px;
-}
-
-/* Customizando o formulário de contato */
-.form-section {
-  @apply bg-white shadow-2xl p-8 rounded-lg;
-}
-
-.form-section h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.form-section input,
-.form-section textarea {
-  @apply block w-full px-4 py-3 mt-4 border rounded-md border-gray-300;
-}
-
-.form-section button {
-  @apply mt-6 px-6 py-3 text-white bg-primary rounded-md hover:bg-secondary transition-colors;
-}
-
-/* Estilo para o botão flutuante do WhatsApp */
-.whatsapp-button {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 9999; /* Garante que o botão fique acima de outros elementos */
-}
-
-/* Animação de carregamento */
 @keyframes spin {
   0% {
     transform: rotate(0deg);

@@ -5,7 +5,7 @@ import ServicesSection from '../components/Servicos/ServicesSection';
 import FaqSection from '../components/Servicos/FaqSection';
 import FormularioContato from '../components/Formularios/FormularioContato';
 import Footer from '../components/Footer';  // Importando o componente Footer
-import FloatingWhatsAppComponent from '../components/Buttons/FloatingWhatsApp'; // Caminho do componente
+import WhatsAppButton  from '../components/Buttons/WhatsAppButton'; // Caminho do componente
 
 
 const Servicos = () => {
@@ -20,7 +20,7 @@ const Servicos = () => {
       {/* Seção dos serviços oferecidos */}
       <ServicesSection />
         <div className="fixed bottom-5 right-5 z-40">
-        <FloatingWhatsAppComponent />
+        <WhatsAppButton  />
       </div>
       {/* Seção de Perguntas Frequentes */}
       <FaqSection />
