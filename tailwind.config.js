@@ -4,11 +4,13 @@ import { nextui } from "@nextui-org/react";
 
 /** @type {import('tailwindcss').Config} */
 const config = withMT({
+  // Arquivos onde o Tailwind CSS irá procurar classes
   content: [
     "./index.html",
     "./src/**/*.{js,jsx,ts,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
+  // Configurações do tema
   theme: {
     extend: {
       colors: {
@@ -25,23 +27,19 @@ const config = withMT({
           '900': '#82420c',
           '950': '#462004',
         },
-        'primary': '#ff8c00',
-        'secondary': '#ffa434',
-        'dark': '#1f1f1f',
-        'light': '#ffffff',
-        'gray-light': '#f5f5f5',
-        'gray-dark': '#4a4a4a',
-      },
-      fontFamily: {
-        'eb-garamond': ['EB Garamond', 'serif'],
-        'noto-serif-kr': ['Noto Serif KR', 'serif'],
-        'poppins': ['Poppins', 'sans-serif'],
-        'ultra': ['Ultra', 'sans-serif'],
-        'inter': ['Inter', 'sans-serif'],
+        // Adicionando mais cores personalizadas
+        'primary': '#ff8c00', // Cor principal
+        'secondary': '#ffa434', // Cor secundária
+        'dark': '#1f1f1f', // Cor escura
+        'light': '#ffffff', // Cor clara
+        'gray-light': '#f5f5f5', // Cinza claro
+        'gray-dark': '#4a4a4a', // Cinza escuro
       },
     },
   },
+  // Habilita o modo escuro através da classe "dark"
   darkMode: "class",
+  // Plugins utilizados no Tailwind CSS
   plugins: [nextui()],
 });
 
