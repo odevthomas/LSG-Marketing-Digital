@@ -60,8 +60,6 @@ p {
 }
 
 .card {
-  background-color: var(--white);
-  border: 1px solid var(--gray-light);
   border-radius: 0.375rem;
   padding: 1.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -103,29 +101,9 @@ p {
   transform: translateY(-2px);
 }
 
-input,
-textarea,
-select {
-  @apply block w-full px-5 py-3 border border-gray-200 rounded-md bg-white text-gray-700;
-  outline: none;
-  transition: border-color 0.2s ease;
-}
 
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 5px var(--primary-color);
-}
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 
 .spinner {
   display: inline-block;
