@@ -27,13 +27,7 @@ const config = withMT({
           '900': '#82420c',
           '950': '#462004',
         },
-        // Adicionando mais cores personalizadas
-        'primary': '#ff8c00', // Cor principal
-        'secondary': '#ffa434', // Cor secundária
-        'dark': '#1f1f1f', // Cor escura
-        'light': '#ffffff', // Cor clara
-        'gray-light': '#f5f5f5', // Cinza claro
-        'gray-dark': '#4a4a4a', // Cinza escuro
+        
       },
     },
   },
