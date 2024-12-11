@@ -13,10 +13,18 @@ const ServicesSection = () => {
             <Box className="shrink-0 w-8 h-8 text-black" />
           </div>
           <div className="mt-5">
-            <h3 className="text-[#f46d40] text-xl font-semibold">Gestão de CRM</h3>
+            <h3 className="text-[#fb1603] text-xl font-semibold">Gestão de CRM</h3>
             <p className="mt-2 text-gray-300 text-sm">
               Organize seus contatos e transforme leads em clientes fiéis com um sistema de CRM otimizado.
             </p>
+            {/* CTA para WhatsApp */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Quero%20saber%20mais%20sobre%20gest%C3%A3o%20de%20CRM&type=phone_number&app_absent=0"
+              className="mt-4 inline-flex items-center justify-center gap-x-2 py-2 px-6 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase w-full"
+              style={{ minHeight: '50px' }} // Garantir a altura consistente
+            >
+              Quer otimizar a gestão de seus clientes? Clique aqui!
+            </a>
           </div>
         </div>
 
@@ -30,6 +38,14 @@ const ServicesSection = () => {
             <p className="mt-2 text-gray-300 text-sm">
               Revolucione seu atendimento ao cliente com chatbots humanizados. Automatize respostas a perguntas frequentes.
             </p>
+            {/* CTA para WhatsApp */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Quero%20implementar%20um%20chatbot%20agora&type=phone_number&app_absent=0"
+              className="mt-4 inline-flex items-center justify-center gap-x-2 py-2 px-6 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase w-full"
+              style={{ minHeight: '50px' }} // Garantir a altura consistente
+            >
+              Pronto para otimizar seu atendimento? Clique aqui e implemente seu chatbot agora!
+            </a>
           </div>
         </div>
 
@@ -43,6 +59,14 @@ const ServicesSection = () => {
             <p className="mt-2 text-gray-300 text-sm">
               Desenvolva funis de vendas inteligentes que guiam seus leads até a conversão de forma eficaz.
             </p>
+            {/* CTA para WhatsApp */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Quero%20criar%20um%20funil%20de%20vendas&type=phone_number&app_absent=0"
+              className="mt-4 inline-flex items-center justify-center gap-x-2 py-2 px-6 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase w-full"
+              style={{ minHeight: '50px' }} // Garantir a altura consistente
+            >
+              Quer aumentar suas conversões? Fale com um especialista e crie seu funil de vendas hoje mesmo!
+            </a>
           </div>
         </div>
 
@@ -56,6 +80,14 @@ const ServicesSection = () => {
             <p className="mt-2 text-gray-300 text-sm">
               Alcance o público certo com a mensagem certa. Impacte sua audiência e veja resultados concretos.
             </p>
+            {/* CTA para WhatsApp */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Quero%20fazer%20campanhas%20personalizadas&type=phone_number&app_absent=0"
+              className="mt-4 inline-flex items-center justify-center gap-x-2 py-2 px-6 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase w-full"
+              style={{ minHeight: '50px' }} // Garantir a altura consistente
+            >
+              Impulsione suas vendas agora! Fale com um especialista e comece sua campanha!
+            </a>
           </div>
         </div>
 
@@ -69,6 +101,14 @@ const ServicesSection = () => {
             <p className="mt-2 text-gray-300 text-sm">
               Crie páginas de destino que convertem visitantes em leads, maximizando a eficácia da sua campanha.
             </p>
+            {/* CTA para WhatsApp */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Quero%20criar%20uma%20landing%20page&type=phone_number&app_absent=0"
+              className="mt-4 inline-flex items-center justify-center gap-x-2 py-2 px-6 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase w-full"
+              style={{ minHeight: '50px' }} // Garantir a altura consistente
+            >
+              Quer converter mais visitantes? Crie sua landing page de alta performance agora!
+            </a>
           </div>
         </div>
 
@@ -82,6 +122,14 @@ const ServicesSection = () => {
             <p className="mt-2 text-gray-300 text-sm">
               Aprimore suas habilidades com nossa mentoria em criação de criativos e copys para gerar resultados.
             </p>
+            {/* CTA para WhatsApp */}
+            <a
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text=Quero%20iniciar%20minha%20mentoria&type=phone_number&app_absent=0"
+              className="mt-4 inline-flex items-center justify-center gap-x-2 py-2 px-6 text-black bg-[#fff] hover:bg-[#f6472c] hover:text-white rounded-lg shadow-lg transition-all duration-300 uppercase w-full"
+              style={{ minHeight: '50px' }} // Garantir a altura consistente
+            >
+              Quer criar postagens que geram resultados? Inicie sua mentoria agora e leve suas campanhas ao próximo nível!
+            </a>
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "../components/Clientes/Carousel";
 import ClientAvaliacao from "../components/Clientes/ClientAvaliacao";
-import Avaliacao from "../components/Clientes/ClientSection";
 import CouponModal from "../components/ModalComponent";
 import Footer from "../components/Footer";
 import ImageCarousel from "../components/Clientes/ImageCarousel";
@@ -27,9 +26,6 @@ const Home = () => {
       <Navbar />
 
         <Carousel />
-
-        <Avaliacao />
-
         <ClientAvaliacao />
 
         <ImageCarousel />

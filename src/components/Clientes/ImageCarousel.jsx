@@ -21,7 +21,7 @@ const ImageCarousel = () => {
     }, [images.length]);
 
     return (
-   <section className="bg-gradient-to-b from-black to-[#0000] py-16 relative z-10">
+        <section className="bg-gradient-to-b from-black to-[#0000] py-16 relative z-10">
             <div className="max-w-full mx-auto px-6 md:px-8 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Imagem */}
@@ -50,7 +50,7 @@ const ImageCarousel = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            Resultados <span className="text-[#f46d40]">Surpreendentes!</span>
+                            Resultados <span className="text-[#f7f7f7]">Surpreendentes!</span>
                         </motion.h3>
 
                         <motion.p
@@ -70,9 +70,20 @@ const ImageCarousel = () => {
                         >
                             Descubra como nossas estratégias de marketing transformam interações em resultados reais. Nossos clientes compartilham suas experiências e a eficácia de nossas soluções inovadoras.
                         </motion.p>
+
+                        {/* CTAs */}
+                        <div className="mt-6 space-y-4">
+                            <button className="bg-[#fb1603] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#d85d2b] transition-colors w-full md:w-auto">
+                                Quer resultados assim para sua empresa? Clique aqui e fale com um especialista!
+                            </button>
+                            <button className="bg-[#fb1603] text-white py-3 px-8 rounded-full font-bold text-lg hover:bg-[#d85d2b] transition-colors w-full md:w-auto">
+                                Descubra como podemos transformar o futuro do seu negócio.
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </section>
     );
 };

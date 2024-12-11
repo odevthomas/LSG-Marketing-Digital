@@ -65,10 +65,10 @@ const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) =>
 
   return (
     <div className="keen-slider__slide p-4 z-10">
-      <blockquote className="flex flex-col justify-between bg-[#f46d40] p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
+      <blockquote className="flex flex-col justify-between bg-[#fb1603] p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
         <div>
           <div className="flex gap-0.5 text-yellow-400">{renderStars(rating)}</div>
-          <div className="mt-4">
+          <div className="mt-0">
             <p className="text-lg sm:text-xl font-medium text-gray-200">{testimonial}</p>
           </div>
         </div>
@@ -124,11 +124,11 @@ const TestimonialsSlider = () => {
   };
 
   return (
-<section className=" from-black via-[#f46d40] to-[#2121] z-10">
+<section className=" from-black via-[#fb1603] to-[#2121] z-10">
    <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <h2 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100">
           Avaliações de{" "}
-          <span className="text-[#f46d40]">Sucesso</span>
+          <span className="text-[#f7f7f7]">Sucesso</span>
         </h2>
         <p className="mt-2 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-100">
           O sucesso dos nossos clientes é o que nos motiva. Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.

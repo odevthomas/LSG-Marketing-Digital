@@ -25,7 +25,7 @@ const Footer = () => {
               Entre em contato pelo WhatsApp: 
               <a 
                 href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0" 
-                className="underline text-[#f46d40] hover:text-white transition-colors"
+                className="underline text-[#fb1603] hover:text-white transition-colors"
               >
                 Clique aqui
               </a>
@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Botão Voltar ao Topo */}
           <button 
             onClick={scrollToTop}
-            className="mt-4 md:mt-0 bg-[#f46d40] text-black font-semibold py-2 px-4 rounded-lg hover:bg-[#e65c30] transition-colors"
+            className="mt-4 md:mt-0 bg-[#fb1603] text-black font-semibold py-2 px-4 rounded-lg hover:bg-[#e65c30] transition-colors"
           >
             Voltar ao Topo
           </button>

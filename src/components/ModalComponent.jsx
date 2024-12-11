@@ -124,7 +124,7 @@ const Modal = () => {
 
               <button
                 onClick={handleSubmit}
-                className="w-full px-4 py-2 mt-3 text-sm font-medium text-white bg-[#f6472c] rounded-md hover:bg-[#f46d40] focus:outline-none transition-colors sm:mt-0 sm:w-1/2"
+                className="w-full px-4 py-2 mt-3 text-sm font-medium text-white bg-[#f6472c] rounded-md hover:bg-[#fb1603] focus:outline-none transition-colors sm:mt-0 sm:w-1/2"
               >
                 Aproveitar Agora
               </button>

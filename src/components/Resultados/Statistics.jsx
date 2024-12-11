@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 const Statistics = () => {
     const stats = [
-        { data: 700000, title: "Gerados em Vendas" },
-        { data: 7000000, title: "Anos no Mercado" },
-        { data: 40, title: "Clientes Fieis" },
+        { data: 700000, title: "Vendas Geradas", description: "Resultados reais para nossos clientes." },
+        { data: 7000000, title: "Anos de Mercado", description: "Uma jornada de sucesso." },
+        { data: 40, title: "Clientes Fiéis", description: "Parceiros de longo prazo." },
     ];
 
     const [count, setCount] = useState(Array(stats.length).fill(0));
@@ -72,18 +72,18 @@ const Statistics = () => {
     }, []); // Executa apenas uma vez, quando o componente é montado
 
     return (
-        <section className="py-14 bg-[#000]">
+        <section className="py-14 px-4 sm:px-8 lg:px-16 ">
             <motion.h2
                 id="impacto-global"
-                className="text-center text-3xl font-bold text-white mb-8"
+                className="text-center text-3xl sm:text-4xl font-bold text-white mb-8"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                Nosso Impacto Global
+                Nosso Impacto: Resultados Reais, Crescimento Visível
             </motion.h2>
 
-            <ul className="flex flex-col items-center justify-center gap-y-10 sm:flex-row sm:flex-wrap lg:divide-x" aria-live="polite">
+            <ul className="flex flex-col sm:flex-row sm:space-x-10 items-center justify-center gap-y-10 sm:gap-y-0 sm:flex-wrap lg:divide-x" aria-live="polite">
                 {stats.map((item, idx) => (
                     <motion.li
                         key={idx}
@@ -92,10 +92,17 @@ const Statistics = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: idx * 0.3, type: 'spring', stiffness: 100 }}
                     >
-                        <h3 className="text-4xl text-[#f6472c] font-semibold" aria-label={`Número de ${item.title}`}>
+                        <h3
+                            className="text-5xl sm:text-6xl text-[#000000] font-bold transition duration-300 ease-in-out"
+                            aria-label={`Número de ${item.title}`}
+                            style={{ 
+                                fontFamily: '"Roboto Slab", serif', 
+                                textShadow: '1px 1px 3px #000' 
+                            }}
+                        >
                             {formatNumber(count[idx])}
                         </h3>
-                        <p className="mt-3 font-medium text-gray-500">{item.title}</p>
+                        <p className="mt-3 font-medium text-gray-200 text-sm sm:text-base">{item.description}</p>
                     </motion.li>
                 ))}
             </ul>
@@ -107,18 +114,30 @@ const Statistics = () => {
                 transition={{ duration: 0.5, delay: stats.length * 0.3 }}
             >
                 <h2
-                    className="text-2xl font-bold text-white sm:text-3xl md:text-4xl text-center"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center"
                     aria-label="Chamada para ação dinâmica"
                     title="Chamada para ação - Junte-se a nós"
                 >
                     {currentText}
                 </h2>
-                {/* SEO */}
-                <meta name="description" content="Junte-se à nossa equipe e faça parte do sucesso! Transforme seu futuro conosco." />
-                <meta property="og:title" content="Junte-se a nós - Sucesso Garantido" />
-                <meta property="og:description" content="Faça parte de uma equipe vencedora e transforme o seu futuro!" />
-                <meta name="robots" content="index, follow" />
+
+                {/* Botão de Chamada para Ação */}
+                <motion.button
+                    className="mt-6 px-8 py-4 bg-[#fb1603] text-white font-semibold rounded-lg shadow-md hover:bg-[bg-[#212121] transition duration-200 text-sm sm:text-base"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    onClick={() => alert('Vamos conversar!')}
+                >
+                    Pronto para alavancar seu negócio? Vamos conversar e mostrar como podemos ajudar!
+                </motion.button>
             </motion.div>
+
+            {/* SEO */}
+            <meta name="description" content="Junte-se à nossa equipe e faça parte do sucesso! Transforme seu futuro conosco." />
+            <meta property="og:title" content="Junte-se a nós - Sucesso Garantido" />
+            <meta property="og:description" content="Faça parte de uma equipe vencedora e transforme o seu futuro!" />
+            <meta name="robots" content="index, follow" />
         </section>
     );
 };

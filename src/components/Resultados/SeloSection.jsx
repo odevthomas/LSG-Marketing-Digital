@@ -10,7 +10,7 @@ const SeloSection = () => {
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 items-center px-6 py-12">
         <div className="text-center sm:text-left space-y-6">
           <motion.h3
-className="text-4xl font-semibold text-[#f46d40] hover:text-[#f6472c] transition duration-300 ease-in-out shadow-md"
+className="text-4xl font-semibold text-[#fb1603] hover:text-[#f6472c] transition duration-300 ease-in-out shadow-md"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -47,7 +47,7 @@ className="text-4xl font-semibold text-[#f46d40] hover:text-[#f6472c] transition
           >
             <a
               href="https://api.whatsapp.com/send/?phone=5519981331191&text=Ola quero saber como funciona"
-              className="inline-flex items-center py-3 px-6 bg-[#333] text-white hover:bg-[#f6472c] rounded-lg shadow-md transition-all duration-300"
+              className="inline-flex items-center py-3 px-6 bg-[#fb1603] text-white hover:bg-[#f6472c] rounded-lg shadow-md transition-all duration-300"
               aria-label="Descubra mais sobre a Garantia"
             >
               DESCUBRA MAIS
@@ -93,7 +93,7 @@ className="text-4xl font-semibold text-[#f46d40] hover:text-[#f6472c] transition
           <div className="space-y-4">
             <details className="group rounded-lg border-2 border-[#333] p-4 text-[#fff]">
               <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-200">
-                <h3 className="font-semibold text-[#f46d40] text-xl hover:text-[#f6472c] transition duration-300 ease-in-out">O que está incluído na garantia?</h3>
+                <h3 className="font-semibold text-[#fb1603] text-xl hover:text-[#f6472c] transition duration-300 ease-in-out">O que está incluído na garantia?</h3>
                 <span className="relative size-5 shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@ className="text-4xl font-semibold text-[#f46d40] hover:text-[#f6472c] transition
 
             <details className="group rounded-lg border-2 border-[#333] p-4 text-[#fff]">
               <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-200">
-                <h3 className="font-semibold text-[#f46d40] text-xl hover:text-[#f6472c] transition duration-300 ease-in-out">Como posso solicitar um ajuste?</h3>
+                <h3 className="font-semibold text-[#fb1603] text-xl hover:text-[#f6472c] transition duration-300 ease-in-out">Como posso solicitar um ajuste?</h3>
                 <span className="relative size-5 shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -171,7 +171,7 @@ className="text-4xl font-semibold text-[#f46d40] hover:text-[#f6472c] transition
 
             <details className="group rounded-lg border-2 border-[#333] p-4 text-[#fff]">
               <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-200">
-                <h3 className="font-semibold text-[#f46d40] text-xl hover:text-[#f6472c] transition duration-300 ease-in-out">E se eu não estiver satisfeito com o ajuste?</h3>
+                <h3 className="font-semibold text-[#fb1603] text-xl hover:text-[#f6472c] transition duration-300 ease-in-out">E se eu não estiver satisfeito com o ajuste?</h3>
                 <span className="relative size-5 shrink-0">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

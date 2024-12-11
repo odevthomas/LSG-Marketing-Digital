@@ -33,7 +33,7 @@ const Modal = ({ isOpen, onOpenChange }) => {
 
             <div className="mt-6 flex justify-center">
               <Dialog.Close asChild>
-                <button className="px-4 py-2 bg-[#f6472c] text-white rounded-lg hover:bg-[#f46d40] transition duration-300">
+                <button className="px-4 py-2 bg-[#f6472c] text-white rounded-lg hover:bg-[#fb1603] transition duration-300">
                   Fechar
                 </button>
               </Dialog.Close>
@@ -112,7 +112,7 @@ const FormComponent = () => {
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-[#f6472c] text-white rounded-lg hover:bg-[#f46d40] transition duration-300"
+          className="px-4 py-2 bg-[#f6472c] text-white rounded-lg hover:bg-[#fb1603] transition duration-300"
         >
           Enviar
         </button>

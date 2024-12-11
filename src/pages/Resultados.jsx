@@ -3,7 +3,6 @@ import Footer from '../components/Footer';
 import CertificationSection from '../components/Resultados/CertificationSection';
 import Navbar from '../components/Navbar';
 import SeloSection from '../components/Resultados/SeloSection';
-import Statistics from '../components/Resultados/Statistics';
 import WhatsAppButton from '../components/Buttons/WhatsAppButton'; // Caminho do componente
 
 
@@ -15,7 +14,6 @@ const Resultados = () => {
     <>
       <Navbar />
       <SectionResultados />  {/* Agora o componente SectionResultados pode ser usado */}
-      <Statistics />
       <CertificationSection /> 
       <SeloSection /> 
       
