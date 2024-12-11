@@ -53,7 +53,7 @@ const HeroSection = () => {
         </p>
         <p className="text-md text-white md:text-lg mb-4">
           <span className="text-sm md:text-md ml-2">A partir de </span>
-          <span className="price-highlight text-6xl font-semibold text-[#ff8c00]">
+          <span className="price-highlight text-6xl font-semibold text-[#fb1603]">
             R$ 599/mês
           </span>
         </p>
@@ -67,7 +67,7 @@ const HeroSection = () => {
           {/* Botão */}
           <button
             aria-label="Clique para conhecer os serviços"
-            className="inline-flex text-white items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-lg bg-[#ff8c00] hover:bg-[#ff6f00] rounded-full shadow-lg transition-all duration-300 uppercase"
+            className="inline-flex text-white items-center justify-center gap-x-2 py-3 px-6 text-sm md:text-lg bg-[#fb1603] hover:bg-[#ff6f00] rounded-full shadow-lg transition-all duration-300 uppercase"
             onClick={() => navigate('/home')}
           >
             QUERO MAIS INFORMAÇÕES
