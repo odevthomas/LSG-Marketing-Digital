@@ -1,18 +1,19 @@
 import React from "react";
-import "./DeveloperInfo.css"; // Importando o CSS
 
 const DeveloperInfo = () => {
   return (
-    <div className="developer-info">
+    <div>
       <h1>Sobre o Desenvolvedor</h1>
       <p>
-        Este site foi desenvolvido por <strong>Thomas Eduardo R Nascimento</strong>, um desenvolvedor frontend apaixonado por criar experiências digitais.
+        Este site foi desenvolvido por Thomas Eduardo R Nascimento, um desenvolvedor frontend apaixonado por criar experiências digitais.
       </p>
       <p>
-        Você pode entrar em contato pelo e-mail: <a href="mailto:developer.thomas@outlook.com">developer.thomas@outlook.com</a>
+        Você pode entrar em contato pelo e-mail: developer.thomas@outlook.com
       </p>
-      <p>Siga-me nas redes sociais:</p>
-      <ul className="social-links">
+      <p>
+        Siga-me nas redes sociais:
+      </p>
+      <ul>
         <li>
           <a href="https://www.linkedin.com/in/devthm/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </li>
