@@ -20,7 +20,6 @@ const Footer = () => {
   return (
     <footer className="bg-[#1212127b] text-white py-10">
       <div className="max-w-7xl mx-auto px-6">
-        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Logo */}
           <div className="flex items-center justify-center md:justify-start mb-4 md:mb-0">
@@ -31,13 +30,13 @@ const Footer = () => {
 
           {/* Links Úteis */}
           <div className="flex flex-col items-center md:items-start">
-            <a href="#" onClick={() => toggleModal(<DeveloperInfo />)} className="hover:underline text-gray-light mb-2">
+            <a href="#" onClick={() => toggleModal(<DeveloperInfo onClose={() => toggleModal(null)} />)} className="hover:underline text-gray-light mb-2">
               Sobre o Desenvolvedor
             </a>
-            <a href="#" onClick={() => toggleModal(<PrivacyPolicyAndTerms />)} className="hover:underline text-gray-light mb-2">
+            <a href="#" onClick={() => toggleModal(<PrivacyPolicyAndTerms onClose={() => toggleModal(null)} />)} className="hover:underline text-gray-light mb-2">
               Política de Privacidade
             </a>
-            <a href="#" onClick={() => toggleModal(<TermsOfUse />)} className="hover:underline text-gray-light mb-2">
+            <a href="#" onClick={() => toggleModal(<TermsOfUse onClose={() => toggleModal(null)} />)} className="hover:underline text-gray-light mb-2">
               Termos de Uso
             </a>
           </div>
@@ -73,7 +72,16 @@ const Footer = () => {
       </div>
 
       {/* Modal */}
-     
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            {modalContent}
+            <button onClick={() => toggleModal(null)} className="close-modal">
+              Fechar
+            </button>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .modal-overlay {
