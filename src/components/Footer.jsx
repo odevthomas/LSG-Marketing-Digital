@@ -1,51 +1,58 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Certifique-se de importar Link do react-router-dom
-import DeveloperInfo from "./DeveloperInfo"; // Importe o componente DeveloperInfo
+import { Link } from "react-router-dom"; 
+import DeveloperInfo from "./DeveloperInfo"; 
+import PrivacyPolicyAndTerms from "./PrivacyPolicyAndTerms"; 
+import TermsOfUse from "./TermsOfUse"; 
 
 const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar a visibilidade do modal
-  const [modalContent, setModalContent] = useState(null); // Estado para controlar o conteúdo do modal
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [modalContent, setModalContent] = useState(null); 
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Função para rolar suavemente para o topo
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const toggleModal = (content) => {
     setModalContent(content);
-    setIsModalOpen(!isModalOpen); // Alterna a visibilidade do modal
+    setIsModalOpen(prev => !prev); 
   };
 
   return (
-    <footer className="bg-[#000] text-white py-10">
+    <footer className="bg-[#1212127b] text-white py-10">
       <div className="max-w-7xl mx-auto px-6">
+        
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
           {/* Logo */}
-          <div className="mb-4 md:mb-0">
-            <Link to="/" className="text-2xl font-semibold flex items-center space-x-2">
-              <img src="/img/logo-2.png" alt="LSG logo" className="h-12" />
+          <div className="flex items-center justify-center md:justify-start mb-4 md:mb-0">
+            <Link to="/" className="flex items-center space-x-2">
+              <img src="/img/logo-2.png" alt="LSG logo" className="h-32" />
             </Link>
           </div>
 
           {/* Links Úteis */}
-          <div>
-            <ul>
-              <li>
-                <a href="#" onClick={() => toggleModal(<DeveloperInfo />)} className="hover:underline text-gray-light">Sobre o Desenvolvedor</a>
-              </li>
-            </ul>
+          <div className="flex flex-col items-center md:items-start">
+            <a href="#" onClick={() => toggleModal(<DeveloperInfo />)} className="hover:underline text-gray-light mb-2">
+              Sobre o Desenvolvedor
+            </a>
+            <a href="#" onClick={() => toggleModal(<PrivacyPolicyAndTerms />)} className="hover:underline text-gray-light mb-2">
+              Política de Privacidade
+            </a>
+            <a href="#" onClick={() => toggleModal(<TermsOfUse />)} className="hover:underline text-gray-light mb-2">
+              Termos de Uso
+            </a>
           </div>
 
           {/* Redes Sociais */}
-          <div>
-            <ul className="flex space-x-4">
-              <li>
-                <a href="https://www.facebook.com/lsgdigital" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-light">Facebook</a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/lsgdigital/" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-light">Instagram</a>
-              </li>
-            </ul>
+          <div className="flex flex-col items-center md:items-end">
+            <span className="font-bold mb-2">Siga-nos</span>
+            <div className="flex space-x-4">
+              <a href="https://www.facebook.com/casalellit" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-light">
+                Facebook
+              </a>
+              <a href="https://www.instagram.com/casalellit/" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-light">
+                Instagram
+              </a>
+            </div>
           </div>
         </div>
 
@@ -61,21 +68,12 @@ const Footer = () => {
 
         {/* Direitos Autorais */}
         <div className="mt-10 text-center">
-          <p>&copy; {new Date().getFullYear()} lsgdigita. Todos os direitos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} Casa Lellit. Todos os direitos reservados.</p>
         </div>
       </div>
 
-      {/* Modal de Sobre o Desenvolvedor */}
-      {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            {modalContent}
-            <button onClick={() => toggleModal(null)} className="close-modal">
-              Fechar
-            </button>
-          </div>
-        </div>
-      )}
+      {/* Modal */}
+     
 
       <style>{`
         .modal-overlay {
@@ -91,18 +89,18 @@ const Footer = () => {
           z-index: 1000;
         }
         .modal-content {
-          background: #1a1a1a; /* Fundo mais escuro */
-          color: white; /* Cor da fonte clara */
+          background: #1a1a1a; 
+          color: white; 
           padding: 20px;
-          border-radius: 8px;
+          border-radius: 12px; 
           width: 90%;
           max-width: 600px;
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-          overflow-y: auto; /* Permite rolagem se o conteúdo for muito longo */
-          max-height: 80vh; /* Limita a altura do modal */
+          overflow-y: auto;
+          max-height: 80vh; 
         }
         .close-modal {
-          background-color: #e53e3e; /* Cor do botão de fechar */
+          background-color: #e53e3e; 
           color: white;
           padding: 10px 20px;
           border: none;
@@ -112,7 +110,7 @@ const Footer = () => {
           transition: background-color 0.3s;
         }
         .close-modal:hover {
-          background-color: #c53030; /* Cor do botão ao passar o mouse */
+          background-color: #c53030; 
         }
         @media (max-width: 768px) {
           .modal-content {
