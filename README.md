@@ -1,8 +1,17 @@
 
 # Projeto LSG Digital
 
-**Descrição:**  
-Este projeto é um site para a agência **LSG Digital**, que oferece serviços de marketing digital, design, e automação. O site possui uma interface moderna e responsiva, destacando serviços oferecidos pela agência, incluindo gestão de CRM, criação de landing pages, e campanhas personalizadas. Além disso, há um formulário de contato para facilitar a interação com clientes e leads.
+
+### Descrição do Projeto:
+
+Este projeto é uma plataforma web para a **LSG Digital**, uma agência especializada em marketing digital e soluções para empresas. A agência oferece diversos serviços, como criação de funis de vendas, campanhas personalizadas, criação de landing pages, implementação de chatbots e mentoria em postagem.
+
+O site é projetado para ser simples, direto e eficiente, com um design responsivo que garante uma boa experiência tanto em desktop quanto em dispositivos móveis. A interface de usuário foi construída utilizando o **React** e estilizada com o **Tailwind CSS**, permitindo um design moderno e flexível.
+
+A seção de **serviços** descreve as soluções oferecidas pela agência, enquanto a **seção de contato** permite que visitantes possam facilmente entrar em contato com a equipe através de um formulário simples, com integração de envio para o **FormSubmit**. Além disso, há um **banner de consentimento de cookies** para garantir conformidade com a legislação de privacidade.
+
+O projeto também é preparado para a adição de novas funcionalidades, com uma estrutura de código limpa e organizada que facilita futuras manutenções e expansões.
+
 
 
 ## Funcionalidades
@@ -104,16 +113,4 @@ Se você deseja contribuir com o projeto, siga os passos abaixo:
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
-
----
-
-### Descrição do Projeto:
-
-Este projeto é uma plataforma web para a **LSG Digital**, uma agência especializada em marketing digital e soluções para empresas. A agência oferece diversos serviços, como criação de funis de vendas, campanhas personalizadas, criação de landing pages, implementação de chatbots e mentoria em postagem.
-
-O site é projetado para ser simples, direto e eficiente, com um design responsivo que garante uma boa experiência tanto em desktop quanto em dispositivos móveis. A interface de usuário foi construída utilizando o **React** e estilizada com o **Tailwind CSS**, permitindo um design moderno e flexível.
-
-A seção de **serviços** descreve as soluções oferecidas pela agência, enquanto a **seção de contato** permite que visitantes possam facilmente entrar em contato com a equipe através de um formulário simples, com integração de envio para o **FormSubmit**. Além disso, há um **banner de consentimento de cookies** para garantir conformidade com a legislação de privacidade.
-
-O projeto também é preparado para a adição de novas funcionalidades, com uma estrutura de código limpa e organizada que facilita futuras manutenções e expansões.
 
