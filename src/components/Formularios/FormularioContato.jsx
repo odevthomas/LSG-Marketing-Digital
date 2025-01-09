@@ -21,28 +21,23 @@ const FormularioDeContato = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    // Verificar se os dados obrigatórios foram preenchidos
+    if (!formData.name || !formData.phone || !formData.email || !formData.message || !formData.terms) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
+
     try {
-      // Enviar os dados para o servidor
-      const response = await fetch("https://seu-endpoint-api.com/contato", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) throw new Error("Erro ao enviar os dados.");
-
-      setSubmitted(true); // Atualiza o estado para indicar que o formulário foi enviado
-
-      // Mensagem para WhatsApp
-      const whatsappMessage = `Olá ${formData.name}, seu contato foi recebido! Um especialista entrará em contato em breve.`;
+      // Cria uma mensagem para o WhatsApp com os dados preenchidos
+      const whatsappMessage = `Olá, meu nome é ${formData.name}. Meu telefone é ${formData.phone}. Meu email é ${formData.email}. Mensagem: ${formData.message}`;
       const encodedMessage = encodeURIComponent(whatsappMessage);
       const whatsappUrl = `https://api.whatsapp.com/send?phone=5519981331191&text=${encodedMessage}`;
 
-      // Redirecionar para o WhatsApp
+      // Redireciona para o WhatsApp
       window.open(whatsappUrl, "_blank");
+
+      setSubmitted(true); // Atualiza o estado para indicar que o formulário foi enviado
     } catch (error) {
       console.error("Erro:", error);
       // Aqui você pode adicionar uma mensagem de erro para o usuário
@@ -50,7 +45,7 @@ const FormularioDeContato = () => {
   };
 
   return (
-    <section className="flex min-h-screen bg-black">
+    <section className="flex min-h-screen bg-white">
       <div className="hidden lg:block lg:w-1/2 h-3/4">
         <img
           src="/digital.png"
@@ -60,19 +55,19 @@ const FormularioDeContato = () => {
       </div>
 
       <div className="w-full lg:w-1/2 flex items-center justify-center p-8">
-        <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-lg">
-          <h1 className="text-2xl font-semibold text-center text-black">Formulário de Contato</h1>
-          <p className="mt-2 text-gray-600 text-center">Pergunte tudo o que quiser. Adoramos ouvir nossos clientes!</p>
+        <div className="w-full max-w-md p-8 bg-black rounded-xl shadow-lg">
+          <h4 className="text-2xl font-semibold text-center text-[#f11414]">Formulário de Contato</h4>
+          <p className="mt-2 text-black text-center">Pergunte tudo o que quiser. Adoramos ouvir nossos clientes!</p>
 
           {submitted ? (
             <div className="text-center mt-6">
-              <h2 className="text-lg font-semibold text-black">Obrigado pelo seu contato!</h2>
-              <p className="mt-2 text-gray-500">Um especialista entrará em contato em breve.</p>
+              <h2 className="text-lg font-semibold text-[#000]">Obrigado pelo seu contato!</h2>
+              <p className="mt-2 text-gray-800">Um especialista entrará em contato em breve.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>
-                <label htmlFor="name" className="block mb-2 text-sm text-gray-600">Nome Completo</label>
+                <label htmlFor="name" className="block mb-2 text-sm text-gray-300">Nome Completo</label>
                 <input
                   type="text"
                   id="name"
@@ -86,7 +81,7 @@ const FormularioDeContato = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-2 text-sm text-gray-600">Endereço de E-mail</label>
+                <label htmlFor="email" className="block mb-2 text-sm text-gray-300">Endereço de E-mail</label>
                 <input
                   type="email"
                   id="email"
@@ -100,7 +95,7 @@ const FormularioDeContato = () => {
               </div>
 
               <div>
-                <label htmlFor="phone" className="block mb-2 text-sm text-gray-600">Número de Telefone</label>
+                <label htmlFor="phone" className="block mb-2 text-sm text-gray-300">Número de Telefone</label>
                 <input
                   type="tel"
                   id="phone"
@@ -108,7 +103,7 @@ const FormularioDeContato = () => {
                   placeholder="(99) 99999-9999"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="block w-full px-5 py-3 text-gray-800 border border-gray-300 rounded-md focus:border-[#fb1603] focus:ring-[#fb1603]"
+                  className="block w-full px-5 py-3 text-gray-200 border border-gray-300 rounded-md focus:border-[#fb1603] focus:ring-[#fb1603]"
                   required
                 />
               </div>
@@ -121,7 +116,7 @@ const FormularioDeContato = () => {
                   placeholder="Sua mensagem aqui..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="block w-full h-32 px-5 py-3 text-gray-800 border border-gray-300 rounded-md focus:border-[#fb1603] focus:ring-[#fb1603]"
+                  className="block w-full h-32 px-5 py-3 text-gray-200 border border-gray-300 rounded-md focus:border-[#fb1603] focus:ring-[#fb1603]"
                   required
                 />
               </div>

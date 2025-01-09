@@ -24,7 +24,7 @@ const CookieConsent = () => {
           <div className="flex-1">
             <p className="text-sm sm:text-base text-white">
               Este site usa cookies para melhorar a sua experiência. Ao continuar a navegar, você concorda com o uso de cookies. 
-              <a href="/política-de-privacidade" className="text-[#f6472c] hover:underline ml-1">
+              <a href="/política-de-privacidade" className="text-[#39393900] hover:underline ml-1">
                 Saiba mais
               </a>
             </p>

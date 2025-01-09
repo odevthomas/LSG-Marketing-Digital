@@ -1,166 +1,143 @@
 <!doctype html>
 <html lang="pt-br">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible"
-          content="IE=edge" />
+      <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="X-UA-Compatible"
+                  content="IE=edge" />
 
-    <!-- Favicon -->
-    <link rel="icon"
-          type="image/svg+xml"
-          href="/logo-nova.png" />
-    <link rel="apple-touch-icon"
-          href="/logo-nova.png" />
+            <!-- Estilos Externos -->
+            <link rel="stylesheet"
+                  href="https://cdn.jsdelivr.net/npm/react-floating-whatsapp@latest/dist/index.css" />
+            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:wght@300;400;500;600;700&display=swap"
+                  rel="stylesheet">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Noto+Serif+KR:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ultra&display=swap"
-          rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-          rel="stylesheet">
+            <!-- Favicon e Ícones -->
+            <link id="favicon"
+                  rel="icon"
+                  type="image/png"
+                  href="/logo-nova.png" />
+            <link rel="apple-touch-icon"
+                  href="/logo-nova.png" />
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+            <!-- Estilos internos -->
+            <link rel="stylesheet"
+                  href="/src/styles/index.css" />
+            <link rel="stylesheet"
+                  href="/src/styles/App.css" />
 
-    <!-- Estilos -->
-    <link rel="stylesheet"
-          href="/src/styles/index.css" />
-    <link rel="stylesheet"
-          href="/src/styles/App.css" />
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/react-floating-whatsapp@latest/dist/index.css" />
+            <title>LSG Digital - Soluções em Marketing Digital em Campinas, SP e RJ</title>
 
-    <!-- Título e Meta Tags Dinâmicas -->
-    <title id="dynamic-title">LSG Digital - Soluções em Marketing Digital em Campinas, SP e RJ</title>
-    <meta name="description"
-          content="LSG Digital oferece soluções inovadoras em marketing digital, assessoria e consultoria em Campinas, SP e RJ para impulsionar seu negócio." />
-    <meta name="keywords"
-          content="Google Ads, Facebook Ads, agência de tráfego pago, marketing digital, gestão de anúncios, como anunciar no Google Ads, especialistas em Facebook Ads, consultoria para campanhas pagas, empresa de marketing digital especializada, Campinas, São Paulo, Rio de Janeiro" />
-    <meta name="author"
-          content="LSG Digital" />
+            <!-- Meta Tags e SEO -->
+            <meta name="description"
+                  content="LSG Digital oferece soluções inovadoras em marketing digital, assessoria e consultoria em Campinas, SP e RJ para impulsionar seu negócio." />
+            <meta name="keywords"
+                  content="Google Ads, Facebook Ads, agência de tráfego pago, marketing digital, gestão de anúncios" />
+            <meta name="author"
+                  content="LSG Digital" />
 
-    <meta property="og:title"
-          content="LSG Digital - Transforme seu Negócio" />
-    <meta property="og:description"
-          content="Explore nossos serviços de marketing digital e assessoria em Campinas, SP e RJ para levar seu negócio ao próximo nível." />
-    <meta property="og:image"
-          content="https://lsgdigital.com.br/public/logo-nova.png" />
-    <meta property="og:url"
-          content="https://lsgdigital.com.br" />
-    <meta property="og:type"
-          content="website" />
+            <!-- Open Graph -->
+            <meta property="og:title"
+                  content="LSG Digital - Transforme seu Negócio" />
+            <meta property="og:description"
+                  content="Explore nossos serviços de marketing digital e assessoria em Campinas, SP e RJ para levar seu negócio ao próximo nível." />
+            <meta property="og:image"
+                  content="https://lsgdigital.com.br/public/logo-nova.png" />
+            <meta property="og:url"
+                  content="https://lsgdigital.com.br" />
+            <meta property="og:type"
+                  content="website" />
 
-    <!-- Twitter Cards -->
-    <meta name="twitter:card"
-          content="summary_large_image" />
-    <meta name="twitter:title"
-          content="LSG Digital - Transforme seu Negócio" />
-    <meta name="twitter:description"
-          content="Explore nossos serviços de marketing digital e assessoria em Campinas, SP e RJ." />
-    <meta name="twitter:image"
-          content="https://lsgdigital.com.br/public/logo-nova.png" />
+            <!-- Twitter Cards -->
+            <meta name="twitter:card"
+                  content="summary_large_image" />
+            <meta name="twitter:title"
+                  content="LSG Digital - Transforme seu Negócio" />
+            <meta name="twitter:description"
+                  content="Explore nossos serviços de marketing digital e assessoria em Campinas, SP e RJ." />
+            <meta name="twitter:image"
+                  content="https://lsgdigital.com.br/public/logo-nova.png" />
+            <meta name="robots"
+                  content="index, follow" />
+            <meta name="theme-color"
+                  content="#ffffff" />
+            <link rel="canonical"
+                  href="https://lsgdigital.com.br" />
 
-    <meta name="robots"
-          content="index, follow" />
-    <meta name="theme-color"
-          content="#ffffff" />
-    <link rel="canonical"
-          href="https://lsgdigital.com.br" />
+            <!-- Google Tag Manager -->
+            <script async
+                    src="https://www.googletagmanager.com/gtm.js?id=GTM-NGBJKQN5"
+                    defer></script>
 
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-        w[l] = w[l] || []; w[l].push({
-          'gtm.start':
-            new Date().getTime(), event: 'gtm.js'
-        }); var f = d.getElementsByTagName(s)[0],
-          j = d = document.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-NGBJKQN5');</script>
-    <!-- End Google Tag Manager -->
+            <!-- Favicon dinâmico -->
+            <script>
+                  function updateFavicon() {
+                        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                        const favicon = document.getElementById('favicon');
+                        favicon.href = darkModeMediaQuery.matches ? '/favicon-branco.svg' : '/logo-nova.png';
+                  }
+                  updateFavicon();
+                  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
+            </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "LSG Digital",
-      "url": "https://lsgdigital.com.br",
-      "logo": "https://lsgdigital.com.br/public/logo-nova.png",
-      "sameAs": [
-        "https://www.facebook.com/lsgdigital",
-        "https://twitter.com/lsgdigital",
-        "https://www.linkedin.com/company/lsgdigital"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Exemplo, 123",
-        "addressLocality": "Campinas",
-        "addressRegion": "SP",
-        "postalCode": "13000-000",
-        "addressCountry": "BR"
-      },
-      "telephone": "+55 19 1234-5678"
-    }
-    </script>
-
-  </head>
-
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGBJKQN5"
-              height="0"
-              width="0"
-              style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
-    <!-- Google Analytics (gtag.js) -->
-    <script async
-            src="https://www.googletagmanager.com/gtag/js?id=G-092NLM84P6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      gtag('config', 'G-092NLM84P6');
-    </script>
-
-    <div id="root"></div>
-
-    <script type="module"
-            src="/src/main.jsx"></script>
-
-    <script>
-      // Script para alterar o título da página dinamicamente
-      document.addEventListener('DOMContentLoaded', function () {
-        const pageTitles = {
-          home: 'LSG Digital - Soluções em Marketing Digital',
-          googleAds: 'LSG Digital - Como Anunciar no Google Ads',
-          facebookAds: 'LSG Digital - Especialistas em Facebook Ads',
-          agenciaGoogleAds: 'LSG Digital - Agência de Google Ads no Brasil',
-          consultoriaCampanhas: 'LSG Digital - Consultoria para Campanhas Pagas',
-          empresaEspecializada: 'LSG Digital - Empresa Especializada em Marketing Digital',
-          dicasGoogleAds: 'LSG Digital - Dicas para Aumentar o ROI no Google Ads',
-          criacaoAnunciosFacebook: 'LSG Digital - Como Criar Anúncios no Facebook',
-          sobre: 'LSG Digital - Sobre a Empresa',
-          contato: 'LSG Digital - Fale Conosco'
-        };
-
-        // Função para alterar o título da página
-        function changeTitle(page) {
-          const title = pageTitles[page] || pageTitles.home;
-          document.getElementById('dynamic-title').innerText = title;
+            <!-- Schema.org (Google) -->
+            <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "LSG Digital",
+            "url": "https://lsgdigital.com.br",
+            "logo": "https://lsgdigital.com.br/public/logo-nova.png",
+            "sameAs": [
+                "https://www.facebook.com/lsgdigital",
+                "https://twitter.com/lsgdigital",
+                "https://www.linkedin.com/company/lsgdigital"
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rua Exemplo, 123",
+                "addressLocality": "Campinas",
+                "addressRegion": "SP",
+                "postalCode": "13000-000",
+                "addressCountry": "BR"
+            },
+            "telephone": "+55 19 1234-5678"
         }
-
-        // Aqui você pode substituir por lógica que determine a página atual
-        const currentPage = 'home'; // Altere isso conforme necessário, pode ser dinâmico
-        changeTitle(currentPage);
-      });
     </script>
+      </head>
 
-  </body>
+      <body>
+            <noscript>
+                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGBJKQN5"
+                          height="0"
+                          width="0"
+                          style="display:none;visibility:hidden"></iframe>
+            </noscript>
+
+            <div id="root"></div>
+
+            <!-- Scripts -->
+            <script type="module"
+                    src="/src/main.jsx"></script>
+
+            <!-- Automação do título da página -->
+            <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                        const keywords = [
+                              "LSG Digital", "Marketing Digital", "Consultoria em Campinas", "Google Ads",
+                              "Facebook Ads", "Gestão de Anúncios", "Campanhas Pagas", "Aumente seu ROI",
+                              "Especialistas em Marketing", "Transforme seu Negócio", "Soluções Inovadoras"
+                        ];
+                        let index = 0;
+                        setInterval(function () {
+                              document.title = keywords[index] + " - LSG Digital";
+                              index = (index + 1) % keywords.length;
+                        }, 3000); // Troca o título a cada 3 segundos
+                  });
+            </script>
+
+      </body>
 
 </html>

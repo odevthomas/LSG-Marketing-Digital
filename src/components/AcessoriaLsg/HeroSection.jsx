@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import logo from '/logo-nova.png'; // Importe sua logo
+import logo from '/logo-novas-lsg.png'; // Importe sua logo
 import { FaWhatsapp } from 'react-icons/fa'; // Certifique-se de ter o react-icons instalado
 
 const HeroSection = () => {
@@ -35,17 +35,14 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative py-20 w-full h-screen bg-cover bg-center bg-fixed flex items-center"
-      style={{
-        backgroundImage:'url("/bg-teste-home.jpg")',
-      }}
+      className="relative py-20 w-full  bg-white h-screen bg-cover bg-center bg-fixed flex items-center"
       aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
     >
-      <div className="hero-section-video-overlay bg-black bg-opacity-75 absolute inset-0"></div>
+      <div className="hero-section-video-overlay bg-white bg-opacity-75 absolute inset-0"></div>
 
       {videoError && (
         <div className="hero-section-fallback bg-black w-full h-full flex items-center justify-center absolute inset-0">
-          <p className="text-white text-xl font-semibold">
+          <p className="text-black text-xl font-semibold">
             O vídeo não pôde ser carregado. Por favor, tente novamente mais tarde.
           </p>
         </div>
@@ -58,15 +55,15 @@ const HeroSection = () => {
           className="mb-6 w-32 sm:w-40 md:w-48 mx-auto"
         />
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider text-white leading-tight uppercase mb-4">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider text-black leading-tight uppercase mb-4">
           Transforme sua Presença Digital Hoje!
         </h1>
 
-        <p className="text-lg sm:text-xl text-white mb-4 font-medium">
+        <p className="text-lg sm:text-xl text-black mb-4 font-medium">
           Descubra soluções inovadoras e acessíveis para o seu negócio de beleza e estética.
         </p>
 
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-6 font-semibold">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black mb-6 font-semibold">
           <span className="text-sm sm:text-base md:text-lg ml-2">A partir de </span>
           <span className="price-highlight text-4xl sm:text-5xl md:text-6xl font-semibold text-[#fb1603]">
             R$ 599/mês

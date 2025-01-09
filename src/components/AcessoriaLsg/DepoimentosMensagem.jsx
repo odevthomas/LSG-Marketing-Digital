@@ -69,25 +69,21 @@ const Depoimentos = () => {
 
   return (
     <motion.section
-      className="py-16 relative w-full"
+      className="py-16 relative bg-white  w-full"
       aria-labelledby="depoimentos"
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      style={{
-        backgroundImage: 'url("/bg-teste.png")',
-        backgroundSize: "cover",
-        backgroundPosition: `center ${scrollY * 0.5}px`, // Efeito parallax
-      }}
+     
     >
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-white  opacity-10"></div>
 
       <div className="relative w-full px-4 md:px-8">
         <div className="flex flex-col items-center text-center mt-4">
-          <h2 className="mt-9 mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white font-semibold">
+          <h2 className="mt-9 mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black font-semibold">
             O Que Nossos Clientes Dizem em Tempo Real
           </h2>
-          <p className="mt-4 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-300">
+          <p className="mt-4 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-900">
             Seus feedbacks são nossa maior motivação para continuarmos oferecendo soluções digitais de excelência em tempo real. Obrigado por confiarem na LSG Digital!
           </p>
         </div>

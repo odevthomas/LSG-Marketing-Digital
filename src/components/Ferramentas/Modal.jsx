@@ -7,11 +7,11 @@ const Modal = ({ isOpen, onOpenChange }) => {
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 w-full h-full bg-black opacity-50 z-50" />
         <Dialog.Content className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-full max-w-lg mx-auto px-4 z-60">
-          <div className="bg-[#0b0b0b] rounded-md shadow-lg px-6 py-8">
+          <div className="bg-[#ffffff] rounded-md shadow-lg px-6 py-8">
             <div className="flex items-center justify-center w-12 h-12 mx-auto bg-[#f6472c] rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5 text-white"
+                className="w-5 h-5 text-black"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -23,17 +23,17 @@ const Modal = ({ isOpen, onOpenChange }) => {
               </svg>
             </div>
 
-            <Dialog.Title className="text-lg font-semibold text-white text-center mt-4">
+            <Dialog.Title className="text-lg font-semibold text-black text-center mt-4">
               Formulário Enviado com Sucesso!
             </Dialog.Title>
-            <Dialog.Description className="mt-2 text-sm leading-relaxed text-center text-white">
+            <Dialog.Description className="mt-2 text-sm leading-relaxed text-center text-black">
               🎉 Obrigado por entrar em contato! Nossa equipe já recebeu sua
               mensagem e responderá em breve. Estamos animados para ajudar você!
             </Dialog.Description>
 
             <div className="mt-6 flex justify-center">
               <Dialog.Close asChild>
-                <button className="px-4 py-2 bg-[#f6472c] text-white rounded-lg hover:bg-[#fb1603] transition duration-300">
+                <button className="px-4 py-2 bg-[#f6472c] text-black rounded-lg hover:bg-[#fb1603] transition duration-300">
                   Fechar
                 </button>
               </Dialog.Close>
@@ -112,7 +112,7 @@ const FormComponent = () => {
         />
         <button
           type="submit"
-          className="px-4 py-2 bg-[#f6472c] text-white rounded-lg hover:bg-[#fb1603] transition duration-300"
+          className="px-4 py-2 bg-[#f6472c] text-black rounded-lg hover:bg-[#fb1603] transition duration-300"
         >
           Enviar
         </button>

@@ -65,7 +65,7 @@ const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) =>
 
   return (
     <div className="keen-slider__slide p-4 z-10">
-      <blockquote className="flex flex-col justify-between bg-[#ececec] p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
+      <blockquote className="flex flex-col justify-between bg-[#ffffff] p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
         <div className="text-center">
           <div className="flex justify-center gap-0.5 text-yellow-400 mb-4">{renderStars(rating)}</div>
           <div>
@@ -94,7 +94,7 @@ const ClientAvaliacao = () => {
     prevArrow: (
       <button
         aria-label="Previous slide"
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 text-rose-600 shadow-md hover:bg-rose-600 hover:text-white transition duration-300"
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black rounded-full p-3 text-rose-600 shadow-md hover:bg-rose-600 hover:text-black transition duration-300"
       >
         <ChevronLeft />
       </button>
@@ -102,7 +102,7 @@ const ClientAvaliacao = () => {
     nextArrow: (
       <button
         aria-label="Next slide"
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 text-rose-600 shadow-md hover:bg-rose-600 hover:text-white transition duration-300"
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black rounded-full p-3 text-rose-600 shadow-md hover:bg-rose-600 hover:text-black transition duration-300"
       >
         <ChevronRight />
       </button>
@@ -125,21 +125,18 @@ const ClientAvaliacao = () => {
 
   return (
     <section
-      className="relative py-20 w-full min-h-screen bg-cover bg-center bg-fixed flex items-center"
-      style={{
-        backgroundImage: 'url("/bg-teste.png")', // Corrigido o erro de sintaxe na URL da imagem
-      }}
+      className="relative py-20 w-full min-h-screen  bg-white  bg-cover bg-center bg-fixed flex items-center"
       aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
     >
       {/* Camada para escurecer a imagem */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="absolute inset-0 bg-white opacity-10"></div>
 
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8 relative">
-        <h2 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100 text-center">
+        <h2 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900 text-center">
           Avaliações de{" "}
-          <span className="text-[#fff]">Sucesso</span>
+          <span className="text-[#0f0f0f]">Sucesso</span>
         </h2>
-        <p className="mt-2 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-100 text-center">
+        <p className="mt-2 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-900 text-center">
           Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
         </p>
         <div className="relative mb-12">

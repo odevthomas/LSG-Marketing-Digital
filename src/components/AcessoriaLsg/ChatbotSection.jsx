@@ -4,10 +4,10 @@ import { FaRobot, FaComments, FaCogs, FaHandshake } from 'react-icons/fa';
 
 const ChatbotSection = () => {
   return (
-    <section id="Servicos" className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-white">
+    <section id="Servicos" className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-gray-900">
       <div className="container mx-auto px-6 text-center">
         <motion.h2
-                className=" mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100"
+          className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -16,59 +16,59 @@ const ChatbotSection = () => {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           {/* Automação Inteligente */}
           <motion.div
-            className="flex flex-col items-center justify-center bg-[#222] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
+            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaRobot className="text-5xl text-[#fb1603] mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Automação Eficiente</h3>
-            <p className="text-sm text-gray-300 mb-4">
+            <FaRobot className="text-4xl text-[#fb1603] mb-4" />
+            <h3 className="text-2xl font-semibold mb-2 text-black">Automação Eficiente</h3>
+            <p className="text-sm text-black mb-4">
               Atenda seus clientes de forma rápida e personalizada com nosso chatbot.
             </p>
           </motion.div>
 
           {/* Atendimento 24/7 */}
           <motion.div
-            className="flex flex-col items-center justify-center bg-[#222] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
+            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaComments className="text-5xl text-[#fb1603] mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Atendimento 24/7</h3>
-            <p className="text-sm text-gray-300 mb-4">
+            <FaComments className="text-4xl text-[#fb1603] mb-4" />
+            <h3 className="text-2xl font-semibold mb-2 text-black">Atendimento 24/7</h3>
+            <p className="text-sm text-black mb-4">
               Esteja sempre disponível para seus clientes, independentemente da hora.
             </p>
           </motion.div>
 
           {/* Configuração Simples */}
           <motion.div
-            className="flex flex-col items-center justify-center bg-[#222] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
+            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaCogs className="text-5xl text-[#fb1603] mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Configuração Rápida</h3>
-            <p className="text-sm text-gray-300 mb-4">
+            <FaCogs className="text-4xl text-[#fb1603] mb-4" />
+            <h3 className="text-2xl font-semibold mb-2 text-black">Configuração Rápida</h3>
+            <p className="text-sm text-black mb-4">
               Instale e configure seu chatbot em minutos, sem complicações.
             </p>
           </motion.div>
 
           {/* Relacionamento com o Cliente */}
           <motion.div
-            className="flex flex-col items-center justify-center bg-[#222] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out"
+            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaHandshake className="text-5xl text-[#fb1603] mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Relacionamento Personalizado</h3>
-            <p className="text-sm text-gray-300 mb-4">
+            <FaHandshake className="text-4xl text-[#fb1603] mb-4" />
+            <h3 className="text-2xl font-semibold mb-2 text-black">Relacionamento Personalizado</h3>
+            <p className="text-sm text-black mb-4">
               Aprenda com cada interação e ofereça um atendimento sob medida.
             </p>
           </motion.div>

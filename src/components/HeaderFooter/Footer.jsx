@@ -1,135 +1,46 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom"; 
-import DeveloperInfo from "../LincensaTermosPolitica/DeveloperInfo"; 
-import PrivacyPolicyAndTerms from "../LincensaTermosPolitica/PrivacyPolicyAndTerms"; 
-import TermsOfUse from "../LincensaTermosPolitica/TermsOfUse"; 
 
 const Footer = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
-  const [modalContent, setModalContent] = useState(null); 
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const toggleModal = (content) => {
-    setModalContent(content);
-    setIsModalOpen(prev => !prev); 
-  };
-
   return (
-    <footer className="bg-gray-900 text-white py-10">
+    <footer className="bg-[#000] text-white py-6">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          
           {/* Logo */}
-          <div className="flex items-center justify-center md:justify-start mb-4 md:mb-0">
+          <div className="flex items-center justify-center mb-4 md:mb-0">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="/img/logo-nova.png" alt="LSG logo" className="h-32" />
+              <img src="/logo-nova.png" alt="LSG logo" className="h-36" />
             </Link>
           </div>
 
-          {/* Links Úteis */}
-          <div className="flex flex-col items-center md:items-start">
-            <h2 className="font-bold text-lg mb-2">Links Úteis</h2>
-            <a href="#" onClick={() => toggleModal(<DeveloperInfo onClose={() => toggleModal(null)} />)} className="hover:underline text-gray-400 mb-2 transition duration-300 ease-in-out transform hover:scale-105">
-              Sobre o Desenvolvedor
-            </a>
-            <a href="#" onClick={() => toggleModal(<PrivacyPolicyAndTerms onClose={() => toggleModal(null)} />)} className="hover:underline text-gray-400 mb-2 transition duration-300 ease-in-out transform hover:scale-105">
-              Política de Privacidade
-            </a>
-            <a href="#" onClick={() => toggleModal(<TermsOfUse onClose={() => toggleModal(null)} />)} className="hover:underline text-gray-400 mb-2 transition duration-300 ease-in-out transform hover:scale-105">
-              Termos de Uso
-            </a>
-          </div>
-
-          {/* Redes Sociais */}
-          <div className="flex flex-col items-center md:items-end">
-            <h2 className="font-bold text-lg mb-2">Siga-nos</h2>
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/casalellit" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 transition duration-300 ease-in-out transform hover:scale-105">
-                Facebook
-              </a>
-              <a href="https://www.instagram.com/casalellit/" target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 transition duration-300 ease-in-out transform hover:scale-105">
-                Instagram
-              </a>
-            </div>
+          {/* Links Úteis Inline */}
+          <div className="flex space-x-6">
+            <Link to="/sobre" className="text-gray-400 hover:underline transition duration-300">Sobre o Desenvolvedor</Link>
+            <Link to="/privacidade" className="text-gray-400 hover:underline transition duration-300">Política de Privacidade</Link>
+            <Link to="/termos" className="text-gray-400 hover:underline transition duration-300">Termos de Uso</Link>
           </div>
         </div>
 
         {/* Botão Voltar ao Topo */}
-        <div className="mt-10 text-center">
+        <div className="mt-6 text-center">
           <button 
             onClick={scrollToTop} 
-            className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-500 transition-colors duration-300"
+            className="bg-[#f11414] text-white py-2 px-4 rounded hover:bg-[#d40f0f] transition-colors duration-300"
           >
             Voltar ao Topo
           </button>
         </div>
 
         {/* Direitos Autorais */}
-        <div className="mt-10 text-center">
-          <p>&copy; {new Date().getFullYear()} LSG. Todos os direitos reservados.</p>
+        <div className="mt-6 text-center">
+          <p className="text-sm">&copy; {new Date().getFullYear()} LSG. Todos os direitos reservados.</p>
         </div>
       </div>
-
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            {modalContent}
-            <button onClick={() => toggleModal(null)} className="close-modal">
-              Fechar
-            </button>
-          </div>
-        </div>
-      )}
-
-      <style>{`
-        .modal-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: rgba(0, 0, 0, 0.7);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-        }
-        .modal-content {
-          background: #1a1a1a; 
-          color: white; 
-          padding: 20px;
-          border-radius: 12px; 
-          width: 90%;
-          max-width: 600px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-          overflow-y: auto;
-          max-height: 80vh; 
-        }
-        .close-modal {
-          background-color: #e53e3e; 
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          border-radius: 8px;
-          cursor: pointer;
-          margin-top: 20px;
-          transition: background-color 0.3s;
-        }
-        .close-modal:hover {
-          background-color: #c53030; 
-        }
-        @media (max-width: 768px) {
-          .modal-content {
-            padding: 15px;
-          }
-          .close-modal {
-            width: 100%;
-          }
-        }
-      `}</style>
     </footer>
   );
 };

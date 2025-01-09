@@ -5,17 +5,17 @@ import { FaQuoteRight } from 'react-icons/fa'; // Importando ícone de citação
 // Componente do cartão do cliente
 const ClientCard = ({ imgSrc, name, description, slogan }) => {
   return (
-    <div className="p-6 flex flex-col items-center border-[#3a3a3a] border p-6 rounded-xl bg-[#000] shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+    <div className="p-6 flex flex-col items-center border-[#3a3a3a] border p-6 rounded-xl bg-[#fff] shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
       <img
         alt={`Imagem de ${name}`}
-        className="w-28 h-28 object-cover object-center rounded-full shadow-md border-2 border-[#000] mb-2"
+        className="w-28 h-28 object-cover object-center rounded-full shadow-md border-2 border-[#fff] mb-2"
         src={imgSrc}
       />
       <div className="text-center">
-        <h3 className="text-2xl font-light text-[#ffffff] mb-2">{name}</h3> {/* Fonte mais fina */}
-        <p className="text-sm text-[#e0e0e0] mb-2">{description}</p> {/* Fonte mais leve */}
-        <div className="text-[#ffff] mt-2 flex items-center justify-center italic">
-          <FaQuoteRight size={18} className="inline-block mr-2 text-[#e0e0e0]" />
+        <h3 className="text-2xl font-light text-[#000001] mb-2">{name}</h3> {/* Fonte mais fina */}
+        <p className="text-sm text-[#000001] mb-2">{description}</p> {/* Fonte mais leve */}
+        <div className="text-[#000001] mt-2 flex items-center justify-center italic">
+          <FaQuoteRight size={18} className="inline-block mr-2 text-[#000001]" />
           <span className="font-light text-lg">{slogan}</span> {/* Fonte mais fina */}
         </div>
       </div>

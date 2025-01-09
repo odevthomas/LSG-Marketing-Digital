@@ -72,10 +72,10 @@ const Statistics = () => {
     }, []); // Executa apenas uma vez, quando o componente é montado
 
     return (
-        <section className=" py-14 px-4 sm:px-8  bg-[#1e1e1e] lg:px-16 text-center">
+        <section className=" py-14 px-4 sm:px-8  bg-[#fff] lg:px-16 text-center">
             <motion.h2
                 id="impacto-global"
-                className=" mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100"
+                className=" mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -97,7 +97,7 @@ const Statistics = () => {
                             aria-label={`Número de ${item.title}`}
                             style={{
                                 fontFamily: '"Orbitron", sans-serif', // Fonte mais quadrada e geométrica
-                                textShadow: '2px 2px 5px rgba(0,0,0,0.7)', // Sombra mais forte para destacar
+                                textShadow: '2px 2px 5px rgba(0,0,0,0.1)', // Sombra mais forte para destacar
                                 padding: '20px', // Adicionando padding para dar sensação de caixa
                                 borderRadius: '8px', // Bordas arredondadas para um visual mais moderno
                                
@@ -106,7 +106,7 @@ const Statistics = () => {
                         >
                             {formatNumber(count[idx])}
                         </h3>
-                        <p className=" mt-3 font-medium text-gray-200 text-sm sm:text-base">{item.description}</p>
+                        <p className=" mt-3 font-medium text-gray-900 text-sm sm:text-base">{item.description}</p>
                     </motion.li>
                 ))}
             </ul>
@@ -118,7 +118,7 @@ const Statistics = () => {
                 transition={{ duration: 0.5, delay: stats.length * 0.3 }}
             >
                 <h2
-                    className=" text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center"
+                    className=" text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center"
                     aria-label="Chamada para ação dinâmica"
                     title="Chamada para ação - Junte-se a nós"
                 >

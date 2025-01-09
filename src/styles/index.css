@@ -472,3 +472,35 @@ video {
 .animate-marquee-smooth {
   animation: marquee 15s linear infinite;
 }
+/* Estilo geral para a barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+  height: 10px; /* Altura da barra de rolagem horizontal */
+}
+
+/* Estilo para a parte do "corpo" da barra de rolagem */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Cor de fundo da área da barra de rolagem */
+  border-radius: 10px;
+}
+
+/* Estilo para a parte deslizante da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background: #888; /* Cor do "thumb", a parte que se move */
+  border-radius: 10px;
+}
+
+/* Estilo para a parte do "thumb" quando está sendo pressionado */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Cor quando o "thumb" é hover */
+}
+
+/* Para a barra de rolagem horizontal */
+::-webkit-scrollbar-horizontal {
+  height: 8px;
+}
+
+/* Para a barra de rolagem vertical */
+::-webkit-scrollbar-vertical {
+  width: 8px;
+}
