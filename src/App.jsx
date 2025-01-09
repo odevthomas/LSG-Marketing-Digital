@@ -1,13 +1,8 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import ContactForm from './components/Formularios/FormularioContato';
-import HomeVideo from './pages/HomeVideo';
 import Home from './pages/Home';
-import Services from './pages/Servicos';
-import Resultados from './pages/Resultados';
-import { Link } from 'react-router-dom'; // Importando o Link
 
-import './styles/App.css';
 import './styles/index.css';
 
 const App = () => {
@@ -15,10 +10,9 @@ const App = () => {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<HomeVideo />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/resultados" element={<Resultados />} />
-          <Route path="/servicos" element={<Services />} />
+          {/* Rota para a página inicial */}
+          <Route path="/" element={<Home />} />
+          {/* Rota para o formulário de contato */}
           <Route path="/contactForm" element={<ContactForm />} />
         </Routes>
       </div>
