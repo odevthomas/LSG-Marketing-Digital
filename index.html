@@ -76,7 +76,7 @@
                   function updateFavicon() {
                         const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
                         const favicon = document.getElementById('favicon');
-                        favicon.href = darkModeMediaQuery.matches ? '/favicon-branco.svg' : '/logo-nova.png';
+                        favicon.href = darkModeMediaQuery.matches ? '/logo-nova-lsg.png' : '/logo-nova.png';
                   }
                   updateFavicon();
                   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
