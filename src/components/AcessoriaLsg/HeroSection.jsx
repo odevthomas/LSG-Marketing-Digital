@@ -35,7 +35,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative py-10 w-full bg-white h-auto bg-cover bg-center bg-fixed flex items-center justify-center"
+      className="relative  w-full bg-white h-auto bg-cover bg-center bg-fixed flex items-center justify-center"
       aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
     >
       <div className="hero-section-video-overlay bg-white bg-opacity-75 absolute inset-0"></div>
@@ -51,8 +51,8 @@ const HeroSection = () => {
       <div className="content relative z-10 text-center px-6 py-6 sm:px-8 lg:px-10 flex flex-col items-center justify-center">
         <img
           src={logo}
-          alt="Logo da Casa L'Ellit - Salão de Beleza e Estética"
-          className="mb-4 w-24 sm:w-32 md:w-40 mx-auto"
+          alt="LSG DIGITAL"
+          className="mb-1 w-24 sm:w-32 md:w-40 mx-auto"
         />
 
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-black leading-tight uppercase mb-3">
@@ -63,7 +63,7 @@ const HeroSection = () => {
           Descubra soluções inovadoras e acessíveis para o seu negócio de beleza e estética.
         </p>
 
-        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black mb-4 font-semibold">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black mb-1 font-semibold">
           <span className="text-sm sm:text-base md:text-lg ml-2">A partir de </span>
           <span className="price-highlight text-3xl sm:text-4xl md:text-5xl font-semibold text-[#fb1603]">
             R$ 599/mês

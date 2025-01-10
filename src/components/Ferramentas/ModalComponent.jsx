@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 
 const Modal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ const Modal = () => {
 
   const handleClose = () => {
     setIsOpen(false);
+    setError(null); // Limpa erros ao fechar
   };
 
   const handleSubmit = () => {
@@ -27,31 +29,40 @@ const Modal = () => {
       return;
     }
 
-    // Cria um formulário HTML para enviar os dados
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action =
-      'https://formsubmit.co/comercial@lsgdigital.com.br?redirect=https://seusite.com/pagina-de-confirmacao';
-
-    // Adiciona os campos ao formulário
-    const fields = [
-      { name: 'name', value: name },
-      { name: 'email', value: email },
-      { name: 'phone', value: phone },
-    ];
-
-    fields.forEach(({ name, value }) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = name;
-      input.value = value;
-      form.appendChild(input);
+    // Enviar dados para o Google Analytics
+    window.gtag('event', 'form_submission', {
+      event_category: 'Formulário',
+      event_label: 'Dados do Usuário',
+      value: name,
     });
 
-    // Envia o formulário
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
+    // Enviar e-mail com os dados do formulário
+    const templateParams = {
+      from_name: name,
+      to_name: 'Equipe LSG Digital',
+      message: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}`,
+      reply_to: email,
+    };
+
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams, 'YOUR_USER_ID')
+      .then((response) => {
+        console.log('E-mail enviado com sucesso!', response.status, response.text);
+        
+        // Cria a mensagem de confirmação para o WhatsApp
+        const mensagemWhatsApp = `Olá! Meu nome é ${name}, meu e-mail é ${email} e meu telefone é ${phone}. Gostaria de confirmar minha solicitação!`;
+
+        // Redireciona para o WhatsApp
+        window.open(`https://wa.me/551999042072?text=${encodeURIComponent(mensagemWhatsApp)}`, '_blank');
+
+        // Limpa os campos do formulário
+        setName('');
+        setEmail('');
+        setPhone('');
+        setIsConfirmed(true);
+      }, (err) => {
+        console.error('Falha ao enviar e-mail:', err);
+        setError('Falha ao enviar e-mail. Tente novamente mais tarde.');
+      });
   };
 
   return (
@@ -129,6 +140,21 @@ const Modal = () => {
                 Aproveitar Agora
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {isConfirmed && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-[#0b0b0b] p-6 rounded-lg shadow-lg max-w-md mx-auto text-center">
+            <h3 className="text-xl font-semibold text-green-600 capitalize">Confirmação</h3>
+            <p className="mt-2 text-sm text-white">Obrigado! Sua solicitação foi enviada com sucesso.</p>
+            <button
+              onClick={handleClose}
+              className="mt-4 px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-500 focus:outline-none transition-colors"
+            >
+              Fechar
+            </button>
           </div>
         </div>
       )}
