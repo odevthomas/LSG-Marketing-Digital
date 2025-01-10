@@ -60,10 +60,10 @@ const Servicos = () => {
               slidesPerView: 1,  // 1 imagem por vez em telas pequenas
             },
             1024: {
-              slidesPerView: 2,  // Exibe 2 imagens por vez em telas grandes
+              slidesPerView: 1,  // 1 imagem por vez em telas grandes
             },
             1440: {
-              slidesPerView: 3,  // Exibe 3 imagens por vez em telas extra grandes
+              slidesPerView: 1,  // Exibe 1 imagem por vez em telas extra grandes
             },
           }}
         >
@@ -79,7 +79,7 @@ const Servicos = () => {
                 <motion.img
                   src={item.image}
                   alt={`Serviço ${index + 1}`}
-                  className="w-full h-auto object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
+                  className="w-full h-[450px] object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
                 />
                 {/* Botão para enviar mensagem no WhatsApp */}
                 <div className="mt-4">
