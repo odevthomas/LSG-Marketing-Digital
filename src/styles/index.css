@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+ 
+ * {
+    margin: 0; /* Remover margens de todos os elementos */
+    padding: 0; /* Remover preenchimentos de todos os elementos */
+    box-sizing: border-box; /* Garantir que o padding e margin não afetam a largura/altura */
+  }
+  
 :root {
   --primary-color: #f46d40;
   --secondary-color: #f6472c;
