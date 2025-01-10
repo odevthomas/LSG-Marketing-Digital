@@ -1,20 +1,18 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
+
+// Certifique-se de importar o CSS do Swiper
 import "swiper/swiper-bundle.css";
 
-const Servicos = () => {
-  const ServicosItems = [
-    { image: "/Criativos/funil.png", service: "Funil de Vendas" },
-    { image: "/Criativos/campanha.png", service: "Campanhas Digitais" },
-    { image: "/Criativos/crm1.png", service: "Gestão de CRM" },
-    { image: "/Criativos/lp.png", service: "Landing Pages" },
-    { image: "/Criativos/chatbot.png", service: "Chatbot Inteligente" },
-    { image: "/Criativos/postagem.png", service: "Postagens para Redes Sociais" },
+const PrintMensagens = () => {
+  const PrintMensagens = [
+    { image: "/Criativos/print1.png", service: "Funil de Vendas" },
+    { image: "/Criativos/print2.png", service: "Campanhas Digitais" },
   ];
 
   const handleWhatsAppMessage = (service) => {
-    const message = `Olá, estou interessado no serviço de ${service}. Gostaria de mais informações.`;
+    const message = `Olá, estou interessado no serviço de ${service}. Gostaria de mais informações. Este interesse veio de um feedback diário.`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=5519981331191&text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
@@ -33,16 +31,16 @@ const Servicos = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          Serviços Essenciais para Impulsionar seu Sucesso
+          Feedbacks Diários dos Nossos Clientes
         </motion.h3>
 
         <motion.p
-          className="text-[#0a0a0a] text-lg mt-10 sm:text-xl md:text-2xl leading-relaxed"
+          className="text-[#fff] text-lg mt-10 sm:text-xl md:text-2xl leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          Descubra como podemos transformar o seu negócio com soluções digitais inovadoras e eficientes.
+          Veja as mensagens que recebemos diariamente, mostrando como podemos ajudar a transformar o seu negócio.
         </motion.p>
 
         {/* Carrossel Swiper */}
@@ -60,14 +58,11 @@ const Servicos = () => {
               slidesPerView: 1,  // 1 imagem por vez em telas pequenas
             },
             1024: {
-              slidesPerView: 2,  // Exibe 2 imagens por vez em telas grandes
-            },
-            1440: {
-              slidesPerView: 3,  // Exibe 3 imagens por vez em telas extra grandes
+              slidesPerView: 1,  // 1 imagem por vez em telas grandes
             },
           }}
         >
-          {ServicosItems.map((item, index) => (
+          {PrintMensagens.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
                 className="flex flex-col justify-center p-6 transition duration-500 ease-in-out"
@@ -75,7 +70,7 @@ const Servicos = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                {/* Imagem do serviço */}
+                {/* Imagem do serviço - Exibe o print da mensagem recebida */}
                 <motion.img
                   src={item.image}
                   alt={`Serviço ${index + 1}`}
@@ -86,7 +81,6 @@ const Servicos = () => {
                   <button
                     onClick={() => handleWhatsAppMessage(item.service)}
                     className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#fb1603] rounded-full hover:bg-[#fb1603] focus:outline-none focus:ring focus:ring-[#fb1603] focus:ring-opacity-50"
-                    aria-label={`Clique para saber mais sobre o serviço de ${item.service}`}
                   >
                     Quero saber mais sobre {item.service}
                   </button>
@@ -98,7 +92,7 @@ const Servicos = () => {
 
         {/* Bolinhas de navegação personalizadas (se necessário) */}
         <div className="flex justify-center gap-4 mt-8">
-          {ServicosItems.map((_, index) => (
+          {PrintMensagens.map((_, index) => (
             <motion.div
               key={index}
               className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 transform ${
@@ -114,4 +108,4 @@ const Servicos = () => {
   );
 };
 
-export default Servicos;
+export default PrintMensagens;

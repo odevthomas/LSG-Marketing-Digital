@@ -19,6 +19,7 @@ const PartnerComponent = () => {
       logo: 'https://static.vecteezy.com/system/resources/previews/025/732/723/non_2x/google-ads-logo-icon-free-vector.jpg',
       actionText: "Aumente seu ROI com o Google Ads!",
       whatsappMessage: "Oi, vim pelo site e quero aumentar meu ROI com o Google Ads.",
+      phone: '5519981331191',  // Número de WhatsApp para o Google Ads
     },
     {
       name: 'Meta Business',
@@ -38,6 +39,7 @@ const PartnerComponent = () => {
       logo: 'https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png',
       actionText: "Seja um parceiro Meta e amplie seu alcance!",
       whatsappMessage: "Oi, vim pelo site e quero aprender mais sobre parcerias com o Meta Business.",
+      phone: '5519981331192',  // Número de WhatsApp para o Meta Business
     },
     {
       name: 'Kommo',
@@ -57,6 +59,7 @@ const PartnerComponent = () => {
       logo: 'https://d3v6byorcue2se.cloudfront.net/contents/KRsHs1KMsDqSwFEaCqAD50E0TIvxHBvjbmgVCQOR.png',
       actionText: "Transforme o relacionamento com seus clientes com CRM!",
       whatsappMessage: "Oi, vim pelo site e quero saber mais sobre o CRM da Kommo.",
+      phone: '5519981331193',  // Número de WhatsApp para o Kommo
     },
   ];
 
@@ -77,15 +80,14 @@ const PartnerComponent = () => {
               className="flex flex-col items-center p-6 bg-[#000] text-white rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105 hover:shadow-xl"
               key={index}
             >
-               <div className="w-full flex justify-center mb-6">
-              <img
-                className="w-full h-auto max-w-48 max-h-48 object-cover rounded-2xl "
-                src={partner.logo}
-                alt={partner.name}
-              />
+              <div className="w-full flex justify-center mb-6">
+                <img
+                  className="w-full h-auto max-w-48 max-h-48 object-cover rounded-2xl "
+                  src={partner.logo}
+                  alt={partner.name}
+                />
               </div>
-              
-              
+
               <div className="text-center space-y-6">
                 <h2 className="text-2xl font-semibold">{partner.name}</h2>
                 <p className="text-md">{partner.description}</p>
@@ -93,7 +95,7 @@ const PartnerComponent = () => {
 
                 {/* Botão de ação com link do WhatsApp */}
                 <a
-                  href={`https://wa.me/5519981331191?text=${encodeURIComponent(partner.whatsappMessage)}`}
+                  href={`https://wa.me/${partner.phone}?text=${encodeURIComponent(partner.whatsappMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#fb1603] text-white py-3 px-8 rounded-full font-semibold hover:bg-[#e64012] transform hover:scale-105 transition-all duration-300 shadow-lg mt-6 inline-block"

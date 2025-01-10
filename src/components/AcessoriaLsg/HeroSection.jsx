@@ -35,7 +35,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative py-20 w-full  bg-white h-screen bg-cover bg-center bg-fixed flex items-center"
+      className="relative py-10 w-full bg-white h-auto bg-cover bg-center bg-fixed flex items-center"
       aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
     >
       <div className="hero-section-video-overlay bg-white bg-opacity-75 absolute inset-0"></div>
@@ -48,36 +48,36 @@ const HeroSection = () => {
         </div>
       )}
 
-      <div className="content relative z-10 text-center px-6 py-10 sm:px-10 lg:px-12 flex flex-col items-center justify-center">
+      <div className="content relative z-10 text-center px-6 py-6 sm:px-8 lg:px-10 flex flex-col items-center justify-center">
         <img
           src={logo}
           alt="Logo da Casa L'Ellit - Salão de Beleza e Estética"
-          className="mb-6 w-32 sm:w-40 md:w-48 mx-auto"
+          className="mb-4 w-24 sm:w-32 md:w-40 mx-auto"
         />
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-wider text-black leading-tight uppercase mb-4">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wider text-black leading-tight uppercase mb-3">
           Transforme sua Presença Digital Hoje!
         </h1>
 
-        <p className="text-lg sm:text-xl text-black mb-4 font-medium">
+        <p className="text-base sm:text-lg text-black mb-3 font-medium">
           Descubra soluções inovadoras e acessíveis para o seu negócio de beleza e estética.
         </p>
 
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black mb-6 font-semibold">
+        <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black mb-4 font-semibold">
           <span className="text-sm sm:text-base md:text-lg ml-2">A partir de </span>
-          <span className="price-highlight text-4xl sm:text-5xl md:text-6xl font-semibold text-[#fb1603]">
+          <span className="price-highlight text-3xl sm:text-4xl md:text-5xl font-semibold text-[#fb1603]">
             R$ 599/mês
           </span>
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center mt-8 gap-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center mt-6 gap-4">
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="inline-flex items-center justify-center border-1 border-[#f11414] text-white py-4 px-8 text-lg transition duration-300 w-full sm:w-auto hover:bg-[#b23012] shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50 text-center rounded-full bg-[#f11414]"
+            className="inline-flex items-center justify-center border-1 border-[#f11414] text-white py-3 px-6 text-lg transition duration-300 w-full sm:w-auto hover:bg-[#b23012] shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50 text-center rounded-full bg-[#f11414]"
             aria-label="Clique para falar conosco via WhatsApp"
           >
             <FaWhatsapp className="inline-block mr-2 text-2xl" />

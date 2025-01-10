@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaRobot, FaComments, FaCogs, FaHandshake } from 'react-icons/fa'; 
+import { FaRobot, FaComments, FaCogs, FaHandshake } from 'react-icons/fa';
 
 const ChatbotSection = () => {
   return (
@@ -30,7 +30,7 @@ const ChatbotSection = () => {
             <FaRobot className="text-4xl text-[#fb1603] mb-4" />
             <h3 className="text-2xl font-semibold mb-2 text-black">Automação Eficiente</h3>
             <p className="text-sm text-black mb-4">
-              Atenda seus clientes de forma rápida e personalizada com nosso chatbot.
+              Ofereça um atendimento mais rápido e eficiente com nosso chatbot automatizado.
             </p>
           </motion.div>
 
@@ -43,7 +43,7 @@ const ChatbotSection = () => {
             <FaComments className="text-4xl text-[#fb1603] mb-4" />
             <h3 className="text-2xl font-semibold mb-2 text-black">Atendimento 24/7</h3>
             <p className="text-sm text-black mb-4">
-              Esteja sempre disponível para seus clientes, independentemente da hora.
+              Esteja disponível para seus clientes a qualquer hora, todos os dias da semana.
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ const ChatbotSection = () => {
             <FaHandshake className="text-4xl text-[#fb1603] mb-4" />
             <h3 className="text-2xl font-semibold mb-2 text-black">Relacionamento Personalizado</h3>
             <p className="text-sm text-black mb-4">
-              Aprenda com cada interação e ofereça um atendimento sob medida.
+              Aprenda com cada interação e ofereça um atendimento sob medida para seus clientes.
             </p>
           </motion.div>
         </motion.div>
@@ -81,7 +81,7 @@ const ChatbotSection = () => {
           transition={{ duration: 1.2 }}
         >
           <a
-            href="https://wa.me/5519981331191?text=Gostaria%20de%20saber%20mais%20sobre%20como%20automatizar%20meu%20atendimento%20com%20um%20chatbot!"
+            href="https://wa.me/5519981331191?text=Oi,%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20automatizar%20meu%20atendimento%20com%20um%20chatbot!"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-[#fb1603] text-white py-3 px-6 text-lg transition duration-300 w-full sm:w-auto hover:bg-[#e64012] transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#fb1603] focus:ring-opacity-50 text-center rounded-full"

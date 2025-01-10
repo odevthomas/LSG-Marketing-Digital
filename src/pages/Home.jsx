@@ -18,6 +18,7 @@ import FaqSection from '../components/AcessoriaLsg/FaqSection';
 import FormularioContato from '../components/Formularios/FormularioContato';
 import MarqueeSection from '../components/AcessoriaLsg/MarqueeSection';
 import CouponModal from '../components/Ferramentas/ModalComponent';
+import PrintMenagem from '../components/AcessoriaLsg/PrintMenagem';
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -88,6 +89,7 @@ const Home = () => {
       <Servicos />
       <ImageCarousel />
       <ChatbotSection />
+      <PrintMenagem />
       <CertificationSection />
       <ClientAvaliacao />
       <SeloSection />
