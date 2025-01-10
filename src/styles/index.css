@@ -270,3 +270,23 @@ select:focus {
 .dark\:text-gray-100 {
   color: #f7fafc; /* Tailwind's gray-100 for dark mode */
 }
+/* Para navegadores baseados em WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+    background-color: #f4f4f4; /* Cor de fundo da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #f6472c; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 6px; /* Bordas arredondadas do "polegar" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #fb1603; /* Cor do "polegar" ao passar o mouse */
+}
+
+/* Para Firefox */
+* {
+    scrollbar-width: thin; /* Largura da barra de rolagem (narrow) */
+    scrollbar-color: #f6472c #f4f4f4; /* Cor do "polegar" e cor de fundo */
+}
