@@ -290,3 +290,29 @@ select:focus {
     scrollbar-width: thin; /* Largura da barra de rolagem (narrow) */
     scrollbar-color: #f6472c #f4f4f4; /* Cor do "polegar" e cor de fundo */
 }
+
+/* Impede a seleção de texto */
+body {
+  user-select: none;  /* Desabilita a seleção de texto */
+  -webkit-user-select: none; /* Para navegadores baseados em WebKit */
+  -moz-user-select: none; /* Para o Firefox */
+}
+
+/* Impede a seleção de imagens */
+img {
+  pointer-events: none; /* Desabilita a interação com imagens */
+}
+
+/* Desabilita o clique direito nas imagens */
+img {
+  -webkit-touch-callout: none; /* Para dispositivos móveis */
+  -webkit-user-drag: none; /* Para impedir o arrasto da imagem */
+  -ms-user-select: none; /* Para o IE */
+}
+
+/* Para impedir a seleção de texto em campos de entrada (input) */
+input, textarea, select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
