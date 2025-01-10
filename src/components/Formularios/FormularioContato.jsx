@@ -45,7 +45,7 @@ const FormularioDeContato = () => {
   };
 
   return (
-    <section className="flex min-h-screen bg-white justify-center items-center">
+    <section className="flex min-h-screen bg-black justify-center items-center">
       {/* Formulário centralizado e utilizando toda a largura disponível */}
       <div className="w-full max-w-4xl p-8 bg-black rounded-xl shadow-lg">
         <h4 className="text-2xl font-semibold text-center text-[#f11414]">Formulário de Contato</h4>

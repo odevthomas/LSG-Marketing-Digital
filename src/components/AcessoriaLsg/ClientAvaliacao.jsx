@@ -1,6 +1,6 @@
 import React from 'react';
-import Slider from 'react-slick'; // Carrossel interativo
-import { ChevronLeft, ChevronRight } from 'lucide-react'; // Ícones do Lucide
+import Slider from 'react-slick';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Testemunhos dos clientes
 const testimonials = [
@@ -65,7 +65,7 @@ const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) =>
 
   return (
     <div className="keen-slider__slide p-4 z-10">
-      <blockquote className="flex flex-col justify-between bg-[#ffffff] p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
+      <blockquote className="flex flex-col justify-between bg-white p-6 rounded-xl shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl">
         <div className="text-center">
           <div className="flex justify-center gap-0.5 text-yellow-400 mb-4">{renderStars(rating)}</div>
           <div>
@@ -111,24 +111,20 @@ const ClientAvaliacao = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2, // Mostra 2 slides em telas de até 1024px
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Mostra 1 slide em telas de até 600px
         },
       },
     ],
   };
 
   return (
-    <section
-      className="relative py-20 w-full min-h-screen  bg-white  bg-cover bg-center bg-fixed flex items-center"
-      aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
-    >
-      {/* Camada para escurecer a imagem */}
+    <section className="relative py-20 w-full min-h-screen bg-white bg-cover bg-center bg-fixed flex items-center">
       <div className="absolute inset-0 bg-white opacity-10"></div>
 
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8 relative">
