@@ -236,7 +236,6 @@ select:focus {
   }
 }
 
-
 @keyframes marquee-smooth {
   0% {
     transform: translateX(100%);
@@ -247,7 +246,9 @@ select:focus {
 }
 
 .animate-marquee-smooth {
-  animation: marquee-smooth 15s linear infinite;
+  display: flex;
+  animation: marquee-smooth 20s linear infinite;
+  will-change: transform;
 }
 
 .relative {
