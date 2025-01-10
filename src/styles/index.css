@@ -1,20 +1,25 @@
-/* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Configuração global do body */
-html, body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #000000;
-  color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  overflow-x: hidden; /* Impede a rolagem lateral */
+:root {
+  --primary-color: #f46d40;
+  --secondary-color: #f6472c;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-dark: #333333;
 }
 
-h1, h2, h3, h4, p {
+body {
+  background-color: var(--black);
+  color: var(--gray-light);
   margin: 0;
   padding: 0;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
 a {
@@ -22,577 +27,245 @@ a {
   color: inherit;
 }
 
-/* Estilos para títulos */
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+}
+
 h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: #ffffff;
   font-size: 2.5rem;
   line-height: 1.2;
-  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Destaque adicional */
 }
 
 h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
   font-size: 2rem;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600; /* Aumento do peso da fonte */
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.4;
+  font-weight: 600; /* Aumento do peso da fonte */
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 600; /* Aumento do peso da fonte */
 }
 
 p {
   font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #f5f5f5;
-  line-height: 1.75;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Estilos de seções */
-.section-with-background {
-  position: relative;
-  background-image: url('/assets/fundo-slide.jpeg'); /* Caminho correto da imagem */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: white;
-  min-height: 60vh;
-  padding: 60px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.section-with-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Filtro escuro */
-  z-index: 0;
-}
-
-.section-with-background h1,
-.section-with-background p {
-  z-index: 1;
-}
-
-/* Impede rolagem lateral quando o modal está aberto */
-body.modal-open {
-  overflow-x: hidden;
-}
-
-/* Estilo para botões de navegação */
-nav button {
-  padding: 1rem 1.25rem;
-  background-color: transparent;
-  border: 2px solid #f46d40;
-  border-radius: 30px;
-  color: #f46d40;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
   font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  margin: 10px 0;
-  text-align: center;
+  line-height: 1.75;
+  color: var(--gray-light);
 }
 
-nav button:hover {
-  background-color: #f46d40;
-  color: #000000;
-}
-
-nav button:focus {
-  outline: none;
-}
-
-/* Estilo para a caixa de vídeo */
-.video-container {
-  margin-top: 3rem;
-  max-width: 100%;
-}
-
-video {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Containers de parceiros */
-.partner-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+.prose {
+  max-width: 70ch;
   margin: 0 auto;
-  max-width: 1300px;
-  padding: 40px 20px;
+  padding: 2rem;
+  font-size: 1rem;
+  color: var(--gray-light);
+  line-height: 1.6;
 }
 
-.partner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background-color: #333333;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 700px;
-}
-
-.partner:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.partner-logo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 20px;
-  border: 3px solid #e0e0e0;
-}
-
-.partner-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.partner-info h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.partner-info p {
-  font-size: 1.1rem;
-  color: #eaeaea;
-  line-height: 1.8;
-}
-
-.additional-info {
-  font-style: italic;
-  color: #f8f8f8;
-}
-
-/* Adaptação responsiva para telas menores */
-@media (max-width: 768px) {
-  .partner {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .partner-logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  .partner-info h2 {
-    font-size: 1.4rem;
-  }
-
-  .partner-info p {
-    font-size: 1rem;
-  }
-
-  .section-with-background {
-    padding: 30px 0;
-    min-height: 50vh;
-  }
-
-  .video-container {
-    margin-top: 2rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .partner-info p {
-    font-size: 0.9rem;
-  }
-
-  .section-with-background {
-    min-height: 40vh;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-}
-
-/* Estilo geral para a barra de rolagem */
-::-webkit-scrollbar {
-  width: 10px; /* Largura da barra de rolagem */
-  height: 10px; /* Altura da barra de rolagem horizontal */
-}
-
-/* Estilo para a parte do "corpo" da barra de rolagem */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Cor de fundo da área da barra de rolagem */
-  border-radius: 10px;
-}
-
-/* Estilo para a parte deslizante da barra de rolagem */
-::-webkit-scrollbar-thumb {
-  background: #888; /* Cor do "thumb", a parte que se move */
-  border-radius: 10px;
-}
-
-/* Estilo para a parte do "thumb" quando está sendo pressionado */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Cor quando o "thumb" é hover */
-}
-
-/* Para a barra de rolagem horizontal */
-::-webkit-scrollbar-horizontal {
-  height: 8px;
-}
-
-/* Para a barra de rolagem vertical */
-::-webkit-scrollbar-vertical {
-  width: 8px;
-}
-
-/* Modal básico */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  z-index: 1000;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* Fundo do Modal */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.video-container {
+  position: relative;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
 }
 
-/* Impede rolagem lateral quando o modal está aberto */
-body.modal-open {
-  overflow-x: hidden;
-}
-/* Importação das fontes */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600&display=swap');
-
-/* Configuração global do body */
-html, body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #000000;
-  color: #f5f5f5;
-  margin: 0;
-  padding: 0;
-  user-select: none;
-  overflow-x: hidden; /* Impede rolagem lateral */
-}
-
-/* Estilos para títulos */
-h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  color: #ffffff;
-  font-size: 2.5rem;
-  line-height: 1.2;
-  text-align: center;
-}
-
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 2rem;
-  color: #ffffff;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  color: #f5f5f5;
-  line-height: 1.75;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Estilos para seções */
-.section-with-background {
-  position: relative;
-  background-image: url('/assets/fundo-slide.jpeg'); /* Caminho correto da imagem */
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: white;
-  min-height: 60vh;
-  padding: 60px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.section-with-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Filtro escuro */
-  z-index: 0;
-}
-
-.section-with-background h1,
-.section-with-background p {
-  z-index: 1;
-}
-
-/* Estilos para botões de navegação */
-nav button {
-  padding: 1rem 1.25rem;
-  background-color: transparent;
-  border: 2px solid #f46d40;
-  border-radius: 30px;
-  color: #f46d40;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  margin: 10px 0;
-  text-align: center;
-}
-
-nav button:hover {
-  background-color: #f46d40;
-  color: #000000;
-}
-
-nav button:focus {
-  outline: none;
-}
-
-/* Estilo para a caixa de vídeo */
-.video-container {
-  margin-top: 3rem;
-  max-width: 100%;
-}
-
-video {
-  width: 100%;
-  height: auto;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Containers de parceiros */
-.partner-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  margin: 0 auto;
-  max-width: 1300px;
-  padding: 40px 20px;
-}
-
-.partner {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background-color: #333333;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 700px;
-}
-
-.partner:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-}
-
-.partner-logo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 20px;
-  border: 3px solid #e0e0e0;
-}
-
-.partner-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.partner-info h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.partner-info p {
-  font-size: 1.1rem;
-  color: #eaeaea;
-  line-height: 1.8;
-}
-
-.additional-info {
-  font-style: italic;
-  color: #f8f8f8;
-}
-
-/* Adaptação responsiva para telas menores */
-@media (max-width: 768px) {
-  .partner {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .partner-logo {
-    width: 100px;
-    height: 100px;
-  }
-
-  .partner-info h2 {
-    font-size: 1.4rem;
-  }
-
-  .partner-info p {
-    font-size: 1rem;
-  }
-
-  .section-with-background {
-    padding: 30px 0;
-    min-height: 50vh;
-  }
-
-  .video-container {
-    margin-top: 2rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .partner-info p {
-    font-size: 0.9rem;
-  }
-
-  .section-with-background {
-    min-height: 40vh;
-  }
-
-  h1 {
-    font-size: 1.75rem;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-}
-
-/* Estilo geral para a barra de rolagem */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-::-webkit-scrollbar-horizontal {
-  height: 8px;
-}
-
-::-webkit-scrollbar-vertical {
-  width: 8px;
-}
-
-/* Modal básico */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  z-index: 1000;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.video-container iframe,
+.video-container video {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
+  object-fit: cover;
 }
 
-/* Impede rolagem lateral quando o modal está aberto */
-body.modal-open {
-  overflow-x: hidden;
+@media (max-width: 768px) {
+  .video-container {
+    height: 250px; /* Ajuste para telas menores */
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Tamanho de fonte para dispositivos menores */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem; /* Ajuste adicional */
+  }
+
+  p {
+    font-size: 0.9rem; /* Reduz tamanho do texto */
+  }
+
+  .prose {
+    max-width: 90%; /* Ajuste para telas pequenas */
+    padding: 1rem;
+  }
+
+  .form-section {
+    padding: 6px;
+  }
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+input,
+textarea,
+select {
+  @apply block w-full px-5 py-3 border border-gray-200 rounded-md bg-gray-800 text-white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.modal {
+  @apply fixed top-0 left-0 right-0 z-50 p-6 bg-black bg-opacity-50 hidden;
+  display: flex; /* Centraliza o modal */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal.show {
+  @apply block;
+}
+
+.modal-content {
+  @apply bg-gray-800 p-8 rounded-lg shadow-lg;
+  width: 100%;
+  max-width: 90%; /* Garantir que o modal não ultrapasse a tela */
+  max-height: 90%;
+  margin: 0 auto;
+  overflow-y: auto; /* Permite rolagem se necessário */
+}
+
+.modal-header {
+  @apply flex justify-between items-center;
+  color: var(--white);
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-footer {
+  @apply flex justify-end mt-4;
+}
+
+.modal-footer .btn {
+  margin-left: 10px;
+}
+
+.form-section {
+  @apply bg-gray-800 shadow-2xl p-8 rounded-lg;
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.form-section input,
+.form-section textarea {
+  @apply block w-full px-4 py-3 mt-4 border rounded-md border-gray-600;
+}
+
+.form-section button {
+  @apply mt-6 px-6 py-3 text-white bg-primary rounded-md hover:bg-secondary transition-colors;
+}
+
+.app-container {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    bottom: 20px; /* Ajuste da posição do botão */
+    right: 20px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes marquee-smooth {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-smooth {
+  animation: marquee-smooth 15s linear infinite;
+}
+
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, rgba(84, 84, 84, 0.5), rgba(84, 84, 84, 0.5));
+}
+
+.text-gray-100 {
+  color: #f7fafc; /* Tailwind's gray-100 */
+}
+
+.dark\:text-gray-100 {
+  color: #f7fafc; /* Tailwind's gray-100 for dark mode */
 }

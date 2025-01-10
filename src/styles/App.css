@@ -194,3 +194,238 @@ select:focus {
     transform: rotate(360deg);
   }
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #f46d40;
+  --secondary-color: #f6472c;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-dark: #333333;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--gray-light);
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.75rem;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray-light);
+}
+
+.prose {
+  max-width: 70ch;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 1rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-container iframe,
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    height: 250px; /* Ajuste para telas menores */
+  }
+
+  .video-container iframe,
+  .video-container video {
+    height: 100%;
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Tamanho de fonte para dispositivos menores */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  .prose {
+    max-width: 90%; /* Ajuste para telas pequenas */
+    padding: 1rem;
+  }
+
+  .form-section {
+    padding: 6px;
+  }
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+input,
+textarea,
+select {
+  @apply block w-full px-5 py-3 border border-gray-200 rounded-md bg-gray-800 text-white;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.modal {
+  @apply fixed top-0 left-0 right-0 z-50 p-6 bg-black bg-opacity-50 hidden;
+  display: flex; /* Centraliza o modal */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal.show {
+  @apply block;
+}
+
+.modal-content {
+  @apply bg-gray-800 p-8 rounded-lg shadow-lg;
+  width: 100%;
+  max-width: 90%; /* Garantir que o modal não ultrapasse a tela */
+  max-height: 90%;
+  margin: 0 auto;
+  overflow-y: auto; /* Permite rolagem se necessário */
+}
+
+.modal-header {
+  @apply flex justify-between items-center;
+  color: var(--white);
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.modal-footer {
+  @apply flex justify-end mt-4;
+}
+
+.modal-footer .btn {
+  margin-left: 10px;
+}
+
+.form-section {
+  @apply bg-gray-800 shadow-2xl p-8 rounded-lg;
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.form-section input,
+.form-section textarea {
+  @apply block w-full px-4 py-3 mt-4 border rounded-md border-gray-600;
+}
+
+.form-section button {
+  @apply mt-6 px-6 py-3 text-white bg-primary rounded-md hover:bg-secondary transition-colors;
+}
+
+.app-container {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+}
+
+@media (max-width: 768px) {
+  .whatsapp-button {
+    bottom: 20px; /* Ajuste da posição do botão */
+    right: 20px;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

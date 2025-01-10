@@ -35,7 +35,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative py-10 w-full bg-white h-auto bg-cover bg-center bg-fixed flex items-center"
+      className="relative py-10 w-full bg-white h-auto bg-cover bg-center bg-fixed flex items-center justify-center"
       aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
     >
       <div className="hero-section-video-overlay bg-white bg-opacity-75 absolute inset-0"></div>
