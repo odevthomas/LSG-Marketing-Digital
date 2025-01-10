@@ -19,7 +19,7 @@ const CookieConsent = () => {
 
   return (
     !isAccepted && (
-      <div className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-[#f6472c] w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s shadow-lg">
+      <div className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-[#000] w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s shadow-lg">
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <p className="text-sm sm:text-base text-white">
