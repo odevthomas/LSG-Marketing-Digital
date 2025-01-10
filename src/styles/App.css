@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #f46d40; /* Laranja forte */
-  --secondary-color: #f6472c; /* Laranja mais escuro */
-  --black: #000000; /* Cor preta */
-  --white: #ffffff; /* Cor branca */
-  --gray-light: #f5f5f5; /* Cinza claro */
-  --gray-dark: #333333; /* Cinza escuro */
+  --primary-color: #f46d40;
+  --secondary-color: #f6472c;
+  --black: #000000;
+  --white: #ffffff;
+  --gray-light: #f5f5f5;
+  --gray-dark: #333333;
 }
 
 body {
@@ -25,10 +25,7 @@ a {
   color: inherit;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: 'Poppins', sans-serif;
   color: var(--white);
 }
@@ -36,7 +33,6 @@ h4 {
 h1 {
   font-size: 2.5rem;
   line-height: 1.2;
-  font-weight: 600;
 }
 
 h2 {
@@ -52,7 +48,6 @@ h3 {
 h4 {
   font-size: 1.5rem;
   line-height: 1.5;
-  font-weight: 500;
 }
 
 p {
@@ -198,47 +193,4 @@ select:focus {
   100% {
     transform: rotate(360deg);
   }
-}
-
-/* Estilos específicos para o carrossel */
-.swiper-button-next,
-.swiper-button-prev {
-  background-color: var(--primary-color);
-  padding: 10px;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Estilo para os títulos dos serviços */
-.servico-title {
-  font-size: 1.875rem;
-  font-weight: bold;
-  color: var(--white);
-}
-
-.servico-description {
-  font-size: 1.125rem;
-  color: var(--gray-light);
-  margin-top: 1rem;
-}
-
-.servico-button {
-  background-color: var(--primary-color);
-  color: var(--white);
-  padding: 12px 25px;
-  text-align: center;
-  border-radius: 50px;
-  font-size: 1.125rem;
-  margin-top: 2rem;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.servico-button:hover {
-  background-color: var(--secondary-color);
 }
