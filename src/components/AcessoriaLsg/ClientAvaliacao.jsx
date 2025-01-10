@@ -109,15 +109,31 @@ const ClientAvaliacao = () => {
     ),
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 2, // Mostra 2 slides em telas de até 1024px
+          slidesToShow: 2,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
-          slidesToShow: 1, // Mostra 1 slide em telas de até 600px
+          slidesToShow: 2,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          centerMode: false,
         },
       },
     ],
@@ -128,14 +144,13 @@ const ClientAvaliacao = () => {
       <div className="absolute inset-0 bg-white opacity-10"></div>
 
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8 relative">
-        <h2 className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900 text-center">
-          Avaliações de{" "}
-          <span className="text-[#0f0f0f]">Sucesso</span>
+        <h2 className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 text-center">
+          Avaliações de <span className="text-[#0f0f0f]">Sucesso</span>
         </h2>
-        <p className="mt-2 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-900 text-center">
+        <p className="mt-2 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-gray-900 text-center">
           Não acreditamos apenas em números, mas em histórias reais de empresas que transformaram suas operações e alcançaram resultados extraordinários.
         </p>
-        <div className="relative mb-12">
+        <div className="relative mb-6 md:mb-8 lg:mb-12">
           <Slider {...settings}>
             {testimonials.map((testimonial, index) => (
               <ClientTestimonial key={index} {...testimonial} />
