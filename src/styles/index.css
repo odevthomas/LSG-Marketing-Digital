@@ -596,3 +596,18 @@ video {
 body.modal-open {
   overflow-x: hidden;
 }
+
+@keyframes marquee-smooth {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee-smooth {
+  display: flex;
+  animation: marquee-smooth 20s linear infinite;
+  will-change: transform;
+}
