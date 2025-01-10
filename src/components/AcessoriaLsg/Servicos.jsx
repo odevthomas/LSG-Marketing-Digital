@@ -1,6 +1,8 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
+
+// Certifique-se de importar o CSS do Swiper
 import "swiper/swiper-bundle.css";
 
 const Servicos = () => {
@@ -62,9 +64,6 @@ const Servicos = () => {
             1024: {
               slidesPerView: 1,  // 1 imagem por vez em telas grandes
             },
-            1440: {
-              slidesPerView: 1,  // Exibe 1 imagem por vez em telas extra grandes
-            },
           }}
         >
           {ServicosItems.map((item, index) => (
@@ -79,14 +78,13 @@ const Servicos = () => {
                 <motion.img
                   src={item.image}
                   alt={`Serviço ${index + 1}`}
-                  className="w-full h-[450px] object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
+                  className="w-full h-auto object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
                 />
                 {/* Botão para enviar mensagem no WhatsApp */}
                 <div className="mt-4">
                   <button
                     onClick={() => handleWhatsAppMessage(item.service)}
                     className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#fb1603] rounded-full hover:bg-[#fb1603] focus:outline-none focus:ring focus:ring-[#fb1603] focus:ring-opacity-50"
-                    aria-label={`Clique para saber mais sobre o serviço de ${item.service}`}
                   >
                     Quero saber mais sobre {item.service}
                   </button>
