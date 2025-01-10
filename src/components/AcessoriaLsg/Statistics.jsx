@@ -9,13 +9,22 @@ const Statistics = () => {
     ];
 
     const [count, setCount] = useState(Array(stats.length).fill(0));
-    const [currentText, setCurrentText] = useState("Junte-se a nós e faça parte do sucesso!");
+    const [currentText, setCurrentText] = useState("O sucesso está ao seu alcance. Vamos juntos!");
 
     const textos = [
-        "Junte-se a nós e faça parte do sucesso!",
         "Transforme seu futuro com a gente!",
         "Não perca a chance de crescer conosco!",
         "O sucesso está ao seu alcance. Vamos juntos!",
+        "Transforme seu potencial em resultados tangíveis!",
+        "O futuro pertence àqueles que acreditam em seus sonhos!",
+        "Desperte a força do seu negócio com nossa expertise!",
+        "Juntos, vamos criar histórias de sucesso!",
+        "A hora de agir é agora—não fique para trás!",
+        "Seu sucesso é a nossa missão!",
+        "Cresça, inove e conquiste com a gente!",
+        "O primeiro passo para o sucesso é se juntar a nós!",
+        "Vamos construir um futuro brilhante juntos!",
+        "O sucesso não é um destino, é uma jornada—vamos trilhá-la juntos!"
     ];
 
     // Função para formatar números de forma legível
@@ -72,60 +81,58 @@ const Statistics = () => {
     }, []); // Executa apenas uma vez, quando o componente é montado
 
     return (
-        <section className=" py-14 px-4 sm:px-8  bg-[#fff] lg:px-16 text-center">
+        <section className="py-14 px-4 sm:px-8 bg-[#fff] lg:px-16 text-center">
             <motion.h2
                 id="impacto-global"
-                className=" mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
+                className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                Nosso Impacto: Resultados Reais, Crescimento Visível
+                Junte-se a nós e faça parte do sucesso!
             </motion.h2>
 
-            <ul className=" flex mt-20 flex-col sm:flex-row sm:space-x-10 items-center justify-center gap-y-10 sm:gap-y-0 sm:flex-wrap lg:divide-x" aria-live="polite">
+            <ul className="flex mt-20 flex-col sm:flex-row sm:space-x-10 items-center justify-center gap-y-10 sm:gap-y-0 sm:flex-wrap lg:divide-x" aria-live="polite">
                 {stats.map((item, idx) => (
                     <motion.li
                         key={idx}
-                        className=" text-center px-12 md:px-16"
+                        className="text-center px-12 md:px-16"
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: idx * 0.3, type: 'spring', stiffness: 100 }}
                     >
                         <h3
-                            className=" text-5xl sm:text-6xl text-[#f11414d0] font-extrabold transition duration-300 ease-in-out"
+                            className="text-5xl sm:text-6xl text-[#f11414d0] font-extrabold transition duration-300 ease-in-out"
                             aria-label={`Número de ${item.title}`}
                             style={{
-                                fontFamily: '"Orbitron", sans-serif', // Fonte mais quadrada e geométrica
-                                textShadow: '2px 2px 5px rgba(0,0,0,0.1)', // Sombra mais forte para destacar
-                                padding: '20px', // Adicionando padding para dar sensação de caixa
-                                borderRadius: '8px', // Bordas arredondadas para um visual mais moderno
-                               
-                                display: 'inline-block', // Fazer os números se comportarem como uma caixa
+                                fontFamily: '"Orbitron", sans-serif',
+                                textShadow: '2px 2px 5px rgba(0,0,0,0.1)',
+                                padding: '20px',
+                                borderRadius: '8px',
+                                display: 'inline-block',
                             }}
                         >
                             {formatNumber(count[idx])}
                         </h3>
-                        <p className=" mt-3 font-medium text-gray-900 text-sm sm:text-base">{item.description}</p>
+                        <p className="mt-3 font-medium text-gray-900 text-sm sm:text-base">{item.description}</p>
                     </motion.li>
                 ))}
             </ul>
 
             <motion.div
-                className=" text-center text-indigo-600 mt-10"
+                className="text-center text-indigo-600 mt-10"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: stats.length * 0.3 }}
             >
                 <h2
-                    className=" text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-black text-center"
                     aria-label="Chamada para ação dinâmica"
                     title="Chamada para ação - Junte-se a nós"
                 >
                     {currentText}
                 </h2>
             </motion.div>
-
           
         </section>
     );

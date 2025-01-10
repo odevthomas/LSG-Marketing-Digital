@@ -21,11 +21,11 @@ const HeroSection = () => {
       className="relative py-6 w-full bg-white h-auto bg-cover bg-center bg-fixed flex items-center justify-center"
       aria-label="Chamada para agendamento e informações sobre nossos serviços de beleza e estética"
     >
-      <div className="content relative z-10 text-center px-4 py-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+      <div className="content relative z-10 text-center px-4 py-1 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
         <img
           src={logo}
-          alt="Logo da Casa L'Ellit - Salão de Beleza e Estética"
-          className="mb-3 w-20 sm:w-28 md:w-36 mx-auto"
+          alt="lsg digital - logo"
+          className="mt-1 w-20 sm:w-28 md:w-36 mx-auto"
         />
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-black leading-tight uppercase mb-2">

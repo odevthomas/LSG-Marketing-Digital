@@ -37,9 +37,9 @@ export default function VideoTabs() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#000000b9] to-[#4848483b] opacity-90"></div>
       <div className="max-w-[75rem] px-4 py-8 sm:px-6 lg:px-2 lg:py-12 mx-auto relative z-10">
-        <div className="text-center mb-8">
+        <div className="text-center mb-3">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wider text-white leading-tight uppercase mb-3">
-            Transformamos Cliques em Resultados Reais
+                Nosso Impacto: Resultados Reais, Crescimento Visível
           </h2>
           <p className="mt-1 text-white text-lg sm:text-xl md:text-2xl leading-relaxed">
             Resultados Imediatos. Impacto Sustentável.
@@ -57,7 +57,7 @@ export default function VideoTabs() {
               className="relative flex flex-col items-center rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105"
             >
               {/* Contêiner de vídeo com efeito hover */}
-              <div className="relative w-full h-[400px] sm:h-[300px] md:h-[450px] bg-cover rounded-lg cursor-pointer">
+              <div className="relative w-full h-[500px] sm:h-[400px] md:h-[550px] bg-cover rounded-lg cursor-pointer">
                 <video
                   className="w-full h-full object-cover rounded-lg opacity-100 transition-opacity duration-300"
                   controls
