@@ -5,18 +5,18 @@ import { FaQuoteRight } from 'react-icons/fa'; // Importando ícone de citação
 // Componente do cartão do cliente
 const ClientCard = ({ imgSrc, name, description, slogan }) => {
   return (
-    <div className="p-6 flex flex-col items-center border-[#3a3a3a] border p-6 rounded-xl bg-[#fff] shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+    <div className="p-4 sm:p-6 flex flex-col items-center border-[#3a3a3a] border p-6 rounded-xl bg-[#fff] shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
       <img
         alt={`Imagem de ${name}`}
-        className="w-28 h-28 object-cover object-center rounded-full shadow-md border-2 border-[#fff] mb-2"
+        className="w-24 h-24 sm:w-28 sm:h-28 object-cover object-center rounded-full shadow-md border-2 border-[#fff] mb-2"
         src={imgSrc}
       />
       <div className="text-center">
-        <h3 className="text-2xl font-light text-[#000001] mb-2">{name}</h3> {/* Fonte mais fina */}
-        <p className="text-sm text-[#000001] mb-2">{description}</p> {/* Fonte mais leve */}
+        <h3 className="text-xl sm:text-2xl font-light text-[#000001] mb-2">{name}</h3> {/* Fonte mais fina */}
+        <p className="text-sm sm:text-base text-[#000001] mb-2">{description}</p> {/* Fonte mais leve */}
         <div className="text-[#000001] mt-2 flex items-center justify-center italic">
           <FaQuoteRight size={18} className="inline-block mr-2 text-[#000001]" />
-          <span className="font-light text-lg">{slogan}</span> {/* Fonte mais fina */}
+          <span className="font-light text-lg sm:text-xl">{slogan}</span> {/* Fonte mais fina */}
         </div>
       </div>
     </div>
@@ -133,21 +133,21 @@ const ClientesParceiros = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#040404] to-[#0000000a] opacity-90 py-12">
-      <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
+    <section className="bg-gradient-to-b from-[#040404] to-[#0000000a] opacity-90 py-4 sm:py-6"> {/* Menor padding */}
+      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         {/* Título alinhado à esquerda */}
-        <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-wider text-white leading-tight uppercase mb-2 text-center">
+        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wider text-white leading-tight uppercase mb-4 sm:mb-6 text-center">
           Empresas que Alavancaram Seus Resultados!
         </h3>
 
-{/* Texto de descrição centralizado */}
-<p className="mt-6 text-[#ffff] text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
- Veja Como Nossos Serviços Impulsionaram o Sucesso de Antigos e Novos Clientes!
-</p>
+        {/* Texto de descrição centralizado */}
+        <p className="mt-2 sm:mt-4 text-[#ffff] text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
+          Veja Como Nossos Serviços Impulsionaram o Sucesso de Antigos e Novos Clientes!
+        </p>
 
-        <Slider {...settings} className="mt-12">
+        <Slider {...settings} className="mt-6 sm:mt-8">
           {clients.map((client, index) => (
-            <div key={index} className="px-2"> {/* Adicionando gap entre os cartões */}
+            <div key={index} className="px-2 sm:px-4"> {/* Ajuste no gap entre os cartões */}
               <ClientCard
                 imgSrc={client.imgSrc}
                 name={client.name}

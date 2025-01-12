@@ -84,7 +84,7 @@ const Statistics = () => {
         <section className="py-14 px-4 sm:px-8 bg-[#fff] lg:px-16 text-center">
             <motion.h2
                 id="impacto-global"
-                className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900"
+                className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-8"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -133,7 +133,6 @@ const Statistics = () => {
                     {currentText}
                 </h2>
             </motion.div>
-          
         </section>
     );
 };

@@ -52,7 +52,7 @@ const SeloSection = () => {
     <section id="Servicos" className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-white">
       <div className="container mx-auto px-6 text-center">
         <motion.h3
-          className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100 mb-8"
+          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -61,7 +61,7 @@ const SeloSection = () => {
         </motion.h3>
 
         <motion.p
-          className="text-[#fff] text-lg mt-10 sm:text-xl md:text-2xl leading-relaxed"
+          className="text-[#fff] text-lg sm:text-xl md:text-2xl leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -98,7 +98,7 @@ const SeloSection = () => {
           ))}
         </Swiper>
 
-        {/* Indicadores de navegação */}
+        {/* Indicadores de navegação (estilizados) */}
         <div className="flex justify-center gap-4 mt-8">
           {icons.map((_, index) => (
             <motion.div

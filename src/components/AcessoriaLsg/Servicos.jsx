@@ -23,14 +23,11 @@ const Servicos = () => {
   };
 
   return (
-    <section
-      id="Servicos"
-      className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-white"
-    >
+    <section id="Servicos" className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-white">
       <div className="container mx-auto px-6 text-center">
         {/* Título e Subtítulo */}
         <motion.h3
-          className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100"
+          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -39,7 +36,7 @@ const Servicos = () => {
         </motion.h3>
 
         <motion.p
-          className="text-[#0a0a0a] text-lg mt-10 sm:text-xl md:text-2xl leading-relaxed"
+          className="text-[#0a0a0a] text-lg mt-6 sm:text-xl md:text-2xl leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -62,7 +59,10 @@ const Servicos = () => {
               slidesPerView: 1,  // 1 imagem por vez em telas pequenas
             },
             1024: {
-              slidesPerView: 1,  // 1 imagem por vez em telas grandes
+              slidesPerView: 2,  // 2 imagens por vez em telas maiores
+            },
+            1280: {
+              slidesPerView: 3,  // 3 imagens por vez em telas muito grandes
             },
           }}
         >
@@ -81,10 +81,10 @@ const Servicos = () => {
                   className="w-full h-auto object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
                 />
                 {/* Botão para enviar mensagem no WhatsApp */}
-                <div className="mt-4">
+                <div className="mt-6">
                   <button
                     onClick={() => handleWhatsAppMessage(item.service)}
-                    className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#fb1603] rounded-full hover:bg-[#fb1603] focus:outline-none focus:ring focus:ring-[#fb1603] focus:ring-opacity-50"
+                    className="w-full px-6 py-3 text-lg font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#fb1603] rounded-full hover:bg-[#fb1603] focus:outline-none focus:ring focus:ring-[#fb1603] focus:ring-opacity-50"
                   >
                     Quero saber mais sobre {item.service}
                   </button>
@@ -94,14 +94,12 @@ const Servicos = () => {
           ))}
         </Swiper>
 
-        {/* Bolinhas de navegação personalizadas (se necessário) */}
+        {/* Indicadores de navegação (se necessário) */}
         <div className="flex justify-center gap-4 mt-8">
           {ServicosItems.map((_, index) => (
             <motion.div
               key={index}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 transform ${
-                index === 0 ? "bg-[#a3a3a3]" : "bg-gray-400"
-              }`}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 transform ${index === 0 ? "bg-[#a3a3a3]" : "bg-gray-400"}`}
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}
             ></motion.div>

@@ -19,12 +19,15 @@ const CookieConsent = () => {
 
   return (
     !isAccepted && (
-      <div className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-[#000] w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s shadow-lg">
+      <div
+        className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-[#000] w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s shadow-lg"
+        aria-live="assertive" // Garantir que a notificação seja lida
+      >
         <div className="flex justify-between items-start">
           <div className="flex-1">
             <p className="text-sm sm:text-base text-white">
               Este site usa cookies para melhorar a sua experiência. Ao continuar a navegar, você concorda com o uso de cookies. 
-              <a href="/política-de-privacidade" className="text-[#39393900] hover:underline ml-1">
+              <a href="/política-de-privacidade" className="text-[#f6472c] hover:underline ml-1">
                 Saiba mais
               </a>
             </p>
@@ -36,7 +39,7 @@ const CookieConsent = () => {
             onClick={handleAccept}
             className="bg-[#f6472c] text-black text-sm px-4 py-2 rounded-md hover:bg-[#d63924] focus:outline-none transition duration-300"
           >
-            Aceitar
+            Aceitar cookies
           </button>
         </div>
       </div>

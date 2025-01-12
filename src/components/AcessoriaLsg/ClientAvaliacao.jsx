@@ -6,35 +6,35 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const testimonials = [
   {
     clientName: 'Floya',
-    role: 'DESIGNER',
+    role: '',
     testimonial: 'Excelente trabalho! A equipe da LSG sempre entrega o que promete e com qualidade.',
     avatar: 'ImgInstagram/Floya.jpg',
     rating: 5, // Número de estrelas
   },
   {
     clientName: 'Tom Minnicelli',
-    role: 'CLIENTE',
+    role: '',
     testimonial: 'A LSG Digital nos ajudou a aumentar nosso alcance em menos de 6 meses. Trabalho incrível!',
     avatar: 'ImgInstagram/tominnicelli.jpg',
     rating: 5,
   },
   {
     clientName: 'Jéssica Rocha',
-    role: 'CLIENTE',
+    role: '',
     testimonial: 'Trabalhar com a LSG foi um divisor de águas para o meu negócio. Profissionais excepcionais!',
     avatar: 'ImgInstagram/cliente2.jpeg',
     rating: 4,
   },
   {
     clientName: 'André Martins',
-    role: 'CLIENTE',
+    role: '',
     testimonial: 'O time da LSG é altamente competente e atencioso. Sempre entregam soluções eficazes para nossos problemas.',
     avatar: 'ImgInstagram/cliente1.jpeg',
     rating: 4,
   },
   {
     clientName: 'Carlos Oliveira',
-    role: 'CLIENTE',
+    role: '',
     testimonial: 'Ótimo atendimento! A LSG tem um time de profissionais dedicados e super capacitados.',
     avatar: 'ImgInstagram/carlos.jpg',
     rating: 5,
@@ -42,7 +42,6 @@ const testimonials = [
 ];
 
 const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) => {
-  // Função para renderizar as estrelas
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -84,13 +83,13 @@ const ClientTestimonial = ({ clientName, role, testimonial, avatar, rating }) =>
 const ClientAvaliacao = () => {
   const settings = {
     infinite: true,
-    speed: 800, // Aumentando a velocidade da transição
-    slidesToShow: 3,
+    speed: 800,
+    slidesToShow: 2,  // Ajustando para mostrar 2 slides
     slidesToScroll: 1,
     centerMode: true,
     focusOnSelect: true,
-    autoplay: true, // Habilitando autoplay
-    autoplaySpeed: 5000, // Atraso entre as transições
+    autoplay: true,
+    autoplaySpeed: 5000,
     prevArrow: (
       <button
         aria-label="Previous slide"
@@ -106,6 +105,10 @@ const ClientAvaliacao = () => {
       >
         <ChevronRight />
       </button>
+    ),
+    dots: true, // Habilita as bolinhas de navegação
+    customPaging: (i) => (
+      <div className="w-3 h-3 bg-gray-600 rounded-full"></div> // Estilo para as bolinhas
     ),
     responsive: [
       {
@@ -140,10 +143,10 @@ const ClientAvaliacao = () => {
   };
 
   return (
-    <section className="relative py-20 w-full min-h-screen bg-white bg-cover bg-center bg-fixed flex items-center">
+    <section className="relative py-12 w-full min-h-screen bg-white bg-cover bg-center bg-fixed flex items-center"> {/* Reduzido padding */}
       <div className="absolute inset-0 bg-white opacity-10"></div>
 
-      <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8 relative">
+      <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8 relative">
         <h2 className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 text-center">
           Avaliações de <span className="text-[#0f0f0f]">Sucesso</span>
         </h2>

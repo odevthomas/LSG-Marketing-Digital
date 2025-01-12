@@ -25,7 +25,7 @@ const PrintSevicos = () => {
       <div className="container mx-auto px-6 text-center">
         {/* Título */}
         <motion.h3
-          className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100"
+          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -34,7 +34,7 @@ const PrintSevicos = () => {
         </motion.h3>
 
         {/* Lista de serviços */}
-        <div className="mt-12 space-y-12">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {ServicosItems.map((item, index) => (
             <motion.div
               key={index}
@@ -52,7 +52,7 @@ const PrintSevicos = () => {
 
               {/* Título do serviço */}
               <motion.h4
-                className="mt-6 text-2xl font-semibold text-[#f1f1f1] mb-4"
+                className="mt-6 text-xl sm:text-2xl font-semibold text-[#f1f1f1] mb-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
@@ -65,7 +65,7 @@ const PrintSevicos = () => {
                 href={`https://wa.me/5519981331191?text=${item.mensagemWhatsApp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#f11414] text-white py-3 px-6 text-lg transition duration-300 w-full sm:w-auto hover:bg-[#b23012] shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50 text-center rounded-full"
+                className="inline-flex items-center justify-center bg-[#f11414] text-white py-3 px-6 text-lg sm:text-base transition duration-300 w-full sm:w-auto hover:bg-[#b23012] shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50 text-center rounded-full"
                 aria-label={`Clique para saber mais sobre ${item.titulo}`}
               >
                 Fale com um Especialista sobre {item.titulo}
