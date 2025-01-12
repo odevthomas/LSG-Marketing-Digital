@@ -159,6 +159,34 @@ const FaqSection = () => {
             )}
           </div>
 
+          {/* Pergunta 6 */}
+          <div className="border border-gray-700 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105">
+            <button
+              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-800 rounded-lg"
+              onClick={() => toggleExpanded(5)}
+            >
+              <h2 className="font-semibold text-lg sm:text-xl text-gray-200">
+                Como melhorar minha presença digital?
+              </h2>
+              <span className="text-gray-400 bg-[#000001] rounded-full p-2 transition-colors duration-300 hover:bg-[#000001]">
+                {expanded === 5 ? (
+                  <Minus className="w-5 h-5 text-[#f4f4f4]" />
+                ) : (
+                  <Plus className="w-5 h-5 text-[#f4f4f4]" />
+                )}
+              </span>
+            </button>
+
+            {expanded === 5 && (
+              <>
+                <hr className="border-t-2 border-blue-900" />
+                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-200">
+                  Melhorar sua presença digital começa com um site otimizado e forte presença nas redes sociais. Utilize estratégias de marketing de conteúdo, SEO e publicidade paga para aumentar o alcance e engajamento com seu público-alvo.
+                </p>
+              </>
+            )}
+          </div>
+
         </div>
       </div>
     </section>
