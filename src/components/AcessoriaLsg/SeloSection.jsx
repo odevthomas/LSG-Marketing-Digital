@@ -53,8 +53,8 @@ const SeloSection = () => {
       <div className="container mx-auto px-6 text-center">
         <motion.h3
           className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-white mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           Garantia de Excelência e Compromisso com a Qualidade
@@ -62,8 +62,8 @@ const SeloSection = () => {
 
         <motion.p
           className="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-300 mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           Na LSG Digital, nossa garantia de qualidade é o alicerce de tudo o que fazemos. Estamos empenhados em oferecer soluções digitais inovadoras que atendem e superam suas necessidades.
@@ -83,10 +83,11 @@ const SeloSection = () => {
           {icons.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="flex flex-col items-center justify-center p-6 transition duration-500 ease-in-out bg-[#222] rounded-xl shadow-lg"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
+                className="flex flex-col items-center justify-center p-6 transition duration-300 ease-in-out bg-[#222] rounded-xl shadow-lg"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                whileHover={{ scale: 1.1 }} // Efeito de aumento ao passar o mouse
               >
                 <div className="text-center mb-4">
                   {item.icon}
@@ -103,7 +104,7 @@ const SeloSection = () => {
           {icons.map((_, index) => (
             <motion.div
               key={index}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 transform ${index === 0 ? "bg-[#f11414]" : "bg-gray-400"}`}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 transform ${index === 0 ? "bg-[#898989]" : "bg-gray-400"}`}
               whileHover={{ scale: 1.3 }}
               whileTap={{ scale: 0.9 }}
             ></motion.div>
