@@ -24,7 +24,7 @@ const Servicos = () => {
 
   return (
     <section
-      id="Servicos"
+      id="servicos"
       className="py-8 bg-gradient-to-b from-black text-white" // Reduzido o padding vertical
     >
       <div className="container mx-auto px-6 text-center">

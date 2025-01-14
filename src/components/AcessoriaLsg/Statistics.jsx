@@ -9,23 +9,6 @@ const Statistics = () => {
     ];
 
     const [count, setCount] = useState(Array(stats.length).fill(0));
-    const [currentText, setCurrentText] = useState("O sucesso está ao seu alcance. Vamos juntos!");
-
-    const textos = [
-        "Transforme seu futuro com a gente!",
-        "Não perca a chance de crescer conosco!",
-        "O sucesso está ao seu alcance. Vamos juntos!",
-        "Transforme seu potencial em resultados tangíveis!",
-        "O futuro pertence àqueles que acreditam em seus sonhos!",
-        "Desperte a força do seu negócio com nossa expertise!",
-        "Juntos, vamos criar histórias de sucesso!",
-        "A hora de agir é agora—não fique para trás!",
-        "Seu sucesso é a nossa missão!",
-        "Cresça, inove e conquiste com a gente!",
-        "O primeiro passo para o sucesso é se juntar a nós!",
-        "Vamos construir um futuro brilhante juntos!",
-        "O sucesso não é um destino, é uma jornada—vamos trilhá-la juntos!"
-    ];
 
     const formatNumber = (num) => {
         if (num >= 1000000) {
@@ -36,18 +19,6 @@ const Statistics = () => {
         }
         return `+${num}`;
     };
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentText((prevText) => {
-                const currentIndex = textos.indexOf(prevText);
-                const nextIndex = (currentIndex + 1) % textos.length;
-                return textos[nextIndex];
-            });
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, []);
 
     useEffect(() => {
         const timers = stats.map((stat, index) => {
@@ -117,18 +88,18 @@ const Statistics = () => {
             </ul>
 
             <motion.div
-                className="text-center text-indigo-600 mt-8"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: stats.length * 0.3 }}
+                className="mt-6 sm:mt-8"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1.2 }}
             >
-                <h2
-                    className="text-xl sm:text-2xl md:text-3xl font-bold text-black"
-                    aria-label="Chamada para ação dinâmica"
-                    title="Chamada para ação - Junte-se a nós"
+                <a
+                    href="#servicos" // Link para a seção de serviços
+                    className="inline-flex items-center justify-center bg-[#fb1603] text-white py-3 px-6 text-lg sm:text-xl transition duration-300 w-full sm:w-auto hover:bg-[#e64012] transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#fb1603] focus:ring-opacity-50 text-center rounded-full"
+                    aria-label="Clique para conhecer nossos serviços"
                 >
-                    {currentText}
-                </h2>
+                    Confira nossos Serviços
+                </a>
             </motion.div>
         </section>
     );

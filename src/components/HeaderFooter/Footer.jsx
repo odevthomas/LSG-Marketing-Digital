@@ -6,6 +6,12 @@ const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState('');
 
+  // Definindo os itens de navegação
+  const navigation = [
+    { title: "", path: "#servicos" },
+    { title: "", path: "#depoimentos" },
+  ];
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -52,6 +58,15 @@ const Footer = () => {
               Termos de Uso
             </button>
           </div>
+        </div>
+
+        {/* Links de Navegação Dinâmicos */}
+        <div className="mt-6 flex justify-center space-x-6 text-lg">
+          {navigation.map((item) => (
+            <Link key={item.title} to={item.path} className="text-gray-400 hover:text-white transition duration-300">
+              {item.title}
+            </Link>
+          ))}
         </div>
 
         {/* Botão Voltar ao Topo */}
@@ -132,11 +147,10 @@ const Footer = () => {
 
             <div className="mt-6 flex justify-center">
               <a 
-                 href="https://wa.me/19999042072?text=Oi,%20achei%20seu%20contato%20na%20LSG%20e%20gostaria%20de%20bater%20um%20papo."
-  target="_blank" 
-  rel="noopener noreferrer" 
-  className="flex items-center gap-x-2 py-2 px-4 text-sm font-medium rounded-lg bg-green-500 text-black hover:bg-green-600 transition"
-
+                href="https://wa.me/19999042072?text=Oi,%20achei%20seu%20contato%20na%20LSG%20e%20gostaria%20de%20bater%20um%20papo."
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center gap-x-2 py-2 px-4 text-sm font-medium rounded-lg bg-green-500 text-black hover:bg-green-600 transition"
               >
                 <FaWhatsapp size={20} />
                 Entrar em contato via WhatsApp
