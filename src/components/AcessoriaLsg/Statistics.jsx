@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 
 const Statistics = () => {
     const stats = [
-        { data: 700000, title: "Vendas Geradas", description: "Resultados reais para nossos clientes." },
-        { data: 7000000, title: "Anos de Mercado", description: "Uma jornada de sucesso." },
-        { data: 40, title: "Clientes Fiéis", description: "Parceiros de longo prazo." },
+        { data: 700000, title: "Vendas Geradas", description: "Mais de R$ 700.000 em vendas conquistadas!" },
+        { data: 7000000, title: "Anos de Mercado", description: " anos no mercado!" },
+        { data: 40, title: "Clientes Fiéis", description: " cleintes ja confiaram em nos!" },
     ];
 
     const [count, setCount] = useState(Array(stats.length).fill(0));
