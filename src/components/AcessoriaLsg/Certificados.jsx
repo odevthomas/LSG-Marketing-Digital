@@ -1,9 +1,68 @@
 import React from 'react';
 
 const PartnerComponent = () => {
-  const partners = [
-    // ... (your partners array remains unchanged)
+    const partners = [
+    {
+      name: 'Google Ads',
+      description: (
+        <>
+          Especializados em <span className="font-semibold text-white">campanhas digitais eficazes</span>, ajudando
+          empresas a alcançar seus <span className="font-semibold text-white">objetivos de marketing</span>.
+        </>
+      ),
+      additionalInfo: (
+        <>
+          Apenas <span className="font-semibold text-white">3%</span> das empresas brasileiras são{' '}
+          <span className="font-semibold text-white">Google Partner Premier</span>.
+        </>
+      ),
+      logo: 'https://static.vecteezy.com/system/resources/previews/025/732/723/non_2x/google-ads-logo-icon-free-vector.jpg',
+      actionText: "Aumente seu ROI com o Google Ads!",
+      whatsappMessage: "Oi, vim pelo site e quero aumentar meu ROI com o Google Ads.",
+      phone: '5519981331191',  // Número de WhatsApp para o Google Ads
+    },
+    {
+      name: 'Meta Business',
+      description: (
+        <>
+          O <span className="font-semibold text-white">Meta Business Partner Certified Company</span> é um selo de
+          qualidade que garante <span className="font-semibold text-white">expertise</span> em marketing digital da Meta
+          e está altamente capacitada para ajudar as empresas.
+        </>
+      ),
+      additionalInfo: (
+        <>
+          Apenas <span className="font-semibold text-white">1%</span> das empresas possuem esse{' '}
+          <span className="font-semibold text-white">certificado</span>.
+        </>
+      ),
+      logo: 'https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png',
+      actionText: "Seja um parceiro Meta e amplie seu alcance!",
+      whatsappMessage: "Oi, vim pelo site e quero aprender mais sobre parcerias com o Meta Business.",
+      phone: '5519981331192',  // Número de WhatsApp para o Meta Business
+    },
+    {
+      name: 'Kommo',
+      description: (
+        <>
+          Soluções personalizadas com a plataforma <span className="font-semibold text-white">CRM</span> da Kommo,
+          proporcionando um <span className="font-semibold text-white">atendimento mais eficaz</span> e com maior{' '}
+          <span className="font-semibold text-white">taxa de conversão</span>.
+        </>
+      ),
+      additionalInfo: (
+        <>
+          Apenas <span className="font-semibold text-white">5%</span> das empresas possuem este{' '}
+          <span className="font-semibold text-white">certificado</span>.
+        </>
+      ),
+      logo: 'https://d3v6byorcue2se.cloudfront.net/contents/KRsHs1KMsDqSwFEaCqAD50E0TIvxHBvjbmgVCQOR.png',
+      actionText: "Transforme o relacionamento com seus clientes com CRM!",
+      whatsappMessage: "Oi, vim pelo site e quero saber mais sobre o CRM da Kommo.",
+      phone: '5519981331193',  // Número de WhatsApp para o Kommo
+    },
   ];
+
 
   return (
     <div className="max-w-7xl mx-auto py-16 px-4 bg-gradient-to-b from-[#000] to-[#111]">
