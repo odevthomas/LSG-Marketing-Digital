@@ -8,7 +8,7 @@ const ClientCard = ({ imgSrc, name, description, slogan }) => {
     <div className="p-6 sm:p-8 flex flex-col items-center border-[#3a3a3a] border p-6 rounded-xl bg-[#000] shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
       <img
         alt={`Imagem de ${name}`}
-        className="w-28 h-28 sm:w-32 sm:h-32 object-cover object-center rounded-full shadow-md border-2 border-[#fff] mb-4"
+        className="w-28 h-28 sm:w-32 sm:h-32 object-cover object-center rounded-full shadow-md border-2 border-[#000] mb-4"
         src={imgSrc}
       />
       <div className="text-center">
@@ -86,6 +86,20 @@ const ClientesParceiros = () => {
       description: "Médico",
       slogan: "Cuidando de você!"
     },
+     {
+      imgSrc: "/ImgInstagram/olenkacosmeticoscampinas.jpg",
+      name: "Kell Cosméticos",
+      description: "Saúde/beleza",
+      slogan: "𝘋𝘪𝘴𝘵𝘳𝘪𝘣𝘶𝘪𝘥𝘰𝘳𝘢 𝘈𝘶𝘵𝘰𝘳𝘪𝘻𝘢𝘥𝘢!"
+    },
+    
+     {
+      imgSrc: "/ImgInstagram/amorsaudebrasil.jpg",
+      name: "AmorSaúde Brasis",
+      description: "Saúde/beleza",
+      slogan: "Medicina - Odontologia - Exames"
+    },
+    
     {
       imgSrc: "/ImgInstagram/Hazap Informática.jpg",
       name: "Hazap Informática",
