@@ -92,7 +92,7 @@ const Depoimentos = () => {
             {currentMessageIndices.map((index) => (
               <motion.div
                 key={index}
-                className={`bg-[#000] text-white rounded-lg shadow-lg p-6 flex items-start space-x-3 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2`}
+                className={`bg-[#000] text-white rounded-xl shadow-2xl p-6 flex items-start space-x-3 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2`}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}

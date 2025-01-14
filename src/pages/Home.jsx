@@ -19,87 +19,91 @@ import FormularioContato from '../components/Formularios/FormularioContato';
 import MarqueeSection from '../components/AcessoriaLsg/MarqueeSection';
 import CouponModal from '../components/Ferramentas/ModalComponent';
 import PrintMenagem from '../components/AcessoriaLsg/PrintMenagem';
+import ServicePlans from '../components/AcessoriaLsg/ServicePlans';
 
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
- const momentsItems = [
+  // Variáveis de texto para cada MarqueeSection
+  const momentsItems1 = [
     "Otimização de SEO - Melhore seu ranqueamento no Google",
     "Marketing de Conteúdo - Atraia visitantes com conteúdo relevante",
     "Anúncios no Google Ads - Amplie sua visibilidade online",
+  ];
+
+  const momentsItems2 = [
     "Facebook Ads segmentados - Alcance seu público-alvo com precisão",
     "Campanhas no Instagram - Impulsione seu negócio com anúncios visuais",
     "Aumento de ROI em Google Ads - Transforme cliques em conversões",
+  ];
+
+  const momentsItems3 = [
     "Remarketing - Reengaje clientes que já visitaram seu site",
     "SEO Local - Conquiste seu mercado local com otimização para busca",
     "Anúncios no YouTube - Expanda sua marca com vídeos impactantes",
+  ];
+
+  const momentsItems4 = [
     "Google Analytics - Acompanhe o desempenho das suas campanhas",
     "SEO On-Page - Melhore a estrutura do seu site para buscas",
     "Meta Ads - Conquiste mais clientes no Facebook e Instagram",
+  ];
+
+  const momentsItems5 = [
     "Pesquisa de palavras-chave - Encontre os termos certos para o SEO",
     "Campanhas de e-mail marketing - Engaje sua base de clientes",
     "Tráfego pago - Aumente suas vendas com anúncios eficientes",
-    "Anúncios responsivos - Melhore a experiência do usuário em dispositivos móveis",
-    "Anúncios dinâmicos - Personalize suas campanhas para o público-alvo",
-    "Otimização de taxa de conversão - Melhore o desempenho das suas páginas",
-    "SEO Técnico - Garanta a indexação do seu site pelos motores de busca",
-    "Google Shopping - Promova seus produtos diretamente nos resultados de busca",
-    "Estratégias de tráfego pago - Atraia mais visitantes para seu site",
-    "Automatização de anúncios - Torne sua publicidade mais eficiente",
-    "Conversão de leads - Transforme visitantes em clientes pagantes",
-    "Bing Ads - Expanda sua presença para além do Google",
-    "Testes A/B - Melhore suas campanhas com testes de performance",
-    "Bots de atendimento - Automatize o atendimento ao cliente",
-    "Google Search Console - Monitore e melhore a saúde do seu site",
-    "SEO de imagens - Torne suas imagens mais encontráveis nas buscas",
-    "Publicidade nativa - Ofereça anúncios que não interrompam a experiência do usuário",
-    "Anúncios de vídeo - Crie campanhas visuais que engajam",
-    "Meta Business Suite - Gerencie suas campanhas de Meta em um só lugar",
-    "Estratégia de conteúdo - Crie conteúdo que atraia e converta",
-    "SEO Mobile - Otimize seu site para usuários móveis",
-    "Campanhas geolocalizadas - Atraia clientes perto de você",
-    "Testes de usabilidade - Melhore a experiência do usuário no seu site",
-    "Anúncios personalizados - Alcance o público certo com anúncios altamente segmentados",
-    "Social Media Marketing - Expanda sua marca com redes sociais",
-    "Campanhas de retargeting - Reengaje visitantes que não converteram",
-    "Google Ads Performance Max - Maximize sua performance com anúncios automatizados",
-    "Chatbots de vendas - Automatize o processo de vendas com bots",
-    "Marketing de Influência - Parcerias para ampliar seu alcance",
-    "SEO para vídeos - Otimize seus vídeos para serem encontrados facilmente",
-    "Google AdSense - Monetize seu site com anúncios do Google"
-];
+  ];
 
-
- useEffect(() => {
+  useEffect(() => {
     const timer = setTimeout(() => {
       setIsModalOpen(true); // Abre o modal após 3 segundos
     }, 8000);
 
     return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
- }, []);
-  
+  }, []);
+
   return (
     <>
       <HeroSection />
-      <Carousel />
-      <MarqueeSection items={momentsItems} />
+      
       <Statistics />
-      <MarqueeSection items={momentsItems} />
+
+      {/* Primeiro MarqueeSection */}
+      <MarqueeSection items={momentsItems1} />
+
+      <Carousel />
       <ClientesParceiros />
-      <Servicos />
-      <ImageCarousel />
       <ChatbotSection />
-      <PrintMenagem />
+      <Servicos />
+
+      {/* Segundo MarqueeSection */}
+      <MarqueeSection items={momentsItems2} />
+
+      <ImageCarousel />
+      
+      {/* Terceiro MarqueeSection */}
+      <MarqueeSection items={momentsItems3} />
+
+      <ServicePlans />
+
       <CertificationSection />
       <ClientAvaliacao />
-      <SeloSection />
+      
+      {/* Quarto MarqueeSection */}
+      <MarqueeSection items={momentsItems4} />
+
+      <PrintMenagem />
       <FaqSection />
+      <SeloSection />
       <FormularioContato />
       <Footer />
-     {/* Modal de Cupom */}
+
+      {/* Modal de Cupom */}
       <CouponModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
       <CookieConsent />
-     <div className="fixed bottom-5 right-5 z-40">
+      
+      <div className="fixed bottom-5 right-5 z-40">
         <WhatsAppButton />
       </div>
     </>

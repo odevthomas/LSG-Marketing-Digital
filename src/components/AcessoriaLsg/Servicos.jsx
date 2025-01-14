@@ -25,12 +25,12 @@ const Servicos = () => {
   return (
     <section
       id="Servicos"
-      className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-white"
+      className="py-8 bg-gradient-to-b from-black text-white" // Reduzido o padding vertical
     >
       <div className="container mx-auto px-6 text-center">
         {/* Título e Subtítulo */}
         <motion.h3
-          className="mt-2 block font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-100"
+          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100" // Reduzido o tamanho do texto
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -39,7 +39,7 @@ const Servicos = () => {
         </motion.h3>
 
         <motion.p
-          className="text-[#0a0a0a] text-lg mt-10 sm:text-xl md:text-2xl leading-relaxed"
+          className="text-gray-300 text-lg mt-4 sm:text-xl leading-relaxed" // Ajustado o espaçamento e tamanho do texto
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -49,42 +49,49 @@ const Servicos = () => {
 
         {/* Carrossel Swiper */}
         <Swiper
-          spaceBetween={30}
-          slidesPerView={1}  // Exibe 1 imagem por vez
-          loop={true}  // O carrossel irá continuar rolando infinitamente
+          spaceBetween={20} // Reduzido o espaço entre slides
+          slidesPerView={1}
+          loop={true}
           autoplay={{
-            delay: 2500, // Atraso de 2.5 segundos antes de trocar a imagem
-            disableOnInteraction: false, // Não desativar a rotação ao interagir com o carrossel
+            delay: 2500,
+            disableOnInteraction: false,
           }}
-          pagination={{ clickable: true }}  // Ativa a navegação por bolinhas
+          pagination={{ clickable: true }}
           breakpoints={{
-            640: {
-              slidesPerView: 1,  // 1 imagem por vez em telas pequenas
-            },
-            1024: {
-              slidesPerView: 1,  // 1 imagem por vez em telas grandes
-            },
+            640: { slidesPerView: 1 },
+            1024: { slidesPerView: 1 },
           }}
         >
           {ServicosItems.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="flex flex-col justify-center p-6 transition duration-500 ease-in-out"
+                className="flex flex-col items-center justify-center p-4 transition duration-500 ease-in-out" // Ajustado o padding
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
+                {/* Texto sobre o serviço */}
+                <motion.h4
+                  className="text-lg font-bold mb-2" // Ajustado o tamanho do texto
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {item.service}
+                </motion.h4>
+                
                 {/* Imagem do serviço */}
                 <motion.img
                   src={item.image}
                   alt={`Serviço ${index + 1}`}
-                  className="w-full h-auto object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
+                  className="w-full h-auto object-cover rounded-3xl border border-[#99999969] shadow-lg"
                 />
+                
                 {/* Botão para enviar mensagem no WhatsApp */}
-                <div className="mt-4">
+                <div className="mt-2">
                   <button
                     onClick={() => handleWhatsAppMessage(item.service)}
-                    className="w-full px-6 py-3 mt-4 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#fb1603] rounded-full hover:bg-[#fb1603] focus:outline-none focus:ring focus:ring-[#fb1603] focus:ring-opacity-50"
+                    className="w-full px-6 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#fb1603] rounded-full hover:bg-[#e30f00] focus:outline-none focus:ring focus:ring-[#fb1603] focus:ring-opacity-50"
                   >
                     Quero saber mais sobre {item.service}
                   </button>
@@ -94,8 +101,8 @@ const Servicos = () => {
           ))}
         </Swiper>
 
-        {/* Bolinhas de navegação personalizadas (se necessário) */}
-        <div className="flex justify-center gap-4 mt-8">
+        {/* Bolinhas de navegação personalizadas */}
+        <div className="flex justify-center gap-4 mt-6">
           {ServicosItems.map((_, index) => (
             <motion.div
               key={index}

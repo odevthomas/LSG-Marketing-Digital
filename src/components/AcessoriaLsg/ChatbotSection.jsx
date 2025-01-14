@@ -4,10 +4,10 @@ import { FaRobot, FaComments, FaCogs, FaHandshake } from 'react-icons/fa';
 
 const ChatbotSection = () => {
   return (
-    <section id="Servicos" className="py-8 sm:py-12 bg-gradient-to-b from-[#000] to-[#000] text-gray-900">
+    <section id="Servicos" className="py-8 sm:py-12 bg-white text-gray-900">
       <div className="container mx-auto px-6 text-center">
         <motion.h2
-          className="mt-4 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100"
+          className="mt-4 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-black"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}

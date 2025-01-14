@@ -49,10 +49,10 @@ const SeloSection = () => {
   ];
 
   return (
-    <section id="Servicos" className="py-16 bg-gradient-to-b from-[#000] to-[#000] text-white">
+    <section id="Servicos" className="py-8 sm:py-12 bg-[#000] text-white">
       <div className="container mx-auto px-6 text-center">
         <motion.h3
-          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100 mb-8"
+          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-white mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -61,7 +61,7 @@ const SeloSection = () => {
         </motion.h3>
 
         <motion.p
-          className="text-[#fff] text-lg sm:text-xl md:text-2xl leading-relaxed"
+          className="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-300 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -70,7 +70,7 @@ const SeloSection = () => {
         </motion.p>
 
         <Swiper
-          spaceBetween={40}
+          spaceBetween={20}
           slidesPerView={1}
           loop={true}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
@@ -83,15 +83,15 @@ const SeloSection = () => {
           {icons.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="flex flex-col items-center justify-center p-6 transition duration-500 ease-in-out bg-[#222] rounded-2xl shadow-lg"
+                className="flex flex-col items-center justify-center p-6 transition duration-500 ease-in-out bg-[#222] rounded-xl shadow-lg"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                <div className="text-center mb-6">
+                <div className="text-center mb-4">
                   {item.icon}
                 </div>
-                <p className="text-lg font-semibold text-[#f5f5f5] mb-3">{item.label}</p>
+                <p className="text-lg font-semibold text-white mb-2">{item.label}</p>
                 <p className="text-sm text-gray-400">{item.description}</p>
               </motion.div>
             </SwiperSlide>
