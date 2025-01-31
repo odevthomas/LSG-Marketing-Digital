@@ -16,7 +16,7 @@ import 'swiper/css';
 const ClientCard = ({ client }) => (
   <motion.div 
     className="group bg-[#111] border border-[#222] rounded-2xl p-6 text-center 
-               w-[380px] h-[300px] flex flex-col justify-center items-center
+               w-full max-w-[380px] h-auto min-h-[300px] flex flex-col justify-center items-center
                transform-gpu transition-all duration-500
                hover:bg-black relative overflow-hidden
                hover:shadow-[0_0_50px_rgba(0,0,0,0.3)]
@@ -149,9 +149,9 @@ const ClientesParceiros = () => {
     <section className="bg-black py-20 text-white overflow-hidden relative">
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#000] to-[#111] opacity-90 pointer-events-none"></div>
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.h2 
-          className="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -160,7 +160,7 @@ const ClientesParceiros = () => {
         </motion.h2>
 
         <motion.p 
-          className="text-xl text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed"
+          className="text-base sm:text-xl text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -172,8 +172,13 @@ const ClientesParceiros = () => {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
-          slidesPerView="auto"
-          centeredSlides={true}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 }
+          }}
+          centeredSlides={false}
           loop={true}
           speed={3000}
           autoplay={{
@@ -183,7 +188,7 @@ const ClientesParceiros = () => {
           className="mb-8"
         >
           {clients.slice(0, Math.ceil(clients.length / 2)).map((client, index) => (
-            <SwiperSlide key={index} className="w-auto">
+            <SwiperSlide key={index} className="flex justify-center">
               <ClientCard client={client} />
             </SwiperSlide>
           ))}
@@ -193,8 +198,13 @@ const ClientesParceiros = () => {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={20}
-          slidesPerView="auto"
-          centeredSlides={true}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4 }
+          }}
+          centeredSlides={false}
           loop={true}
           speed={3000}
           autoplay={{
@@ -204,7 +214,7 @@ const ClientesParceiros = () => {
           }}
         >
           {clients.slice(Math.ceil(clients.length / 2)).map((client, index) => (
-            <SwiperSlide key={index} className="w-auto">
+            <SwiperSlide key={index} className="flex justify-center">
               <ClientCard client={client} />
             </SwiperSlide>
           ))}
