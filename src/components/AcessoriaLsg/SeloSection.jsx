@@ -92,16 +92,27 @@ const SeloSection = () => {
   const swiperParams = {
     modules: [Autoplay],
     spaceBetween: 30,
-    slidesPerView: "auto",
+    centeredSlides: true,
+    slidesPerView: 1,
     loop: true,
-    speed: 3000,
+    speed: 1000,
     autoplay: {
-      delay: 0,
+      delay: 3000,
       disableOnInteraction: false,
     },
     breakpoints: {
-      640: { slidesPerView: "auto" },
-      1024: { slidesPerView: "auto" },
+      640: { 
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      768: { 
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      1024: { 
+        slidesPerView: 3,
+        spaceBetween: 50
+      }
     }
   };
 
@@ -129,11 +140,10 @@ const SeloSection = () => {
           Desenvolvemos estratégias digitais personalizadas que elevam sua marca, combinando tecnologia de ponta, criatividade e resultados mensuráveis.
         </motion.p>
 
-        {/* Carrossel Único */}
-        <div className="relative">
-          <Swiper {...swiperParams} className="selo-slider">
+        <div className="max-w-7xl mx-auto px-4">
+          <Swiper {...swiperParams} className="selo-slider py-4">
             {icons.map((item, index) => (
-              <SwiperSlide key={`slide-${index}`} className="w-auto">
+              <SwiperSlide key={`slide-${index}`} className="px-2">
                 <CardContent item={item} />
               </SwiperSlide>
             ))}

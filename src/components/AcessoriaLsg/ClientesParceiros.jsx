@@ -16,8 +16,8 @@ import 'swiper/css';
 const ClientCard = ({ client }) => (
   <motion.div 
     className="group bg-[#111] border border-[#222] rounded-2xl p-6 text-center 
-               w-[280px] h-[280px] flex flex-col justify-center items-center
-               transform-gpu transition-all duration-500 mx-2 sm:mx-3
+               w-[380px] h-[300px] flex flex-col justify-center items-center
+               transform-gpu transition-all duration-500
                hover:bg-black relative overflow-hidden
                hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
                hover:border-[#f11414]"
@@ -31,9 +31,9 @@ const ClientCard = ({ client }) => (
     </div>
     
     {/* Conteúdo */}
-    <div className="relative z-10 flex flex-col items-center justify-center h-full">
-      <div className="flex justify-center mb-4">
-        <div className="relative w-20 h-20 transform-gpu group-hover:scale-110 transition-transform duration-500">
+    <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
+      <div className="flex justify-center mb-6">
+        <div className="relative w-28 h-28 transform-gpu group-hover:scale-110 transition-transform duration-500">
           <img 
             src={client.imgSrc} 
             alt={client.name}
@@ -43,12 +43,12 @@ const ClientCard = ({ client }) => (
         </div>
       </div>
       
-      <h3 className="text-lg font-bold text-white mb-2 text-center
+      <h3 className="text-2xl font-bold text-white mb-3 text-center
                      group-hover:text-[#f11414] transition-colors duration-300">
         {client.name}
       </h3>
       
-      <p className="text-sm text-gray-400 text-center
+      <p className="text-base text-gray-400 text-center max-w-[80%] mx-auto
                    group-hover:text-gray-300 transition-colors duration-300">
         {client.description}
       </p>
