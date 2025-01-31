@@ -1,123 +1,122 @@
 import React from 'react';
-import { FaWhatsapp } from 'react-icons/fa'; // Certifique-se de importar o ícone do WhatsApp
+import { FaWhatsapp, FaCheckCircle } from 'react-icons/fa';
 
 const PartnerComponent = () => {
-      const partners = [
+    const partners = [
         {
             name: 'Google Ads',
-            description: (
-                <>
-                    Especializados em <span className="font-semibold text-white">campanhas digitais eficazes</span>, ajudando
-                    empresas a alcançar seus <span className="font-semibold text-white">objetivos de marketing</span>.
-                </>
-            ),
-            additionalInfo: (
-                <>
-                    Apenas <span className="font-semibold text-white">3%</span> das empresas brasileiras são{' '}
-                    <span className="font-semibold text-white">Google Partner Premier</span>.
-                </>
-            ),
+            description: 'Maximize seu ROI com estratégias de marketing digital de ponta.',
+            highlights: [
+                'Campanhas otimizadas',
+                'Targeting preciso',
+                'Resultados mensuráveis'
+            ],
             logo: 'https://static.vecteezy.com/system/resources/previews/025/732/723/non_2x/google-ads-logo-icon-free-vector.jpg',
-            actionText: "Aumente seu ROI com o Google Ads!",
-            whatsappMessage: "Oi, vim pelo site e quero aumentar meu ROI com o Google Ads.",
-            phone: '5519981331191',  // Número de WhatsApp para o Google Ads
+            actionText: "Impulsione seus Resultados",
+            whatsappMessage: "Quero aumentar meu ROI com Google Ads",
+            phone: '5519981331191',
+            expertise: '3% das empresas são Google Partner Premier'
         },
         {
             name: 'Meta Business',
-            description: (
-                <>
-                    O <span className="font-semibold text-white">Meta Business Partner Certified Company</span> é um selo de
-                    qualidade que garante <span className="font-semibold text-white">expertise</span> em marketing digital da Meta
-                    e está altamente capacitada para ajudar as empresas.
-                </>
-            ),
-            additionalInfo: (
-                <>
-                    Apenas <span className="font-semibold text-white">1%</span> das empresas possuem esse{' '}
-                    <span className="font-semibold text-white">certificado</span>.
-                </>
-            ),
+            description: 'Expanda sua presença digital com soluções de marketing social.',
+            highlights: [
+                'Estratégias criativas',
+                'Segmentação avançada',
+                'Engajamento de marca'
+            ],
             logo: 'https://cdn.pixabay.com/photo/2021/12/14/22/29/meta-6871457_1280.png',
-            actionText: "Seja um parceiro Meta e amplie seu alcance!",
-            whatsappMessage: "Oi, vim pelo site e quero aprender mais sobre parcerias com o Meta Business.",
-            phone: '5519981331192',  // Número de WhatsApp para o Meta Business
+            actionText: "Conecte-se com seu Público",
+            whatsappMessage: "Quero ampliar meu alcance no Meta Business",
+            phone: '5519981331192',
+            expertise: '1% possuem certificação Meta'
         },
         {
-            name: 'Kommo',
-            description: (
-                <>
-                    Soluções personalizadas com a plataforma <span className="font-semibold text-white">CRM</span> da Kommo,
-                    proporcionando um <span className="font-semibold text-white">atendimento mais eficaz</span> e com maior{' '}
-                    <span className="font-semibold text-white">taxa de conversão</span>.
-                </>
-            ),
-            additionalInfo: (
-                <>
-                    Apenas <span className="font-semibold text-white">5%</span> das empresas possuem este{' '}
-                    <span className="font-semibold text-white">certificado</span>.
-                </>
-            ),
+            name: 'Kommo CRM',
+            description: 'Transforme relacionamentos com inteligência em gestão de clientes.',
+            highlights: [
+                'Automação de processos',
+                'Análise de performance',
+                'Experiência personalizada'
+            ],
             logo: 'https://d3v6byorcue2se.cloudfront.net/contents/KRsHs1KMsDqSwFEaCqAD50E0TIvxHBvjbmgVCQOR.png',
-            actionText: "Transforme o relacionamento com seus clientes com CRM!",
-            whatsappMessage: "Oi, vim pelo site e quero saber mais sobre o CRM da Kommo.",
-            phone: '5519981331193',  // Número de WhatsApp para o Kommo
-        },
+            actionText: "Revolucione seu CRM",
+            whatsappMessage: "Quero otimizar meu atendimento com Kommo",
+            phone: '5519981331193',
+            expertise: '5% das empresas certificadas'
+        }
     ];
 
-    const selectedPartner = partners[0]; // Seleciona apenas o primeiro parceiro
-
     return (
-        <div className="max-w-7xl mx-auto py-16 px-4 bg-gradient-to-b from-[#000]">
-            <h3 className="text-center text-4xl font-extrabold text-white mb-6">
-                Nossos Parceiros de Confiança
-            </h3>
-            <p className="text-center text-lg text-gray-300 mb-12">
-                Trabalhe com empresas líderes que são especializadas em ajudar o seu negócio a crescer com soluções de marketing poderosas.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-                {partners.map((partner, index) => (
-                    <div
-                        className="flex flex-col items-center p-6 bg-[#111] text-white rounded-2xl shadow-2xl transition-transform duration-500 hover:scale-105 hover:shadow-xl"
-                        key={index}
-                    >
-                        <div className="w-full flex justify-center mb-6">
-                            <img
-                                className="w-32 h-32 object-cover rounded-full shadow-lg"
-                                src={partner.logo}
-                                alt={partner.name}
-                            />
-                        </div>
-
-                        <div className="text-center space-y-4">
-                            <h2 className="text-2xl font-semibold">{partner.name}</h2>
-                            <p className="text-md">{partner.description}</p>
-                            <p className="text-sm italic text-gray-400">{partner.additionalInfo}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Botão CTA Único */}
-            <div className="flex justify-center mt-6">
-                <a
-                    href={`https://wa.me/${selectedPartner.phone}?text=${encodeURIComponent(selectedPartner.whatsappMessage)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center border-1 border-[#f11414] text-white py-3 px-6 text-lg transition duration-300 w-full sm:w-auto hover:bg-[#b23012] shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50 text-center rounded-full bg-[#f11414]"
-                    aria-label="Clique para falar conosco via WhatsApp"
+        <section 
+            className="bg-black text-white py-16 px-4"
+            aria-labelledby="partners-title"
+        >
+            <div className="max-w-6xl mx-auto">
+                <h2 
+                    id="partners-title" 
+                    className="text-4xl font-bold text-center mb-8 text-white"
                 >
-                    <FaWhatsapp className="inline-block mr-2 text-xl" />
-                    {selectedPartner.actionText}
-                </a>
-            </div>
+                    Parceiros Estratégicos de Marketing
+                </h2>
 
-            <div className="mt-12 text-center">
-                <p className="text-lg font-semibold text-white">
-                    Junte-se a nós e aproveite as vantagens de ter parceiros certificados!
-                </p>
+                <div className="grid md:grid-cols-3 gap-8">
+                    {partners.map((partner, index) => (
+                        <div 
+                            key={index} 
+                            className="bg-[#111] rounded-2xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                        >
+                            <div className="flex items-center mb-6">
+                                <img 
+                                    src={partner.logo} 
+                                    alt={`Logo ${partner.name}`} 
+                                    className="w-20 h-20 rounded-full mr-4 object-cover"
+                                />
+                                <h3 className="text-2xl font-bold text-white">{partner.name}</h3>
+                            </div>
+
+                            <p className="text-gray-300 mb-4">{partner.description}</p>
+
+                            <div className="mb-4">
+                                {partner.highlights.map((highlight, idx) => (
+                                    <div 
+                                        key={idx} 
+                                        className="flex items-center text-[#f11414] mb-2"
+                                    >
+                                        <FaCheckCircle className="mr-2" />
+                                        <span className="text-white">{highlight}</span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="text-sm italic text-gray-400 mb-4">
+                                {partner.expertise}
+                            </div>
+
+                            <a 
+                                href={`https://wa.me/${partner.phone}?text=${encodeURIComponent(partner.whatsappMessage)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full block text-center bg-[#f11414] text-white py-3 rounded-full hover:bg-[#b23012] transition-colors"
+                                aria-label={`Fale sobre ${partner.name}`}
+                            >
+                                <FaWhatsapp className="inline-block mr-2 text-xl" />
+                                {partner.actionText}
+                            </a>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="text-center mt-12">
+                    <p className="text-xl font-semibold text-white">
+                        Transforme sua estratégia com parceiros de excelência
+                    </p>
+                    <p className="text-gray-400 mt-4">
+                        Soluções certificadas para impulsionar seu negócio
+                    </p>
+                </div>
             </div>
-        </div>
+        </section>
     );
 };
 

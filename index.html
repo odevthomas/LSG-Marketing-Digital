@@ -2,87 +2,81 @@
 <html lang="pt-br">
 
       <head>
+            <!-- Meta Tags Essenciais -->
             <meta charset="UTF-8" />
-            <meta name="viewport"
-                  content="width=device-width, initial-scale=1.0" />
-            <meta http-equiv="X-UA-Compatible"
-                  content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+            <!-- Títulos e Descrições Otimizados -->
+            <title>LSG Digital: Marketing de Alto Impacto | Campinas e RJ</title>
+            <meta name="description" content="Transforme sua presença digital com estratégias de marketing inteligentes. Especialistas em Google Ads, Facebook Ads e tráfego pago." />
+            <meta name="keywords" content="marketing digital, google ads, facebook ads, tráfego pago, consultoria marketing, campinas, rj" />
+
+            <!-- Performance e Carregamento -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+            <!-- Fontes Otimizadas -->
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="/src/styles/satoshi.css" />
+
+            <!-- Ícones e Favicon -->
+            <link id="favicon" rel="icon" type="image/png" href="/logo-nova.png" />
+            <link rel="apple-touch-icon" href="/logo-nova.png" />
+
+            <!-- Estilos Críticos -->
+            <style>
+                  :root {
+                        --primary-color: #0066cc;
+                        --secondary-color: #00a86b;
+                        --text-color: #333;
+                        --font-primary: 'Satoshi', Arial, sans-serif;
+                        --font-secondary: 'Inter', Arial, sans-serif;
+                  }
+                  body { 
+                        font-family: var(--font-primary);
+                        line-height: 1.6;
+                        color: var(--text-color);
+                  }
+                  h1, h2, h3 {
+                        font-family: var(--font-secondary);
+                  }
+            </style>
 
             <!-- Estilos Externos -->
-            <link rel="stylesheet"
-                  href="https://cdn.jsdelivr.net/npm/react-floating-whatsapp@latest/dist/index.css" />
-            <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:wght@300;400;500;600;700&display=swap"
-                  rel="stylesheet">
+            <link rel="stylesheet" href="/src/styles/index.css" />
+            <link rel="stylesheet" href="/src/styles/App.css" />
 
-            <!-- Favicon e Ícones -->
-            <link id="favicon"
-                  rel="icon"
-                  type="image/png"
-                  href="/logo-nova.png" />
-            <link rel="apple-touch-icon"
-                  href="/logo-nova.png" />
+            <!-- SEO Avançado -->
+            <meta name="author" content="LSG Digital" />
+            <meta name="robots" content="index, follow" />
+            <link rel="canonical" href="https://lsgdigital.com.br" />
 
-            <!-- Estilos internos -->
-            <link rel="stylesheet"
-                  href="/src/styles/index.css" />
-            <link rel="stylesheet"
-                  href="/src/styles/App.css" />
+            <!-- Open Graph Aprimorado -->
+            <meta property="og:locale" content="pt_BR" />
+            <meta property="og:type" content="business.business" />
+            <meta property="og:title" content="LSG Digital - Marketing Digital de Alto Desempenho" />
+            <meta property="og:description" content="Transforme sua estratégia digital com resultados mensuráveis. Especialistas em tráfego pago e marketing digital." />
+            <meta property="og:url" content="https://lsgdigital.com.br" />
+            <meta property="og:image" content="https://lsgdigital.com.br/public/logo-nova.png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
 
-            <title>LSG Digital - Soluções em Marketing Digital em Campinas, SP e RJ</title>
+            <!-- Twitter Cards Otimizado -->
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@lsgdigital" />
+            <meta name="twitter:creator" content="@lsgdigital" />
 
-            <!-- Meta Tags e SEO -->
-            <meta name="description"
-                  content="LSG Digital oferece soluções inovadoras em marketing digital, assessoria e consultoria em Campinas, SP e RJ para impulsionar seu negócio." />
-            <meta name="keywords"
-                  content="Google Ads, Facebook Ads, agência de tráfego pago, marketing digital, gestão de anúncios" />
-            <meta name="author"
-                  content="LSG Digital" />
-
-            <!-- Open Graph -->
-            <meta property="og:title"
-                  content="LSG Digital - Transforme seu Negócio" />
-            <meta property="og:description"
-                  content="Explore nossos serviços de marketing digital e assessoria em Campinas, SP e RJ para levar seu negócio ao próximo nível." />
-            <meta property="og:image"
-                  content="https://lsgdigital.com.br/public/logo-nova.png" />
-            <meta property="og:url"
-                  content="https://lsgdigital.com.br" />
-            <meta property="og:type"
-                  content="website" />
-
-            <!-- Twitter Cards -->
-            <meta name="twitter:card"
-                  content="summary_large_image" />
-            <meta name="twitter:title"
-                  content="LSG Digital - Transforme seu Negócio" />
-            <meta name="twitter:description"
-                  content="Explore nossos serviços de marketing digital e assessoria em Campinas, SP e RJ." />
-            <meta name="twitter:image"
-                  content="https://lsgdigital.com.br/public/logo-nova.png" />
-            <meta name="robots"
-                  content="index, follow" />
-            <meta name="theme-color"
-                  content="#ffffff" />
-            <link rel="canonical"
-                  href="https://lsgdigital.com.br" />
-
-            <!-- Google Tag Manager -->
-            <script async
-                    src="https://www.googletagmanager.com/gtm.js?id=GTM-NGBJKQN5"
-                    defer></script>
-
-            <!-- Google Ads -->
+            <!-- Performance Scripts -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16827802848"></script>
             <script>
                   window.dataLayer = window.dataLayer || [];
-                  function gtag() {
-                        dataLayer.push(arguments);
-                  }
+                  function gtag() { dataLayer.push(arguments); }
                   gtag('js', new Date());
                   gtag('config', 'AW-16827802848');
             </script>
 
-            <!-- Favicon dinâmico -->
+            <!-- Favicon Dinâmico -->
             <script>
                   function updateFavicon() {
                         const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -121,31 +115,28 @@
 
       <body>
             <noscript>
-                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGBJKQN5"
-                          height="0"
-                          width="0"
-                          style="display:none;visibility:hidden"></iframe>
+                  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGBJKQN5" height="0" width="0" style="display:none;visibility:hidden"></iframe>
             </noscript>
 
             <div id="root"></div>
 
-            <!-- Scripts -->
-            <script type="module"
-                    src="/src/main.jsx"></script>
+            <!-- Scripts Otimizados -->
+            <script type="module" src="/src/main.jsx" defer></script>
 
-            <!-- Automação do título da página -->
+            <!-- Título Dinâmico de Marketing -->
             <script>
                   document.addEventListener("DOMContentLoaded", function () {
-                        const keywords = [
-                              "LSG Digital", "Marketing Digital", "Consultoria em Campinas", "Google Ads",
-                              "Facebook Ads", "Gestão de Anúncios", "Campanhas Pagas", "Aumente seu ROI",
-                              "Especialistas em Marketing", "Transforme seu Negócio", "Soluções Inovadoras"
+                        const marketingPhrases = [
+                              "Maximize Seus Resultados", 
+                              "Estratégias Inteligentes de Marketing", 
+                              "Tráfego Pago de Alto Desempenho", 
+                              "Transforme Cliques em Conversões"
                         ];
                         let index = 0;
                         setInterval(function () {
-                              document.title = keywords[index] + " - LSG Digital";
-                              index = (index + 1) % keywords.length;
-                        }, 3000); // Troca o título a cada 3 segundos
+                              document.title = marketingPhrases[index] + " | LSG Digital";
+                              index = (index + 1) % marketingPhrases.length;
+                        }, 4000);
                   });
             </script>
       </body>

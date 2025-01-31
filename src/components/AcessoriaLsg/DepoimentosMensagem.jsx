@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, Eye } from "lucide-react";
+import { MessageCircle, Eye, CheckCircle } from "lucide-react";
 
 const Depoimentos = () => {
   const mensagens = [
@@ -43,76 +43,71 @@ const Depoimentos = () => {
   ];
 
   const [currentMessageIndices, setCurrentMessageIndices] = useState([0, 1, 2]);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentMessageIndices((prevIndices) => {
-        const nextIndices = prevIndices.map((index) => (index + 1) % mensagens.length);
-        return nextIndices;
-      });
+      setCurrentMessageIndices((prevIndices) => 
+        prevIndices.map((index) => (index + 1) % mensagens.length)
+      );
     }, 8000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <motion.section
-      className="py-8 relative bg-white w-full"
-      aria-labelledby="depoimentos"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+    <section 
+      className="py-16 bg-black relative overflow-hidden"
+      aria-labelledby="depoimentos-titulo"
     >
-      <div className="absolute inset-0 bg-white opacity-10"></div>
-
-      <div className="relative w-full px-4 md:px-8">
-        <div className="flex flex-col items-center text-center mt-0">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black font-semibold">
-            O Que Nossos Clientes Dizem em Tempo Real
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 
+            id="depoimentos-titulo"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight"
+          >
+            Resultados Reais de Clientes Reais
           </h2>
-          <p className="mt-4 text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-900">
-            Seus feedbacks são nossa maior motivação para continuarmos oferecendo soluções digitais de excelência em tempo real. Obrigado por confiarem na LSG Digital!
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Transformamos desafios em sucessos mensuráveis. Veja o que nossos clientes dizem sobre o impacto das nossas estratégias digitais.
           </p>
         </div>
 
-        <div className="flex flex-col items-center space-y-4 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <AnimatePresence>
             {currentMessageIndices.map((index) => (
               <motion.div
                 key={index}
-                className={`bg-[#000] text-white rounded-xl shadow-2xl p-6 flex items-start space-x-3 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 xl:w-1/2`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.8 }}
-                style={{ borderRadius: "20px" }}
+                className="bg-[#1a1a1a] border border-[#f11414]/20 rounded-2xl p-6 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -50 }}
+                transition={{ duration: 0.6 }}
               >
-                <div className="flex flex-col w-full">
-                  <div className="flex items-center mb-2 justify-between">
-                    <div className="flex items-center">
-                      <MessageCircle size={24} className="text-green-600 mr-2" />
-                      <span className="text-sm font-semibold">{mensagens[index].cliente}</span>
-                      <span className="text-xs text-gray-500 ml-2">{mensagens[index].hora}</span>
-                    </div>
-                    <span className="text-xs text-gray-500">Mensagem recebida</span>
+                <div className="flex items-center mb-4">
+                  <MessageCircle className="text-[#f11414] mr-3" size={32} />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">
+                      {mensagens[index].cliente}
+                    </h3>
+                    <span className="text-sm text-gray-400">
+                      {mensagens[index].hora}
+                    </span>
                   </div>
-                  <div className="text-sm">{mensagens[index].texto}</div>
+                </div>
+
+                <p className="text-gray-200 mb-4 italic">
+                  "{mensagens[index].texto}"
+                </p>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center text-green-500">
+                    <CheckCircle size={20} className="mr-2" />
+                    <span className="text-sm">Verificado</span>
+                  </div>
                   {mensagens[index].visualizado && (
-                    <div className="flex items-center mt-2">
-                      <Eye size={16} className="text-gray-400 mr-1" />
-                      <span className="text-xs text-gray-500">Visualizado</span>
+                    <div className="flex items-center text-gray-400">
+                      <Eye size={20} className="mr-2" />
+                      <span className="text-sm">Visualizado</span>
                     </div>
                   )}
                 </div>
@@ -121,7 +116,9 @@ const Depoimentos = () => {
           </AnimatePresence>
         </div>
       </div>
-    </motion.section>
+
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-black via-black to-[#f11414]/10 opacity-50 -z-10"></div>
+    </section>
   );
 };
 

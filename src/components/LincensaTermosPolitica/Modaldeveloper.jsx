@@ -22,30 +22,51 @@ const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center transition-opacity duration-300 ease-in-out"
-      aria-hidden={!isOpen}
+    <div 
+      className="fixed inset-0 z-50 bg-black bg-opacity-70 flex justify-center items-center"
+      role="dialog" 
+      aria-modal="true"
+      aria-labelledby="modal-title"
     >
-      <div
-        className="bg-white rounded-lg p-6 max-w-sm mx-auto transform transition-transform duration-300 ease-in-out"
-        style={{ animation: isOpen ? 'scaleIn 0.3s ease-out' : 'scaleOut 0.3s ease-in' }}
+      <div 
+        className="bg-white rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all duration-300 ease-in-out"
+        style={{ 
+          animation: 'fadeInUp 0.5s ease-out',
+          fontFamily: 'Satoshi, sans-serif'
+        }}
       >
-        <h2 className="text-xl font-semibold mb-4">Entre em Contato</h2>
-        <p>Você pode entrar em contato pelo WhatsApp:</p>
-        <a 
-          href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-red-500 font-semibold"
-        >
-          Clique aqui
-        </a>
-        <button 
-          onClick={onClose}
-          className="mt-4 bg-gray-900 text-black font-semibold py-2 px-4 rounded-lg hover:bg-gray-900 transition-colors"
-        >
-          Fechar
-        </button>
+        <div className="p-8 text-center">
+          <h2 
+            id="modal-title" 
+            className="text-3xl font-bold mb-6 text-black"
+          >
+            Vamos Conversar?
+          </h2>
+          
+          <div className="mb-6">
+            <p className="text-gray-700 mb-4 text-lg">
+              Entre em contato direto pelo WhatsApp e acelere seu projeto
+            </p>
+            <a 
+              href="https://api.whatsapp.com/send/?phone=5519981331191&text&type=phone_number&app_absent=0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block w-full py-4 bg-[#f11414] text-white font-bold rounded-lg hover:bg-opacity-90 transition-colors duration-300 ease-in-out"
+              aria-label="Iniciar conversa no WhatsApp"
+            >
+              <i className="fab fa-whatsapp mr-2"></i>
+              Iniciar Conversa Agora
+            </a>
+          </div>
+
+          <button 
+            onClick={onClose}
+            className="text-gray-600 hover:text-black underline transition-colors"
+            aria-label="Fechar modal"
+          >
+            Fechar
+          </button>
+        </div>
       </div>
     </div>
   );

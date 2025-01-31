@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 // Componentes principais
 import Footer from "../components/HeaderFooter/Footer";
@@ -57,40 +58,75 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsModalOpen(true); // Abre o modal após 3 segundos
+      setIsModalOpen(true);
     }, 8000);
 
-    return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
-      <HeroSection />
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="bg-white text-black overflow-hidden"
+    >
+      <motion.div 
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <HeroSection />
+      </motion.div>
       
-      <Statistics />
+      <motion.div 
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <Statistics />
+      </motion.div>
 
-      {/* Primeiro MarqueeSection */}
-      <MarqueeSection items={momentsItems1} />
+      {/* MarqueeSections com efeito de hover */}
+      <motion.div 
+        whileHover={{ scale: 1.01 }}
+        transition={{ type: "tween" }}
+      >
+        <MarqueeSection items={momentsItems1} />
+      </motion.div>
 
-      <Carousel />
-      <ClientesParceiros />
-      <ChatbotSection />
-      <Servicos />
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Carousel />
+        <ClientesParceiros />
+        <ChatbotSection />
+        <Servicos />
+      </motion.div>
 
-      {/* Segundo MarqueeSection */}
       <MarqueeSection items={momentsItems2} />
 
-      <ImageCarousel />
-      
-      {/* Terceiro MarqueeSection */}
+      <motion.div 
+        initial={{ x: -50, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <ImageCarousel />
+      </motion.div>
+
       <MarqueeSection items={momentsItems3} />
 
-      <ServicePlans />
+      <motion.div 
+        whileHover={{ scale: 1.03 }}
+        transition={{ type: "spring", stiffness: 200 }}
+      >
+        <ServicePlans />
+      </motion.div>
 
       <CertificationSection />
       <ClientAvaliacao />
       
-      {/* Quarto MarqueeSection */}
       <MarqueeSection items={momentsItems4} />
 
       <PrintMenagem />
@@ -99,14 +135,18 @@ const Home = () => {
       <FormularioContato />
       <Footer />
 
-      {/* Modal de Cupom */}
       <CouponModal isOpen={isModalOpen} onOpenChange={setIsModalOpen} />
       <CookieConsent />
       
-      <div className="fixed bottom-5 right-5 z-40">
+      <motion.div 
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        className="fixed bottom-5 right-5 z-40"
+      >
         <WhatsAppButton />
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   );
 };
 

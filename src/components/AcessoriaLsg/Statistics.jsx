@@ -1,11 +1,27 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
+import { TrendingUp, Award, Users } from 'lucide-react';
 
 const Statistics = () => {
     const stats = [
-        { data: 700000, title: "Vendas Geradas", description: "Mais de R$ 700.000 em vendas conquistadas!" },
-        { data: 7000000, title: "Anos de Mercado", description: " anos no mercado!" },
-        { data: 40, title: "Clientes Fiéis", description: " cleintes ja confiaram em nos!" },
+        { 
+            data: 700000, 
+            title: "Vendas Geradas", 
+            description: "Mais de R$ 700.000 em vendas conquistadas!", 
+            icon: TrendingUp 
+        },
+        { 
+            data: 7, 
+            title: "Anos de Mercado", 
+            description: "Anos de experiência e excelência!", 
+            icon: Award 
+        },
+        { 
+            data: 40, 
+            title: "Clientes Fiéis", 
+            description: "Clientes que já confiaram em nosso trabalho!", 
+            icon: Users 
+        },
     ];
 
     const [count, setCount] = useState(Array(stats.length).fill(0));
@@ -22,7 +38,7 @@ const Statistics = () => {
 
     useEffect(() => {
         const timers = stats.map((stat, index) => {
-            const duration = 6;
+            const duration = 3;
             const stepTime = Math.ceil(duration * 1000 / stat.data);
             const step = Math.ceil(stat.data / 100);
 
@@ -49,56 +65,68 @@ const Statistics = () => {
     }, []);
 
     return (
-        <section className="py-10 sm:py-12 bg-white lg:px-16 text-center">
+        <section className="py-16 bg-gradient-to-br from-gray-50 to-white lg:px-16 text-center">
             <motion.h2
                 id="impacto-global"
-                className="block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6"
+                className="block font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gray-900 mb-12 px-4"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.7 }}
             >
-                Junte-se a nós e faça parte do sucesso!
+                Nosso Impacto em Números
             </motion.h2>
 
-            <ul className="flex flex-col sm:flex-row sm:space-x-8 items-center justify-center gap-y-6 sm:gap-y-0 sm:flex-wrap lg:divide-x" aria-live="polite">
-                {stats.map((item, idx) => (
-                    <motion.li
-                        key={idx}
-                        className="text-center px-8 md:px-10"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: idx * 0.3, type: 'spring', stiffness: 100 }}
-                    >
-                        <h3
-                            className="text-4xl sm:text-5xl text-red-600 font-extrabold transition duration-300 ease-in-out"
-                            aria-label={`Número de ${item.title}`}
-                            style={{
-                                fontFamily: '"Orbitron", sans-serif',
-                                textShadow: '2px 2px 5px rgba(0,0,0,0.1)',
-                                padding: '10px',
-                                borderRadius: '8px',
-                                display: 'inline-block',
+            <ul className="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12" aria-live="polite">
+                {stats.map((item, idx) => {
+                    const IconComponent = item.icon;
+                    return (
+                        <motion.li
+                            key={idx}
+                            className="text-center p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                            initial={{ opacity: 0, scale: 0.5 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                delay: idx * 0.3, 
+                                type: 'spring', 
+                                stiffness: 120 
                             }}
                         >
-                            {formatNumber(count[idx])}
-                        </h3>
-                        <p className="mt-2 font-medium text-gray-900 text-sm sm:text-base">{item.description}</p>
-                    </motion.li>
-                ))}
+                            <div className="mb-4 flex items-center justify-center">
+                                <IconComponent 
+                                    className="text-red-600" 
+                                    size={48} 
+                                    strokeWidth={1.5} 
+                                />
+                            </div>
+                            <h3
+                                className="text-5xl text-red-600 font-extrabold mb-2"
+                                aria-label={`Número de ${item.title}`}
+                                style={{
+                                    fontFamily: '"Orbitron", sans-serif',
+                                    textShadow: '2px 2px 5px rgba(0,0,0,0.1)',
+                                }}
+                            >
+                                {formatNumber(count[idx])}
+                            </h3>
+                            <p className="font-medium text-gray-800 text-base">{item.description}</p>
+                        </motion.li>
+                    );
+                })}
             </ul>
 
             <motion.div
-                className="mt-6 sm:mt-8"
+                className="mt-12"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.2 }}
             >
                 <a
-                    href="#servicos" // Link para a seção de serviços
-                    className="inline-flex items-center justify-center bg-[#fb1603] text-white py-3 px-6 text-lg sm:text-xl transition duration-300 w-full sm:w-auto hover:bg-[#e64012] transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#fb1603] focus:ring-opacity-50 text-center rounded-full"
-                    aria-label="Clique para conhecer nossos serviços"
+                    href="#servicos"
+                    className="inline-flex items-center justify-center bg-[#fb1603] text-white py-4 px-8 text-xl transition duration-300 hover:bg-[#e64012] transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#fb1603] focus:ring-opacity-50 rounded-full shadow-lg hover:shadow-xl"
+                    aria-label="Conheça nossos serviços"
                 >
-                    Confira nossos Serviços
+                    Descubra Nossos Serviços
                 </a>
             </motion.div>
         </section>

@@ -6,70 +6,81 @@ const PrintSevicos = () => {
     {
       image: "/Servicos/campanha.png",
       mensagemWhatsApp: "Gostaria%20de%20saber%20mais%20sobre%20Campanhas%20Digitais!",
-      titulo: "Campanhas Digitais"
+      titulo: "Campanhas Digitais",
+      descricao: "Estratégias personalizadas para alcançar seu público-alvo e impulsionar resultados."
     },
     {
       image: "/Servicos/crm.png",
       mensagemWhatsApp: "Gostaria%20de%20saber%20mais%20sobre%20CRM%20e%20Automação%20de%20Marketing!",
-      titulo: "CRM e Automação de Marketing"
+      titulo: "CRM e Automação",
+      descricao: "Otimize relacionamentos e processos com soluções inteligentes de gestão."
     },
     {
       image: "/Servicos/funil.png",
       mensagemWhatsApp: "Gostaria%20de%20saber%20mais%20sobre%20Funil%20de%20Vendas!",
-      titulo: "Funil de Vendas"
+      titulo: "Funil de Vendas",
+      descricao: "Maximize conversões e eficiência com análise e otimização de funil."
     },
   ];
 
   return (
-    <section id="Servicos" className="py-16 bg-gradient-to-b from-[#000] to-[#333] text-white">
+    <section 
+      id="Servicos" 
+      className="py-20 bg-gradient-to-br from-black via-[#121212] to-[#1e1e1e] text-white"
+    >
       <div className="container mx-auto px-6 text-center">
-        {/* Título */}
-        <motion.h3
-          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        {/* Título com efeito moderno */}
+        <motion.h2
+          className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#ff6b00] mb-12"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Serviços Essenciais para Impulsionar seu Sucesso
-        </motion.h3>
+          Serviços que Transformam Negócios
+        </motion.h2>
 
-        {/* Lista de serviços */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        {/* Grid de serviços com design moderno */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ServicosItems.map((item, index) => (
             <motion.div
               key={index}
-              className="flex flex-col items-center transition duration-500 ease-in-out"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
+              className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl border border-[#333] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-[#ff6b00]"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              {/* Imagem do serviço */}
-              <motion.img
-                src={item.image}
-                alt={item.titulo}
-                className="w-full h-auto object-cover rounded-3xl border-1 border-[#00000000] shadow-lg"
-              />
+              {/* Imagem do serviço com overlay */}
+              <div className="relative">
+                <img 
+                  src={item.image} 
+                  alt={item.titulo} 
+                  className="w-full h-64 object-cover opacity-80 hover:opacity-100 transition-opacity"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
+              </div>
 
-              {/* Título do serviço */}
-              <motion.h4
-                className="mt-6 text-xl sm:text-2xl font-semibold text-[#f1f1f1] mb-4"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-              >
-                {item.titulo}
-              </motion.h4>
+              {/* Conteúdo do serviço */}
+              <div className="p-6 text-left">
+                <h3 className="text-2xl font-bold text-[#ff6b00] mb-4">
+                  {item.titulo}
+                </h3>
+                <p className="text-gray-300 mb-6">
+                  {item.descricao}
+                </p>
 
-              {/* Botão para cada serviço */}
-              <motion.a
-                href={`https://wa.me/5519981331191?text=${item.mensagemWhatsApp}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#f11414] text-white py-3 px-6 text-lg sm:text-base transition duration-300 w-full sm:w-auto hover:bg-[#b23012] shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50 text-center rounded-full"
-                aria-label={`Clique para saber mais sobre ${item.titulo}`}
-              >
-                Fale com um Especialista sobre {item.titulo}
-              </motion.a>
+                {/* Botão de chamada com estilo moderno */}
+                <a
+                  href={`https://wa.me/5519981331191?text=${item.mensagemWhatsApp}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-[#ff6b00] text-black font-semibold rounded-full 
+                  hover:bg-white transition-all duration-300 
+                  transform hover:scale-105 hover:shadow-lg
+                  focus:outline-none focus:ring-2 focus:ring-[#ff6b00]"
+                >
+                  Consulta Gratuita
+                </a>
+              </div>
             </motion.div>
           ))}
         </div>

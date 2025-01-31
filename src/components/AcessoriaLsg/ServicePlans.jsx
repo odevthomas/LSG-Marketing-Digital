@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaUsers, FaRobot, FaRegHandshake, FaBullhorn, FaLaptop, FaChartLine, FaCode, FaMobileAlt, FaClipboardList } from "react-icons/fa"; // Importando os ícones necessários
+import { FaUsers, FaRobot, FaRegHandshake, FaBullhorn, FaLaptop, FaChartLine, FaCode, FaMobileAlt, FaClipboardList, FaNetworkWired } from "react-icons/fa"; // Importando os ícones necessários
 
 const ServicePlans = () => {
   const plans = [
@@ -45,9 +45,9 @@ const ServicePlans = () => {
       icon: <FaMobileAlt size={44} className="text-[#fb1603]" />,
     },
     {
-      name: "Gerenciamento de Projetos",
-      desc: "Mantenha seus projetos em dia com uma gestão eficiente e organizada.",
-      icon: <FaClipboardList size={44} className="text-[#fb1603]" />,
+      name: "Integração de Sistemas",
+      desc: "Conecte e otimize suas ferramentas para um fluxo de trabalho mais eficiente.",
+      icon: <FaNetworkWired size={44} className="text-[#fb1603]" />,
     },
   ];
 
@@ -70,16 +70,16 @@ const ServicePlans = () => {
           {plans.map((item, idx) => (
             <motion.div
               key={idx}
-              className="relative flex flex-col rounded-xl border-2 border-gray-600 bg-white shadow-lg p-6 transition-all duration-300 hover:shadow-xl"
+              className="relative flex flex-col rounded-xl border-2 border-transparent bg-[#0f0f0f] shadow-lg p-6 transition-all duration-300 hover:shadow-xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
               <div className="flex items-center mb-4">
                 {item.icon}
-                <h4 className="text-black font-medium text-xl ml-2">{item.name}</h4>
+                <h4 className="text-white font-medium text-xl ml-2">{item.name}</h4>
               </div>
-              <p className="text-gray-600">{item.desc}</p>
+              <p className="text-gray-300">{item.desc}</p>
             </motion.div>
           ))}
         </div>

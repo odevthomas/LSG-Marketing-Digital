@@ -3,91 +3,126 @@ import { motion } from "framer-motion";
 import { FaRobot, FaComments, FaCogs, FaHandshake } from 'react-icons/fa';
 
 const ChatbotSection = () => {
+  const cardVariants = {
+    hover: { 
+      scale: 1.05,
+      boxShadow: "0 15px 30px rgba(0,0,0,0.1)",
+      transition: { 
+        duration: 0.3,
+        type: "spring",
+        stiffness: 300
+      }
+    },
+    tap: { scale: 0.95 }
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const cardData = [
+    {
+      icon: FaRobot,
+      title: "IA Inteligente",
+      description: "Transformação digital com tecnologia de ponta e eficiência máxima.",
+      delay: 0
+    },
+    {
+      icon: FaComments,
+      title: "Suporte Inteligente",
+      description: "Atendimento contínuo e personalizado, 24 horas por dia.",
+      delay: 0.2
+    },
+    {
+      icon: FaCogs,
+      title: "Implementação Rápida",
+      description: "Solução plug-and-play sem complexidade técnica.",
+      delay: 0.4
+    },
+    {
+      icon: FaHandshake,
+      title: "Experiência Única",
+      description: "Interações que antecipam e superam expectativas do cliente.",
+      delay: 0.6
+    }
+  ];
+
   return (
-    <section id="Servicos" className="py-8 sm:py-12 bg-white text-gray-900">
-      <div className="container mx-auto px-6 text-center">
-        <motion.h2
-          className="mt-4 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-black"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+    <section 
+      id="solucoes-ia-atendimento" 
+      className="py-20 bg-white text-gray-900 overflow-hidden"
+      aria-labelledby="chatbot-title"
+    >
+      <div className="container mx-auto px-6 text-center max-w-7xl">
+        <motion.h1
+          id="chatbot-title"
+          className="text-5xl md:text-6xl font-black text-black mb-16 tracking-tight leading-tight"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          Transforme Seu Atendimento com um Chatbot Inovador!
-        </motion.h2>
+          Transforme seu Atendimento com <span className="text-[#f11414]">Inteligência Artificial</span>
+        </motion.h1>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
         >
-          {/* Automação Inteligente */}
-          <motion.div
-            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FaRobot className="text-3xl sm:text-4xl text-[#fb1603] mb-4" />
-            <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black">Automação Eficiente</h3>
-            <p className="text-sm sm:text-base text-black mb-4">
-              Ofereça um atendimento mais rápido e eficiente com nosso chatbot automatizado.
-            </p>
-          </motion.div>
-
-          {/* Atendimento 24/7 */}
-          <motion.div
-            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FaComments className="text-3xl sm:text-4xl text-[#fb1603] mb-4" />
-            <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black">Atendimento 24/7</h3>
-            <p className="text-sm sm:text-base text-black mb-4">
-              Esteja disponível para seus clientes a qualquer hora, todos os dias da semana.
-            </p>
-          </motion.div>
-
-          {/* Configuração Simples */}
-          <motion.div
-            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FaCogs className="text-3xl sm:text-4xl text-[#fb1603] mb-4" />
-            <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black">Configuração Rápida</h3>
-            <p className="text-sm sm:text-base text-black mb-4">
-              Instale e configure seu chatbot em minutos, sem complicações.
-            </p>
-          </motion.div>
-
-          {/* Relacionamento com o Cliente */}
-          <motion.div
-            className="flex flex-col items-center text-gray-900 justify-center bg-[#fff] p-6 sm:p-8 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 ease-in-out"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <FaHandshake className="text-3xl sm:text-4xl text-[#fb1603] mb-4" />
-            <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-black">Relacionamento Personalizado</h3>
-            <p className="text-sm sm:text-base text-black mb-4">
-              Aprenda com cada interação e ofereça um atendimento sob medida para seus clientes.
-            </p>
-          </motion.div>
+          {cardData.map((card, index) => (
+            <motion.div
+              key={index}
+              className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                visible: { 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { 
+                    duration: 0.6,
+                    delay: card.delay
+                  }
+                }
+              }}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <card.icon 
+                className="mx-auto text-6xl text-[#f11414] mb-6 group-hover:scale-110 transition-transform" 
+                aria-hidden="true"
+              />
+              <h2 className="text-2xl font-bold text-black mb-4 group-hover:text-[#f11414] transition-colors">
+                {card.title}
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed">
+                {card.description}
+              </p>
+            </motion.div>
+          ))}
         </motion.div>
 
         <motion.div
-          className="mt-6 sm:mt-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2 }}
+          className="mt-20"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <a
-            href="https://wa.me/5519981331191?text=Oi,%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20como%20automatizar%20meu%20atendimento%20com%20um%20chatbot!"
+            href="https://wa.me/5519981331191?text=Quero%20revolucionar%20meu%20atendimento%20com%20IA!"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center bg-[#fb1603] text-white py-3 px-6 text-lg sm:text-xl transition duration-300 w-full sm:w-auto hover:bg-[#e64012] transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#fb1603] focus:ring-opacity-50 text-center rounded-full"
-            aria-label="Clique para falar conosco sobre automação de atendimento via WhatsApp"
+            className="inline-block bg-[#f11414] text-white px-12 py-5 rounded-full text-xl font-bold uppercase tracking-wider shadow-2xl hover:bg-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#f11414] focus:ring-opacity-50"
+            aria-label="Iniciar transformação do atendimento via WhatsApp"
           >
-            Fale com um Especialista e Comece Sua Transformação!
+            Transforme Agora!
           </a>
         </motion.div>
       </div>

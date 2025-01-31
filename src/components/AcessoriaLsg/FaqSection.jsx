@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Plus, Minus } from "lucide-react"; // Ícones de "expandir" e "fechar"
+import { ChevronDown, ChevronUp, Target, DollarSign, LayoutDashboard, MessageSquareMore, Users, Globe } from "lucide-react";
 
 const FaqSection = () => {
   const [expanded, setExpanded] = useState(null);
@@ -8,185 +8,121 @@ const FaqSection = () => {
     setExpanded(expanded === index ? null : index);
   };
 
+  const faqs = [
+    {
+      question: (
+        <span className="flex items-center gap-2">
+          <Target className="w-6 h-6 text-[#f11414]" />
+          Tráfego Pago: Como Impulsionar Meu Negócio?
+        </span>
+      ),
+      answer: "Desenvolvemos estratégias precisas de anúncios no Google Ads e Facebook Ads para gerar tráfego qualificado, aumentando conversões e visibilidade com resultados mensuráveis e alto impacto.",
+      id: "faq-trafego-pago"
+    },
+    {
+      question: (
+        <span className="flex items-center gap-2">
+          <DollarSign className="w-6 h-6 text-[#f11414]" />
+          Funil de Vendas: Transformação de Leads?
+        </span>
+      ),
+      answer: "Otimizamos cada etapa do funil de vendas, nutrindo leads de forma inteligente e transformando interesse em vendas através de estratégias de marketing digital personalizadas e de alta performance.",
+      id: "faq-funil-vendas"
+    },
+    {
+      question: (
+        <span className="flex items-center gap-2">
+          <LayoutDashboard className="w-6 h-6 text-[#f11414]" />
+          Landing Page: Qual Seu Verdadeiro Poder?
+        </span>
+      ),
+      answer: "Criamos landing pages estratégicas que capturam atenção instantânea, direcionam o usuário com precisão e maximizam a taxa de conversão através de design moderno e copywriting persuasivo.",
+      id: "faq-landing-page"
+    },
+    {
+      question: (
+        <span className="flex items-center gap-2">
+          <MessageSquareMore className="w-6 h-6 text-[#f11414]" />
+          Chatbot Inteligente: Benefícios Reais?
+        </span>
+      ),
+      answer: "Implemente um atendimento automatizado de ponta, com respostas instantâneas, melhorando significativamente a experiência do cliente e otimizando sua comunicação digital.",
+      id: "faq-chatbot"
+    },
+    {
+      question: (
+        <span className="flex items-center gap-2">
+          <Users className="w-6 h-6 text-[#f11414]" />
+          CRM: Como Gerenciar Relacionamentos?
+        </span>
+      ),
+      answer: "Centralize informações, personalize interações e potencialize a fidelização através de uma gestão de clientes inteligente, orientada por dados e análises estratégicas.",
+      id: "faq-crm"
+    },
+    {
+      question: (
+        <span className="flex items-center gap-2">
+          <Globe className="w-6 h-6 text-[#f11414]" />
+          Presença Digital: Como Elevar Minha Marca?
+        </span>
+      ),
+      answer: "Combinamos SEO avançado, marketing de conteúdo e publicidade direcionada para construir uma marca digital robusta, aumentando alcance, engajamento e autoridade no mercado.",
+      id: "faq-presenca-digital"
+    }
+  ];
+
   return (
-    <section className="bg-white py-12 sm:py-16 z-10">
-      <div className="container mx-auto px-6 text-black">
-        {/* Título da seção */}
-        <h3 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12 tracking-wide text-black">
-          Perguntas Frequentes sobre Como Impulsionar Seu Negócio Online
-        </h3>
+    <section 
+      className="bg-white py-16 sm:py-20 relative overflow-hidden" 
+      aria-labelledby="faq-section-title"
+    >
+      <div className="container mx-auto px-6 max-w-6xl">
+        <h2 
+          id="faq-section-title" 
+          className="text-4xl sm:text-5xl font-bold text-center mb-12 text-black tracking-tight font-satoshi"
+        >
+          Perguntas <span className="text-[#f11414]">Estratégicas</span>
+        </h2>
 
-        {/* Container de Grid - 1 ou 2 colunas dependendo da tela */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-
-          {/* Pergunta 1 */}
-          <div className="border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-100">
-            <button
-              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-100 rounded-lg"
-              onClick={() => toggleExpanded(0)}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {faqs.map((faq, index) => (
+            <div 
+              key={faq.id} 
+              className="bg-white border border-gray-200 rounded-3xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-[#f11414]/20"
             >
-              <h2 className="font-semibold text-lg sm:text-xl text-gray-800">
-                O que é tráfego pago e como ele pode ajudar meu negócio?
-              </h2>
-              <span className="text-gray-600 bg-[#f4f4f4] rounded-full p-2 transition-colors duration-300 hover:bg-gray-200">
-                {expanded === 0 ? (
-                  <Minus className="w-5 h-5 text-black" />
-                ) : (
-                  <Plus className="w-5 h-5 text-black" />
-                )}
-              </span>
-            </button>
+              <button
+                onClick={() => toggleExpanded(index)}
+                className="flex items-center justify-between w-full p-5 sm:p-6 text-left group"
+                aria-expanded={expanded === index}
+                aria-controls={faq.id}
+              >
+                <h3 className="font-semibold text-lg sm:text-xl text-black group-hover:text-[#f11414] transition-colors font-satoshi">
+                  {faq.question}
+                </h3>
+                <span 
+                  className="ml-4 p-2 rounded-full bg-gray-100 group-hover:bg-[#f11414]/10 transition-colors"
+                  aria-hidden="true"
+                >
+                  {expanded === index ? (
+                    <ChevronUp className="w-6 h-6 text-black group-hover:text-[#f11414]" />
+                  ) : (
+                    <ChevronDown className="w-6 h-6 text-black group-hover:text-[#f11414]" />
+                  )}
+                </span>
+              </button>
 
-            {expanded === 0 && (
-              <>
-                <hr className="border-t-2 border-blue-300" />
-                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-800">
-                  O tráfego pago inclui anúncios no Google Ads e Facebook Ads, ajudando a gerar tráfego qualificado e aumentar as conversões. Com campanhas bem segmentadas, sua empresa alcança rapidamente o público certo, aumentando a visibilidade e, o melhor, potencializando suas vendas com resultados mensuráveis.
-                </p>
-              </>
-            )}
-          </div>
-
-          {/* Pergunta 2 */}
-          <div className="border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-100">
-            <button
-              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-100 rounded-lg"
-              onClick={() => toggleExpanded(1)}
-            >
-              <h2 className="font-semibold text-lg sm:text-xl text-gray-800">
-                Como um funil de vendas pode aumentar minhas conversões?
-              </h2>
-              <span className="text-gray-600 bg-[#f4f4f4] rounded-full p-2 transition-colors duration-300 hover:bg-gray-200">
-                {expanded === 1 ? (
-                  <Minus className="w-5 h-5 text-black" />
-                ) : (
-                  <Plus className="w-5 h-5 text-black" />
-                )}
-              </span>
-            </button>
-
-            {expanded === 1 && (
-              <>
-                <hr className="border-t-2 border-blue-300" />
-                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-800">
-                  Um funil de vendas orienta seus leads do início até a conversão, otimizando cada etapa. Com estratégias comprovadas, engajamos e nutrimos seus clientes potenciais, transformando interesse em vendas. Não se trata apenas de capturar, mas de converter com eficiência.
-                </p>
-              </>
-            )}
-          </div>
-
-          {/* Pergunta 3 */}
-          <div className="border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-100">
-            <button
-              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-100 rounded-lg"
-              onClick={() => toggleExpanded(2)}
-            >
-              <h2 className="font-semibold text-lg sm:text-xl text-gray-800">
-                O que é uma landing page e como ela pode melhorar meu negócio?
-              </h2>
-              <span className="text-gray-600 bg-[#f4f4f4] rounded-full p-2 transition-colors duration-300 hover:bg-gray-200">
-                {expanded === 2 ? (
-                  <Minus className="w-5 h-5 text-black" />
-                ) : (
-                  <Plus className="w-5 h-5 text-black" />
-                )}
-              </span>
-            </button>
-
-            {expanded === 2 && (
-              <>
-                <hr className="border-t-2 border-blue-300" />
-                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-800">
-                  A landing page é a chave para transformar visitantes em clientes. Criamos páginas otimizadas, com designs irresistíveis e chamadas para ação que capturam a atenção e direcionam os usuários para a conversão imediata. Sua campanha digital precisa disso para ter sucesso!
-                </p>
-              </>
-            )}
-          </div>
-
-          {/* Pergunta 4 */}
-          <div className="border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-100">
-            <button
-              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-100 rounded-lg"
-              onClick={() => toggleExpanded(3)}
-            >
-              <h3 className="font-semibold text-lg sm:text-xl text-gray-800">
-                Como a inclusão de chatbot pode beneficiar meu negócio?
-              </h3>
-              <span className="text-gray-600 bg-[#f4f4f4] rounded-full p-2 transition-colors duration-300 hover:bg-gray-200">
-                {expanded === 3 ? (
-                  <Minus className="w-5 h-5 text-black" />
-                ) : (
-                  <Plus className="w-5 h-5 text-black" />
-                )}
-              </span>
-            </button>
-
-            {expanded === 3 && (
-              <>
-                <hr className="border-t-2 border-blue-300" />
-                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-800">
-                  A implementação de chatbots melhora a comunicação com seus clientes, respondendo rapidamente a dúvidas frequentes e garantindo um atendimento contínuo. Proporcione uma experiência ágil e moderna para seus consumidores, enquanto otimiza seu tempo.
-                </p>
-              </>
-            )}
-          </div>
-
-          {/* Pergunta 5 */}
-          <div className="border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-100">
-            <button
-              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-100 rounded-lg"
-              onClick={() => toggleExpanded(4)}
-            >
-              <h2 className="font-semibold text-lg sm:text-xl text-gray-800">
-                O que é CRM e como ele pode otimizar minha gestão de clientes?
-              </h2>
-              <span className="text-gray-600 bg-[#f4f4f4] rounded-full p-2 transition-colors duration-300 hover:bg-gray-200">
-                {expanded === 4 ? (
-                  <Minus className="w-5 h-5 text-black" />
-                ) : (
-                  <Plus className="w-5 h-5 text-black" />
-                )}
-              </span>
-            </button>
-
-            {expanded === 4 && (
-              <>
-                <hr className="border-t-2 border-blue-300" />
-                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-800">
-                  O CRM organiza e personaliza o relacionamento com seus clientes, tornando cada interação mais eficaz. Ele facilita a automação da comunicação e a análise de dados, aprimorando a fidelização e a satisfação do cliente.
-                </p>
-              </>
-            )}
-          </div>
-
-          {/* Pergunta 6 */}
-          <div className="border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-100">
-            <button
-              className="flex items-center justify-between w-full p-4 sm:p-6 text-left transition-colors duration-300 ease-in-out hover:bg-gray-100 rounded-lg"
-              onClick={() => toggleExpanded(5)}
-            >
-              <h2 className="font-semibold text-lg sm:text-xl text-gray-800">
-                Como melhorar minha presença digital?
-              </h2>
-              <span className="text-gray-600 bg-[#f4f4f4] rounded-full p-2 transition-colors duration-300 hover:bg-gray-200">
-                {expanded === 5 ? (
-                  <Minus className="w-5 h-5 text-black" />
-                ) : (
-                  <Plus className="w-5 h-5 text-black" />
-                )}
-              </span>
-            </button>
-
-            {expanded === 5 && (
-              <>
-                <hr className="border-t-2 border-blue-300" />
-                <p className="p-4 sm:p-6 text-base sm:text-lg text-gray-800">
-                  Melhorar sua presença digital começa com um site otimizado e forte presença nas redes sociais. Utilize estratégias de marketing de conteúdo, SEO e publicidade paga para aumentar o alcance e engajamento com seu público-alvo.
-                </p>
-              </>
-            )}
-          </div>
-
+              {expanded === index && (
+                <div 
+                  id={faq.id} 
+                  className="border-t border-gray-200 bg-gray-50/50"
+                >
+                  <p className="p-5 sm:p-6 text-base sm:text-lg text-gray-800 font-satoshi">
+                    {faq.answer}
+                  </p>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>

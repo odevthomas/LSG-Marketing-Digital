@@ -19,28 +19,43 @@ const CookieConsent = () => {
 
   return (
     !isAccepted && (
-      <div
-        className="fixed bottom-5 right-5 z-50 bg-[#0b0b0b] text-gray-100 p-6 rounded-lg border-2 border-[#000] w-full max-w-sm animate__animated animate__fadeIn animate__delay-1s shadow-lg"
-        aria-live="assertive" // Garantir que a notificação seja lida
+      <div 
+        className="fixed bottom-0 left-0 w-full bg-black/90 text-white p-6 z-50 shadow-2xl"
+        role="alert"
+        aria-describedby="cookie-consent-message"
       >
-        <div className="flex justify-between items-start">
-          <div className="flex-1">
-            <p className="text-sm sm:text-base text-white">
-              Este site usa cookies para melhorar a sua experiência. Ao continuar a navegar, você concorda com o uso de cookies. 
-              <a href="/política-de-privacidade" className="text-[#f6472c] hover:underline ml-1">
-                Saiba mais
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex-grow text-center md:text-left">
+            <h2 
+              id="cookie-consent-message" 
+              className="text-lg font-satoshi font-bold mb-2 text-white"
+            >
+              Privacidade e Cookies
+            </h2>
+            <p className="text-sm font-satoshi text-gray-300">
+              Utilizamos cookies para melhorar sua experiência e análise de dados. 
+              Ao continuar navegando, você concorda com nossa 
+              <a 
+                href="/politica-de-privacidade" 
+                className="text-[#f11414] hover:underline ml-1 font-bold"
+                aria-label="Política de Privacidade"
+              >
+                Política de Privacidade
               </a>
             </p>
           </div>
-        </div>
-
-        <div className="mt-4 flex justify-end">
-          <button
-            onClick={handleAccept}
-            className="bg-[#f6472c] text-black text-sm px-4 py-2 rounded-md hover:bg-[#d63924] focus:outline-none transition duration-300"
-          >
-            Aceitar cookies
-          </button>
+          
+          <div className="flex space-x-4">
+            <button
+              onClick={handleAccept}
+              className="bg-[#f11414] text-white font-satoshi font-bold px-6 py-3 rounded-full 
+                         hover:bg-[#d30f0f] transition-colors duration-300 
+                         focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-opacity-50"
+              aria-label="Aceitar cookies"
+            >
+              Aceitar Cookies
+            </button>
+          </div>
         </div>
       </div>
     )

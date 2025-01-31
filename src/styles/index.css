@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@400;600&display=swap');
+@import url('/src/styles/satoshi.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +22,7 @@
 body {
   background-color: var(--black);
   color: var(--gray-light);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'Satoshi', sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -33,7 +34,7 @@ a {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', 'Satoshi', sans-serif;
   color: var(--white);
   text-align: center; /* Centraliza os títulos */
 }
@@ -329,5 +330,30 @@ input, textarea, select {
 
 .text-center {
   text-align: center;
+}
+
+/* Novas classes de utilidade para Satoshi */
+.font-satoshi {
+  font-family: 'Satoshi', sans-serif;
+}
+
+.font-satoshi-light {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 300;
+}
+
+.font-satoshi-regular {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+}
+
+.font-satoshi-medium {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+}
+
+.font-satoshi-bold {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 700;
 }
 

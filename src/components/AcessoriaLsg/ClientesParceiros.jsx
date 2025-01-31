@@ -1,25 +1,48 @@
-import React from 'react';  
-import Slider from 'react-slick';  
-import { FaQuoteRight } from 'react-icons/fa'; // Importando ícone de citação
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaCheckCircle, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 // Componente do cartão do cliente
 const ClientCard = ({ imgSrc, name, description, slogan }) => {
   return (
-    <div className="p-6 sm:p-8 flex flex-col items-center border-[#3a3a3a] border p-6 rounded-xl bg-[#000] shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
-      <img
-        alt={`Imagem de ${name}`}
-        className="w-28 h-28 sm:w-32 sm:h-32 object-cover object-center rounded-full shadow-md border-2 border-[#000] mb-4"
-        src={imgSrc}
-      />
-      <div className="text-center">
-        <h3 className="text-xl sm:text-2xl font-light text-[#fff] mb-2">{name}</h3> {/* Fonte mais fina */}
-        <p className="text-sm sm:text-base text-[#fff] mb-4">{description}</p> {/* Fonte mais leve */}
-        <div className="text-[#fff] mt-2 flex items-center justify-center italic">
-          <FaQuoteRight size={18} className="inline-block mr-2 text-[#fff]" />
-          <span className="font-light text-lg sm:text-xl">{slogan}</span> {/* Fonte mais fina */}
+    <motion.div 
+      className="client-card group relative p-6 rounded-2xl bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 
+      backdrop-blur-sm border border-white/10 shadow-lg overflow-hidden cursor-pointer"
+      whileHover={{ 
+        scale: 1.05,
+        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)'
+      }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent opacity-75 rounded-2xl"></div>
+      
+      <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="mb-4 relative">
+          <motion.img
+            alt={`Logo de ${name}`}
+            className="w-24 h-24 object-cover object-center rounded-full 
+            shadow-md"
+            src={imgSrc}
+            loading="lazy"
+            whileHover={{ scale: 1.1 }}
+          />
+        </div>
+        
+        <div className="text-white space-y-3">
+          <h3 className="text-2xl font-bold text-white transition-colors">
+            {name}
+          </h3>
+          
+          <p className="text-sm text-gray-300 max-w-xs mx-auto">
+            {description}
+          </p>
+          
+          <div className="flex items-center justify-center text-white italic">
+            <span className="font-medium text-base opacity-80">{slogan}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -108,78 +131,137 @@ const ClientesParceiros = () => {
     },
     {
       imgSrc: "/ImgInstagram/casalellit.jpg",
-      name: "Casa L’Ellit",
+      name: "Casa L'Ellit",
       description: "Beleza e Bem-estar",
       slogan: "Seu bem-estar é nossa missão!"
     },
   ];
 
-  // Configurações do carrossel sem setas
-  const settings = {
-    dots: true,
-    arrows: false,  // Removendo as setas de navegação
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true, // Ativando autoplay
-    autoplaySpeed: 3000, // Tempo entre as transições
-    cssEase: "linear", // Efeito de transição
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      }
-    ]
+  const [currentPage, setCurrentPage] = useState(0);
+  const clientsPerPage = 6;
+
+  const paginatedClients = clients.slice(
+    currentPage * clientsPerPage, 
+    (currentPage + 1) * clientsPerPage
+  );
+
+  const totalPages = Math.ceil(clients.length / clientsPerPage);
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
   };
 
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+
+  // Adicionar manipuladores de teclado
+  React.useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowRight') handleNextPage();
+      if (e.key === 'ArrowLeft') handlePrevPage();
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
+
   return (
-    <section className="bg-gradient-to-b from-[#040404] to-[#0000000a] opacity-90 py-4 sm:py-6"> {/* Menor padding */}
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        {/* Título alinhado à esquerda */}
-        <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-wider text-white leading-tight uppercase mb-4 sm:mb-6 text-center">
-          Empresas que Alavancaram Seus Resultados!
-        </h3>
+    <motion.section 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="bg-black/95 py-16 relative overflow-hidden"
+    >
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <motion.div 
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-5xl font-bold text-white mb-4 
+            bg-clip-text text-transparent bg-gradient-to-r from-white to-white">
+            Nossos Parceiros de Sucesso
+          </h2>
+          
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Empresas que confiam em nossa visão e transformam seus negócios com estratégia e inovação.
+          </p>
+        </motion.div>
 
-        {/* Texto de descrição centralizado */}
-        <p className="mt-2 sm:mt-4 text-[#ffff] text-lg sm:text-xl md:text-2xl leading-relaxed text-center">
-          Veja Como Nossos Serviços Impulsionaram o Sucesso de Antigos e Novos Clientes!
-        </p>
+        <div className="relative">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <AnimatePresence mode="wait">
+              {paginatedClients.map((client, index) => (
+                <motion.div 
+                  key={`${client.name}-${currentPage}-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ClientCard
+                    imgSrc={client.imgSrc}
+                    name={client.name}
+                    description={client.description}
+                    slogan={client.slogan}
+                  />
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
 
-        <Slider {...settings} className="mt-6 sm:mt-8">
-          {clients.map((client, index) => (
-            <div key={index} className="px-2 sm:px-4"> {/* Ajuste no gap entre os cartões */}
-              <ClientCard
-                imgSrc={client.imgSrc}
-                name={client.name}
-                description={client.description}
-                slogan={client.slogan}
-              />
+          {/* Navegação de Páginas */}
+          <div className="flex justify-center items-center mt-10 space-x-4">
+            <motion.button 
+              onClick={handlePrevPage}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-zinc-800 text-white p-3 rounded-full hover:bg-[#f11414] transition-colors"
+            >
+              <FaArrowLeft />
+            </motion.button>
+            
+            <div className="text-white">
+              Página {currentPage + 1} de {totalPages}
             </div>
-          ))}
-        </Slider>
-
-        {/* Botão Fora dos Cards com largura total */}
-        <div className="text-center mt-10">
-          <button className="w-full sm:w-auto px-8 py-3 text-white bg-[#fb1603] text-lg rounded-full hover:bg-[#e01400] transition-colors duration-300 ease-in-out">
-            Transforme seu negócio hoje!
-          </button>
+            
+            <motion.button 
+              onClick={handleNextPage}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-zinc-800 text-white p-3 rounded-full hover:bg-[#f11414] transition-colors"
+            >
+              <FaArrowRight />
+            </motion.button>
+          </div>
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-16 text-center"
+        >
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-10 py-4 bg-white text-black font-bold text-lg 
+            rounded-full hover:bg-gray-200 transition-all duration-300 
+            flex items-center justify-center mx-auto shadow-2xl"
+          >
+            <FaCheckCircle className="mr-3 text-xl" />
+            Transforme Seu Negócio Agora!
+          </motion.button>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
