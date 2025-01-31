@@ -17,7 +17,7 @@ const CardContent = ({ item }) => (
   <motion.div 
     className="group bg-[#111] border border-[#222] rounded-3xl p-8 text-center w-[300px]
                transform transition-all duration-500 mx-2
-               hover:bg-black relative overflow-hidden
+               hover:scale-105 hover:bg-black
                hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
                hover:border-[#f11414]"
     initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const CardContent = ({ item }) => (
     {/* Conteúdo */}
     <div className="relative z-10">
       <div className="flex justify-center mb-4">
-        <div className="transform-gpu group-hover:scale-110 transition-transform duration-500">
+        <div className="relative group-hover:scale-110 transition-transform duration-500">
           {item.icon}
         </div>
       </div>
@@ -105,14 +105,6 @@ const SeloSection = () => {
     }
   };
 
-  const swiperParamsReverse = {
-    ...swiperParams,
-    autoplay: {
-      ...swiperParams.autoplay,
-      reverseDirection: true
-    }
-  };
-
   return (
     <section className="bg-black py-20 text-white overflow-hidden relative">
       {/* Efeito de fundo gradiente */}
@@ -137,22 +129,11 @@ const SeloSection = () => {
           Desenvolvemos estratégias digitais personalizadas que elevam sua marca, combinando tecnologia de ponta, criatividade e resultados mensuráveis.
         </motion.p>
 
-        {/* Primeiro Carrossel - Da esquerda para direita */}
-        <div className="mb-8 relative">
+        {/* Carrossel Único */}
+        <div className="relative">
           <Swiper {...swiperParams} className="selo-slider">
             {icons.map((item, index) => (
-              <SwiperSlide key={`slide1-${index}`} className="w-auto">
-                <CardContent item={item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-
-        {/* Segundo Carrossel - Da direita para esquerda */}
-        <div className="relative">
-          <Swiper {...swiperParamsReverse} className="selo-slider">
-            {[...icons].reverse().map((item, index) => (
-              <SwiperSlide key={`slide2-${index}`} className="w-auto">
+              <SwiperSlide key={`slide-${index}`} className="w-auto">
                 <CardContent item={item} />
               </SwiperSlide>
             ))}
