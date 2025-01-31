@@ -15,9 +15,10 @@ import 'swiper/css';
 
 const ClientCard = ({ client }) => (
   <motion.div 
-    className="group bg-[#111] border border-[#222] rounded-3xl p-6 text-center w-[280px] sm:w-[260px]
-               transform transition-all duration-500 mx-2 sm:mx-3
-               hover:scale-105 hover:bg-black
+    className="group bg-[#111] border border-[#222] rounded-2xl p-6 text-center 
+               w-[280px] h-[280px] flex flex-col justify-center items-center
+               transform-gpu transition-all duration-500 mx-2 sm:mx-3
+               hover:bg-black relative overflow-hidden
                hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
                hover:border-[#f11414]"
     initial={{ opacity: 0 }}
@@ -26,13 +27,13 @@ const ClientCard = ({ client }) => (
   >
     {/* Efeito de brilho */}
     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f11414]/10 to-transparent 
-                    opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl blur-lg">
+                    opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl blur-lg">
     </div>
     
     {/* Conteúdo */}
-    <div className="relative z-10">
+    <div className="relative z-10 flex flex-col items-center justify-center h-full">
       <div className="flex justify-center mb-4">
-        <div className="relative w-24 h-24 group-hover:scale-110 transition-transform duration-500">
+        <div className="relative w-20 h-20 transform-gpu group-hover:scale-110 transition-transform duration-500">
           <img 
             src={client.imgSrc} 
             alt={client.name}
@@ -42,12 +43,12 @@ const ClientCard = ({ client }) => (
         </div>
       </div>
       
-      <h3 className="text-xl font-bold text-white mb-2 
+      <h3 className="text-lg font-bold text-white mb-2 text-center
                      group-hover:text-[#f11414] transition-colors duration-300">
         {client.name}
       </h3>
       
-      <p className="text-sm text-gray-400 
+      <p className="text-sm text-gray-400 text-center
                    group-hover:text-gray-300 transition-colors duration-300">
         {client.description}
       </p>
@@ -88,6 +89,7 @@ const ClientesParceiros = () => {
     modules: [Autoplay],
     spaceBetween: 20,
     slidesPerView: "auto",
+    centeredSlides: true,
     loop: true,
     speed: 3000,
     autoplay: {
@@ -95,12 +97,16 @@ const ClientesParceiros = () => {
       disableOnInteraction: false,
     },
     breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 10
+      },
       640: { 
-        slidesPerView: "auto",
-        spaceBetween: 25
+        slidesPerView: 2,
+        spaceBetween: 20
       },
       1024: { 
-        slidesPerView: "auto",
+        slidesPerView: 3,
         spaceBetween: 30
       },
     }
@@ -141,7 +147,7 @@ const ClientesParceiros = () => {
         <div className="mb-8 relative">
           <Swiper {...swiperParams} className="parceiros-slider">
             {clients.map((client, index) => (
-              <SwiperSlide key={`slide1-${index}`} className="w-auto">
+              <SwiperSlide key={`slide1-${index}`} className="flex justify-center">
                 <ClientCard client={client} />
               </SwiperSlide>
             ))}
@@ -152,7 +158,7 @@ const ClientesParceiros = () => {
         <div className="relative">
           <Swiper {...swiperParamsReverse} className="parceiros-slider">
             {[...clients].reverse().map((client, index) => (
-              <SwiperSlide key={`slide2-${index}`} className="w-auto">
+              <SwiperSlide key={`slide2-${index}`} className="flex justify-center">
                 <ClientCard client={client} />
               </SwiperSlide>
             ))}

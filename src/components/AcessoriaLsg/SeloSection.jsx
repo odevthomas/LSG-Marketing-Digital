@@ -17,7 +17,7 @@ const CardContent = ({ item }) => (
   <motion.div 
     className="group bg-[#111] border border-[#222] rounded-3xl p-8 text-center w-[300px]
                transform transition-all duration-500 mx-2
-               hover:scale-105 hover:bg-black
+               hover:bg-black relative overflow-hidden
                hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
                hover:border-[#f11414]"
     initial={{ opacity: 0 }}
@@ -32,7 +32,7 @@ const CardContent = ({ item }) => (
     {/* Conteúdo */}
     <div className="relative z-10">
       <div className="flex justify-center mb-4">
-        <div className="relative group-hover:scale-110 transition-transform duration-500">
+        <div className="transform-gpu group-hover:scale-110 transition-transform duration-500">
           {item.icon}
         </div>
       </div>
