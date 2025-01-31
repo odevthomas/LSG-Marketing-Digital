@@ -19,17 +19,12 @@ const ClientCard = ({ client }) => (
                w-[380px] h-[300px] flex flex-col justify-center items-center
                transform-gpu transition-all duration-500
                hover:bg-black relative overflow-hidden
-               hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
-               hover:border-[#f11414]"
+               hover:shadow-[0_0_50px_rgba(0,0,0,0.3)]
+               hover:border-[#333]"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.5 }}
   >
-    {/* Efeito de brilho */}
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f11414]/10 to-transparent 
-                    opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl blur-lg">
-    </div>
-    
     {/* Conteúdo */}
     <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
       <div className="flex justify-center mb-6">
@@ -44,7 +39,7 @@ const ClientCard = ({ client }) => (
       </div>
       
       <h3 className="text-2xl font-bold text-white mb-3 text-center
-                     group-hover:text-[#f11414] transition-colors duration-300">
+                     group-hover:text-white transition-colors duration-300">
         {client.name}
       </h3>
       
@@ -59,66 +54,96 @@ const ClientCard = ({ client }) => (
 const ClientesParceiros = () => {
   const clients = [
     {
-      imgSrc: "/ImgInstagram/royalpalmplazaresort.jpg",
-      name: "Royal Palm Plaza Resort",
-      description: "Resort & Hospitalidade"
-    },
-    {
       imgSrc: "/ImgInstagram/luizgoncalvesconnection.jpg",
       name: "Luiz Gonçalves Connection",
-      description: "Consultoria em Conexões Digitais"
+      description: "Consultoria em Conexões Digitais",
+      slogan: "Conectando você ao futuro!"
     },
     {
       imgSrc: "/ImgInstagram/novo_olhar_revelesuabeleza.jpg",
       name: "Novo Olhar",
-      description: "Beleza e Transformação Visual"
+      description: "Beleza e Transformação Visual",
+      slogan: "Transforme-se, surpreenda-se!"
     },
     {
       imgSrc: "/ImgInstagram/dconceptbr.jpg",
       name: "DConcept BR",
-      description: "Design e Consultoria de Branding"
+      description: "Design e Consultoria de Branding",
+      slogan: "Sua marca, nossa paixão!"
     },
     {
       imgSrc: "/ImgInstagram/casavrsalao.jpg",
       name: "Casa VR Salão",
-      description: "Beleza e Estilo para Todos"
+      description: "Beleza e Estilo para Todos",
+      slogan: "Beleza que inspira!"
+    },
+    {
+      imgSrc: "/ImgInstagram/Floya.jpg",
+      name: "Floya Design",
+      description: "Design de Interiores e Estilo",
+      slogan: "Espaços que contam histórias!"
+    },
+    {
+      imgSrc: "/ImgInstagram/amovacinasoficial.jpg",
+      name: "Amo Vacinas",
+      description: "Promoção da Saúde e Bem-estar",
+      slogan: "Saúde em primeiro lugar!"
+    },
+    {
+      imgSrc: "/ImgInstagram/tominnicelli.jpg",
+      name: "Tom Minnicelli",
+      description: "Coiffeur Coloriste",
+      slogan: "Cores que encantam!"
+    },
+    {
+      imgSrc: "/ImgInstagram/marina.cleff.jpg",
+      name: "Marina Cleff",
+      description: "Micropigmentação e Tattoos",
+      slogan: "Arte na pele!"
+    },
+    {
+      imgSrc: "/ImgInstagram/gilbarbosabeautycenter.jpg",
+      name: "Gil Barbosa",
+      description: "Beauty Center",
+      slogan: "Beleza para todos!"
+    },
+    {
+      imgSrc: "/ImgInstagram/José Bernardo Denig.jpg",
+      name: "José Bernardo Denig",
+      description: "Médico",
+      slogan: "Cuidando de você!"
+    },
+    {
+      imgSrc: "/ImgInstagram/olenkacosmeticoscampinas.jpg",
+      name: "Kell Cosméticos",
+      description: "Saúde/beleza",
+      slogan: "𝘋𝘪𝘴𝘵𝘳𝘪𝘣𝘶𝘪𝘥𝘰𝘳𝘢 𝘈𝘶𝘵𝘰𝘳𝘪𝘻𝘢𝘥𝘢!"
+    },
+    {
+      imgSrc: "/ImgInstagram/amorsaudebrasil.jpg",
+      name: "AmorSaúde Brasil",
+      description: "Saúde/beleza",
+      slogan: "Medicina - Odontologia - Exames"
+    },
+    {
+      imgSrc: "/ImgInstagram/Hazap Informática.jpg",
+      name: "Hazap Informática",
+      description: "Soluções em Tecnologia",
+      slogan: "Tecnologia que transforma!"
+    },
+    {
+      imgSrc: "/ImgInstagram/casalellit.jpg",
+      name: "Casa L'Ellit",
+      description: "Beleza e Bem-estar",
+      slogan: "Seu bem-estar é nossa missão!"
+    },
+    {
+      imgSrc: "/ImgInstagram/royalpalmplazaresort.jpg",
+      name: "Royal Palm Plaza Resort",
+      description: "Resort & Hospitalidade",
+      slogan: "Excelência em hospitalidade!"
     }
   ];
-
-  const swiperParams = {
-    modules: [Autoplay],
-    spaceBetween: 20,
-    slidesPerView: "auto",
-    centeredSlides: true,
-    loop: true,
-    speed: 3000,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 10
-      },
-      640: { 
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-      1024: { 
-        slidesPerView: 3,
-        spaceBetween: 30
-      },
-    }
-  };
-
-  const swiperParamsReverse = {
-    ...swiperParams,
-    autoplay: {
-      ...swiperParams.autoplay,
-      reverseDirection: true
-    }
-  };
 
   return (
     <section className="bg-black py-20 text-white overflow-hidden relative">
@@ -143,27 +168,47 @@ const ClientesParceiros = () => {
           Empresas que confiam em nosso trabalho para impulsionar sua presença digital
         </motion.p>
 
-        {/* Primeiro Carrossel */}
-        <div className="mb-8 relative">
-          <Swiper {...swiperParams} className="parceiros-slider">
-            {clients.map((client, index) => (
-              <SwiperSlide key={`slide1-${index}`} className="flex justify-center">
-                <ClientCard client={client} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        {/* Primeiro Swiper - Direção normal */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={20}
+          slidesPerView="auto"
+          centeredSlides={true}
+          loop={true}
+          speed={3000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          className="mb-8"
+        >
+          {clients.slice(0, Math.ceil(clients.length / 2)).map((client, index) => (
+            <SwiperSlide key={index} className="w-auto">
+              <ClientCard client={client} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-        {/* Segundo Carrossel */}
-        <div className="relative">
-          <Swiper {...swiperParamsReverse} className="parceiros-slider">
-            {[...clients].reverse().map((client, index) => (
-              <SwiperSlide key={`slide2-${index}`} className="flex justify-center">
-                <ClientCard client={client} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        {/* Segundo Swiper - Direção reversa */}
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={20}
+          slidesPerView="auto"
+          centeredSlides={true}
+          loop={true}
+          speed={3000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+            reverseDirection: true
+          }}
+        >
+          {clients.slice(Math.ceil(clients.length / 2)).map((client, index) => (
+            <SwiperSlide key={index} className="w-auto">
+              <ClientCard client={client} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   );
