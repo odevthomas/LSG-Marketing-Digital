@@ -10,7 +10,45 @@ import {
   FaGlobeAmericas,
   FaNetworkWired
 } from "react-icons/fa";
-import "swiper/swiper-bundle.css";
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+
+const CardContent = ({ item }) => (
+  <motion.div 
+    className="group bg-[#111] border border-[#222] rounded-3xl p-8 text-center w-[300px]
+               transform transition-all duration-500 mx-2
+               hover:scale-105 hover:bg-black
+               hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
+               hover:border-[#f11414]"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    {/* Efeito de brilho */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f11414]/10 to-transparent 
+                    opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl blur-lg">
+    </div>
+    
+    {/* Conteúdo */}
+    <div className="relative z-10">
+      <div className="flex justify-center mb-4">
+        <div className="relative group-hover:scale-110 transition-transform duration-500">
+          {item.icon}
+        </div>
+      </div>
+      
+      <h3 className="text-xl font-bold text-white mb-2 
+                     group-hover:text-[#f11414] transition-colors duration-300">
+        {item.label}
+      </h3>
+      
+      <p className="text-sm text-gray-400 
+                   group-hover:text-gray-300 transition-colors duration-300">
+        {item.description}
+      </p>
+    </div>
+  </motion.div>
+);
 
 const SeloSection = () => {
   const icons = [
@@ -51,10 +89,34 @@ const SeloSection = () => {
     }
   ];
 
+  const swiperParams = {
+    modules: [Autoplay],
+    spaceBetween: 30,
+    slidesPerView: "auto",
+    loop: true,
+    speed: 3000,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: "auto" },
+      1024: { slidesPerView: "auto" },
+    }
+  };
+
+  const swiperParamsReverse = {
+    ...swiperParams,
+    autoplay: {
+      ...swiperParams.autoplay,
+      reverseDirection: true
+    }
+  };
+
   return (
     <section className="bg-black py-20 text-white overflow-hidden relative">
       {/* Efeito de fundo gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#111] to-[#222] opacity-80 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#000] to-[#111] opacity-90 pointer-events-none"></div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.h2 
@@ -75,39 +137,27 @@ const SeloSection = () => {
           Desenvolvemos estratégias digitais personalizadas que elevam sua marca, combinando tecnologia de ponta, criatividade e resultados mensuráveis.
         </motion.p>
 
-        <Swiper
-          spaceBetween={30}
-          slidesPerView={1}
-          loop={true}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-          }}
-          className="px-4"
-        >
-          {icons.map((item, index) => (
-            <SwiperSlide key={index} className="pb-12">
-              <motion.div 
-                className="group bg-[#111] border border-[#222] rounded-3xl p-10 text-center 
-                           transform transition-all duration-300 
-                           hover:scale-105 hover:shadow-2xl hover:border-[#ff4500]
-                           relative overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                {/* Efeito de borda gradiente */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-[#ff4500]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl blur-lg"></div>
+        {/* Primeiro Carrossel - Da esquerda para direita */}
+        <div className="mb-8 relative">
+          <Swiper {...swiperParams} className="selo-slider">
+            {icons.map((item, index) => (
+              <SwiperSlide key={`slide1-${index}`} className="w-auto">
+                <CardContent item={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-                <div className="flex justify-center mb-6 relative z-10">
-                  {item.icon}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4 relative z-10">{item.label}</h3>
-                <p className="text-gray-400 relative z-10">{item.description}</p>
-              </motion.div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {/* Segundo Carrossel - Da direita para esquerda */}
+        <div className="relative">
+          <Swiper {...swiperParamsReverse} className="selo-slider">
+            {[...icons].reverse().map((item, index) => (
+              <SwiperSlide key={`slide2-${index}`} className="w-auto">
+                <CardContent item={item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

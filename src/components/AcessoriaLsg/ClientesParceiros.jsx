@@ -1,267 +1,159 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FaCheckCircle, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { motion } from "framer-motion";
+import { 
+  FaRocket, 
+  FaChartLine, 
+  FaBullhorn, 
+  FaCode, 
+  FaLightbulb, 
+  FaGlobeAmericas,
+  FaNetworkWired
+} from "react-icons/fa";
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
 
-// Componente do cartão do cliente
-const ClientCard = ({ imgSrc, name, description, slogan }) => {
-  return (
-    <motion.div 
-      className="client-card group relative p-6 rounded-2xl bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 
-      backdrop-blur-sm border border-white/10 shadow-lg overflow-hidden cursor-pointer"
-      whileHover={{ 
-        scale: 1.05,
-        boxShadow: '0 10px 25px rgba(0, 0, 0, 0.2)'
-      }}
-      transition={{ duration: 0.3 }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent opacity-75 rounded-2xl"></div>
-      
-      <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="mb-4 relative">
-          <motion.img
-            alt={`Logo de ${name}`}
-            className="w-24 h-24 object-cover object-center rounded-full 
-            shadow-md"
-            src={imgSrc}
+const ClientCard = ({ client }) => (
+  <motion.div 
+    className="group bg-[#111] border border-[#222] rounded-3xl p-8 text-center w-[300px]
+               transform transition-all duration-500 mx-2
+               hover:scale-105 hover:bg-black
+               hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
+               hover:border-[#f11414]"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    {/* Efeito de brilho */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f11414]/10 to-transparent 
+                    opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl blur-lg">
+    </div>
+    
+    {/* Conteúdo */}
+    <div className="relative z-10">
+      <div className="flex justify-center mb-4">
+        <div className="relative w-24 h-24 group-hover:scale-110 transition-transform duration-500">
+          <img 
+            src={client.imgSrc} 
+            alt={client.name}
+            className="w-full h-full rounded-full object-cover shadow-lg"
             loading="lazy"
-            whileHover={{ scale: 1.1 }}
           />
         </div>
-        
-        <div className="text-white space-y-3">
-          <h3 className="text-2xl font-bold text-white transition-colors">
-            {name}
-          </h3>
-          
-          <p className="text-sm text-gray-300 max-w-xs mx-auto">
-            {description}
-          </p>
-          
-          <div className="flex items-center justify-center text-white italic">
-            <span className="font-medium text-base opacity-80">{slogan}</span>
-          </div>
-        </div>
       </div>
-    </motion.div>
-  );
-};
+      
+      <h3 className="text-xl font-bold text-white mb-2 
+                     group-hover:text-[#f11414] transition-colors duration-300">
+        {client.name}
+      </h3>
+      
+      <p className="text-sm text-gray-400 
+                   group-hover:text-gray-300 transition-colors duration-300">
+        {client.description}
+      </p>
+    </div>
+  </motion.div>
+);
 
-// Componente da seção de clientes
 const ClientesParceiros = () => {
   const clients = [
     {
+      imgSrc: "/ImgInstagram/royalpalmplazaresort.jpg",
+      name: "Royal Palm Plaza Resort",
+      description: "Resort & Hospitalidade"
+    },
+    {
       imgSrc: "/ImgInstagram/luizgoncalvesconnection.jpg",
       name: "Luiz Gonçalves Connection",
-      description: "Consultoria em Conexões Digitais",
-      slogan: "Conectando você ao futuro!"
+      description: "Consultoria em Conexões Digitais"
     },
     {
       imgSrc: "/ImgInstagram/novo_olhar_revelesuabeleza.jpg",
       name: "Novo Olhar",
-      description: "Beleza e Transformação Visual",
-      slogan: "Transforme-se, surpreenda-se!"
+      description: "Beleza e Transformação Visual"
     },
     {
       imgSrc: "/ImgInstagram/dconceptbr.jpg",
       name: "DConcept BR",
-      description: "Design e Consultoria de Branding",
-      slogan: "Sua marca, nossa paixão!"
+      description: "Design e Consultoria de Branding"
     },
     {
       imgSrc: "/ImgInstagram/casavrsalao.jpg",
       name: "Casa VR Salão",
-      description: "Beleza e Estilo para Todos",
-      slogan: "Beleza que inspira!"
-    },
-    {
-      imgSrc: "/ImgInstagram/Floya.jpg",
-      name: "Floya Design",
-      description: "Design de Interiores e Estilo",
-      slogan: "Espaços que contam histórias!"
-    },
-    {
-      imgSrc: "/ImgInstagram/amovacinasoficial.jpg",
-      name: "Amo Vacinas",
-      description: "Promoção da Saúde e Bem-estar",
-      slogan: "Saúde em primeiro lugar!"
-    },
-    {
-      imgSrc: "/ImgInstagram/tominnicelli.jpg",
-      name: "Tom Minnicelli",
-      description: "Coiffeur Coloriste",
-      slogan: "Cores que encantam!"
-    },
-    {
-      imgSrc: "/ImgInstagram/marina.cleff.jpg",
-      name: "Marina Cleff",
-      description: "Micropigmentação e Tattoos",
-      slogan: "Arte na pele!"
-    },
-    {
-      imgSrc: "/ImgInstagram/gilbarbosabeautycenter.jpg",
-      name: "Gil Barbosa",
-      description: "Beauty Center",
-      slogan: "Beleza para todos!"
-    },
-    {
-      imgSrc: "/ImgInstagram/José Bernardo Denig.jpg",
-      name: "José Bernardo Denig",
-      description: "Médico",
-      slogan: "Cuidando de você!"
-    },
-     {
-      imgSrc: "/ImgInstagram/olenkacosmeticoscampinas.jpg",
-      name: "Kell Cosméticos",
-      description: "Saúde/beleza",
-      slogan: "𝘋𝘪𝘴𝘵𝘳𝘪𝘣𝘶𝘪𝘥𝘰𝘳𝘢 𝘈𝘶𝘵𝘰𝘳𝘪𝘻𝘢𝘥𝘢!"
-    },
-    
-     {
-      imgSrc: "/ImgInstagram/amorsaudebrasil.jpg",
-      name: "AmorSaúde Brasis",
-      description: "Saúde/beleza",
-      slogan: "Medicina - Odontologia - Exames"
-    },
-    
-    {
-      imgSrc: "/ImgInstagram/Hazap Informática.jpg",
-      name: "Hazap Informática",
-      description: "Soluções em Tecnologia",
-      slogan: "Tecnologia que transforma!"
-    },
-    {
-      imgSrc: "/ImgInstagram/casalellit.jpg",
-      name: "Casa L'Ellit",
-      description: "Beleza e Bem-estar",
-      slogan: "Seu bem-estar é nossa missão!"
-    },
+      description: "Beleza e Estilo para Todos"
+    }
   ];
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const clientsPerPage = 6;
-
-  const paginatedClients = clients.slice(
-    currentPage * clientsPerPage, 
-    (currentPage + 1) * clientsPerPage
-  );
-
-  const totalPages = Math.ceil(clients.length / clientsPerPage);
-
-  const handleNextPage = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
+  const swiperParams = {
+    modules: [Autoplay],
+    spaceBetween: 30,
+    slidesPerView: "auto",
+    loop: true,
+    speed: 3000,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: "auto" },
+      1024: { slidesPerView: "auto" },
+    }
   };
 
-  const handlePrevPage = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  const swiperParamsReverse = {
+    ...swiperParams,
+    autoplay: {
+      ...swiperParams.autoplay,
+      reverseDirection: true
+    }
   };
-
-  // Adicionar manipuladores de teclado
-  React.useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'ArrowRight') handleNextPage();
-      if (e.key === 'ArrowLeft') handlePrevPage();
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
 
   return (
-    <motion.section 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="bg-black/95 py-16 relative overflow-hidden"
-    >
-      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
-        <motion.div 
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+    <section className="bg-black py-20 text-white overflow-hidden relative">
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#000] to-[#111] opacity-90 pointer-events-none"></div>
+
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <motion.h2 
+          className="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl font-bold text-white mb-4 
-            bg-clip-text text-transparent bg-gradient-to-r from-white to-white">
-            Nossos Parceiros de Sucesso
-          </h2>
-          
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Empresas que confiam em nossa visão e transformam seus negócios com estratégia e inovação.
-          </p>
-        </motion.div>
+          Nossos Parceiros
+        </motion.h2>
 
-        <div className="relative">
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <AnimatePresence mode="wait">
-              {paginatedClients.map((client, index) => (
-                <motion.div 
-                  key={`${client.name}-${currentPage}-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ClientCard
-                    imgSrc={client.imgSrc}
-                    name={client.name}
-                    description={client.description}
-                    slogan={client.slogan}
-                  />
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-
-          {/* Navegação de Páginas */}
-          <div className="flex justify-center items-center mt-10 space-x-4">
-            <motion.button 
-              onClick={handlePrevPage}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-zinc-800 text-white p-3 rounded-full hover:bg-[#f11414] transition-colors"
-            >
-              <FaArrowLeft />
-            </motion.button>
-            
-            <div className="text-white">
-              Página {currentPage + 1} de {totalPages}
-            </div>
-            
-            <motion.button 
-              onClick={handleNextPage}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="bg-zinc-800 text-white p-3 rounded-full hover:bg-[#f11414] transition-colors"
-            >
-              <FaArrowRight />
-            </motion.button>
-          </div>
-        </div>
-
-        <motion.div 
+        <motion.p 
+          className="text-xl text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 text-center"
+          transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-white text-black font-bold text-lg 
-            rounded-full hover:bg-gray-200 transition-all duration-300 
-            flex items-center justify-center mx-auto shadow-2xl"
-          >
-            <FaCheckCircle className="mr-3 text-xl" />
-            Transforme Seu Negócio Agora!
-          </motion.button>
-        </motion.div>
+          Empresas que confiam em nosso trabalho para impulsionar sua presença digital
+        </motion.p>
+
+        {/* Primeiro Carrossel */}
+        <div className="mb-8 relative">
+          <Swiper {...swiperParams} className="parceiros-slider">
+            {clients.map((client, index) => (
+              <SwiperSlide key={`slide1-${index}`} className="w-auto">
+                <ClientCard client={client} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+
+        {/* Segundo Carrossel */}
+        <div className="relative">
+          <Swiper {...swiperParamsReverse} className="parceiros-slider">
+            {[...clients].reverse().map((client, index) => (
+              <SwiperSlide key={`slide2-${index}`} className="w-auto">
+                <ClientCard client={client} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
