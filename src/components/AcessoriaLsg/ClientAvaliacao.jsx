@@ -83,7 +83,8 @@ const ClientAvaliacao = () => {
     centerMode: true,
     focusOnSelect: true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 3000,
+    pauseOnHover: false,
     prevArrow: (
       <button
         aria-label="Slide anterior"
@@ -103,14 +104,22 @@ const ClientAvaliacao = () => {
     responsive: [
       {
         breakpoint: 1280,
-        settings: { slidesToShow: 2 }
+        settings: { 
+          slidesToShow: 2,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          pauseOnHover: false
+        }
       },
       {
         breakpoint: 768,
         settings: { 
           slidesToShow: 1,
           centerMode: false,
-          arrows: false 
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          pauseOnHover: false
         }
       }
     ]

@@ -9,6 +9,7 @@ import {
   DocumentTextIcon,
   PresentationChartBarIcon
 } from "@heroicons/react/24/solid";
+import { Autoplay } from 'swiper/modules';
 
 // Certifique-se de importar o CSS do Swiper
 import "swiper/swiper-bundle.css";
@@ -88,6 +89,7 @@ const Servicos = () => {
         </motion.p>
 
         <Swiper
+          modules={[Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
           loop={true}

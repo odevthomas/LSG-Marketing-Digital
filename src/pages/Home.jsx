@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Componentes principais
 import Footer from "../components/HeaderFooter/Footer";
@@ -68,37 +68,81 @@ const Home = () => {
     "Branding Digital - Construção de marca forte",
   ];
 
+  // Variantes de animação para o fundo
+  const backgroundVariants = {
+    initial: { 
+      background: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+      opacity: 0.7 
+    },
+    animate: { 
+      background: [
+        'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+        'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+        'linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)'
+      ],
+      opacity: [0.7, 0.8, 0.9],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        repeatType: 'reverse'
+      }
+    }
+  };
+
   return (
     <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white text-black overflow-hidden"
+      initial="initial"
+      animate="animate"
+      variants={backgroundVariants}
+      className="relative min-h-screen bg-gradient-to-r from-orange-100 to-blue-100 overflow-hidden"
     >
-      <HeroSection />
-      <Statistics />
-      <MarqueeSection items={momentsItems1} />
-      <Carousel />
-      <ClientesParceiros />
-      <ChatbotSection />
-      <Servicos />
-      <MarqueeSection items={momentsItems2} />
-      <ImageCarousel />
-      <MarqueeSection items={momentsItems3} />
-      <ServicePlans />
-      <CertificationSection />
-      <ClientAvaliacao />
-      <MarqueeSection items={momentsItems4} />
-      <PrintMenagem />
-      <FaqSection />
-      <SeloSection />
-      <FormularioContato />
-      <Footer />
-      <CookieConsent />
-      
-      <div className="fixed bottom-5 right-5 z-40">
-        <WhatsAppButton />
-      </div>
+      {/* Efeito de sobreposição sutil */}
+      <motion.div 
+        className="absolute inset-0 bg-white opacity-10 pointer-events-none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 2, repeat: Infinity, repeatType: 'mirror' }}
+      />
+
+      <AnimatePresence mode="wait">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          className="relative z-10"
+        >
+          <HeroSection />
+          <Statistics />
+          <MarqueeSection items={momentsItems1} />
+          <Carousel />
+          <ClientesParceiros />
+          <ChatbotSection />
+          <Servicos />
+          <MarqueeSection items={momentsItems2} />
+          <ImageCarousel />
+          <MarqueeSection items={momentsItems3} />
+          <ServicePlans />
+          <CertificationSection />
+          <ClientAvaliacao />
+          <MarqueeSection items={momentsItems4} />
+          <PrintMenagem />
+          <FaqSection />
+          <SeloSection />
+          <FormularioContato />
+          <Footer />
+          <CookieConsent />
+          
+          <motion.div 
+            className="fixed bottom-5 right-5 z-40"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          >
+            <WhatsAppButton />
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
     </motion.div>
   );
 };
