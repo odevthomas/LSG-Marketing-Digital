@@ -15,8 +15,8 @@ import 'swiper/css';
 
 const ClientCard = ({ client }) => (
   <motion.div 
-    className="group bg-[#111] border border-[#222] rounded-3xl p-8 text-center w-[300px]
-               transform transition-all duration-500 mx-2
+    className="group bg-[#111] border border-[#222] rounded-3xl p-6 text-center w-[280px] sm:w-[260px]
+               transform transition-all duration-500 mx-2 sm:mx-3
                hover:scale-105 hover:bg-black
                hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
                hover:border-[#f11414]"
@@ -86,7 +86,7 @@ const ClientesParceiros = () => {
 
   const swiperParams = {
     modules: [Autoplay],
-    spaceBetween: 30,
+    spaceBetween: 20,
     slidesPerView: "auto",
     loop: true,
     speed: 3000,
@@ -95,8 +95,14 @@ const ClientesParceiros = () => {
       disableOnInteraction: false,
     },
     breakpoints: {
-      640: { slidesPerView: "auto" },
-      1024: { slidesPerView: "auto" },
+      640: { 
+        slidesPerView: "auto",
+        spaceBetween: 25
+      },
+      1024: { 
+        slidesPerView: "auto",
+        spaceBetween: 30
+      },
     }
   };
 
