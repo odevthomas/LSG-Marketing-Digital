@@ -1,7 +1,7 @@
 // postcss.config.mjs
 // Configuração do PostCSS com Tailwind CSS e Autoprefixer
 export default {
-  plugins: {
+  plugins: [
     // Suporte a recursos CSS modernos
     'postcss-preset-env': {
       stage: 1,
@@ -17,10 +17,10 @@ export default {
     },
 
     // Plugin do Tailwind CSS para utilizar suas classes utilitárias
-    tailwindcss: {},
-    
+    'tailwindcss',
+
     // Compressão e otimização de CSS
-    cssnano: process.env.NODE_ENV === 'production' ? {
+    ['cssnano', process.env.NODE_ENV === 'production' ? {
       preset: ['default', {
         discardComments: { removeAll: true },
         normalizeWhitespace: false,
@@ -28,15 +28,15 @@ export default {
         minifyFontValues: true,
         reduceIdents: true
       }]
-    } : false,
+    } : false],
 
     // Plugin para purgar CSS não utilizado
-    '@fullhuman/postcss-purgecss': process.env.NODE_ENV === 'production' ? {
+    ['@fullhuman/postcss-purgecss', process.env.NODE_ENV === 'production' ? {
       content: [
         './src/**/*.{js,jsx,ts,tsx}',
         './public/index.html'
       ],
       defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-    } : false,
-  },
+    } : false],
+  ],
 };
