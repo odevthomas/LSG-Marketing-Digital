@@ -105,7 +105,7 @@ const Servicos = () => {
           {ServicosItems.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="bg-[#1a1a1a] rounded-2xl p-6 m-4 border border-[#333] shadow-2xl transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-[#fb1603]"
+                className="bg-[#1a1a1a] rounded-2xl p-6 m-4 border border-[#333] transition-all duration-300 hover:scale-105 hover:border-[#fb1603]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}

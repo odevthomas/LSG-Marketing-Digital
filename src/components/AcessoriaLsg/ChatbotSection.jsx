@@ -61,7 +61,7 @@ const ChatbotSection = () => {
       aria-labelledby="chatbot-title"
     >
       <div className="container mx-auto px-6 text-center max-w-7xl">
-        <motion.h1
+        <motion.h2
           id="chatbot-title"
           className="text-5xl md:text-6xl font-black text-black mb-16 tracking-tight leading-tight"
           initial={{ opacity: 0, y: -50 }}
@@ -69,7 +69,7 @@ const ChatbotSection = () => {
           transition={{ duration: 0.8 }}
         >
           Transforme seu Atendimento com <span className="text-[#f11414]">Inteligência Artificial</span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
@@ -80,7 +80,7 @@ const ChatbotSection = () => {
           {cardData.map((card, index) => (
             <motion.div
               key={index}
-              className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 group overflow-hidden"
+              className="bg-white p-8 rounded-3xl border border-gray-100 transition-all duration-300 group overflow-hidden"
               variants={{
                 hidden: { opacity: 0, y: 50 },
                 visible: { 
@@ -92,8 +92,8 @@ const ChatbotSection = () => {
                   }
                 }
               }}
-              whileHover="hover"
-              whileTap="tap"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <card.icon 
                 className="mx-auto text-6xl text-[#f11414] mb-6 group-hover:scale-110 transition-transform" 
@@ -119,7 +119,7 @@ const ChatbotSection = () => {
             href="https://wa.me/5519981331191?text=Quero%20revolucionar%20meu%20atendimento%20com%20IA!"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-[#f11414] text-white px-12 py-5 rounded-full text-xl font-bold uppercase tracking-wider shadow-2xl hover:bg-black transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#f11414] focus:ring-opacity-50"
+            className="inline-block bg-[#f11414] text-white px-12 py-5 rounded-full text-xl font-bold uppercase tracking-wider hover:bg-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-[#f11414] focus:ring-opacity-50"
             aria-label="Iniciar transformação do atendimento via WhatsApp"
           >
             Transforme Agora!

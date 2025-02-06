@@ -15,12 +15,12 @@
   --black: #000000;
   --white: #ffffff;
   --gray-light: #ffffff;
-  --gray-dark: #333333;
+  --heading-line-height: 1.1; /* Linha mais apertada para títulos */
 }
 
 body {
   color: var(--gray-light);
-  font-family: 'Roboto', 'Satoshi', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -32,41 +32,45 @@ a {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Montserrat', 'Satoshi', sans-serif;
+  font-family: 'Satoshi', sans-serif;
   color: var(--white);
-  text-align: center; /* Centraliza os títulos */
+  text-align: center;
+  letter-spacing: -0.02em; /* Espaçamento negativo para um look mais moderno */
+  margin-bottom: 0.5em;
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 3.5rem; /* Aumentado para mais impacto */
+  line-height: var(--heading-line-height);
+  font-weight: 800; /* Extra bold para mais destaque */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase; /* Maiúsculas para títulos principais */
 }
 
 h2 {
-  font-size: 2rem;
-  line-height: 1.3;
-  font-weight: 600;
+  font-size: 2.75rem;
+  line-height: var(--heading-line-height);
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 1.75rem;
-  line-height: 1.4;
+  font-size: 2rem;
+  line-height: 1.2;
   font-weight: 600;
 }
 
 h4 {
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.75rem;
+  line-height: 1.3;
   font-weight: 600;
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  line-height: 1.75;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 1.125rem; /* Aumentado para melhor legibilidade */
+  line-height: 1.8;
   color: var(--gray-light);
+  letter-spacing: 0.01em;
 }
 
 .prose {
@@ -333,25 +337,43 @@ input, textarea, select {
 /* Novas classes de utilidade para Satoshi */
 .font-satoshi {
   font-family: 'Satoshi', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .font-satoshi-light {
   font-family: 'Satoshi', sans-serif;
   font-weight: 300;
+  letter-spacing: 0.01em;
 }
 
 .font-satoshi-regular {
   font-family: 'Satoshi', sans-serif;
   font-weight: 400;
+  letter-spacing: 0;
 }
 
 .font-satoshi-medium {
   font-family: 'Satoshi', sans-serif;
   font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 .font-satoshi-bold {
   font-family: 'Satoshi', sans-serif;
   font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Novas classes para destaque de texto */
+.text-highlight {
+  background: linear-gradient(120deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-shadow-strong {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 

@@ -9,8 +9,6 @@ const MarqueeSection = ({ items }) => {
 
   return (
     <div className="relative overflow-hidden bg-black text-white py-8">
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-[#ff6f61]/20 to-black opacity-50"></div>
-      
       <div className="relative z-10 flex whitespace-nowrap animate-marquee-smooth">
         {items.map((item, index) => (
           <span

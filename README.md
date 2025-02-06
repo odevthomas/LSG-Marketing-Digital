@@ -2,24 +2,60 @@
 
 ## Descrição do Projeto
 
-Plataforma web moderna para a LSG Digital, oferecendo soluções completas de marketing digital com interface responsiva e interativa.
+Plataforma web moderna para a LSG Digital, oferecendo soluções completas de marketing digital com interface responsiva e interativa. Nossa plataforma é projetada para fornecer uma experiência de usuário excepcional e resultados eficientes em marketing digital.
 
 ## Funcionalidades
 
-- **Página Inicial:** Com informações sobre os serviços da agência.
-- **Serviços:** Exibe as principais soluções que a agência oferece com uma descrição detalhada.
-- **Formulário de Contato:** Permite que os visitantes entrem em contato diretamente com a equipe através de um formulário interativo.
-- **Consentimento de Cookies:** Banner de consentimento de cookies para conformidade com as leis de privacidade.
-- **Design Responsivo:** O site é totalmente responsivo, adaptando-se a diferentes tamanhos de tela.
+- **Página Inicial:**
+  - Apresentação dinâmica da empresa
+  - Carrossel de cases de sucesso
+  - Seção de métricas e resultados
+  
+- **Serviços:**
+  - Marketing de Conteúdo
+  - SEO e Otimização
+  - Gestão de Redes Sociais
+  - Marketing de Performance
+  - Email Marketing
+  - Consultoria Estratégica
+
+- **Área do Cliente:**
+  - Dashboard personalizado
+  - Relatórios de performance
+  - Comunicação direta com a equipe
+
+- **Recursos Técnicos:**
+  - Design responsivo para todos dispositivos
+  - Otimização SEO
+  - Performance otimizada
+  - Integração com Google Analytics
+  - Sistema de cache avançado
 
 ## Tecnologias Utilizadas
 
-- React.js
-- Tailwind CSS
+### Frontend
+- React.js 18
+- Tailwind CSS 3
 - Framer Motion
 - Lucide Icons
-- React Router
+- React Router 6
 - FormSubmit
+
+### DevOps
+- Docker
+- GitHub Actions
+- Vercel
+
+### Monitoramento
+- Google Analytics 4
+- Hotjar
+- Sentry
+
+## Pré-requisitos
+
+- Node.js 18.x ou superior
+- npm 9.x ou superior
+- Git
 
 ## Instalação
 
@@ -69,4 +105,40 @@ lsg-digital/
 ## Licença
 
 Projeto licenciado sob MIT License.
+
+## Scripts Disponíveis
+
+```bash
+# Desenvolvimento
+npm run dev         # Inicia servidor de desenvolvimento
+npm run build      # Gera build de produção
+npm run preview    # Visualiza build de produção
+npm run lint       # Executa verificação de código
+npm run test       # Executa testes unitários
+```
+
+## Variáveis de Ambiente
+
+```env
+VITE_API_URL=sua_url_api
+VITE_GA_ID=seu_id_google_analytics
+VITE_SENTRY_DSN=seu_dsn_sentry
+```
+
+## Boas Práticas
+
+- Siga o padrão de commits convencionais
+- Mantenha a documentação atualizada
+- Escreva testes para novas funcionalidades
+- Revise o código antes de submeter PRs
+
+## Suporte
+
+Para suporte, entre em contato:
+- Email: suporte@lsgdigital.com.br
+- WhatsApp: +55 (XX) XXXXX-XXXX
+
+## Changelog
+
+Consulte o arquivo [CHANGELOG.md](./CHANGELOG.md) para ver o histórico de alterações.
 ```

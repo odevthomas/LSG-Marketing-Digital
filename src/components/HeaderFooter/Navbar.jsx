@@ -57,21 +57,21 @@ const Header = () => {
       {/* Avatares de Certificados e Parcerias */}
       <div className="certificates">
         <div className="flex flex-col md:flex-row items-center p-6">
-          <div className="flex items-center text-white -space-x-2">
+          <div className="flex items-center -space-x-2">
             {avatarData.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ scale: 0 }}
+                initial={{ scale: 1 }}
                 animate={{ scale: 1 }}
-                transition={{ duration: 0.3, delay: idx * 0.1 }}
                 className="relative"
               >
                 <Avatar.Root
-                  className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#f4f4f4]"
+                  className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center overflow-hidden rounded-full border-2 border-[#f4f4f4] bg-transparent"
                 >
                   <Avatar.Image
                     src={item.imgURL}
                     className="h-full w-full object-cover"
+                    style={{ boxShadow: 'none' }}
                   />
                   <Avatar.Fallback delayMs={600}>{item.name}</Avatar.Fallback>
                 </Avatar.Root>
@@ -79,10 +79,10 @@ const Header = () => {
             ))}
           </div>
           <motion.p
-            className=" text-gray-100 font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
-            initial={{ opacity: 0, y: -10 }}
+            className="text-gray-100 font-medium mt-2 md:mt-0 md:ml-2 md:block hidden"
+            initial={{ opacity: 1, y: 0 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
+            style={{ textShadow: 'none' }}
           >
             Certificações e Parcerias
           </motion.p>

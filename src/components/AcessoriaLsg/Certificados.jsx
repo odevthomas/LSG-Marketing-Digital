@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaWhatsapp, FaCheckCircle } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const PartnerComponent = () => {
     const partners = [
@@ -53,29 +54,43 @@ const PartnerComponent = () => {
             aria-labelledby="partners-title"
         >
             <div className="max-w-6xl mx-auto">
-                <h2 
-                    id="partners-title" 
-                    className="text-4xl font-bold text-center mb-8 text-white"
+                <motion.h2
+                    id="chatbot-title"
+                    className="text-5xl md:text-6xl font-black text-white mb-16 tracking-tight leading-tight"
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
                 >
-                    Parceiros Estratégicos de Marketing
-                </h2>
+                    Transforme seu Atendimento com
+                    <br />
+                    <span className="text-[#f11414]">Soluções Certificadas</span>
+                    <motion.span
+                        className="block text-2xl md:text-3xl mt-4 font-medium text-gray-300"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.5 }}
+                    >
+                        Parceiros Oficiais Google, Meta e Kommo
+                    </motion.span>
+                </motion.h2>
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {partners.map((partner, index) => (
                         <div 
                             key={index} 
-                            className="bg-[#111] rounded-2xl p-6 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                            className="bg-[#111] rounded-2xl p-6 transform transition-all duration-300"
                         >
                             <div className="flex items-center mb-6">
                                 <img 
                                     src={partner.logo} 
                                     alt={`Logo ${partner.name}`} 
                                     className="w-20 h-20 rounded-full mr-4 object-cover"
+                                    style={{ boxShadow: 'none' }}
                                 />
                                 <h3 className="text-2xl font-bold text-white">{partner.name}</h3>
                             </div>
 
-                            <p className="text-gray-300 mb-4">{partner.description}</p>
+                            <p className="text-gray-100 mb-4 font-medium">{partner.description}</p>
 
                             <div className="mb-4">
                                 {partner.highlights.map((highlight, idx) => (
@@ -84,12 +99,12 @@ const PartnerComponent = () => {
                                         className="flex items-center text-[#f11414] mb-2"
                                     >
                                         <FaCheckCircle className="mr-2" />
-                                        <span className="text-white">{highlight}</span>
+                                        <span className="text-white font-medium">{highlight}</span>
                                     </div>
                                 ))}
                             </div>
 
-                            <div className="text-sm italic text-gray-400 mb-4">
+                            <div className="text-sm italic text-gray-200 mb-4 font-medium">
                                 {partner.expertise}
                             </div>
 

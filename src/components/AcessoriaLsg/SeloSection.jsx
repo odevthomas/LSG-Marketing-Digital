@@ -12,27 +12,28 @@ import {
 } from "react-icons/fa";
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { ArrowRight } from "lucide-react";
 
 const CardContent = ({ item }) => (
   <motion.div 
     className="group bg-[#111] border border-[#222] rounded-3xl p-8 text-center w-[300px]
-               transform transition-all duration-500 mx-2
+               transform transition-all duration-500 mx-2 relative overflow-hidden
                hover:scale-105 hover:bg-black
-               hover:shadow-[0_0_50px_rgba(241,20,20,0.15)]
                hover:border-[#f11414]"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     transition={{ duration: 0.5 }}
   >
-    {/* Efeito de brilho */}
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#f11414]/10 to-transparent 
-                    opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl blur-lg">
+    {/* Efeito de brilho - mantido como estava */}
+    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+      <div className="absolute inset-[-100%] bg-gradient-to-r from-transparent via-[#ff450015] to-transparent transform rotate-45 translate-x-full group-hover:translate-x-[-200%] transition-transform duration-1000"></div>
     </div>
-    
+
     {/* Conteúdo */}
-    <div className="relative z-10">
+    <div className="relative z-10 flex flex-col h-full">
       <div className="flex justify-center mb-4">
-        <div className="relative group-hover:scale-110 transition-transform duration-500">
+        <div className="relative p-6 rounded-full bg-[#ffffff08] group-hover:bg-[#ffffff0f] transition-all duration-500
+                      before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-r before:from-[#ff450015] before:to-transparent before:opacity-0 before:group-hover:opacity-100 before:transition-opacity before:duration-500">
           {item.icon}
         </div>
       </div>
@@ -42,10 +43,35 @@ const CardContent = ({ item }) => (
         {item.label}
       </h3>
       
-      <p className="text-sm text-gray-400 
+      <p className="text-sm text-gray-400 mb-6
                    group-hover:text-gray-300 transition-colors duration-300">
         {item.description}
       </p>
+
+      {/* Novo Botão */}
+      <div className="mt-auto">
+        <button className="group/btn relative inline-flex items-center justify-center gap-2 
+                         py-3 px-6 
+                         text-sm font-medium text-white
+                         bg-gradient-to-r from-[#f11414] to-[#ff4500]
+                         rounded-full overflow-hidden
+                         transition-all duration-300
+                         hover:shadow-[0_0_20px_rgba(241,20,20,0.3)]
+                         focus:outline-none focus:ring-2 focus:ring-[#f11414] focus:ring-offset-2 focus:ring-offset-[#111]">
+          <span className="relative z-10">
+            Saiba mais
+          </span>
+          <ArrowRight className="w-4 h-4 transition-transform duration-300 
+                                group-hover/btn:translate-x-1" />
+          
+          {/* Efeito de brilho no hover */}
+          <div className="absolute inset-0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500">
+            <div className="absolute inset-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent 
+                          transform rotate-45 translate-x-full group-hover/btn:translate-x-[-200%] 
+                          transition-transform duration-1000"></div>
+          </div>
+        </button>
+      </div>
     </div>
   </motion.div>
 );
@@ -118,9 +144,6 @@ const SeloSection = () => {
 
   return (
     <section className="bg-black py-20 text-white overflow-hidden relative">
-      {/* Efeito de fundo gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#000] to-[#111] opacity-90 pointer-events-none"></div>
-
       <div className="container mx-auto px-6 text-center relative z-10">
         <motion.h2 
           className="text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight"

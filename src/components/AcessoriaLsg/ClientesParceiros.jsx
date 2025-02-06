@@ -151,12 +151,15 @@ const ClientesParceiros = () => {
 
       <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.h2 
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white tracking-tight"
+          className="text-5xl md:text-6xl font-black text-white mb-16 tracking-tight leading-tight"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Nossos Parceiros
+          Conheça Nossos <span className="text-[#f11414]">Parceiros de Sucesso</span>
+          <span className="block text-2xl sm:text-3xl md:text-4xl mt-3 text-gray-300 font-bold">
+            Histórias que Inspiram
+          </span>
         </motion.h2>
 
         <motion.p 
@@ -165,7 +168,10 @@ const ClientesParceiros = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Empresas que confiam em nosso trabalho para impulsionar sua presença digital
+          Conheça as empresas que estão revolucionando seus negócios através do marketing digital.
+          <span className="block mt-2 text-sm sm:text-base text-gray-400">
+            Cada parceiro é uma história única de transformação e crescimento
+          </span>
         </motion.p>
 
         {/* Primeiro Swiper - Direção normal */}

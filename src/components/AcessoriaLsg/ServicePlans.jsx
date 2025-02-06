@@ -54,16 +54,27 @@ const ServicePlans = () => {
   return (
     <section className="py-14 bg-black text-white">
       <div className="max-w-full mx-auto px-4 text-center">
+        <motion.h2
+          className="text-5xl md:text-6xl font-black mb-16 tracking-tight leading-tight"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Soluções <span className="text-[#fb1603]">Digitais</span> que 
+          <br />
+          Impulsionam seu Negócio
+        </motion.h2>
         <motion.h3
-          className="text-3xl font-semibold sm:text-4xl"
+          className="text-2xl font-medium text-gray-300 mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
-          Planos para Todos os Tamanhos de Negócio
+          Tecnologia e Estratégia para Cada Fase do seu Crescimento
         </motion.h3>
         <p className="mt-4 text-lg text-gray-300">
-          Nossos planos são cuidadosamente elaborados para atender a diversas necessidades e orçamentos. Explore e descubra qual opção se adapta melhor ao seu negócio!
+          Nossos planos são cuidadosamente elaborados para atender a diversas necessidades e orçamentos. 
+          Descubra a solução ideal para revolucionar sua presença digital!
         </p>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">

@@ -17,7 +17,7 @@ const App = () => {
           {/* Rota para a página inicial */}
           <Route path="/" element={<Home />} />
           <Route path="/sobredeveloper" element={<DeveloperInfo />} />
-            <Route path="/termos" element={<TermsOfUse />} />
+          <Route path="/contato" element={<ContactForm />} />
           {/* Rota para o formulário de contato */}
           <Route path="/privacidade" element={<PrivacyPolicyAndTerms />} />
         </Routes>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Testemunhos dos clientes
 const testimonials = [
@@ -128,20 +129,28 @@ const ClientAvaliacao = () => {
   return (
     <section 
       className="relative py-16 bg-white" 
-      aria-labelledby="testimonials-title"
+      aria-labelledby="chatbot-title"
     >
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 
-            id="testimonials-title" 
-            className="text-4xl md:text-5xl font-bold text-black mb-4"
+        <motion.h2
+          id="chatbot-title"
+          className="text-5xl md:text-6xl font-black text-black mb-16 tracking-tight leading-tight"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          Potencialize seus 
+          <br />
+          <span className="text-[#f11414]">Resultados Digitais</span>
+          <motion.p
+            className="text-2xl md:text-3xl mt-6 font-medium text-gray-600"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
           >
-            Histórias de <span className="text-[#fb1603]">Sucesso</span>
-          </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Transformando desafios em conquistas. Conheça os resultados reais de empresas que confiaram na nossa expertise.
-          </p>
-        </div>
+            Marketing Digital que gera resultados reais
+          </motion.p>
+        </motion.h2>
 
         <div className="relative">
           <Slider {...settings}>

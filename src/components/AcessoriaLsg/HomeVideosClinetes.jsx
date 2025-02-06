@@ -8,23 +8,23 @@ export default function VideoTabs() {
   const slides = [
     { 
       link: "/videos/1.mov", 
-      content: "Triplicamos Leads em Tempo Recorde!",
-      impactPhrase: "Transforme Oportunidades em Resultados",
-      description: "Estratégias precisas que geram leads qualificados em tempo recorde.",
+      content: "Resultados Extraordinários em 30 Dias",
+      impactPhrase: "De 100 para 1000 Leads Qualificados",
+      description: "Estratégia personalizada que multiplicou leads e converteu em vendas reais.",
       icon: <FaArrowUp className="text-4xl text-[#ff4500]" />
     },
     { 
       link: "/videos/3.mp4", 
-      content: "Faturamento 2x Maior em 90 Dias!",
-      impactPhrase: "Maximize Suas Vendas",
-      description: "Campanhas digitais personalizadas que impulsionam o crescimento.",
+      content: "Faturamento Recorde Alcançado",
+      impactPhrase: "200% de Aumento em Vendas",
+      description: "Campanhas estratégicas que transformaram visitantes em clientes fiéis.",
       icon: <FaMoneyBillAlt className="text-4xl text-[#ff4500]" />
     },
     { 
       link: "/videos/4.mp4", 
-      content: "10x Mais Alcance nas Redes",
-      impactPhrase: "Expanda Sua Visibilidade",
-      description: "Transformação digital com engajamento e conversão estratégica.",
+      content: "Alcance e Engajamento Explosivo",
+      impactPhrase: "1000% Mais Visibilidade Online",
+      description: "Estratégia digital que amplificou presença e autoridade da marca.",
       icon: <FaShareAlt className="text-4xl text-[#ff4500]" />
     },
   ];
@@ -42,13 +42,20 @@ export default function VideoTabs() {
     >
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <motion.h2 
-            className="text-5xl font-bold tracking-tight text-white mb-6"
-            initial={{ opacity: 0, y: -20 }}
+          <motion.h2
+            id="chatbot-title"
+            className="text-5xl md:text-6xl font-black text-[#ffff] mb-16 tracking-tight leading-tight"
+            initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+            transition={{ duration: 0.8 }}
           >
-            Resultados Que Transformam Negócios
+            Revolucione seu Negócio com{" "}
+            <span className="text-[#f11414]">
+              Atendimento Inteligente
+            </span>
+            <span className="block text-3xl md:text-4xl mt-4 text-gray-700 font-bold">
+              24/7 - Sempre Online, Sempre Eficiente
+            </span>
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-400 max-w-4xl mx-auto"
@@ -64,7 +71,7 @@ export default function VideoTabs() {
           {slides.map((slide, index) => (
             <motion.div
               key={index}
-              className="bg-[#0f0f0f] rounded-3xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+              className="bg-[#0f0f0f] rounded-3xl overflow-hidden transform transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               onHoverStart={() => handleVideoHover(index)}
               onHoverEnd={() => setActiveVideo(null)}
@@ -75,7 +82,7 @@ export default function VideoTabs() {
               <div className="relative h-[500px] overflow-hidden group">
                 <video
                   className={`w-full h-full object-cover transition-all duration-500 ${
-                    activeVideo === index ? 'scale-110 blur-sm' : 'scale-100 blur-none'
+                    activeVideo === index ? 'scale-110' : 'scale-100'
                   }`}
                   src={slide.link}
                   muted
@@ -83,7 +90,7 @@ export default function VideoTabs() {
                 />
                 
                 {activeVideo === index && (
-                  <div className="absolute inset-0 bg-black bg-opacity-80 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
                     <motion.div 
                       className="text-center text-white p-8 max-w-md"
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -96,13 +103,13 @@ export default function VideoTabs() {
                       <h3 className="text-2xl font-bold mb-3 text-[#ff4500]">
                         {slide.content}
                       </h3>
-                      <p className="text-lg text-gray-200 mb-4 font-semibold">
+                      <p className="text-lg text-white mb-4 font-semibold">
                         {slide.impactPhrase}
                       </p>
-                      <p className="text-sm text-gray-400 mb-6">
+                      <p className="text-sm text-gray-200 mb-6">
                         {slide.description}
                       </p>
-                      <button className="mx-auto flex items-center justify-center bg-[#ff4500] text-white px-8 py-3 rounded-full text-base hover:bg-[#ff6347] transition-all duration-300 transform hover:scale-105 hover:shadow-lg">
+                      <button className="mx-auto flex items-center justify-center bg-[#ff4500] text-white px-8 py-3 rounded-full text-base hover:bg-[#ff6347] transition-all duration-300">
                         <FaPlay className="mr-3" /> Ver Caso de Sucesso
                       </button>
                     </motion.div>

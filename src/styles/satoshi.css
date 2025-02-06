@@ -150,3 +150,21 @@
   font-style: italic;
 }
 
+img {
+  box-shadow: none !important; /* Remove qualquer sombra */
+  filter: none !important; /* Remove filtros que possam criar sombras */
+}
+
+.texto {
+  text-shadow: none !important; /* Remove sombras do texto */
+  position: relative; /* Garante que o texto fique em sua própria camada */
+  z-index: 1; /* Coloca o texto acima de outros elementos */
+  background: transparent; /* Fundo transparente */
+}
+
+.container-imagem {
+  position: relative;
+  display: block;
+  clear: both; /* Evita sobreposições com outros elementos */
+}
+

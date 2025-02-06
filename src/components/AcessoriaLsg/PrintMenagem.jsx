@@ -25,22 +25,22 @@ const PrintMensagens = () => {
     >
       <div className="container mx-auto px-6 text-center">
         {/* Título e Subtítulo */}
-        <motion.h3
-          className="mt-2 block font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gray-100"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+        <motion.h2
+          className="text-5xl md:text-6xl font-black mb-6 text-white"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Feedbacks Diários dos Nossos Clientes
-        </motion.h3>
+          Feedbacks <span className="text-[#fb1603]">Diários</span> dos Nossos Clientes
+        </motion.h2>
 
         <motion.p
-          className="text-[#fff] text-lg mt-10 sm:text-xl md:text-2xl leading-relaxed"
+          className="text-gray-300 text-xl md:text-2xl mb-16 leading-relaxed max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ delay: 0.3, duration: 1 }}
         >
-          Veja as mensagens que recebemos diariamente, mostrando como podemos ajudar a transformar o seu negócio.
+          Veja as mensagens que recebemos diariamente dos nossos clientes
         </motion.p>
 
         {/* Carrossel Swiper */}
@@ -67,17 +67,38 @@ const PrintMensagens = () => {
           {PrintMensagens.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="flex flex-col justify-center p-4 sm:p-6 transition duration-500 ease-in-out"
+                className="flex flex-col justify-center p-4 sm:p-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8 }}
               >
-                {/* Imagem do serviço - Exibe o print da mensagem recebida */}
-                <motion.img
-                  src={item.image}
-                  alt={`Serviço ${index + 1}`}
-                  className="w-full h-auto object-cover rounded-3xl border-1 border-[#99999969] shadow-lg"
-                />
+                {/* Container do navegador Mac simplificado */}
+                <div className="max-w-4xl mx-auto">
+                  <div className="bg-white rounded-lg overflow-hidden shadow-2xl">
+                    {/* Barra superior do navegador Mac */}
+                    <div className="bg-[#f5f5f5] px-4 py-2 flex items-center border-b border-[#e0e0e0]">
+                      <div className="flex space-x-2">
+                        <div className="w-3 h-3 rounded-full bg-[#FF5F57] border border-[#E0443E]"></div>
+                        <div className="w-3 h-3 rounded-full bg-[#FEBC2E] border border-[#D4A02C]"></div>
+                        <div className="w-3 h-3 rounded-full bg-[#28C840] border border-[#24AA36]"></div>
+                      </div>
+                      {/* Barra de URL simplificada */}
+                      <div className="ml-4 flex-1 mx-auto max-w-2xl">
+                        <div className="bg-[#e8e8e8] rounded-md h-7 flex items-center px-3">
+                          <img src="/favicon.png" alt="LSG favicon" className="w-4 h-4 mr-2" />
+                          <span className="text-[#333] text-sm">www.lsgdigital.com.br</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Imagem */}
+                    <motion.img
+                      src={item.image}
+                      alt={`Feedback de Cliente - ${item.service}`}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                </div>
                 {/* Botão para enviar mensagem no WhatsApp */}
                 <div className="mt-4">
                   <button

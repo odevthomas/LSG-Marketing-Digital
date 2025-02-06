@@ -15,11 +15,13 @@
 
             <!-- Performance e Carregamento -->
             <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link rel="preconnect" href="https://cdn.jsdelivr.net">
+            <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-            <!-- Fontes Otimizadas -->
-            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-            <link rel="stylesheet" href="/src/styles/satoshi.css" />
+            <!-- Fontes Otimizadas com display=swap -->
+            <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+            <link rel="stylesheet" href="/src/styles/satoshi.css" media="print" onload="this.media='all'">
 
             <!-- Ícones e Favicon -->
             <link id="favicon" rel="icon" type="image/png" href="/logo-nova.png" />
@@ -31,16 +33,27 @@
                         --primary-color: #0066cc;
                         --secondary-color: #00a86b;
                         --text-color: #333;
+                        --bg-color: #ffffff;
                         --font-primary: 'Satoshi', Arial, sans-serif;
                         --font-secondary: 'Inter', Arial, sans-serif;
+                  }
+                  @media (prefers-color-scheme: dark) {
+                        :root {
+                              --text-color: #ffffff;
+                              --bg-color: #121212;
+                        }
                   }
                   body { 
                         font-family: var(--font-primary);
                         line-height: 1.6;
                         color: var(--text-color);
+                        background-color: var(--bg-color);
+                        margin: 0;
+                        padding: 0;
                   }
                   h1, h2, h3 {
                         font-family: var(--font-secondary);
+                        margin-top: 0;
                   }
             </style>
 
@@ -70,11 +83,14 @@
 
             <!-- Performance Scripts -->
             <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16827802848"></script>
-            <script>
+            <script type="text/javascript">
                   window.dataLayer = window.dataLayer || [];
                   function gtag() { dataLayer.push(arguments); }
                   gtag('js', new Date());
-                  gtag('config', 'AW-16827802848');
+                  gtag('config', 'AW-16827802848', {
+                        'anonymize_ip': true,
+                        'cookie_flags': 'SameSite=None;Secure'
+                  });
             </script>
 
             <!-- Favicon Dinâmico -->
@@ -122,10 +138,10 @@
             <div id="root"></div>
 
             <!-- Scripts Otimizados -->
-            <script type="module" src="/src/main.jsx" defer></script>
+            <script type="module" src="/src/main.jsx" defer async></script>
 
-            <!-- Título Dinâmico de Marketing -->
-            <script>
+            <!-- Título Dinâmico de Marketing com Performance Melhorada -->
+            <script type="text/javascript">
                   document.addEventListener("DOMContentLoaded", function () {
                         const marketingPhrases = [
                               "Maximize Seus Resultados", 
@@ -134,10 +150,20 @@
                               "Transforme Cliques em Conversões"
                         ];
                         let index = 0;
-                        setInterval(function () {
-                              document.title = marketingPhrases[index] + " | LSG Digital";
+                        const updateTitle = () => {
+                              document.title = `${marketingPhrases[index]} | LSG Digital`;
                               index = (index + 1) % marketingPhrases.length;
-                        }, 4000);
+                        };
+                        const interval = setInterval(updateTitle, 4000);
+                        
+                        // Limpa o intervalo quando a página não está visível
+                        document.addEventListener('visibilitychange', () => {
+                              if (document.hidden) {
+                                    clearInterval(interval);
+                              } else {
+                                    setInterval(updateTitle, 4000);
+                              }
+                        });
                   });
             </script>
       </body>

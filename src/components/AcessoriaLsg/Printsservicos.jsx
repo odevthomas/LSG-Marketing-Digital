@@ -44,19 +44,18 @@ const PrintSevicos = () => {
           {ServicosItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-[#1a1a1a] rounded-2xl overflow-hidden shadow-2xl border border-[#333] transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:border-[#ff6b00]"
+              className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-[#333] transform transition-all duration-300 hover:scale-105 hover:border-[#ff6b00]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              {/* Imagem do serviço com overlay */}
+              {/* Imagem do serviço sem overlay */}
               <div className="relative">
                 <img 
                   src={item.image} 
                   alt={item.titulo} 
                   className="w-full h-64 object-cover opacity-80 hover:opacity-100 transition-opacity"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-30 hover:bg-opacity-10 transition-all"></div>
               </div>
 
               {/* Conteúdo do serviço */}
@@ -75,7 +74,7 @@ const PrintSevicos = () => {
                   rel="noopener noreferrer"
                   className="inline-block px-6 py-3 bg-[#ff6b00] text-black font-semibold rounded-full 
                   hover:bg-white transition-all duration-300 
-                  transform hover:scale-105 hover:shadow-lg
+                  transform hover:scale-105
                   focus:outline-none focus:ring-2 focus:ring-[#ff6b00]"
                 >
                   Consulta Gratuita

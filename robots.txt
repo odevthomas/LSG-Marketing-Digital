@@ -1,6 +1,22 @@
+# Configurações globais para todos os robôs
 User-agent: *
-Disallow: /admin/          # Se houver uma área administrativa que você deseja bloquear
-Disallow: /login/          # Se houver uma área de login que você deseja bloquear
-Disallow: /private/        # Outros diretórios privados
+Allow: /                   # Permite acesso à raiz do site
+Disallow: /admin/         # Bloqueia acesso à área administrativa
+Disallow: /login/         # Bloqueia acesso à área de login
+Disallow: /private/       # Bloqueia acesso a diretórios privados
+Disallow: /wp-admin/      # Bloqueia acesso ao painel WordPress (se aplicável)
+Disallow: /includes/      # Bloqueia acesso a diretórios de sistema
+Disallow: /cgi-bin/       # Bloqueia acesso a scripts
+Disallow: /*.php$         # Bloqueia acesso direto a arquivos PHP
+Disallow: /*?*           # Bloqueia URLs com parâmetros de consulta
 
-Sitemap: https://devthm.site/sitemap.xml  # URL do sitemap XML
+# Configurações específicas para Googlebot
+User-agent: Googlebot
+Crawl-delay: 10           # Intervalo entre requisições em segundos
+
+# Configurações específicas para Bingbot
+User-agent: Bingbot
+Crawl-delay: 10
+
+# Localização do Sitemap
+Sitemap: https://devthm.site/sitemap.xml

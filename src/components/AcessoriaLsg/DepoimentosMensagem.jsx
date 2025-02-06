@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, Eye, CheckCircle } from "lucide-react";
+import React, { useState, useCallback } from "react";
+import { MessageCircle, Eye, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 const Depoimentos = () => {
   const mensagens = [
@@ -42,61 +41,60 @@ const Depoimentos = () => {
     { texto: "Oi Gabriel! As vendas estão bombando! Estão superando minhas expectativas!", cliente: "Gabriel M.", hora: "21:30", visualizado: true },
   ];
 
-  const [currentMessageIndices, setCurrentMessageIndices] = useState([0, 1, 2]);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 3;
+  const totalPages = Math.ceil(mensagens.length / itemsPerPage);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentMessageIndices((prevIndices) => 
-        prevIndices.map((index) => (index + 1) % mensagens.length)
-      );
-    }, 8000);
+  const getCurrentMessages = useCallback(() => {
+    const start = currentPage * itemsPerPage;
+    return mensagens.slice(start, start + itemsPerPage);
+  }, [currentPage]);
 
-    return () => clearInterval(interval);
-  }, []);
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => (prev > 0 ? prev - 1 : totalPages - 1));
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
 
   return (
-    <section 
-      className="py-16 bg-black relative overflow-hidden"
-      aria-labelledby="depoimentos-titulo"
-    >
+    <section className="py-16 bg-black relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 
-            id="depoimentos-titulo"
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight"
-          >
-            Resultados Reais de Clientes Reais
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            Resultados Reais de{" "}
+            <span className="text-[#f11414] relative inline-block">
+              Clientes Reais
+              <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#f11414]/20 rounded-full"></span>
+            </span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Transformamos desafios em sucessos mensuráveis. Veja o que nossos clientes dizem sobre o impacto das nossas estratégias digitais.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <AnimatePresence>
-            {currentMessageIndices.map((index) => (
-              <motion.div
-                key={index}
+        <div className="relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {getCurrentMessages().map((mensagem, index) => (
+              <div
+                key={`${mensagem.cliente}-${index}`}
                 className="bg-[#1a1a1a] border border-[#f11414]/20 rounded-2xl p-6 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.6 }}
               >
                 <div className="flex items-center mb-4">
                   <MessageCircle className="text-[#f11414] mr-3" size={32} />
                   <div>
                     <h3 className="text-lg font-semibold text-white">
-                      {mensagens[index].cliente}
+                      {mensagem.cliente}
                     </h3>
                     <span className="text-sm text-gray-400">
-                      {mensagens[index].hora}
+                      {mensagem.hora}
                     </span>
                   </div>
                 </div>
 
-                <p className="text-gray-200 mb-4 italic">
-                  "{mensagens[index].texto}"
+                <p className="text-gray-200 mb-4 italic min-h-[80px]">
+                  "{mensagem.texto}"
                 </p>
 
                 <div className="flex items-center justify-between">
@@ -104,16 +102,47 @@ const Depoimentos = () => {
                     <CheckCircle size={20} className="mr-2" />
                     <span className="text-sm">Verificado</span>
                   </div>
-                  {mensagens[index].visualizado && (
+                  {mensagem.visualizado && (
                     <div className="flex items-center text-gray-400">
                       <Eye size={20} className="mr-2" />
                       <span className="text-sm">Visualizado</span>
                     </div>
                   )}
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </AnimatePresence>
+          </div>
+
+          <div className="flex justify-center items-center mt-8 gap-4">
+            <button
+              onClick={handlePrevPage}
+              className="p-2 rounded-full bg-[#1a1a1a] hover:bg-[#f11414]/20 transition-colors duration-300"
+              aria-label="Página anterior"
+            >
+              <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+            
+            <div className="flex gap-2">
+              {[...Array(totalPages)].map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentPage(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentPage === index ? "bg-[#f11414] w-6" : "bg-gray-600"
+                  }`}
+                  aria-label={`Ir para página ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={handleNextPage}
+              className="p-2 rounded-full bg-[#1a1a1a] hover:bg-[#f11414]/20 transition-colors duration-300"
+              aria-label="Próxima página"
+            >
+              <ChevronRight className="w-6 h-6 text-white" />
+            </button>
+          </div>
         </div>
       </div>
 

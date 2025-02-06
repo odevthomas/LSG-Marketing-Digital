@@ -62,10 +62,10 @@ const CarouselSection = () => {
         </div>
       </div>
 
-      {/* Botões de navegação com aria-label */}
+      {/* Botões de navegação */}
       <button 
         onClick={scrollLeft}
-        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg z-10 hover:bg-white transition-all"
+        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full z-10 hover:bg-white transition-all"
         aria-label="Ver itens anteriores"
       >
         <ChevronLeft className="w-6 h-6 text-gray-700" />
@@ -73,7 +73,7 @@ const CarouselSection = () => {
 
       <button 
         onClick={scrollRight}
-        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-lg z-10 hover:bg-white transition-all"
+        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 p-2 rounded-full z-10 hover:bg-white transition-all"
         aria-label="Ver próximos itens"
       >
         <ChevronRight className="w-6 h-6 text-gray-700" />
