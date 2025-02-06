@@ -55,7 +55,7 @@ const ClientTestimonial = ({ clientName, role, testimonial, rating }) => {
   return (
     <div className="keen-slider__slide p-4 z-10">
       <blockquote 
-        className="flex flex-col justify-between bg-black text-white p-8 rounded-2xl shadow-2xl transform transition-all duration-300 hover:scale-105"
+        className="flex flex-col justify-between bg-black text-white p-8 rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105"
         aria-label={`Depoimento de ${clientName}`}
       >
         <div className="text-center">
