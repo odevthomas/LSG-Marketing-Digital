@@ -79,7 +79,7 @@ const Depoimentos = () => {
             {getCurrentMessages().map((mensagem, index) => (
               <div
                 key={`${mensagem.cliente}-${index}`}
-                className="bg-[#1a1a1a] border border-[#f11414]/20 rounded-2xl p-6 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+                className="bg-[#000] border border-[#f11414]/20 rounded-2xl p-6 text-white transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
               >
                 <div className="flex items-center mb-4">
                   <MessageCircle className="text-[#f11414] mr-3" size={32} />
@@ -116,7 +116,7 @@ const Depoimentos = () => {
           <div className="flex justify-center items-center mt-8 gap-4">
             <button
               onClick={handlePrevPage}
-              className="p-2 rounded-full bg-[#1a1a1a] hover:bg-[#f11414]/20 transition-colors duration-300"
+              className="p-2 rounded-full bg-[#000] hover:bg-[#f11414]/20 transition-colors duration-300"
               aria-label="Página anterior"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
@@ -137,7 +137,7 @@ const Depoimentos = () => {
 
             <button
               onClick={handleNextPage}
-              className="p-2 rounded-full bg-[#1a1a1a] hover:bg-[#f11414]/20 transition-colors duration-300"
+              className="p-2 rounded-full bg-[#000] hover:bg-[#f11414]/20 transition-colors duration-300"
               aria-label="Próxima página"
             >
               <ChevronRight className="w-6 h-6 text-white" />

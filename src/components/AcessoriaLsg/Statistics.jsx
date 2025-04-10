@@ -65,7 +65,7 @@ const Statistics = () => {
     }, []);
 
     return (
-        <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-b from-white to-gray-50 px-4 lg:px-16 text-center">
+        <section className="py-8 sm:py-12 md:py-16 bg-white from-white to-gray-50 px-4 lg:px-16 text-center">
             <div className="max-w-4xl mx-auto">
                 <motion.span
                     className="text-red-600 font-semibold text-base sm:text-lg mb-2 sm:mb-4 block tracking-wide"

@@ -40,13 +40,13 @@ const FormularioDeContato = () => {
 
   return (
     <section 
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 py-24 px-4 font-satoshi overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-white from-white to-gray-50 py-24 px-4 font-satoshi overflow-hidden"
       aria-labelledby="contact-section-title"
     >
       {/* Elementos decorativos de fundo */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-red-50 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-red-50 rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob"></div>
+        <div className="absolute top-40 right-10 w-72 h-72 bg[#f11414] rounded-full mix-blend-multiply filter blur-xl opacity-50 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="container mx-auto grid md:grid-cols-2 gap-16 items-center relative z-10">

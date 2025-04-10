@@ -44,7 +44,7 @@ const PrintSevicos = () => {
           {ServicosItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-[#1a1a1a] rounded-2xl overflow-hidden border border-[#333] transform transition-all duration-300 hover:scale-105 hover:border-[#ff6b00]"
+              className="bg-[#000] rounded-2xl overflow-hidden border border-[#333] transform transition-all duration-300 hover:scale-105 hover:border-[#ff6b00]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}

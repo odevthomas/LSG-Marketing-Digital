@@ -45,7 +45,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className="bg-gradient-to-b from-white to-gray-50 py-20 sm:py-24">
+    <section className="bg-white from-white to-gray-50 py-20 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

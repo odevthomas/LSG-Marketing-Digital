@@ -72,23 +72,25 @@ const Home = () => {
     <div className="relative min-h-screen bg-gradient-to-r from-gray-100 to-gray-200 overflow-hidden">
       <div className="relative z-10">
         <HeroSection />
-        <Statistics />
-        <MarqueeSection items={momentsItems1} />
         <Carousel />
         <ClientesParceiros />
-        <ChatbotSection />
-        <Servicos />
+        <MarqueeSection items={momentsItems1} />
+        <Statistics />    
+       
         <MarqueeSection items={momentsItems2} />
-        <ImageCarousel />
-        <MarqueeSection items={momentsItems3} />
-        <ServicePlans />
-        <CertificationSection />
         <ClientAvaliacao />
-        <MarqueeSection items={momentsItems4} />
-        <PrintMenagem />
+        <ServicePlans />
+
+        <ImageCarousel />
         <FaqSection />
-        <SeloSection />
+        <MarqueeSection items={momentsItems3} />
+        <Servicos />
+
+        <PrintMenagem />
+
+        <CertificationSection />  
         <FormularioContato />
+
         <Footer />
         <CookieConsent />
         

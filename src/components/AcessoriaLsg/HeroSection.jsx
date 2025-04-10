@@ -39,7 +39,7 @@ const HeroSection = () => {
           {brandLogos.map((logo, idx) => (
             <motion.div
               key={idx}
-              className="w-20 h-20 flex items-center justify-center rounded-full bg-white/90 p-3 shadow-lg hover:scale-105 transition-transform duration-300 -ml-4 first:ml-0 hover:z-10 border border-gray-100/20"
+              className="w-20 h-20 flex items-center justify-center rounded-full transition-transform duration-300 -ml-4 first:ml-0 hover:z-10 border"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: idx * 0.2 }}

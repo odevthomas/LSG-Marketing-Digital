@@ -10,8 +10,6 @@ import {
   PresentationChartBarIcon
 } from "@heroicons/react/24/solid";
 import { Autoplay } from 'swiper/modules';
-
-// Certifique-se de importar o CSS do Swiper
 import "swiper/swiper-bundle.css";
 
 const Servicos = () => {
@@ -64,14 +62,13 @@ const Servicos = () => {
   return (
     <section
       id="servicos"
-      className="py-16 bg-black text-white relative overflow-hidden"
+      className="py-12 bg-black text-white relative overflow-hidden"
     >
-      {/* Fundo com gradiente sutil */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#1a1a1a] opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-black to-[#00000] opacity-90"></div>
       
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-4 text-center relative z-10">
         <motion.h3
-          className="mt-2 block font-bold text-4xl sm:text-5xl md:text-6xl text-white mb-6"
+          className="mt-2 block font-bold text-3xl sm:text-4xl md:text-5xl text-white mb-4"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -80,7 +77,7 @@ const Servicos = () => {
         </motion.h3>
 
         <motion.p
-          className="text-gray-300 text-xl max-w-3xl mx-auto mb-12 leading-relaxed"
+          className="text-gray-300 text-lg max-w-3xl mx-auto mb-6 leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -90,7 +87,7 @@ const Servicos = () => {
 
         <Swiper
           modules={[Autoplay]}
-          spaceBetween={30}
+          spaceBetween={20}
           slidesPerView={1}
           loop={true}
           autoplay={{
@@ -105,28 +102,26 @@ const Servicos = () => {
           {ServicosItems.map((item, index) => (
             <SwiperSlide key={index}>
               <motion.div
-                className="bg-[#1a1a1a] rounded-2xl p-6 m-4 border border-[#333] transition-all duration-300 hover:scale-105 hover:border-[#fb1603]"
+                className="bg-[#000] rounded-2xl p-4 m-2 border border-[#333] transition-all duration-300 hover:scale-105 hover:border-[#fb1603]"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex items-center justify-center mb-4">
-                  <item.icon 
-                    className="w-16 h-16 text-[#fb1603] mb-4" 
-                  />
+                <div className="flex items-center justify-center mb-2">
+                  <item.icon className="w-14 h-14 text-[#fb1603]" />
                 </div>
                 
-                <h4 className="text-2xl font-bold text-white mb-3">
+                <h4 className="text-xl font-bold text-white mb-2">
                   {item.service}
                 </h4>
                 
-                <p className="text-gray-300 mb-4 h-20">
+                <p className="text-gray-300 mb-3 h-20">
                   {item.description}
                 </p>
                 
                 <button
                   onClick={() => handleWhatsAppMessage(item.service)}
-                  className="w-full px-6 py-3 text-sm font-bold uppercase tracking-wider text-white bg-[#fb1603] rounded-full hover:bg-[#e30f00] transition-all duration-300 transform hover:scale-105"
+                  className="w-full px-4 py-2 text-sm font-bold uppercase tracking-wider text-white bg-[#fb1603] rounded-full hover:bg-[#e30f00] transition-all duration-300 transform hover:scale-105"
                 >
                   Saiba Mais
                 </button>
